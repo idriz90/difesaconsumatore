@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Guide e Consigli su Rimborsi Bancari e Tutela Consumatore | Difesa Consumatore Pisa</title>
+  <meta name="description" content="Guide pratiche e articoli su cessione del quinto, sovraindebitamento, segnalazioni CRIF, saldo e stralcio e rimborso voli cancellati. Aggiornamenti dalla redazione di Difesa Consumatore Pisa." />
+  <meta name="keywords" content="blog tutela consumatore, guida cessione del quinto, sovraindebitamento come funziona, cancellazione CRIF come fare, rimborso volo cancellato europa, diritti consumatore banca" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Difesa Consumatore S.r.l.s." />
+  <link rel="canonical" href="https://www.difesaconsumatore.org/blog" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.difesaconsumatore.org/blog" />
+  <meta property="og:title" content="Blog | Guide su Rimborsi Bancari e Tutela Consumatore" />
+  <meta property="og:description" content="Articoli e guide pratiche su cessione del quinto, CRIF, sovraindebitamento, saldo e stralcio e rimborso voli. Tutto quello che devi sapere per difendere i tuoi diritti." />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:site_name" content="Difesa Consumatore" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Blog | Guide su Rimborsi Bancari e Tutela Consumatore" />
+  <meta name="twitter:description" content="Guide pratiche su cessione del quinto, CRIF, sovraindebitamento e rimborso voli." />
+
+  <!-- Schema.org Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog Difesa Consumatore",
+    "url": "https://www.difesaconsumatore.org/blog",
+    "description": "Guide pratiche e articoli su tutela del consumatore, rimborsi bancari, cessione del quinto e diritti dei passeggeri aerei.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Difesa Consumatore",
+      "url": "https://www.difesaconsumatore.org",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Novecchio, 10",
+        "addressLocality": "Pisa",
+        "addressCountry": "IT"
+      }
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Guida alla Cessione del Quinto: cos'è, come funziona e quali sono i vantaggi",
+        "datePublished": "2024-04-15",
+        "author": { "@type": "Organization", "name": "Difesa Consumatore" }
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Sovraindebitamento: un aiuto per i consumatori in difficoltà",
+        "datePublished": "2024-03-28",
+        "author": { "@type": "Organization", "name": "Difesa Consumatore" }
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Segnalazione al CRIF: cosa significa e come Difesa Consumatore può aiutarti",
+        "datePublished": "2024-03-10",
+        "author": { "@type": "Organization", "name": "Difesa Consumatore" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── BLOG LAYOUT ── */
+    .blog-section { background: var(--white); }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 56px;
+      align-items: start;
+    }
+
+    /* ── ARTICLE CARDS ── */
+    .articles-list { display: flex; flex-direction: column; gap: 0; }
+
+    .article-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      border-bottom: 1px solid var(--border);
+      padding: 36px 0;
+      text-decoration: none;
+      color: inherit;
+    }
+    .article-card:first-child { padding-top: 0; }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .article-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--navy);
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .article-tag.gold {
+      background: rgba(245,200,66,0.15);
+      border-color: rgba(245,200,66,0.4);
+      color: var(--gold-dark);
+    }
+
+    .article-date {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 12px;
+      transition: color 0.2s;
+    }
+
+    .article-card:hover .article-title { color: var(--gold-dark); }
+
+    .article-excerpt {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.78;
+      margin-bottom: 18px;
+      max-width: 640px;
+    }
+
+    .article-read-more {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+
+    .article-card:hover .article-read-more { gap: 10px; }
+
+    /* ── FEATURED ARTICLE ── */
+    .article-card.featured { padding: 0 0 36px; }
+    .article-card.featured .article-title { font-size: clamp(1.35rem, 2.5vw, 1.8rem); }
+
+    .article-featured-visual {
+      width: 100%; height: 220px;
+      background: var(--navy);
+      border-radius: 10px;
+      margin-bottom: 22px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .article-featured-visual::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    }
+    .article-featured-visual::after {
+      content: ''; position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(45deg, rgba(245,200,66,0.05) 0px, rgba(245,200,66,0.05) 1px, transparent 1px, transparent 20px);
+    }
+    .afv-label {
+      position: relative; z-index: 1;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: rgba(255,255,255,0.25);
+      letter-spacing: 0.2em; text-transform: uppercase; font-style: italic;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 88px; }
+
+    .sidebar-card {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 20px;
+      box-shadow: 0 2px 8px rgba(26,58,107,0.04);
+    }
+
+    .sidebar-card h4 {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--text-muted);
+      margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+    }
+
+    .cat-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .cat-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 9px 0; border-bottom: 1px solid var(--border); cursor: pointer;
+    }
+    .cat-item:last-child { border-bottom: none; }
+    .cat-name { font-size: 13px; color: var(--navy); font-weight: 500; }
+    .cat-count {
+      font-size: 11px; background: var(--navy); color: var(--gold);
+      padding: 2px 8px; border-radius: 999px; font-weight: 600;
+    }
+
+    .recent-list { display: flex; flex-direction: column; gap: 14px; }
+    .recent-item { display: flex; gap: 10px; align-items: flex-start; text-decoration: none; color: inherit; }
+    .recent-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 6px; }
+    .recent-title { font-size: 13px; color: var(--navy); line-height: 1.4; font-weight: 500; transition: color 0.2s; }
+    .recent-item:hover .recent-title { color: var(--gold-dark); }
+    .recent-date { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
+    .sidebar-cta {
+      background: var(--navy); border-radius: 10px; padding: 24px 20px; text-align: center;
+    }
+    .sidebar-cta h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: 0; text-transform: none; border: none; padding: 0; }
+    .sidebar-cta p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 18px; }
+
+    /* ── PAGINATION ── */
+    .pagination { display: flex; gap: 8px; margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border); }
+    .page-btn {
+      width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border); border-radius: 8px;
+      font-size: 13px; font-weight: 500; color: var(--navy);
+      cursor: pointer; background: var(--white); text-decoration: none;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
+    }
+    .page-btn:hover, .page-btn.active { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Blog</div>
+      <h1>Blog &amp; Guide</h1>
+      <p>Approfondimenti, guide pratiche e aggiornamenti su diritti del consumatore, rimborsi bancari e tutela creditizia.</p>
+    </div>
+  </div>
+
+  <!-- BLOG -->
+  <section class="blog-section">
+    <div class="section-inner">
+      <div class="blog-grid">
+
+        <!-- ARTICLES -->
+        <div>
+          <div class="articles-list">
+
+            <!-- FEATURED -->
+            <a href="#" class="article-card featured">
+              <div class="article-featured-visual">
+                <span class="afv-label">Guida completa</span>
+              </div>
+              <div class="article-meta">
+                <span class="article-tag gold">In evidenza</span>
+                <span class="article-tag">Cessione del Quinto</span>
+                <span class="article-date">15 aprile 2024</span>
+              </div>
+              <div class="article-title">Guida alla Cessione del Quinto: cos'è, come funziona e quali sono i vantaggi</div>
+              <p class="article-excerpt">La cessione del quinto dello stipendio è una forma di prestito personale garantito, rimborsato attraverso trattenute dirette sull'accredito mensile. Scopri come funziona, quando hai diritto al rimborso delle commissioni e come verificare se sei stato trattato correttamente dalla tua banca.</p>
+              <span class="article-read-more">Leggi l'articolo →</span>
+            </a>
+
+            <!-- ARTICLE 2 -->
+            <a href="#" class="article-card">
+              <div class="article-meta">
+                <span class="article-tag">Sovraindebitamento</span>
+                <span class="article-date">28 marzo 2024</span>
+              </div>
+              <div class="article-title">Sovraindebitamento: un aiuto per i consumatori in difficoltà</div>
+              <p class="article-excerpt">La Legge n. 3/2012, spesso chiamata "Legge Salva-suicidi", offre una via d'uscita legale per chi non riesce a far fronte ai propri debiti. Analizziamo le procedure disponibili e come accedervi.</p>
+              <span class="article-read-more">Leggi l'articolo →</span>
+            </a>
+
+            <!-- ARTICLE 3 -->
+            <a href="#" class="article-card">
+              <div class="article-meta">
+                <span class="article-tag">CRIF</span>
+                <span class="article-date">10 marzo 2024</span>
+              </div>
+              <div class="article-title">Segnalazione al CRIF: cosa significa e come Difesa Consumatore può aiutarti</div>
+              <p class="article-excerpt">Essere segnalati al CRIF può avere conseguenze serie sul tuo accesso al credito. In questo articolo spieghiamo cosa sono le segnalazioni negative, quanto durano e come è possibile richiederne la cancellazione in caso di segnalazione illegittima.</p>
+              <span class="article-read-more">Leggi l'articolo →</span>
+            </a>
+
+            <!-- ARTICLE 4 -->
+            <a href="#" class="article-card">
+              <div class="article-meta">
+                <span class="article-tag">Saldo e Stralcio</span>
+                <span class="article-date">18 febbraio 2024</span>
+              </div>
+              <div class="article-title">Saldo e Stralcio con le banche: come funziona e quando conviene</div>
+              <p class="article-excerpt">Il saldo e stralcio è un accordo tra debitore e creditore che consente di estinguere un debito pagando una cifra inferiore al totale dovuto. Quando è applicabile, quali sono i rischi e come gestire la trattativa nel modo corretto.</p>
+              <span class="article-read-more">Leggi l'articolo →</span>
+            </a>
+
+            <!-- ARTICLE 5 -->
+            <a href="#" class="article-card">
+              <div class="article-meta">
+                <span class="article-tag">Rimborso Voli</span>
+                <span class="article-date">5 febbraio 2024</span>
+              </div>
+              <div class="article-title">Volo cancellato a Pisa: come ottenere il rimborso fino a 600€</div>
+              <p class="article-excerpt">Il Regolamento CE n. 261/2004 tutela i passeggeri in caso di cancellazione, ritardo prolungato e overbooking. Ecco come funziona il rimborso, chi ha diritto e come presentare il reclamo alla compagnia aerea.</p>
+              <span class="article-read-more">Leggi l'articolo →</span>
+            </a>
+
+            <!-- ARTICLE 6 -->
+            <a href="#" class="article-card">
+              <div class="article-meta">
+                <span class="article-tag">Cessione del Quinto</span>
+                <span class="article-date">20 gennaio 2024</span>
+              </div>
+              <div class="article-title">Rimborso anticipato della cessione del quinto: tutto quello che devi sapere</div>
+              <p class="article-excerpt">Quando si estingue anticipatamente un finanziamento, la legge prevede il diritto al rimborso proporzionale delle commissioni e dei premi assicurativi. Scopri come calcolare il rimborso e come richiederlo alla banca.</p>
+              <span class="article-read-more">Leggi l'articolo →</span>
+            </a>
+
+          </div>
+
+          <!-- PAGINATION -->
+          <div class="pagination">
+            <a href="#" class="page-btn active">1</a>
+            <a href="#" class="page-btn">2</a>
+            <a href="#" class="page-btn">3</a>
+            <a href="#" class="page-btn" style="width:auto;padding:0 14px;">Avanti →</a>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+          <div class="sidebar-card">
+            <h4>Categorie</h4>
+            <ul class="cat-list">
+              <li class="cat-item">
+                <span class="cat-name">Cessione del Quinto</span>
+                <span class="cat-count">8</span>
+              </li>
+              <li class="cat-item">
+                <span class="cat-name">Sovraindebitamento</span>
+                <span class="cat-count">5</span>
+              </li>
+              <li class="cat-item">
+                <span class="cat-name">Segnalazioni CRIF</span>
+                <span class="cat-count">4</span>
+              </li>
+              <li class="cat-item">
+                <span class="cat-name">Saldo e Stralcio</span>
+                <span class="cat-count">3</span>
+              </li>
+              <li class="cat-item">
+                <span class="cat-name">Rimborso Voli</span>
+                <span class="cat-count">6</span>
+              </li>
+              <li class="cat-item">
+                <span class="cat-name">Guide Pratiche</span>
+                <span class="cat-count">7</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sidebar-card">
+            <h4>Articoli Recenti</h4>
+            <div class="recent-list">
+              <a href="#" class="recent-item">
+                <div class="recent-dot"></div>
+                <div>
+                  <div class="recent-title">Guida alla Cessione del Quinto: cos'è e come funziona</div>
+                  <div class="recent-date">15 aprile 2024</div>
+                </div>
+              </a>
+              <a href="#" class="recent-item">
+                <div class="recent-dot"></div>
+                <div>
+                  <div class="recent-title">Sovraindebitamento: un aiuto per i consumatori</div>
+                  <div class="recent-date">28 marzo 2024</div>
+                </div>
+              </a>
+              <a href="#" class="recent-item">
+                <div class="recent-dot"></div>
+                <div>
+                  <div class="recent-title">Segnalazione al CRIF: cosa significa e come agire</div>
+                  <div class="recent-date">10 marzo 2024</div>
+                </div>
+              </a>
+              <a href="#" class="recent-item">
+                <div class="recent-dot"></div>
+                <div>
+                  <div class="recent-title">Volo cancellato: rimborso fino a 600€</div>
+                  <div class="recent-date">5 febbraio 2024</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="sidebar-cta">
+            <h4>Hai bisogno di aiuto?</h4>
+            <p>Contattaci per una consulenza gratuita. Analizziamo il tuo caso senza impegno.</p>
+            <a href="dove-siamo.html" class="btn-primary" style="width:100%;text-align:center;display:block;">Consulenza gratuita →</a>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="cta-band-inner">
+      <div class="cta-text">
+        <h2>Hai letto e vuoi sapere se ti spetta un rimborso?</h2>
+        <p>La valutazione del tuo caso è sempre gratuita e senza impegno.</p>
+      </div>
+      <a href="dove-siamo.html" class="cta-btn">Contattaci ora →</a>
+    </div>
+  </div>
+
+  <script src="nav.js"></script>
+</body>
+</html>

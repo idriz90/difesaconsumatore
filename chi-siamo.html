@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chi Siamo | Difesa Consumatore Pisa – Studio Legale Davini Ciferri</title>
+  <meta name="description" content="Difesa Consumatore Pisa: chi siamo, la nostra storia e il team. Avv. Fabio Davini e Avv. Christian Ciferri al fianco del consumatore contro banche e finanziarie." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.difesaconsumatore.org/chi-siamo.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.difesaconsumatore.org/chi-siamo.html" />
+  <meta property="og:title" content="Chi Siamo | Difesa Consumatore Pisa" />
+  <meta property="og:description" content="Il team di professionisti che difende ogni giorno i diritti del consumatore contro banche, finanziarie e compagnie aeree." />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:site_name" content="Difesa Consumatore" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Difesa Consumatore",
+    "url": "https://www.difesaconsumatore.org",
+    "telephone": "+393296491028",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Novecchio, 10",
+      "addressLocality": "Pisa",
+      "addressRegion": "PI",
+      "addressCountry": "IT"
+    },
+    "employee": [
+      {
+        "@type": "Person",
+        "name": "Avv. Fabio Davini",
+        "jobTitle": "Avvocato – Socio Fondatore"
+      },
+      {
+        "@type": "Person",
+        "name": "Avv. Christian Ciferri",
+        "jobTitle": "Avvocato – Socio"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── HERO CHI SIAMO ── */
+    .chi-hero {
+      background: var(--navy);
+      padding: 80px 32px 88px;
+      text-align: center;
+    }
+    .chi-hero .eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+    }
+    .chi-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 18px;
+    }
+    .chi-hero p {
+      font-size: 16px; color: rgba(255,255,255,0.65);
+      max-width: 620px; margin: 0 auto; line-height: 1.82;
+    }
+
+    /* ── MISSION ── */
+    .mission { background: var(--white); }
+    .mission-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 72px; align-items: center;
+    }
+    .mission-text .section-title { margin-bottom: 22px; }
+    .mission-text p {
+      font-size: 15px; color: var(--text-body);
+      line-height: 1.85; margin-bottom: 14px;
+    }
+    .mission-values {
+      display: flex; flex-direction: column; gap: 16px; margin-top: 32px;
+    }
+    .value-item {
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .value-icon {
+      width: 42px; height: 42px; background: var(--gold);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .value-icon svg { width: 20px; height: 20px; stroke: var(--navy); fill: none; stroke-width: 2; }
+    .value-body h4 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .value-body p { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── STATS ── */
+    .chi-stats { background: var(--off-white); border-top: 1px solid var(--border); }
+    .stats-row {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px;
+      border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+    }
+    .stat-cell {
+      background: #fff; padding: 36px 24px; text-align: center;
+    }
+    .stat-cell .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem; font-weight: 700; color: var(--navy); line-height: 1;
+    }
+    .stat-cell .lbl {
+      font-size: 12px; color: var(--text-muted); margin-top: 8px; line-height: 1.5;
+    }
+
+    /* ── TEAM ── */
+    .team-section { background: var(--white); }
+    .team-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px;
+    }
+    .team-card {
+      background: var(--off-white); border: 1px solid var(--border);
+      border-radius: 10px; padding: 36px 32px;
+    }
+    .team-avatar {
+      width: 64px; height: 64px; background: var(--navy);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; color: var(--gold); margin-bottom: 20px;
+    }
+    .team-name { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .team-role { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 16px; }
+    .team-bio { font-size: 14px; color: var(--text-body); line-height: 1.78; }
+
+    /* ── WHY US ── */
+    .why-us { background: var(--off-white); border-top: 1px solid var(--border); }
+    .why-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px;
+    }
+    .why-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 10px; padding: 32px 28px;
+    }
+    .why-num {
+      font-family: 'Playfair Display', serif; font-size: 2rem;
+      font-weight: 700; color: var(--gold-dark); margin-bottom: 14px;
+    }
+    .why-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .why-desc { font-size: 13px; color: var(--text-body); line-height: 1.72; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .mission-grid { grid-template-columns: 1fr; gap: 48px; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .stats-row { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .chi-hero { padding: 60px 20px 70px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="chi-hero">
+    <div class="eyebrow">Chi Siamo</div>
+    <h1>Un team al fianco del consumatore,<br>ogni giorno</h1>
+    <p>Dal nostro studio di Pisa difendiamo i diritti di migliaia di consumatori contro banche, finanziarie e compagnie aeree. Con competenza, trasparenza e determinazione.</p>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission">
+    <div class="section-inner">
+      <div class="mission-grid">
+        <div class="mission-text">
+          <div class="section-label">La Nostra Missione</div>
+          <h2 class="section-title">Non lasciamo mai solo il consumatore</h2>
+          <p>Difesa Consumatore nasce dalla convinzione che ogni cittadino abbia il diritto di ricevere ciò che gli spetta, senza doversi arrendere davanti al muro burocratico delle grandi istituzioni finanziarie.</p>
+          <p>Operiamo da Pisa con un team di avvocati e consulenti specializzati nel diritto bancario e del consumo. La nostra forza è la specializzazione: conosciamo nel dettaglio le procedure di rimborso, le normative europee e le strategie che le banche usano per evitare di restituire quanto dovuto.</p>
+          <p>Oltre 2000 pratiche risolte ogni anno parlano da soli: nel 95% dei casi abbiamo ottenuto un rimborso o una soluzione favorevole per il cliente.</p>
+          <div class="mission-values">
+            <div class="value-item">
+              <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 2L3 7v6c0 5 3.8 9.7 9 11 5.2-1.3 9-6 9-11V7L12 2z"/></svg></div>
+              <div class="value-body"><h4>Trasparenza totale</h4><p>Nessun costo nascosto. Ti spieghiamo tutto prima di iniziare.</p></div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+              <div class="value-body"><h4>Risposta rapida</h4><p>Risponderemo entro 24 ore dalla tua richiesta. Sempre.</p></div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+              <div class="value-body"><h4>Nessun anticipo</h4><p>Il compenso è legato al risultato. Se non otteniamo nulla, non paghi.</p></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="stats-row" style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+            <div class="stat-cell" style="border-right:1px solid var(--border);border-bottom:1px solid var(--border);">
+              <div class="num">2000+</div><div class="lbl">Pratiche risolte ogni anno</div>
+            </div>
+            <div class="stat-cell" style="border-bottom:1px solid var(--border);">
+              <div class="num">95%</div><div class="lbl">Tasso di successo</div>
+            </div>
+            <div class="stat-cell" style="border-right:1px solid var(--border);">
+              <div class="num">5</div><div class="lbl">Aree di specializzazione</div>
+            </div>
+            <div class="stat-cell">
+              <div class="num">4.7★</div><div class="lbl">Valutazione media clienti</div>
+            </div>
+          </div>
+          <div style="margin-top:24px;background:var(--navy);border-radius:10px;padding:28px 24px;">
+            <p style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.8;font-style:italic;">&ldquo;La nostra missione non e' solo ottenere rimborsi. E' restituire ai consumatori la fiducia nel fatto che i loro diritti esistono e possono essere fatti valere.&rdquo;</p>
+            <p style="margin-top:12px;font-size:12px;color:var(--gold);font-weight:700;">— Avv. Fabio Davini, Fondatore</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team-section">
+    <div class="section-inner">
+      <div class="section-label">Il Team</div>
+      <h2 class="section-title">I professionisti che ti difendono</h2>
+      <p class="section-desc">Avvocati e consulenti specializzati nel diritto bancario, del consumo e nelle procedure di mediazione e conciliazione.</p>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">FD</div>
+          <div class="team-name">Avv. Fabio Davini</div>
+          <div class="team-role">Avvocato – Socio Fondatore</div>
+          <p class="team-bio">Specializzato nel diritto bancario e nella tutela del consumatore, guida lo studio con oltre un decennio di esperienza nelle procedure di rimborso, sovraindebitamento e contenzioso bancario. Ha costruito Difesa Consumatore su un principio semplice: ogni consumatore merita una difesa professionale, accessibile e concreta.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">CC</div>
+          <div class="team-name">Avv. Christian Ciferri</div>
+          <div class="team-role">Avvocato – Socio</div>
+          <p class="team-bio">Si occupa in particolare delle negoziazioni assistite, delle procedure di conciliazione davanti ad ARERA, AGCOM e ART, e della gestione delle pratiche di segnalazione CRIF e saldo e stralcio. La sua attenzione al dettaglio e la profonda conoscenza delle normative di settore sono un valore fondamentale per i nostri clienti.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">ST</div>
+          <div class="team-name">Staff Specializzato</div>
+          <div class="team-role">Consulenti & Back Office</div>
+          <p class="team-bio">Il nostro team di consulenti e collaboratori segue ogni pratica dalla prima valutazione fino alla liquidazione del rimborso. Curiamo tutta la documentazione, i contatti con banche e finanziarie, e teniamo il cliente aggiornato in ogni fase del percorso.</p>
+        </div>
+        <div class="team-card" style="background:var(--navy);border-color:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+          <div style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);margin-bottom:14px;">Hai bisogno<br>di noi?</div>
+          <p style="font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:22px;line-height:1.7;">La prima consulenza è sempre gratuita e senza impegno.</p>
+          <a href="https://wa.me/393296491028" class="btn-primary" target="_blank" rel="noopener">Scrivici su WhatsApp</a>
+          <a href="dove-siamo.html" class="btn-secondary" style="margin-top:12px;border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);">Vieni in studio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why-us">
+    <div class="section-inner">
+      <div class="section-label">Perche' sceglierci</div>
+      <h2 class="section-title">Cosa ci distingue</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-num">01</div>
+          <div class="why-title">Specializzazione esclusiva</div>
+          <p class="why-desc">Non siamo uno studio generalista. Operiamo esclusivamente nella tutela del consumatore: conosciamo ogni dettaglio normativo, ogni procedura, ogni tecnica delle banche per evitare i rimborsi.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">02</div>
+          <div class="why-title">Zero rischi per te</div>
+          <p class="why-desc">La consulenza iniziale e' gratuita. Non ti chiediamo anticipi. Il nostro compenso dipende dal risultato ottenuto: il nostro interesse coincide col tuo.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">03</div>
+          <div class="why-title">Volume e competenza</div>
+          <p class="why-desc">Gestiamo oltre 2000 pratiche l'anno. Questa scala ci permette di conoscere perfettamente i comportamenti di ogni banca e finanziaria, e di scegliere la strategia piu' efficace per ogni caso.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">04</div>
+          <div class="why-title">Sede a Pisa, clienti in tutta Italia</div>
+          <p class="why-desc">Operiamo principalmente in Toscana, ma assistiamo clienti da tutta Italia. Molte pratiche si gestiscono completamente da remoto, senza bisogno di spostarsi.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">05</div>
+          <div class="why-title">Comunicazione chiara</div>
+          <p class="why-desc">Ti spieghiamo ogni passo in linguaggio semplice. Niente gergo legale incomprensibile: saprai sempre cosa sta succedendo con la tua pratica e cosa aspettarti.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">06</div>
+          <div class="why-title">Risposta garantita entro 24h</div>
+          <p class="why-desc">Puoi contattarci per telefono, email o WhatsApp. Ci impegniamo a rispondere entro un giorno lavorativo, perche' il tuo tempo ha valore.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="cta-band-inner">
+      <div class="cta-text">
+        <h2>Inizia con una consulenza gratuita</h2>
+        <p>Nessun impegno. Ti valutiamo la pratica e ti diciamo subito se hai diritto a un rimborso.</p>
+      </div>
+      <a href="https://wa.me/393296491028" class="cta-btn" target="_blank" rel="noopener">Scrivici su WhatsApp &rarr;</a>
+    </div>
+  </div>
+
+  <script src="nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# robots.txt — Difesa Consumatore
+# https://www.difesaconsumatore.org
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.difesaconsumatore.org/sitemap.xml
