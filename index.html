@@ -5,253 +5,185 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Difesa Consumatore Pisa | Rimborsi Cessione del Quinto e Tutela Consumatore</title>
   <meta name="description" content="Difesa Consumatore Pisa: più di 2000 contenziosi bancari risolti ogni anno. Rimborsi cessione del quinto, sovraindebitamento, CRIF, saldo e stralcio, rimborso voli. Consulenza gratuita." />
-  <meta name="keywords" content="difesa consumatore, cessione del quinto rimborso, sovraindebitamento, CRIF cancellazione, saldo e stralcio, rimborso volo cancellato, Pisa, tutela consumatore" />
   <meta name="robots" content="index, follow" />
-  <meta name="author" content="Difesa Consumatore S.r.l.s." />
   <link rel="canonical" href="https://www.difesaconsumatore.org/" />
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-
-  <!-- Open Graph -->
+  <link rel="icon" href="favicon.png" type="image/png" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.difesaconsumatore.org/" />
   <meta property="og:title" content="Difesa Consumatore Pisa | Rimborsi Bancari e Tutela Consumatore" />
-  <meta property="og:description" content="Più di 2000 contenziosi bancari risolti ogni anno. Nel 95% dei casi rimborsi a favore del cliente. Consulenza gratuita." />
-  <meta property="og:locale" content="it_IT" />
-  <meta property="og:site_name" content="Difesa Consumatore" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Difesa Consumatore Pisa | Rimborsi Bancari e Tutela Consumatore" />
-  <meta name="twitter:description" content="Più di 2000 contenziosi bancari risolti ogni anno. Consulenza gratuita senza impegno." />
-
-  <!-- Schema.org LocalBusiness -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LegalService",
-    "name": "Difesa Consumatore",
-    "description": "Studio specializzato nella tutela del consumatore nei confronti di banche, finanziarie e compagnie aeree. Rimborsi cessione del quinto, sovraindebitamento, CRIF, saldo e stralcio, rimborso voli.",
-    "url": "https://www.difesaconsumatore.org",
-    "telephone": "+393296491028",
-    "email": "info@difesaconsumatore.org",
-    "vatID": "02285180507",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Via Novecchio, 10",
-      "addressLocality": "Pisa",
-      "addressRegion": "PI",
-      "addressCountry": "IT"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 43.7102,
-      "longitude": 10.3768
-    },
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "18:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "17:00" }
-    ],
-    "sameAs": [
-      "https://www.facebook.com/difesaconsumatoresrls/",
-      "https://www.instagram.com/difesaconsumatore/"
-    ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.7",
-      "reviewCount": "47"
-    }
-  }
-  </script>
-
+  <meta property="og:description" content="Più di 2000 contenziosi bancari risolti ogni anno. Nel 95% dei casi rimborsi a favore del cliente." />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LegalService","name":"Difesa Consumatore","url":"https://www.difesaconsumatore.org","telephone":"+393296491028","email":"difesaconsumatorepisa@gmail.com","vatID":"02285180507","address":{"@type":"PostalAddress","streetAddress":"Via Novecchio, 10","addressLocality":"Pisa","addressRegion":"PI","addressCountry":"IT"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"4"}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* ── HERO ── */
+    /* ── HERO (fedele al Wix: sfondo foto scura, testo a sinistra) ── */
     .hero {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
+      min-height: 88vh;
+      position: relative; overflow: hidden;
+      display: flex; align-items: center;
     }
-    .hero-content {
-      max-width: 1200px; width: 100%; margin: 0 auto;
-      padding: 72px 32px 80px;
-      display: grid; grid-template-columns: 1fr 380px; gap: 64px; align-items: start;
+    .hero-bg-photo {
+      position: absolute; inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1600&q=80&auto=format&fit=crop');
+      background-size: cover; background-position: center top;
     }
+    /* overlay blu navy a sinistra come Wix */
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg,
+        rgba(26,58,107,0.92) 0%,
+        rgba(26,58,107,0.85) 40%,
+        rgba(26,58,107,0.40) 70%,
+        rgba(26,58,107,0.10) 100%);
+    }
+    .hero-inner {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto;
+      padding: 80px 32px 60px;
+      width: 100%;
+    }
+    .hero-content { max-width: 560px; }
     .hero-eyebrow {
-      display: inline-block; font-size: 11px; font-weight: 600;
-      letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted);
-      margin-bottom: 18px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--yellow);
+      margin-bottom: 20px; display: block;
     }
     .hero-title {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 700; line-height: 1.15; color: var(--navy); margin-bottom: 18px;
+      font-size: clamp(2rem, 4.5vw, 3.6rem);
+      font-weight: 700; line-height: 1.15; color: var(--white);
+      margin-bottom: 20px;
     }
-    .hero-title em { font-style: normal; color: var(--gold-dark); }
     .hero-subtitle {
-      font-size: 15px; color: var(--text-body);
-      max-width: 520px; line-height: 1.82; margin-bottom: 36px;
+      font-size: 16px; color: rgba(255,255,255,0.75);
+      line-height: 1.8; margin-bottom: 36px; max-width: 460px;
+      font-style: italic;
     }
-    .hero-stat-row { display: flex; gap: 36px; margin-bottom: 40px; flex-wrap: wrap; }
-    .hero-stat { display: flex; flex-direction: column; }
-    .hero-stat .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem; font-weight: 700; color: var(--navy); line-height: 1;
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+    /* stats in fondo all'hero */
+    .hero-stats {
+      display: flex; gap: 0;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 28px;
     }
-    .hero-stat .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
-    .hero-stat-divider { width: 1px; background: var(--border); align-self: stretch; }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-stat { padding-right: 32px; margin-right: 32px; border-right: 1px solid rgba(255,255,255,0.15); }
+    .hero-stat:last-child { border-right: none; padding-right: 0; margin-right: 0; }
+    .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; color: var(--yellow); line-height: 1; }
+    .hero-stat-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 4px; }
 
-    /* Hero form card */
-    .hero-card {
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      border-radius: 10px; padding: 32px 28px;
-      box-shadow: 0 4px 24px rgba(26,58,107,0.07);
+    /* ── AREE DI COMPETENZA con mascotte (fedele al Wix) ── */
+    .competenze { background: var(--blue-pale); padding: 80px 32px; }
+    .competenze-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 280px 1fr;
+      gap: 56px; align-items: center;
     }
-    .hero-card h3 {
-      font-size: 14px; font-weight: 700;
-      color: var(--navy); margin-bottom: 20px;
-      padding-bottom: 14px; border-bottom: 1px solid var(--border);
+    .mascotte-col { display: flex; flex-direction: column; align-items: center; }
+    .mascotte-col img {
+      width: 220px; height: auto;
+      filter: drop-shadow(0 16px 32px rgba(26,58,107,0.25));
+      animation: float 4s ease-in-out infinite;
     }
-    .card-form { display: flex; flex-direction: column; gap: 10px; }
-    .card-form input,
-    .card-form select,
-    .card-form textarea {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 6px; padding: 11px 14px; font-size: 13px;
-      color: var(--navy); font-family: inherit; outline: none; transition: border-color 0.2s;
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    .mascotte-label {
+      margin-top: 16px; text-align: center;
+      font-size: 13px; color: var(--navy); font-weight: 600;
     }
-    .card-form input::placeholder, .card-form textarea::placeholder { color: #9ab0cc; }
-    .card-form input:focus, .card-form select:focus, .card-form textarea:focus { border-color: var(--navy); }
-    .card-form select { color: var(--text-muted); }
-    .card-form textarea { min-height: 72px; resize: vertical; }
-    .card-form-btn {
-      background: var(--gold); color: var(--navy);
-      font-size: 13px; font-weight: 700;
-      border: none; padding: 13px;
-      border-radius: 999px; cursor: pointer; font-family: inherit;
-      transition: background 0.2s;
-    }
-    .card-form-btn:hover { background: var(--gold-light); }
-    .card-privacy { font-size: 10px; color: var(--text-muted); text-align: center; margin-top: 2px; }
-
-    /* ── ABOUT HOME ── */
-    .about-home { background: var(--off-white); border-top: 1px solid var(--border); }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-    .about-body { font-size: 15px; color: var(--text-body); line-height: 1.82; margin-top: 18px; }
-    .about-body p + p { margin-top: 14px; }
-    .stats-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
-    }
-    .stat-box {
-      background: #fff; padding: 28px 24px;
-      border: 1px solid var(--border); border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(26,58,107,0.05);
-    }
-    .stat-box .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.4rem; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 6px;
-    }
-    .stat-box .lbl { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
-
-    /* ── SERVICES PREVIEW ── */
-    .services-preview { background: var(--white); }
-    .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; gap: 24px; flex-wrap: wrap; }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .service-card {
-      background: var(--off-white); padding: 32px 28px;
+    .competenze-list { display: flex; flex-direction: column; gap: 0; }
+    .competenza-item {
+      display: flex; align-items: flex-start; gap: 18px;
+      padding: 20px 0; border-bottom: 1px solid var(--border);
       text-decoration: none; color: inherit;
-      border: 1px solid var(--border); border-radius: 10px;
-      transition: box-shadow 0.2s, transform 0.2s; display: block;
+      transition: background 0.2s; border-radius: 4px;
     }
-    .service-card:hover { box-shadow: 0 8px 28px rgba(26,58,107,0.11); transform: translateY(-2px); }
-    .service-card:hover .s-arrow { gap: 10px; }
-    .service-num { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--text-muted); margin-bottom: 14px; }
-    .service-icon {
-      width: 48px; height: 48px; background: var(--navy); border-radius: 10px;
-      display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+    .competenza-item:first-child { padding-top: 0; }
+    .competenza-item:last-child { border-bottom: none; }
+    .competenza-item:hover .competenza-title { color: var(--blue); }
+    .competenza-icon {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: var(--navy); border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
     }
-    .service-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.6; }
-    .service-name { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.35; }
-    .service-desc { font-size: 13px; color: var(--text-body); line-height: 1.7; margin-bottom: 20px; }
-    .s-arrow { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: var(--navy); transition: gap 0.2s; }
+    .competenza-icon svg { width: 22px; height: 22px; stroke: var(--yellow); fill: none; stroke-width: 1.8; }
+    .competenza-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .competenza-desc { font-size: 13px; color: var(--text-body); line-height: 1.6; }
 
-    /* ── TESTIMONIALS ── */
-    .testimonials { background: var(--off-white); border-top: 1px solid var(--border); }
-    .reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    /* ── TESTIMONIANZE su sfondo celeste (fedele al Wix) ── */
+    .testimonials { background: var(--blue-pale); }
+    .testi-reviews-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .testi-card {
+      background: var(--white); border-radius: 8px;
+      padding: 28px 22px; position: relative;
+      box-shadow: 0 4px 16px rgba(26,58,107,0.10);
+    }
+    .testi-quote-icon {
+      font-size: 3.5rem; color: var(--blue); opacity: 0.25;
+      font-family: Georgia, serif; line-height: 1; margin-bottom: 8px;
+    }
+    .testi-text { font-size: 13px; color: var(--text-body); line-height: 1.8; margin-bottom: 18px; font-style: italic; }
+    .testi-author { font-size: 12px; font-weight: 700; color: var(--navy); }
+    .testi-source { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+    .testi-stars { display: flex; gap: 3px; margin-bottom: 10px; }
+    .testi-star { width: 12px; height: 12px; background: var(--yellow); clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
 
-    /* ── RESPONSIVE ── */
+    /* ── CHI SIAMO ── */
+    .about-home { background: var(--white); }
+    .about-photo-wrap { position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 12px 40px rgba(26,58,107,0.18); }
+    .about-photo-wrap img { width: 100%; height: 440px; object-fit: cover; display: block; }
+    .about-photo-badge { position: absolute; bottom: 20px; left: 20px; background: var(--navy); border-left: 4px solid var(--yellow); padding: 14px 18px; }
+    .about-photo-badge .num { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--yellow); line-height: 1; }
+    .about-photo-badge .lbl { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+
     @media (max-width: 960px) {
-      .hero-content { grid-template-columns: 1fr; gap: 40px; }
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .reviews-grid { grid-template-columns: 1fr; }
+      .competenze-inner { grid-template-columns: 1fr; }
+      .mascotte-col { flex-direction: row; gap: 20px; align-items: center; }
+      .mascotte-col img { width: 120px; }
+      .testi-reviews-grid { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 600px) {
-      .hero-stat-row { gap: 20px; }
-      .services-grid { grid-template-columns: 1fr; }
-      .stats-grid { grid-template-columns: 1fr; }
+      .hero-inner { padding: 56px 20px 44px; }
+      .hero-stats { flex-wrap: wrap; gap: 20px; }
+      .hero-stat { border-right: none; padding-right: 0; margin-right: 0; }
+      .testi-reviews-grid { grid-template-columns: 1fr; }
+      .mascotte-col { flex-direction: column; }
+      .mascotte-col img { width: 160px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
+  <!-- HERO: foto scura + overlay navy + testo a sinistra (come Wix) -->
   <section class="hero" id="home">
-    <div class="hero-content">
-      <div class="hero-text">
-        <span class="hero-eyebrow">Tutela del consumatore · Pisa</span>
+    <div class="hero-bg-photo"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-eyebrow">Tutela del Consumatore · Pisa dal 2012</span>
         <h1 class="hero-title">
-          Più di <em>2000</em> contenziosi bancari risolti ogni anno
+          Più di 2000<br>contenziosi bancari<br>risolti ogni anno
         </h1>
         <p class="hero-subtitle">
           Nel 95% dei casi sono stati emessi rimborsi a favore del cliente.
-          Difendiamo i tuoi diritti contro banche e finanziarie.
         </p>
-        <div class="hero-stat-row">
-          <div class="hero-stat">
-            <div class="stat-num">2000+</div>
-            <div class="stat-label">Contenziosi risolti/anno</div>
-          </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <div class="stat-num">95%</div>
-            <div class="stat-label">Rimborsi ottenuti</div>
-          </div>
-          <div class="hero-stat-divider"></div>
-          <div class="hero-stat">
-            <div class="stat-num">5</div>
-            <div class="stat-label">Aree di competenza</div>
-          </div>
-        </div>
         <div class="hero-actions">
-          <a href="servizi.html" class="btn-primary">Scopri i servizi</a>
-          <a href="dove-siamo.html" class="btn-secondary">Consulenza gratuita</a>
+          <a href="dove-siamo.html#modulo" class="btn-yellow">Consulenza gratuita →</a>
+          <a href="servizi.html" class="btn-outline-white">Scopri i servizi</a>
         </div>
-      </div>
-
-      <div class="hero-card">
-        <h3>Richiedi una consulenza gratuita</h3>
-        <div class="card-form" id="heroForm">
-          <input type="text" id="formNome" placeholder="Nome e Cognome" required />
-          <input type="tel" id="formTel" placeholder="Numero di telefono" required />
-          <input type="email" id="formEmail" placeholder="Indirizzo email" />
-          <select id="formTipo">
-            <option value="" disabled selected>Tipo di pratica</option>
-            <option>Cessione del Quinto / Prestito Personale</option>
-            <option>Sovraindebitamento</option>
-            <option>Segnalazioni CRIF</option>
-            <option>Saldo e Stralcio</option>
-            <option>Rimborso al Volo</option>
-          </select>
-          <textarea id="formMsg" placeholder="Descrivi brevemente la tua situazione..."></textarea>
-          <button class="card-form-btn" id="formBtn" onclick="submitForm(event)">Invia Richiesta &rarr;</button>
-          <p class="card-privacy">Trattamento dati ai sensi del GDPR. Privacy garantita.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">2000+</div>
+            <div class="hero-stat-label">Pratiche annue</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">95%</div>
+            <div class="hero-stat-label">Rimborsi ottenuti</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">€600</div>
+            <div class="hero-stat-label">Max rimborso volo</div>
+          </div>
         </div>
       </div>
     </div>
@@ -261,133 +193,156 @@
   <div class="trust-strip">
     <div class="trust-strip-inner">
       <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5 3.8 9.7 9 11 5.2-1.3 9-6 9-11V7L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
         <span>Consulenza Gratuita</span>
       </div>
       <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        <span>Risposta in 24 ore</span>
-      </div>
-      <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         <span>Nessun Anticipo</span>
       </div>
       <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-        <span>Professionisti Certificati</span>
+        <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <span>Risposta in 24 Ore</span>
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        <span>2000+ Clienti Soddisfatti</span>
       </div>
     </div>
   </div>
 
-  <!-- SERVICES PREVIEW -->
-  <section class="services-preview">
-    <div class="section-inner">
-      <div class="services-header">
-        <div>
-          <div class="section-label">Practice Areas</div>
-          <h2 class="section-title">Aree di Competenza</h2>
-        </div>
-        <a href="servizi.html" class="btn-secondary">Tutti i servizi →</a>
+  <!-- AREE DI COMPETENZA con mascotte (come Wix) -->
+  <section class="competenze">
+    <div class="competenze-inner">
+
+      <!-- MASCOTTE -->
+      <div class="mascotte-col reveal">
+        <img src="images/logo.png" alt="Difesa Consumatore" />
+        <div class="mascotte-label">Aree di Competenza:</div>
       </div>
-      <div class="services-grid">
-        <a href="servizi.html#cqs" class="service-card">
-          <div class="service-num">01</div>
-          <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
-          <div class="service-name">Cessione del Quinto</div>
-          <p class="service-desc">Hai chiuso anticipatamente un finanziamento? Verifica se ti spetta un rimborso delle commissioni non godute.</p>
-          <span class="s-arrow">Approfondisci →</span>
+
+      <!-- LISTA SERVIZI -->
+      <div class="competenze-list reveal">
+        <a href="servizi.html#cqs" class="competenza-item">
+          <div class="competenza-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          </div>
+          <div>
+            <div class="competenza-title">Cessione del Quinto / Prestito Personale</div>
+            <div class="competenza-desc">Hai chiuso o rinegoziato in anticipo una CQS o un PP? Il nostro staff ti può aiutare a capire se sei stato rimborsato completamente.</div>
+          </div>
         </a>
-        <a href="servizi.html#sovraindebitamento" class="service-card">
-          <div class="service-num">02</div>
-          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M7 4H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2h-2M9 4a2 2 0 002 2h2a2 2 0 002-2M9 4a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
-          <div class="service-name">Sovraindebitamento</div>
-          <p class="service-desc">Procedura ai sensi della Legge n. 3/2012 per consumatori e imprese in difficoltà finanziaria.</p>
-          <span class="s-arrow">Approfondisci →</span>
+        <a href="servizi.html#sovraindebitamento" class="competenza-item">
+          <div class="competenza-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M7 4H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2h-2M9 4a2 2 0 002 2h2a2 2 0 002-2"/></svg>
+          </div>
+          <div>
+            <div class="competenza-title">Sovraindebitamento</div>
+            <div class="competenza-desc">Ai sensi della Legge n. 3/2012 i consumatori, imprese e tutti i soggetti sovraindebitati possono ricorrere al procedimento di esdebitazione e sanare la propria condizione CRIF.</div>
+          </div>
         </a>
-        <a href="servizi.html#crif" class="service-card">
-          <div class="service-num">03</div>
-          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
-          <div class="service-name">Segnalazioni CRIF</div>
-          <p class="service-desc">Visura, cancellazione e tutela della tua reputazione creditizia nei confronti del sistema bancario.</p>
-          <span class="s-arrow">Approfondisci →</span>
+        <a href="servizi.html#crif" class="competenza-item">
+          <div class="competenza-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <div>
+            <div class="competenza-title">Segnalazioni CRIF</div>
+            <div class="competenza-desc">Se vuoi avere una visura, richiedere una cancellazione o conoscere la tua situazione creditizia, siamo pronti ad assisterti.</div>
+          </div>
         </a>
-        <a href="servizi.html#saldo" class="service-card">
-          <div class="service-num">04</div>
-          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg></div>
-          <div class="service-name">Saldo e Stralcio</div>
-          <p class="service-desc">Intermediazione con gli istituti bancari per piani di rientro e stralcio dei debiti esistenti.</p>
-          <span class="s-arrow">Approfondisci →</span>
+        <a href="servizi.html#saldo" class="competenza-item">
+          <div class="competenza-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div>
+            <div class="competenza-title">Saldo e Stralcio</div>
+            <div class="competenza-desc">Offriamo assistenza nelle procedure di intermediazione contro gli Istituti bancari, al fine di ottenere piani di rientro e stralciare debiti esistenti.</div>
+          </div>
         </a>
-        <a href="servizi.html#volo" class="service-card">
-          <div class="service-num">05</div>
-          <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.08 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
-          <div class="service-name">Rimborso al Volo</div>
-          <p class="service-desc">Volo cancellato o ritardato? Potresti avere diritto a un rimborso fino a 600€ per Regolamento CE.</p>
-          <span class="s-arrow">Approfondisci →</span>
+        <a href="servizi.html#volo" class="competenza-item">
+          <div class="competenza-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.08 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="competenza-title">Rimborso al Volo</div>
+            <div class="competenza-desc">Il tuo volo è stato cancellato o ha subito un ritardo? Potresti avere diritto ad un rimborso fino a 600€.</div>
+          </div>
         </a>
-        <div class="service-card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:default;">
-          <div style="font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--gold-dark);margin-bottom:10px;">?</div>
-          <div class="service-name">Non trovi il tuo caso?</div>
-          <p class="service-desc" style="margin-top:6px;">Contattaci per una consulenza gratuita e senza impegno.</p>
-          <a href="dove-siamo.html" class="btn-primary" style="margin-top:18px;">Scrivici</a>
-        </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- CHI SIAMO -->
   <section class="about-home">
     <div class="section-inner">
       <div class="about-grid">
-        <div>
-          <div class="section-label">Chi Siamo</div>
-          <h2 class="section-title">Un team al fianco del consumatore</h2>
-          <div class="about-body">
-            <p>Siamo specializzati nell'assistere il consumatore nelle sue sfide più ardue.</p>
-            <p>Nella lotta quotidiana alle ingiustizie contro i rivali molto grandi, quali siano delle Banche, delle Finanziarie, delle Compagnie aeree oppure delle società di recupero crediti.</p>
-            <p>La nostra missione è quella di non abbandonare mai il consumatore.</p>
-          </div>
-          <div style="margin-top:28px;">
-            <a href="dove-siamo.html" class="btn-primary">Contattaci ora →</a>
+        <div class="about-photo-wrap reveal">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80&auto=format&fit=crop"
+               alt="Team Difesa Consumatore Pisa" loading="lazy" />
+          <div class="about-photo-badge">
+            <div class="num">2012</div>
+            <div class="lbl">Fondati a Pisa</div>
           </div>
         </div>
-        <div class="stats-grid">
-          <div class="stat-box"><div class="num">2000+</div><div class="lbl">Pratiche risolte ogni anno</div></div>
-          <div class="stat-box"><div class="num">95%</div><div class="lbl">Tasso di successo</div></div>
-          <div class="stat-box"><div class="num">5</div><div class="lbl">Aree di specializzazione</div></div>
-          <div class="stat-box"><div class="num">€600</div><div class="lbl">Rimborso max voli</div></div>
+        <div class="reveal">
+          <span class="section-label">Chi Siamo</span>
+          <h2 class="section-title">Un team al fianco<br>del consumatore</h2>
+          <div style="width:48px;height:3px;background:var(--yellow);margin:16px 0 28px;border-radius:2px;"></div>
+          <div class="about-body">
+            <p>Siamo specializzati nell'assistere il consumatore nelle sue sfide più ardue.</p>
+            <p>Nella lotta quotidiana alle ingiustizie contro dei rivali molto grandi, quali siano delle Banche, delle Finanziarie, delle Compagnie aeree oppure delle società di recupero crediti.</p>
+            <p>La nostra missione è quella di non abbandonare mai il consumatore.</p>
+          </div>
+          <div class="stats-grid">
+            <div class="stat-box"><div class="num">2000+</div><div class="lbl">Pratiche annue</div></div>
+            <div class="stat-box"><div class="num">95%</div><div class="lbl">Tasso di successo</div></div>
+            <div class="stat-box"><div class="num">5</div><div class="lbl">Aree di competenza</div></div>
+            <div class="stat-box"><div class="num">€600</div><div class="lbl">Max rimborso volo</div></div>
+          </div>
+          <div style="margin-top:32px;">
+            <a href="dove-siamo.html" class="btn-yellow">Contattaci ora →</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
+  <!-- TESTIMONIANZE su sfondo celeste (come Wix) -->
   <section class="testimonials">
     <div class="section-inner">
-      <div style="margin-bottom:52px;">
-        <div class="section-label">Le testimonianze dei clienti</div>
-        <h2 class="section-title">Cosa dicono di noi</h2>
+      <div style="text-align:center;margin-bottom:44px;" class="reveal">
+        <span class="section-label">Recensioni Google</span>
+        <h2 class="section-title">Le testimonianze dei clienti</h2>
       </div>
-      <div class="reviews-grid">
-        <div class="review-card">
-          <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          <p class="review-text">Grazie a Difesa Consumatore di Pisa, sono riuscita ad avere rimborsi notevoli da cessioni del quinto non saldati perfettamente. Sono riuscita a recuperare all'incirca 7000 euro! Grazie infinite.</p>
-          <div class="review-author"><div class="review-avatar">M</div><div><div class="review-name">Maria</div><div class="review-source">Recensione Google ★★★★★</div></div></div>
+      <div class="testi-reviews-grid">
+        <div class="testi-card reveal">
+          <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
+          <div class="testi-quote-icon">"</div>
+          <p class="testi-text">Grazie a Difesa Consumatore di Pisa, sono riuscita ad avere rimborsi notevoli da cessioni del quinto non saldati perfettamente. Sono riuscita a recuperare all'incirca 7000 euro! Grazie infinite.</p>
+          <div class="testi-author">Maria</div>
+          <div class="testi-source">Recensione Google ★★★★★</div>
         </div>
-        <div class="review-card">
-          <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          <p class="review-text">Sono rimasto piacevolmente sorpreso dalla velocità e la puntualità dei rimborsi, nonché dalla disponibilità di coloro che lavorano per il buon esito degli stessi.</p>
-          <div class="review-author"><div class="review-avatar">C</div><div><div class="review-name">Christian</div><div class="review-source">Recensione Google ★★★★★</div></div></div>
+        <div class="testi-card reveal">
+          <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
+          <div class="testi-quote-icon">"</div>
+          <p class="testi-text">Sono rimasto piacevolmente sorpreso dalla velocità e la puntualità dei rimborsi, nonché dalla disponibilità di coloro che lavorano per il buon esito degli stessi.</p>
+          <div class="testi-author">Christian</div>
+          <div class="testi-source">Recensione Google ★★★★★</div>
         </div>
-        <div class="review-card">
-          <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          <p class="review-text">Lo scetticismo iniziale dato il periodo di truffe era lecito. Ragazzi, affidatevi a questa agenzia perché le vere truffe le fanno le finanziare e le banche! Ottima disponibilità, molto gentili!</p>
-          <div class="review-author"><div class="review-avatar">D</div><div><div class="review-name">Davide</div><div class="review-source">Recensione Google ★★★★★</div></div></div>
+        <div class="testi-card reveal">
+          <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
+          <div class="testi-quote-icon">"</div>
+          <p class="testi-text">Lo scetticismo iniziale dato il periodo di truffe era lecito. Ragazzi, affidatevi a questa agenzia perché le vere truffe le fanno le finanziare e le banche! Ottima disponibilità, molto gentili!</p>
+          <div class="testi-author">Davide</div>
+          <div class="testi-source">Recensione Google ★★★★★</div>
         </div>
-        <div class="review-card">
-          <div class="stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          <p class="review-text">Personale molto professionale, attento scrupoloso e veloce. Sono rimasto pienamente soddisfatto. Complimenti per il lavoro non facile svolto e grazie di tutto. Servizio eccellente.</p>
-          <div class="review-author"><div class="review-avatar">M</div><div><div class="review-name">Marco</div><div class="review-source">Recensione Google ★★★★★</div></div></div>
+        <div class="testi-card reveal">
+          <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
+          <div class="testi-quote-icon">"</div>
+          <p class="testi-text">Personale molto professionale, attento scrupoloso e veloce. Sono rimasto pienamente soddisfatto. Complimenti per il lavoro non facile svolto e grazie di tutto. Servizio eccellente.</p>
+          <div class="testi-author">Marco</div>
+          <div class="testi-source">Recensione Google ★★★★★</div>
         </div>
       </div>
     </div>
@@ -400,42 +355,21 @@
         <h2>Pensi di avere diritto a un rimborso?</h2>
         <p>La consulenza iniziale è completamente gratuita e senza impegno.</p>
       </div>
-      <a href="dove-siamo.html" class="cta-btn">Contattaci ora →</a>
+      <a href="dove-siamo.html" class="btn-yellow">Contattaci ora →</a>
     </div>
   </div>
 
   <script>
-    async function submitForm(e) {
-      e.preventDefault();
-      const btn = document.getElementById('formBtn');
-      const nome = document.getElementById('formNome').value.trim();
-      const tel  = document.getElementById('formTel').value.trim();
-      if (!nome || !tel) { alert('Inserisci nome e numero di telefono.'); return; }
-      btn.textContent = 'Invio in corso...';
-      btn.disabled = true;
-      try {
-        const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            nome: nome,
-            telefono: tel,
-            email: document.getElementById('formEmail').value,
-            pratica: document.getElementById('formTipo').value,
-            messaggio: document.getElementById('formMsg').value
-          })
-        });
-        if (res.ok) {
-          document.getElementById('heroForm').innerHTML = '<p style="text-align:center;color:var(--navy);padding:32px 0;font-size:15px;line-height:1.7;">&#10003; Richiesta inviata!<br><strong>Ti contatteremo entro 24 ore.</strong><br><br><a href="https://wa.me/393296491028" style="color:var(--navy);">Preferisci WhatsApp? Scrivici subito &rarr;</a></p>';
-        } else {
-          throw new Error();
+    // Scroll reveal
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          e.target.style.transitionDelay = (i % 4) * 0.08 + 's';
+          e.target.classList.add('visible');
         }
-      } catch {
-        btn.textContent = 'Invia Richiesta \u2192';
-        btn.disabled = false;
-        alert('Errore nell\'invio. Contattaci su WhatsApp o per telefono.');
-      }
-    }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   </script>
   <script src="nav.js"></script>
 </body>
