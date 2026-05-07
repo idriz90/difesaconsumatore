@@ -74,7 +74,7 @@
         </div>
         <div class="footer-bottom">
           <div class="footer-copy">
-            &copy; 2025 Difesa Consumatore S.r.l.s. &middot; Via Novecchio 10, Pisa &middot; P.IVA 02285180507
+            &copy; 2025 DC S.r.l. &middot; Via Novecchio 10, Pisa &middot; P.IVA 02285180507
             &nbsp;&middot;&nbsp; <a href="#" style="color:rgba(255,255,255,0.4);text-decoration:none;" onclick="dcOpenPrivacy(event)">Privacy Policy</a>
             &nbsp;&middot;&nbsp; <a href="#" style="color:rgba(255,255,255,0.4);text-decoration:none;" onclick="dcOpenCookie(event)">Cookie Policy</a>
           </div>
@@ -133,7 +133,7 @@
 
   // ── EXTRA STYLES ──
   const extraStyles = `<style>
-    .logo-img { height: 40px; width: auto; object-fit: contain; }
+    .logo-img { height: 52px; width: auto; object-fit: contain; }
 
     .wa-float {
       position: fixed; bottom: 84px; right: 24px;
@@ -252,7 +252,7 @@
     document.getElementById('dcModalContent').innerHTML = `
       <h2 style="font-family:'Playfair Display',serif;color:#1a3a6b;margin-bottom:16px;">Privacy Policy</h2>
       <p style="font-size:14px;color:#555;line-height:1.8;margin-bottom:12px;">
-        <strong>Titolare:</strong> Difesa Consumatore S.r.l.s. — Via Novecchio 10, Pisa (PI) — P.IVA 02285180507
+        <strong>Titolare:</strong> DC S.r.l. — Via Novecchio 10, Pisa (PI) — P.IVA 02285180507
       </p>
       <p style="font-size:14px;color:#555;line-height:1.8;margin-bottom:12px;">
         I dati personali forniti tramite il modulo di contatto (nome, email, telefono) vengono utilizzati esclusivamente per rispondere alle richieste e per la gestione delle pratiche. Non vengono ceduti a terzi.
