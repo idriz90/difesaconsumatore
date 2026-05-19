@@ -353,7 +353,9 @@
   (function () {
     const SUBSTACK_URL = 'https://difesaconsumatore.substack.com';
     const FEED_URL = SUBSTACK_URL + '/feed';
-    const API = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(FEED_URL);
+    // Cache-busting timestamp per evitare cache lato proxy/browser
+    const cb = Date.now();
+    const API = 'https://api.allorigins.win/get?url=' + encodeURIComponent(FEED_URL) + '&t=' + cb;
 
     const articlesEl = document.getElementById('articles-list');
     const recentEl = document.getElementById('recent-list');
@@ -382,6 +384,38 @@
       if (t.match(/volo|aereo|261|rimborso vol/)) return 'Rimborso Voli';
       if (t.match(/energia|gas|luce|telefon|arera|agcom|mercato libero/)) return 'Energia & Telefonia';
       return 'Guida';
+    }
+
+    function getThumbnail(item, raw) {
+      // Try enclosure
+      const enc = item.querySelector('enclosure');
+      if (enc && enc.getAttribute('url')) return enc.getAttribute('url');
+      // Try media:content
+      const media = item.getElementsByTagNameNS('*', 'content')[0]
+        || item.querySelector('media\\:content, content[medium="image"]');
+      if (media && media.getAttribute && media.getAttribute('url')) return media.getAttribute('url');
+      // Try first <img> in content
+      const m = (raw || '').match(/<img[^>]+src=["']([^"']+)["']/i);
+      if (m) return m[1];
+      return null;
+    }
+
+    function parseRSS(xmlText) {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(xmlText, 'application/xml');
+      const items = [];
+      doc.querySelectorAll('item').forEach(item => {
+        const title = (item.querySelector('title')?.textContent || '').trim();
+        const link = (item.querySelector('link')?.textContent || '').trim();
+        const pubDate = (item.querySelector('pubDate')?.textContent || '').trim();
+        const description = (item.querySelector('description')?.textContent || '').trim();
+        const contentEncoded = (item.getElementsByTagName('content:encoded')[0]?.textContent
+          || item.querySelector('encoded')?.textContent || '').trim();
+        const raw = contentEncoded || description;
+        const thumbnail = getThumbnail(item, raw);
+        items.push({ title, link, pubDate, description, content: raw, thumbnail });
+      });
+      return items;
     }
 
     function renderArticles(items) {
@@ -451,12 +485,13 @@
       recentEl.innerHTML = '<div style="font-size:12px;color:var(--text-muted);">Articoli non disponibili.</div>';
     }
 
-    fetch(API)
+    fetch(API, { cache: 'no-store' })
       .then(r => r.json())
       .then(data => {
-        if (data && data.status === 'ok' && data.items) {
-          renderArticles(data.items);
-          renderRecent(data.items);
+        if (data && data.contents) {
+          const items = parseRSS(data.contents);
+          renderArticles(items);
+          renderRecent(items);
         } else {
           showError();
         }
