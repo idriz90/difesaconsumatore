@@ -1,501 +1,380 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servizi — Difesa Consumatore Pisa</title>
-  <meta name="description" content="Recupero crediti CQS, reclami bancari ABF, mutui, energia, telefonia, conciliazioni. Scopri tutti i servizi di Difesa Consumatore Pisa.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script src="nav.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servizi | Cessione del Quinto, CRIF, Sovraindebitamento | Difesa Consumatore Pisa</title>
+  <meta name="description" content="Scopri i servizi di Difesa Consumatore Pisa: rimborso cessione del quinto, procedura di sovraindebitamento legge 3/2012, cancellazione CRIF, saldo e stralcio, rimborso voli cancellati fino a 600€." />
+  <meta name="keywords" content="cessione del quinto rimborso, sovraindebitamento legge 3 2012, cancellazione CRIF, saldo stralcio banca, rimborso volo cancellato 600 euro, tutela consumatore Pisa" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Difesa Consumatore S.r.l.s." />
+  <link rel="canonical" href="https://www.difesaconsumatore.org/servizi" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.difesaconsumatore.org/servizi" />
+  <meta property="og:title" content="Servizi di Tutela Consumatore | Difesa Consumatore Pisa" />
+  <meta property="og:description" content="Cessione del quinto, sovraindebitamento, CRIF, saldo e stralcio, rimborso voli. Consulenza gratuita e senza anticipo." />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:site_name" content="Difesa Consumatore" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Servizi di Tutela Consumatore | Difesa Consumatore Pisa" />
+  <meta name="twitter:description" content="Cessione del quinto, sovraindebitamento, CRIF, saldo e stralcio, rimborso voli. Consulenza gratuita." />
+
+  <!-- Schema.org Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Tutela del Consumatore",
+    "provider": {
+      "@type": "LegalService",
+      "name": "Difesa Consumatore",
+      "url": "https://www.difesaconsumatore.org",
+      "telephone": "+393296491028",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Novecchio, 10",
+        "addressLocality": "Pisa",
+        "addressRegion": "PI",
+        "addressCountry": "IT"
+      }
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servizi di Tutela",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rimborso Cessione del Quinto" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Procedura di Sovraindebitamento" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cancellazione Segnalazioni CRIF" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Saldo e Stralcio" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rimborso Voli Cancellati" } }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    :root {
-      --navy: #1a3a6b;
-      --navy-dark: #122a52;
-      --navy-light: #234d8a;
-      --celeste: #4a90d9;
-      --giallo: #f5c842;
-      --bianco: #ffffff;
-      --grigio-chiaro: #f4f6fa;
-      --grigio-testo: #555e6e;
-      --testo: #1a1a2e;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Open Sans', sans-serif; color: var(--testo); background: var(--bianco); }
+    /* ── SERVICE DETAIL CARDS ── */
+    .services-list { background: var(--white); }
 
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
-      padding: 80px 40px 70px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 0; right: 0;
-      height: 50px;
-      background: var(--bianco);
-      clip-path: ellipse(55% 100% at 50% 100%);
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      color: var(--bianco);
-      margin-bottom: 16px;
-    }
-    .hero h1 em { color: var(--giallo); font-style: italic; }
-    .hero p {
-      color: rgba(255,255,255,0.78);
-      font-size: 1.1rem;
-      font-weight: 300;
-      max-width: 580px;
-      margin: 0 auto;
-    }
-    .accent-line {
-      width: 60px; height: 3px;
-      background: var(--giallo);
-      margin: 18px auto 22px;
-      border-radius: 2px;
-    }
-
-    /* ── INTRO ── */
-    .intro-band {
-      background: var(--grigio-chiaro);
-      padding: 42px 40px;
-      text-align: center;
-      border-bottom: 1px solid #e0e6f0;
-    }
-    .intro-band p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.05rem;
-      color: var(--grigio-testo);
-      line-height: 1.8;
-    }
-    .intro-band strong { color: var(--navy); }
-
-    /* ── SERVIZI GRID ── */
-    .servizi-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 70px 40px 90px;
-    }
-    .servizi-section > h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      color: var(--navy);
-      text-align: center;
-      margin-bottom: 8px;
-    }
-    .servizi-section > p {
-      text-align: center;
-      color: var(--grigio-testo);
-      margin-bottom: 50px;
-      font-size: 0.95rem;
-    }
-
-    .servizi-grid {
+    .service-detail {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 30px;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .service-detail:last-child { border-bottom: none; }
+    .service-detail.reverse { direction: rtl; }
+    .service-detail.reverse > * { direction: ltr; }
+
+    .sd-label { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; }
+    .sd-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 18px;
+    }
+    .sd-body { font-size: 15px; color: var(--text-body); line-height: 1.85; margin-bottom: 28px; }
+    .sd-body p + p { margin-top: 14px; }
+
+    .sd-checklist { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .sd-checklist li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 14px; color: var(--navy);
+    }
+    .sd-checklist li::before {
+      content: '';
+      width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;
+      background: var(--gold);
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
     }
 
-    .servizio-card {
+    .sd-visual {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 40px 36px;
+      display: flex; flex-direction: column; gap: 20px;
+      box-shadow: 0 4px 20px rgba(26,58,107,0.06);
+    }
+
+    .sd-visual-icon {
+      width: 68px; height: 68px;
       background: var(--navy);
-      border-radius: 16px;
-      overflow: hidden;
-      transition: transform 0.25s, box-shadow 0.25s;
-      position: relative;
-    }
-    .servizio-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 50px rgba(26,58,107,0.25);
-    }
-    .card-header {
-      padding: 28px 28px 20px;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-    .card-icon {
-      width: 56px; height: 56px;
-      background: rgba(245,200,66,0.15);
-      border: 2px solid var(--giallo);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      flex-shrink: 0;
-    }
-    .card-header-text h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      color: var(--bianco);
-      margin-bottom: 4px;
-    }
-    .card-header-text span {
-      font-size: 0.78rem;
-      color: var(--giallo);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 600;
-    }
-    .card-body {
-      padding: 24px 28px 28px;
-    }
-    .card-body p {
-      color: rgba(255,255,255,0.72);
-      font-size: 0.93rem;
-      line-height: 1.75;
-      margin-bottom: 20px;
-    }
-    .card-features {
-      list-style: none;
-      margin-bottom: 24px;
-    }
-    .card-features li {
-      color: rgba(255,255,255,0.85);
-      font-size: 0.88rem;
-      padding: 5px 0;
-      padding-left: 20px;
-      position: relative;
-    }
-    .card-features li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--giallo);
-      font-weight: 700;
-    }
-    .card-cta {
-      display: inline-block;
-      background: var(--giallo);
-      color: var(--navy-dark);
-      padding: 10px 22px;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.88rem;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .card-cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(245,200,66,0.4);
-    }
-
-    /* Tag "Più richiesto" */
-    .badge-top {
-      position: absolute;
-      top: 16px; right: 16px;
-      background: var(--giallo);
-      color: var(--navy-dark);
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-
-    /* ── GARANZIE ── */
-    .garanzie-band {
-      background: var(--grigio-chiaro);
-      padding: 60px 40px;
-      text-align: center;
-    }
-    .garanzie-band h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      color: var(--navy);
-      margin-bottom: 40px;
-    }
-    .garanzie-grid {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .garanzia-item {
-      text-align: center;
-      width: 180px;
-    }
-    .garanzia-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      color: var(--navy);
-      font-weight: 700;
-      line-height: 1;
-    }
-    .garanzia-num span { color: var(--giallo); }
-    .garanzia-item p {
-      color: var(--grigio-testo);
-      font-size: 0.88rem;
-      margin-top: 6px;
-      line-height: 1.4;
-    }
-
-    /* ── CTA FINALE ── */
-    .cta-finale {
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-      padding: 70px 40px;
-      text-align: center;
-    }
-    .cta-finale h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      color: var(--bianco);
-      margin-bottom: 14px;
-    }
-    .cta-finale h2 span { color: var(--giallo); }
-    .cta-finale p { color: rgba(255,255,255,0.75); margin-bottom: 30px; font-size: 1rem; }
-    .cta-btn {
-      display: inline-block;
-      background: var(--giallo);
-      color: var(--navy-dark);
-      padding: 16px 38px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: 1.05rem;
-      text-decoration: none;
-      letter-spacing: 0.04em;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .cta-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(245,200,66,0.45);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy-dark);
-      color: rgba(255,255,255,0.6);
-      text-align: center;
-      padding: 28px 20px;
-      font-size: 0.85rem;
-    }
-    footer strong { color: var(--bianco); }
-
-    .wa-float {
-      position: fixed; bottom: 28px; right: 28px;
-      background: #25d366; color: white;
-      width: 56px; height: 56px; border-radius: 50%;
+      border-radius: 14px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; text-decoration: none;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
-      z-index: 999; transition: transform 0.2s;
     }
-    .wa-float:hover { transform: scale(1.1); }
+    .sd-visual-icon svg { width: 30px; height: 30px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
 
-    @media (max-width: 600px) {
-      .servizi-section { padding: 50px 20px 70px; }
-      .servizi-grid { grid-template-columns: 1fr; }
-      .intro-band, .hero { padding-left: 20px; padding-right: 20px; }
+    .sd-visual-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; color: var(--navy); }
+    .sd-visual-desc { font-size: 13px; color: var(--text-body); line-height: 1.7; }
+
+    .sd-highlight {
+      background: var(--navy);
+      border-radius: 8px;
+      padding: 18px 22px;
+      display: flex; gap: 16px; align-items: center;
+    }
+    .sd-highlight-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem; font-weight: 700; color: var(--gold); white-space: nowrap;
+    }
+    .sd-highlight-text { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.5; }
+
+    /* ── HOW IT WORKS ── */
+    .how-it-works { background: var(--off-white); border-top: 1px solid var(--border); }
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+    .step { background: var(--white); padding: 32px 24px; border-radius: 10px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(26,58,107,0.04); }
+    .step-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem; font-weight: 700; color: var(--gold); opacity: 0.4;
+      line-height: 1; margin-bottom: 14px;
+    }
+    .step-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .step-desc { font-size: 13px; color: var(--text-body); line-height: 1.7; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .service-detail { grid-template-columns: 1fr; gap: 40px; direction: ltr !important; }
+      .steps-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 540px) {
+      .steps-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<div id="navbar-placeholder"></div>
-
-<!-- HERO -->
-<div class="hero">
-  <h1>I Nostri <em>Servizi</em></h1>
-  <div class="accent-line"></div>
-  <p>Tutela legale concreta per consumatori e famiglie. Valutiamo il tuo caso gratuitamente.</p>
-</div>
-
-<!-- INTRO -->
-<div class="intro-band">
-  <p>
-    Da anni affianchiamo <strong>consumatori, pensionati e lavoratori</strong> in controversie con banche, finanziarie, fornitori di energia e operatori telefonici.
-    Operare nella <strong>difesa del consumatore</strong> significa ottenere rimborsi concreti, spesso senza andare in tribunale.
-  </p>
-</div>
-
-<!-- SERVIZI -->
-<div class="servizi-section">
-  <h2>Cosa Facciamo per Te</h2>
-  <p>Seleziona il servizio che ti interessa per saperne di più</p>
-
-  <div class="servizi-grid">
-
-    <!-- 1. CQS -->
-    <div class="servizio-card">
-      <div class="badge-top">⭐ Più richiesto</div>
-      <div class="card-header">
-        <div class="card-icon">💰</div>
-        <div class="card-header-text">
-          <h3>Rimborso CQS / CQP</h3>
-          <span>Cessione del Quinto</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <p>Hai estinto anticipatamente un prestito con cessione del quinto? Hai diritto al rimborso delle commissioni e dei costi non goduti. Lo recuperiamo noi per te.</p>
-        <ul class="card-features">
-          <li>Analisi gratuita del contratto</li>
-          <li>Calcolo rimborso pro-quota (sentenza Lexitor)</li>
-          <li>Reclamo diretto alla finanziaria</li>
-          <li>Ricorso ABF se necessario</li>
-        </ul>
-        <a href="dove-siamo.html" class="card-cta">Richiedi analisi gratuita →</a>
-      </div>
-    </div>
-
-    <!-- 2. ABF / Banca -->
-    <div class="servizio-card">
-      <div class="card-header">
-        <div class="card-icon">🏦</div>
-        <div class="card-header-text">
-          <h3>Reclami Bancari & ABF</h3>
-          <span>Arbitro Bancario Finanziario</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <p>Controversie con la tua banca su commissioni, conti correnti, mutui o carte di credito? Ti assistiamo nel ricorso all'ABF, alternativa rapida e gratuita al tribunale.</p>
-        <ul class="card-features">
-          <li>Reclami su commissioni bancarie indebite</li>
-          <li>Controversie su mutui e finanziamenti</li>
-          <li>Ricorso ABF senza spese legali</li>
-          <li>Gestione integrale della pratica</li>
-        </ul>
-        <a href="dove-siamo.html" class="card-cta">Parla con noi →</a>
-      </div>
-    </div>
-
-    <!-- 3. Mutui -->
-    <div class="servizio-card">
-      <div class="card-header">
-        <div class="card-icon">🏠</div>
-        <div class="card-header-text">
-          <h3>Mutui & Finanziamenti</h3>
-          <span>Revisione e contestazione</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <p>Interessi usurari, TAEG errato, clausole vessatorie nel mutuo? Analizziamo il tuo contratto e agiamo per ottenere la restituzione di quanto pagato in eccesso.</p>
-        <ul class="card-features">
-          <li>Verifica TAEG e costi effettivi</li>
-          <li>Individuazione clausole abusive</li>
-          <li>Ricalcolo piano ammortamento</li>
-          <li>Trattativa stragiudiziale</li>
-        </ul>
-        <a href="dove-siamo.html" class="card-cta">Verifica il tuo mutuo →</a>
-      </div>
-    </div>
-
-    <!-- 4. Energia -->
-    <div class="servizio-card">
-      <div class="card-header">
-        <div class="card-icon">⚡</div>
-        <div class="card-header-text">
-          <h3>Bollette Gas & Luce</h3>
-          <span>Reclami e conciliazioni</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <p>Bollette con importi anomali, contratti non richiesti o problemi con il fornitore energetico? Gestiamo reclami e conciliazioni davanti all'ARERA per te.</p>
-        <ul class="card-features">
-          <li>Analisi bollette e contratti</li>
-          <li>Reclamo formale al fornitore</li>
-          <li>Conciliazione ARERA</li>
-          <li>Recupero importi fatturati erroneamente</li>
-        </ul>
-        <a href="dove-siamo.html" class="card-cta">Analizza la tua bolletta →</a>
-      </div>
-    </div>
-
-    <!-- 5. Telefonia -->
-    <div class="servizio-card">
-      <div class="card-header">
-        <div class="card-icon">📱</div>
-        <div class="card-header-text">
-          <h3>Telefonia & Pay-TV</h3>
-          <span>AGCOM · ConciliaWeb</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <p>Addebiti non autorizzati, disservizi, mancato rispetto del contratto da parte di operatori telefonici o pay-TV? Ti assistiamo nella procedura AGCOM e ConciliaWeb.</p>
-        <ul class="card-features">
-          <li>Reclami Tim, Vodafone, Wind, Iliad ecc.</li>
-          <li>Addebiti non richiesti e truffe telefoniche</li>
-          <li>Conciliazione ConciliaWeb (AGCOM)</li>
-          <li>Pay-TV e streaming abusivi</li>
-        </ul>
-        <a href="dove-siamo.html" class="card-cta">Risolvi il problema →</a>
-      </div>
-    </div>
-
-    <!-- 6. Conciliazioni -->
-    <div class="servizio-card">
-      <div class="card-header">
-        <div class="card-icon">⚖️</div>
-        <div class="card-header-text">
-          <h3>Conciliazioni & Trasporti</h3>
-          <span>ARERA · AGCOM · ART</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <p>Gestione completa delle procedure di conciliazione obbligatoria nei settori energia, telecomunicazioni e trasporti — alternativa rapida ed economica al tribunale.</p>
-        <ul class="card-features">
-          <li>Conciliazione energetica (ARERA)</li>
-          <li>Conciliazione telefonica (AGCOM)</li>
-          <li>Conciliazione trasporti (ART)</li>
-          <li>Redazione atti e rappresentanza</li>
-        </ul>
-        <a href="dove-siamo.html" class="card-cta">Apri una conciliazione →</a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- NUMERI -->
-<div class="garanzie-band">
-  <h2>I Nostri Risultati in Numeri</h2>
-  <div class="garanzie-grid">
-    <div class="garanzia-item">
-      <div class="garanzia-num">2000<span>+</span></div>
-      <p>Pratiche gestite con successo</p>
-    </div>
-    <div class="garanzia-item">
-      <div class="garanzia-num">95<span>%</span></div>
-      <p>Tasso di successo nelle conciliazioni</p>
-    </div>
-    <div class="garanzia-item">
-      <div class="garanzia-num">€600</div>
-      <p>Rimborso medio ottenuto per cliente</p>
-    </div>
-    <div class="garanzia-item">
-      <div class="garanzia-num">0<span>€</span></div>
-      <p>Costo della consulenza iniziale</p>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Servizi Offerti</div>
+      <h1>I Nostri Servizi</h1>
+      <p>Cinque aree di specializzazione per difendere i tuoi diritti contro banche, finanziarie e compagnie aeree.</p>
     </div>
   </div>
-</div>
 
-<!-- CTA FINALE -->
-<div class="cta-finale">
-  <h2>Non sai se hai <span>diritto a un rimborso?</span></h2>
-  <p>Mandaci i tuoi documenti — lo valutiamo gratuitamente entro 24 ore.</p>
-  <a href="dove-siamo.html" class="cta-btn">📩 Contattaci Gratis</a>
-</div>
+  <!-- SERVICES LIST -->
+  <section class="services-list">
+    <div class="section-inner">
 
-<footer>
-  <strong>DC S.r.l. — Difesa Consumatore</strong><br>
-  Via Novecchio 10, 56127 Pisa (PI) — P.IVA 02285180507<br>
-  <a href="privacy.html" style="color: #4a90d9;">Privacy Policy</a>
-</footer>
+      <!-- 01 CQS -->
+      <div class="service-detail" id="cqs">
+        <div class="sd-content">
+          <div class="sd-label">Servizio 01</div>
+          <h2 class="sd-title">Cessione del Quinto / Prestito Personale</h2>
+          <div class="sd-body">
+            <p>Hai chiuso o rinegoziato in anticipo una Cessione del Quinto dello stipendio (CQS) o un Prestito Personale? Per legge hai diritto al rimborso delle commissioni e dei premi assicurativi non goduti.</p>
+            <p>Il nostro staff analizza ogni contratto e verifica se sei stato rimborsato correttamente dalla banca o finanziaria. Nella maggior parte dei casi vengono emessi rimborsi significativi a favore del cliente.</p>
+          </div>
+          <ul class="sd-checklist">
+            <li>Analisi gratuita del contratto di finanziamento</li>
+            <li>Verifica del rimborso delle commissioni non godute</li>
+            <li>Recupero premi assicurativi residui</li>
+            <li>Gestione del contenzioso con la banca/finanziaria</li>
+            <li>Nessun anticipo — paghiamo solo a successo</li>
+          </ul>
+          <a href="dove-siamo.html" class="btn-primary">Richiedi una verifica gratuita →</a>
+        </div>
+        <div class="sd-visual">
+          <div class="sd-visual-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+          </div>
+          <div class="sd-visual-title">Cessione del Quinto</div>
+          <div class="sd-visual-desc">La cessione del quinto è un prestito rimborsato tramite trattenuta diretta sullo stipendio o pensione, fino a un massimo di 1/5 del netto mensile.</div>
+          <div class="sd-highlight">
+            <div class="sd-highlight-num">95%</div>
+            <div class="sd-highlight-text">dei clienti ottiene un rimborso dopo la nostra analisi del contratto</div>
+          </div>
+          <div class="sd-highlight">
+            <div class="sd-highlight-num">€7.000+</div>
+            <div class="sd-highlight-text">rimborso medio ottenuto per i nostri clienti CQS</div>
+          </div>
+        </div>
+      </div>
 
-<a class="wa-float" href="https://wa.me/393296491028?text=Salve%2C%20vorrei%20una%20consulenza%20gratuita." target="_blank" title="WhatsApp" aria-label="Contattaci su WhatsApp">💬</a>
+      <!-- 02 SOVRAINDEBITAMENTO -->
+      <div class="service-detail reverse" id="sovraindebitamento">
+        <div class="sd-content">
+          <div class="sd-label">Servizio 02</div>
+          <h2 class="sd-title">Sovraindebitamento</h2>
+          <div class="sd-body">
+            <p>Ai sensi della Legge n. 3/2012, i consumatori, le imprese e tutti i soggetti sovraindebitati (esclusi dalle procedure fallimentari) possono ricorrere al procedimento di esdebitazione e sanare la propria condizione.</p>
+            <p>Ti aiutiamo a ristrutturare il debito, ottenere la sospensione delle azioni esecutive e avviare il percorso di liberazione dai debiti attraverso le procedure previste dalla legge.</p>
+          </div>
+          <ul class="sd-checklist">
+            <li>Analisi della situazione debitoria complessiva</li>
+            <li>Procedura di esdebitazione ex Legge 3/2012</li>
+            <li>Piano del consumatore e accordo con i creditori</li>
+            <li>Sospensione delle azioni esecutive in corso</li>
+            <li>Assistenza completa fino all'omologa del piano</li>
+          </ul>
+          <a href="dove-siamo.html" class="btn-primary">Parlaci della tua situazione →</a>
+        </div>
+        <div class="sd-visual">
+          <div class="sd-visual-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M7 4H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2h-2M9 4a2 2 0 002 2h2a2 2 0 002-2"/></svg>
+          </div>
+          <div class="sd-visual-title">Procedura di Sovraindebitamento</div>
+          <div class="sd-visual-desc">La Legge n. 3/2012 (Legge Salva-suicidi) offre una via d'uscita legale per chi non riesce a far fronte ai propri debiti e non può accedere alle procedure fallimentari ordinarie.</div>
+          <div class="sd-highlight">
+            <div class="sd-highlight-num">L.3/12</div>
+            <div class="sd-highlight-text">procedura legale di esdebitazione per consumatori e piccole imprese</div>
+          </div>
+        </div>
+      </div>
 
+      <!-- 03 CRIF -->
+      <div class="service-detail" id="crif">
+        <div class="sd-content">
+          <div class="sd-label">Servizio 03</div>
+          <h2 class="sd-title">Segnalazioni CRIF</h2>
+          <div class="sd-body">
+            <p>Il CRIF è il principale sistema di informazioni creditizie in Italia. Una segnalazione negativa può impedire l'accesso a mutui, prestiti e finanziamenti. Ti aiutiamo a capire la tua situazione e ad agire.</p>
+            <p>Offriamo visura CRIF, analisi delle segnalazioni presenti, richiesta di cancellazione in caso di segnalazioni illegittime e assistenza nei confronti degli istituti che ti hanno segnalato erroneamente.</p>
+          </div>
+          <ul class="sd-checklist">
+            <li>Richiesta e analisi della visura CRIF</li>
+            <li>Verifica della legittimità delle segnalazioni</li>
+            <li>Richiesta di cancellazione delle segnalazioni illegittime</li>
+            <li>Contenzioso con l'istituto segnalante</li>
+            <li>Monitoraggio e aggiornamento della posizione</li>
+          </ul>
+          <a href="dove-siamo.html" class="btn-primary">Verifica la tua posizione CRIF →</a>
+        </div>
+        <div class="sd-visual">
+          <div class="sd-visual-icon">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <div class="sd-visual-title">Reputazione Creditizia</div>
+          <div class="sd-visual-desc">Una segnalazione negativa al CRIF può durare fino a 36 mesi. Intervenire rapidamente è fondamentale per tutelare il tuo accesso al credito.</div>
+          <div class="sd-highlight">
+            <div class="sd-highlight-num">36</div>
+            <div class="sd-highlight-text">mesi: durata massima di una segnalazione negativa nel sistema CRIF</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04 SALDO E STRALCIO -->
+      <div class="service-detail reverse" id="saldo">
+        <div class="sd-content">
+          <div class="sd-label">Servizio 04</div>
+          <h2 class="sd-title">Saldo e Stralcio</h2>
+          <div class="sd-body">
+            <p>Offriamo assistenza nelle procedure di intermediazione contro gli istituti bancari, al fine di ottenere comodi piani di rientro, stralciare debiti esistenti ed evitare procedure di recupero coattivo da parte delle banche.</p>
+            <p>Negoziamo direttamente con i creditori per ridurre l'importo del debito e definire accordi sostenibili, proteggendoti da pignoramenti e azioni legali.</p>
+          </div>
+          <ul class="sd-checklist">
+            <li>Analisi del debito e valutazione delle opzioni</li>
+            <li>Trattativa diretta con banche e finanziarie</li>
+            <li>Accordi di saldo e stralcio con riduzione del debito</li>
+            <li>Piani di rientro sostenibili e personalizzati</li>
+            <li>Protezione da azioni esecutive e pignoramenti</li>
+          </ul>
+          <a href="dove-siamo.html" class="btn-primary">Analizza il tuo debito →</a>
+        </div>
+        <div class="sd-visual">
+          <div class="sd-visual-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+          </div>
+          <div class="sd-visual-title">Saldo e Stralcio</div>
+          <div class="sd-visual-desc">Il saldo e stralcio consente di estinguere un debito pagando una cifra inferiore al totale dovuto, a fronte di un accordo con il creditore.</div>
+          <div class="sd-highlight">
+            <div class="sd-highlight-num">-50%</div>
+            <div class="sd-highlight-text">riduzione media del debito ottenuta nelle nostre trattative bancarie</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 RIMBORSO AL VOLO -->
+      <div class="service-detail" id="volo">
+        <div class="sd-content">
+          <div class="sd-label">Servizio 05</div>
+          <h2 class="sd-title">Rimborso al Volo</h2>
+          <div class="sd-body">
+            <p>Il tuo volo è stato cancellato o ha subito un ritardo superiore alle 3 ore? Ai sensi del Regolamento CE n. 261/2004, potresti avere diritto a un rimborso fino a 600€ per passeggero.</p>
+            <p>Gestiamo l'intera pratica nei confronti della compagnia aerea: dalla verifica del diritto alla riscossione del rimborso, senza anticipi e senza complicazioni per te.</p>
+          </div>
+          <ul class="sd-checklist">
+            <li>Verifica gratuita del diritto al rimborso</li>
+            <li>Rimborso fino a 600€ per passeggero</li>
+            <li>Applicabile a voli cancellati, ritardati e overbooking</li>
+            <li>Gestione completa della pratica con la compagnia</li>
+            <li>Nessun anticipo — solo a successo ottenuto</li>
+          </ul>
+          <a href="dove-siamo.html" class="btn-primary">Verifica il tuo rimborso →</a>
+        </div>
+        <div class="sd-visual">
+          <div class="sd-visual-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.08 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="sd-visual-title">Regolamento CE 261/2004</div>
+          <div class="sd-visual-desc">Il regolamento europeo tutela i passeggeri aerei in caso di cancellazione, ritardo prolungato e negato imbarco per overbooking.</div>
+          <div class="sd-highlight">
+            <div class="sd-highlight-num">€600</div>
+            <div class="sd-highlight-text">rimborso massimo per passeggero previsto dal Regolamento CE 261/2004</div>
+          </div>
+          <div class="sd-highlight">
+            <div class="sd-highlight-num">3h+</div>
+            <div class="sd-highlight-text">di ritardo all'arrivo per avere diritto al risarcimento</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="section-inner">
+      <div class="section-label">Come Funziona</div>
+      <h2 class="section-title">Il nostro processo in 4 passi</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-title">Contatto Gratuito</div>
+          <p class="step-desc">Ci contatti per telefono, WhatsApp o email. La prima consulenza è completamente gratuita e senza impegno.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-title">Analisi del Caso</div>
+          <p class="step-desc">Il nostro team analizza la tua documentazione e valuta le possibilità di rimborso o di tutela legale.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-title">Apertura Pratica</div>
+          <p class="step-desc">Se il caso è fondato, apriamo la pratica e avviamo le procedure nei confronti della banca o finanziaria.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div class="step-title">Rimborso Ottenuto</div>
+          <p class="step-desc">In caso di successo (95% dei casi), il rimborso viene erogato direttamente a te. Il nostro compenso è una percentuale sul risultato ottenuto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="cta-band-inner">
+      <div class="cta-text">
+        <h2>Inizia oggi: la consulenza è gratuita</h2>
+        <p>Analisiamo il tuo caso senza impegno e senza anticipi.</p>
+      </div>
+      <a href="dove-siamo.html" class="cta-btn">Contattaci ora →</a>
+    </div>
+  </div>
+
+  <script src="nav.js"></script>
 </body>
 </html>
