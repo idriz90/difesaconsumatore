@@ -1,563 +1,563 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dove Siamo | Contatti Difesa Consumatore Pisa | Via Novecchio 10</title>
-  <meta name="description" content="Difesa Consumatore Pisa si trova in Via Novecchio 10, Pisa. Contattaci al +39 329 649 1028 o via email. Consulenza gratuita anche online e telefonica per tutta Italia." />
-  <meta name="keywords" content="difesa consumatore pisa indirizzo, via novecchio pisa, contatti difesa consumatore, consulenza gratuita pisa, tutela consumatore pisa" />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="Difesa Consumatore S.r.l.s." />
-  <link rel="canonical" href="https://www.difesaconsumatore.org/dove-siamo" />
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.difesaconsumatore.org/dove-siamo" />
-  <meta property="og:title" content="Dove Siamo | Contatti Difesa Consumatore Pisa" />
-  <meta property="og:description" content="Via Novecchio 10, Pisa. Tel: +39 329 649 1028. Consulenza gratuita anche online per tutta Italia." />
-  <meta property="og:locale" content="it_IT" />
-  <meta property="og:site_name" content="Difesa Consumatore" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Dove Siamo | Contatti Difesa Consumatore Pisa" />
-  <meta name="twitter:description" content="Via Novecchio 10, Pisa. Tel: +39 329 649 1028. Consulenza gratuita." />
-
-  <!-- Schema.org LocalBusiness + ContactPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Difesa Consumatore",
-    "url": "https://www.difesaconsumatore.org",
-    "telephone": "+393296491028",
-    "email": "info@difesaconsumatore.org",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Via Novecchio, 10",
-      "addressLocality": "Pisa",
-      "addressRegion": "PI",
-      "postalCode": "56121",
-      "addressCountry": "IT"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 43.7102,
-      "longitude": 10.3768
-    },
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "18:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "17:00" }
-    ],
-    "sameAs": [
-      "https://www.facebook.com/difesaconsumatoresrls/",
-      "https://www.instagram.com/difesaconsumatore/"
-    ]
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dove Siamo — Difesa Consumatore</title>
+  <meta name="description" content="Trova il nostro studio a Pisa, Via Novecchio 10. Contattaci per una consulenza gratuita.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="nav.js" defer></script>
   <style>
-    /* ── CONTACT SECTION ── */
-    .contact-section { background: var(--white); }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
+    :root {
+      --navy: #1a3a6b;
+      --navy-dark: #122a52;
+      --navy-light: #234d8a;
+      --celeste: #4a90d9;
+      --giallo: #f5c842;
+      --bianco: #ffffff;
+      --grigio-chiaro: #f4f6fa;
+      --grigio-testo: #555e6e;
+      --testo: #1a1a2e;
     }
 
-    .contact-card {
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 36px 32px;
-      box-shadow: 0 2px 12px rgba(26,58,107,0.05);
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--testo);
+      background: var(--bianco);
     }
 
-    .contact-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 24px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .contact-row {
+    /* ── NAVBAR placeholder ── */
+    nav {
+      background: var(--navy);
+      height: 110px;
       display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
+      align-items: center;
+      padding: 0 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
     }
-    .contact-row:last-child { border-bottom: none; }
 
-    .contact-icon-wrap {
-      width: 40px; height: 40px;
-      background: var(--navy);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+    /* ── HERO STRIP ── */
+    .hero-strip {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-light) 100%);
+      padding: 70px 40px 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
     }
-    .contact-icon-wrap svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
+    .hero-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-strip h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--bianco);
+      position: relative;
+      margin-bottom: 14px;
+    }
+    .hero-strip h1 span { color: var(--giallo); }
+    .hero-strip p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1.1rem;
+      font-weight: 300;
+      position: relative;
+    }
+    .accent-line {
+      width: 60px;
+      height: 3px;
+      background: var(--giallo);
+      margin: 18px auto 22px;
+      border-radius: 2px;
+      position: relative;
+    }
 
-    .contact-label {
-      font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;
+    /* ── MAIN LAYOUT ── */
+    .page-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 70px 40px 90px;
     }
-    .contact-value {
-      font-size: 15px; color: var(--navy); font-weight: 500;
-    }
-    .contact-value a { color: var(--navy); text-decoration: none; transition: color 0.2s; }
-    .contact-value a:hover { color: var(--gold-dark); }
 
-    /* ── MAP ── */
-    .map-section { background: var(--off-white); padding: 0; }
-    .map-wrap {
-      width: 100%;
-      height: 420px;
-      border-top: 3px solid var(--gold);
+    /* ── CONTATTI CARDS ── */
+    .contatti-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-bottom: 70px;
     }
-    .map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+    .contatto-card {
+      background: var(--grigio-chiaro);
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+      border-top: 4px solid var(--navy);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .contatto-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(26,58,107,0.12);
+    }
+    .contatto-card .icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .contatto-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .contatto-card p, .contatto-card a {
+      font-size: 0.95rem;
+      color: var(--grigio-testo);
+      line-height: 1.7;
+      text-decoration: none;
+    }
+    .contatto-card a {
+      color: var(--celeste);
+      font-weight: 600;
+      display: block;
+    }
+    .contatto-card a:hover { color: var(--navy); }
 
-    /* ── FORM SECTION ── */
-    .form-section { background: var(--off-white); border-top: 1px solid var(--border); }
-    .form-grid {
+    /* ── ORARI BADGE ── */
+    .orari-badge {
+      display: inline-block;
+      background: var(--giallo);
+      color: var(--navy-dark);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-top: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SEZIONE MAPPA + FORM ── */
+    .mappa-form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      gap: 50px;
       align-items: start;
+      margin-bottom: 70px;
+    }
+    @media (max-width: 860px) {
+      .mappa-form-grid { grid-template-columns: 1fr; }
     }
 
-    .info-boxes { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
-    .info-box {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--gold);
-      border-radius: 6px;
-      padding: 16px 18px;
-    }
-    .info-box-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .info-box-text { font-size: 13px; color: var(--text-body); line-height: 1.6; }
-
-    /* ── CONTACT FORM ── */
-    .contact-form-card {
-      background: var(--navy);
-      border-radius: 10px;
-      padding: 40px 36px;
-      box-shadow: 0 8px 32px rgba(26,58,107,0.15);
-    }
-    .contact-form-card h3 {
-      font-size: 13px; font-weight: 700; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
-    }
-    .cf { display: flex; flex-direction: column; gap: 12px; }
-    .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .cf input, .cf select, .cf textarea {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.13);
-      border-radius: 6px; padding: 12px 14px;
-      font-size: 13px; color: #fff; font-family: inherit;
-      outline: none; width: 100%; transition: border-color 0.2s;
-    }
-    .cf input::placeholder, .cf textarea::placeholder { color: rgba(255,255,255,0.32); }
-    .cf input:focus, .cf select:focus, .cf textarea:focus { border-color: var(--gold); }
-    .cf select { color: rgba(255,255,255,0.55); }
-    .cf select option { background: var(--navy); color: #fff; }
-    .cf textarea { min-height: 110px; resize: vertical; }
-    .cf-btn {
-      background: var(--gold); color: var(--navy);
-      font-size: 13px; font-weight: 700;
-      border: none; padding: 14px;
-      border-radius: 999px; cursor: pointer; font-family: inherit;
-      transition: background 0.2s; width: 100%;
-    }
-    .cf-btn:hover { background: var(--gold-light); }
-    .cf-privacy { font-size: 10px; color: rgba(255,255,255,0.3); text-align: center; }
-
-    /* ── SOCIAL BAND ── */
-    .social-band { background: var(--off-white); padding: 56px 32px; border-top: 1px solid var(--border); }
-    .social-band-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 32px; flex-wrap: wrap;
-    }
-    .social-band h3 {
+    .section-label {
       font-family: 'Playfair Display', serif;
-      font-size: 1.4rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;
+      font-size: 1.6rem;
+      color: var(--navy);
+      margin-bottom: 8px;
     }
-    .social-band p { font-size: 14px; color: var(--text-body); }
-    .social-links-row { display: flex; gap: 12px; }
-    .social-btn {
-      display: flex; align-items: center; gap: 10px;
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 999px; padding: 11px 20px;
-      text-decoration: none; color: var(--navy);
-      font-size: 13px; font-weight: 500;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
-      box-shadow: 0 2px 8px rgba(26,58,107,0.06);
+    .section-sub {
+      color: var(--grigio-testo);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      line-height: 1.6;
     }
-    .social-btn svg { width: 17px; height: 17px; }
-    .social-btn:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
 
-    /* ── ORARI ── */
-    .orari-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    .orari-table tr { border-bottom: 1px solid var(--border); }
-    .orari-table td { padding: 11px 0; font-size: 14px; }
-    .orari-table td:first-child { color: var(--text-muted); }
-    .orari-table td:last-child { color: var(--navy); font-weight: 600; text-align: right; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .form-grid { grid-template-columns: 1fr; gap: 40px; }
-      .cf-row { grid-template-columns: 1fr; }
-      .social-band-inner { flex-direction: column; text-align: center; }
-      .social-links-row { justify-content: center; flex-wrap: wrap; }
+    .mappa-wrapper {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+      border: 3px solid var(--navy);
     }
-    /* ── DAY SLOTS ── */
-    .day-slot { display: flex; flex-direction: column; gap: 6px; align-items: center; }
-    .day-name { font-size: 11px; font-weight: 700; color: var(--navy); letter-spacing: 0.08em; margin-bottom: 2px; }
-    .slot {
-      width: 100%; text-align: center; font-size: 10px; font-weight: 600;
-      padding: 7px 4px; border-radius: 6px; letter-spacing: 0.04em;
+    .mappa-wrapper iframe {
+      width: 100%;
+      height: 380px;
+      display: block;
+      border: none;
     }
-    .slot.available { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
-    .slot.limited { background: #fef9c3; color: #a16207; border: 1px solid #fde68a; }
+    .mappa-indirizzo {
+      background: var(--navy);
+      color: var(--bianco);
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .mappa-indirizzo span { font-size: 1.2rem; }
 
+    /* ── FORM ── */
+    .form-card {
+      background: var(--grigio-chiaro);
+      border-radius: 14px;
+      padding: 36px 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 480px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--navy);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #dde3ef;
+      border-radius: 8px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--testo);
+      background: var(--bianco);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--celeste);
+      box-shadow: 0 0 0 3px rgba(74,144,217,0.15);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .btn-invia {
+      width: 100%;
+      background: var(--navy);
+      color: var(--bianco);
+      border: none;
+      padding: 15px 24px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-invia:hover {
+      background: var(--celeste);
+      transform: translateY(-1px);
+    }
+    .btn-invia:active { transform: translateY(0); }
+
+    .privacy-note {
+      font-size: 0.78rem;
+      color: #8a93a6;
+      margin-top: 12px;
+      text-align: center;
+      line-height: 1.5;
+    }
+    .privacy-note a { color: var(--celeste); }
+
+    /* ── MESSAGGIO SUCCESSO ── */
+    #form-success {
+      display: none;
+      background: #e8f5e9;
+      border: 2px solid #4caf50;
+      border-radius: 10px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 16px;
+    }
+    #form-success .ok-icon { font-size: 2.5rem; display: block; margin-bottom: 10px; }
+    #form-success p { color: #2e7d32; font-weight: 600; font-size: 1rem; }
+    #form-success small { color: #555; font-size: 0.85rem; }
+
+    /* ── CTA BOTTOM ── */
+    .cta-bottom {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-radius: 16px;
+      padding: 50px 40px;
+      text-align: center;
+      color: var(--bianco);
+    }
+    .cta-bottom h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      margin-bottom: 14px;
+    }
+    .cta-bottom h2 span { color: var(--giallo); }
+    .cta-bottom p { opacity: 0.8; margin-bottom: 28px; font-size: 1rem; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-primary {
+      background: var(--giallo);
+      color: var(--navy-dark);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-block;
+    }
+    .btn-cta-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245,200,66,0.4);
+    }
+    .btn-cta-secondary {
+      background: transparent;
+      color: var(--bianco);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: border-color 0.2s, background 0.2s;
+      display: inline-block;
+    }
+    .btn-cta-secondary:hover {
+      border-color: var(--bianco);
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 0.85rem;
+    }
+    footer strong { color: var(--bianco); }
+
+    /* ── WHATSAPP FLOAT ── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      background: #25d366;
+      color: white;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      z-index: 999;
+      transition: transform 0.2s;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+
+    @media (max-width: 600px) {
+      .page-content { padding: 50px 20px 70px; }
+      .form-card { padding: 24px 18px; }
+      .cta-bottom { padding: 36px 24px; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- PAGE HEADER -->
-  <div class="page-header">
-    <div class="page-header-inner">
-      <div class="breadcrumb"><a href="index.html">Home</a> / Dove Siamo</div>
-      <h1>Dove Siamo</h1>
-      <p>Siamo a Pisa e disponibili anche per consulenze telefoniche e online. Contattaci — la prima consulenza è gratuita.</p>
+<!-- Navbar caricata da nav.js -->
+<div id="navbar-placeholder"></div>
+
+<!-- HERO -->
+<div class="hero-strip">
+  <h1>Dove <span>Siamo</span></h1>
+  <div class="accent-line"></div>
+  <p>Siamo a Pisa — vieni a trovarci o scrivici direttamente</p>
+</div>
+
+<!-- CONTENUTO PRINCIPALE -->
+<div class="page-content">
+
+  <!-- CARDS CONTATTI -->
+  <div class="contatti-grid">
+    <div class="contatto-card">
+      <span class="icon">📍</span>
+      <h3>Indirizzo</h3>
+      <p>Via Novecchio, 10<br>56127 — Pisa (PI)</p>
+    </div>
+    <div class="contatto-card">
+      <span class="icon">📞</span>
+      <h3>Telefono</h3>
+      <a href="tel:+393296491028">+39 329 649 1028</a>
+      <a href="tel:+390505201278">050 520 1278</a>
+    </div>
+    <div class="contatto-card">
+      <span class="icon">✉️</span>
+      <h3>Email</h3>
+      <a href="mailto:difesaconsumatorepisa@gmail.com">difesaconsumatorepisa<br>@gmail.com</a>
+    </div>
+    <div class="contatto-card">
+      <span class="icon">🕐</span>
+      <h3>Orari</h3>
+      <p>Lun – Ven<br>9:00 – 13:00 / 15:00 – 18:30</p>
+      <span class="orari-badge">Consulenza gratuita</span>
     </div>
   </div>
 
-  <!-- CONTACT INFO -->
-  <section class="contact-section" id="contatti">
-    <div class="section-inner">
-      <div class="contact-grid">
+  <!-- MAPPA + FORM -->
+  <div class="mappa-form-grid">
 
-        <div>
-          <div class="section-label">Recapiti</div>
-          <h2 class="section-title">Contatti diretti</h2>
-          <p class="section-desc" style="margin-bottom:32px;">Siamo disponibili dal lunedì al venerdì. Puoi contattarci per telefono, WhatsApp, email o venire direttamente in ufficio.</p>
-
-          <div class="contact-card">
-            <h3>Informazioni di contatto</h3>
-
-            <div class="contact-row">
-              <div class="contact-icon-wrap">
-                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <div class="contact-label">Indirizzo</div>
-                <div class="contact-value">Via Novecchio, 10 — Pisa (PI), Italia</div>
-              </div>
-            </div>
-
-            <div class="contact-row">
-              <div class="contact-icon-wrap">
-                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.08 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              </div>
-              <div>
-                <div class="contact-label">Telefono / WhatsApp</div>
-                <div class="contact-value"><a href="tel:+393296491028">+39 329 649 1028</a></div>
-              </div>
-            </div>
-
-            <div class="contact-row">
-              <div class="contact-icon-wrap">
-                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <div class="contact-label">Email</div>
-                <div class="contact-value"><a href="mailto:info@difesaconsumatore.org">info@difesaconsumatore.org</a></div>
-              </div>
-            </div>
-
-            <div class="contact-row">
-              <div class="contact-icon-wrap">
-                <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-              </div>
-              <div>
-                <div class="contact-label">Partita IVA</div>
-                <div class="contact-value">02285180507</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="section-label">Orari</div>
-          <h2 class="section-title">Quando siamo disponibili</h2>
-          <p class="section-desc">Puoi venire in ufficio o contattarci telefonicamente negli orari indicati. Fuori orario puoi scrivere su WhatsApp.</p>
-          <table class="orari-table">
-            <tr><td>Lunedì</td><td>09:00 – 18:00</td></tr>
-            <tr><td>Martedì</td><td>09:00 – 18:00</td></tr>
-            <tr><td>Mercoledì</td><td>09:00 – 18:00</td></tr>
-            <tr><td>Giovedì</td><td>09:00 – 18:00</td></tr>
-            <tr><td>Venerdì</td><td>09:00 – 17:00</td></tr>
-            <tr><td>Sabato</td><td style="color:var(--text-muted);">Su appuntamento</td></tr>
-            <tr><td>Domenica</td><td style="color:var(--text-muted);">Chiuso</td></tr>
-          </table>
-          <div class="info-boxes" style="margin-top:28px;">
-            <div class="info-box">
-              <div class="info-box-title">Risposta garantita in 24 ore</div>
-              <div class="info-box-text">Ogni richiesta inviata via email o WhatsApp riceve risposta entro il giorno lavorativo successivo.</div>
-            </div>
-            <div class="info-box">
-              <div class="info-box-title">Consulenza anche a distanza</div>
-              <div class="info-box-text">Non sei a Pisa? Offriamo consulenze telefoniche e via videochiamata per tutta Italia.</div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- MAP -->
-  <div class="map-section">
-    <div class="map-wrap">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2870.5!2d10.3768!3d43.7102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d591bcf3b68a4b%3A0x1a0b2c3d4e5f6a7b!2sVia%20Novecchio%2C%20Pisa%20PI%2C%20Italia!5e0!3m2!1sit!2sit!4v1"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Mappa Difesa Consumatore Pisa">
-      </iframe>
-    </div>
-  </div>
-
-  <!-- PRENOTA APPUNTAMENTO -->
-  <section class="form-section" id="prenota" style="background:var(--white);">
-    <div class="section-inner">
-      <div class="form-grid">
-
-        <div class="form-intro">
-          <div class="section-label">Prenota una consulenza</div>
-          <h2 class="section-title">Richiedi un appuntamento</h2>
-          <p class="section-desc">Indica il giorno e la fascia oraria che preferisci. Il nostro staff ti contatter&agrave; per confermare l&apos;appuntamento.</p>
-
-          <div style="margin-top:32px;">
-            <div style="font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;">Disponibilit&agrave; settimanale</div>
-            <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;">
-              <div class="day-slot">
-                <div class="day-name">Lun</div>
-                <div class="slot available">09-13</div>
-                <div class="slot available">14-18</div>
-              </div>
-              <div class="day-slot">
-                <div class="day-name">Mar</div>
-                <div class="slot available">09-13</div>
-                <div class="slot available">14-18</div>
-              </div>
-              <div class="day-slot">
-                <div class="day-name">Mer</div>
-                <div class="slot available">09-13</div>
-                <div class="slot available">14-18</div>
-              </div>
-              <div class="day-slot">
-                <div class="day-name">Gio</div>
-                <div class="slot available">09-13</div>
-                <div class="slot available">14-18</div>
-              </div>
-              <div class="day-slot">
-                <div class="day-name">Ven</div>
-                <div class="slot available">09-13</div>
-                <div class="slot limited">14-17</div>
-              </div>
-            </div>
-            <div style="display:flex;gap:16px;margin-top:14px;flex-wrap:wrap;">
-              <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-muted);"><span style="width:12px;height:12px;border-radius:3px;background:#22c55e;display:inline-block;"></span>Disponibile</div>
-              <div style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-muted);"><span style="width:12px;height:12px;border-radius:3px;background:#f59e0b;display:inline-block;"></span>Orario ridotto</div>
-            </div>
-          </div>
-
-          <div class="info-boxes" style="margin-top:24px;">
-            <div class="info-box">
-              <div class="info-box-title">Consulenza anche a distanza</div>
-              <div class="info-box-text">Non sei a Pisa? L&apos;appuntamento pu&ograve; essere in studio, telefonico o in videochiamata.</div>
-            </div>
-            <div class="info-box">
-              <div class="info-box-title">Conferma entro 24 ore</div>
-              <div class="info-box-text">Il nostro staff verificher&agrave; la disponibilit&agrave; e ti confermer&agrave; l&apos;appuntamento via telefono o WhatsApp.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-form-card">
-          <h3>Richiesta appuntamento</h3>
-          <div class="cf" id="prenotaForm">
-            <div class="cf-row">
-              <input type="text" id="pNome" placeholder="Nome" />
-              <input type="text" id="pCognome" placeholder="Cognome" />
-            </div>
-            <input type="tel" id="pTel" placeholder="Numero di telefono" />
-            <input type="email" id="pEmail" placeholder="Indirizzo email (opzionale)" />
-            <select id="pModalita">
-              <option value="" disabled selected>Modalit&agrave; preferita</option>
-              <option>In studio (Via Novecchio 10, Pisa)</option>
-              <option>Telefonicamente</option>
-              <option>Videochiamata</option>
-            </select>
-            <select id="pGiorno">
-              <option value="" disabled selected>Giorno preferito</option>
-              <option>Luned&igrave;</option>
-              <option>Marted&igrave;</option>
-              <option>Mercoled&igrave;</option>
-              <option>Gioved&igrave;</option>
-              <option>Venerd&igrave;</option>
-              <option>Sabato (su disponibilit&agrave;)</option>
-            </select>
-            <select id="pFascia">
-              <option value="" disabled selected>Fascia oraria preferita</option>
-              <option>Mattina (09:00 - 13:00)</option>
-              <option>Pomeriggio (14:00 - 18:00)</option>
-              <option>Indifferente</option>
-            </select>
-            <select id="pPratica">
-              <option value="" disabled selected>Tipo di pratica</option>
-              <option>Cessione del Quinto / Prestito Personale</option>
-              <option>Sovraindebitamento</option>
-              <option>Segnalazioni CRIF</option>
-              <option>Saldo e Stralcio</option>
-              <option>Rimborso al Volo</option>
-              <option>Non so ancora / Voglio una valutazione</option>
-            </select>
-            <textarea id="pNote" placeholder="Note aggiuntive (opzionale)..." style="min-height:72px;"></textarea>
-            <button class="cf-btn" id="pBtn" onclick="submitPrenota(event)">Richiedi Appuntamento &rarr;</button>
-            <p class="cf-privacy">Dati trattati ai sensi del GDPR. Non saranno ceduti a terzi.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT FORM -->
-  <section class="form-section" id="modulo">
-    <div class="section-inner">
-      <div class="form-grid">
-        <div class="form-intro">
-          <div class="section-label">Scrivici</div>
-          <h2 class="section-title">Invia la tua richiesta</h2>
-          <p class="section-desc">Compilа il modulo con i tuoi dati e descrivi brevemente la tua situazione. Ti risponderemo entro 24 ore lavorative.</p>
-          <div class="info-boxes">
-            <div class="info-box">
-              <div class="info-box-title">Prima consulenza gratuita</div>
-              <div class="info-box-text">Analizziamo il tuo caso senza alcun costo iniziale e senza impegno da parte tua.</div>
-            </div>
-            <div class="info-box">
-              <div class="info-box-title">Solo a successo</div>
-              <div class="info-box-text">Il nostro compenso è una percentuale sul rimborso effettivamente ottenuto. Se non otteniamo risultati, non paghi nulla.</div>
-            </div>
-            <div class="info-box">
-              <div class="info-box-title">Massima riservatezza</div>
-              <div class="info-box-text">I tuoi dati sono trattati nel pieno rispetto del GDPR e della normativa sulla privacy.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-form-card">
-          <h3>Modulo di contatto</h3>
-          <div class="cf">
-            <div class="cf-row">
-              <input type="text" placeholder="Nome" />
-              <input type="text" placeholder="Cognome" />
-            </div>
-            <input type="tel" placeholder="Numero di telefono" />
-            <input type="email" placeholder="Indirizzo email" />
-            <select>
-              <option value="" disabled selected>Tipo di pratica</option>
-              <option>Cessione del Quinto / Prestito Personale</option>
-              <option>Sovraindebitamento</option>
-              <option>Segnalazioni CRIF</option>
-              <option>Saldo e Stralcio</option>
-              <option>Rimborso al Volo</option>
-              <option>Altro</option>
-            </select>
-            <textarea placeholder="Descrivi brevemente la tua situazione. Più dettagli fornisci, più precisa sarà la nostra valutazione..."></textarea>
-            <button class="cf-btn" onclick="alert('Grazie! La tua richiesta è stata inviata. Ti contatteremo entro 24 ore lavorative.')">Invia Richiesta →</button>
-            <p class="cf-privacy">Inviando il modulo accetti il trattamento dei dati ai sensi del GDPR · Privacy Policy</p>
-          </div>
+    <!-- MAPPA -->
+    <div>
+      <h2 class="section-label">Come Raggiungerci</h2>
+      <p class="section-sub">Siamo in zona semicentrale a Pisa, facilmente raggiungibile con mezzi pubblici e auto. Parcheggio disponibile nelle vicinanze.</p>
+      <div class="mappa-wrapper">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.123!2d10.3951!3d43.7229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d591b6b9e6c3c1%3A0x0!2sVia+Novecchio%2C+10%2C+56127+Pisa+PI!5e0!3m2!1sit!2sit!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mappa Studio Difesa Consumatore Pisa">
+        </iframe>
+        <div class="mappa-indirizzo">
+          <span>📍</span>
+          <strong>Via Novecchio 10, 56127 Pisa (PI)</strong>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- SOCIAL BAND -->
-  <div class="social-band">
-    <div class="social-band-inner">
-      <div>
-        <h3>Seguici sui social</h3>
-        <p>Aggiornamenti, news e consigli per tutelare i tuoi diritti.</p>
-      </div>
-      <div class="social-links-row">
-        <a href="https://www.facebook.com/difesaconsumatoresrls/" class="social-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-          Facebook
-        </a>
-        <a href="https://www.instagram.com/difesaconsumatore/" class="social-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          Instagram
-        </a>
-        <a href="tel:+393296491028" class="social-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-          WhatsApp
-        </a>
+    <!-- FORM -->
+    <div>
+      <h2 class="section-label">Scrivici</h2>
+      <p class="section-sub">Compila il modulo e ti ricontattiamo entro 24 ore lavorative. La consulenza iniziale è sempre <strong>gratuita</strong>.</p>
+
+      <div class="form-card">
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="32082512-78b3-445e-a8c0-93646ca527f8">
+          <input type="hidden" name="subject" value="Richiesta dal sito Difesa Consumatore">
+          <input type="hidden" name="from_name" value="Sito Web Difesa Consumatore">
+          <input type="checkbox" name="botcheck" style="display:none">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Nome *</label>
+              <input type="text" id="nome" name="nome" placeholder="Mario" required>
+            </div>
+            <div class="form-group">
+              <label for="cognome">Cognome *</label>
+              <input type="text" id="cognome" name="cognome" placeholder="Rossi" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" placeholder="mario@email.it" required>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Telefono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="320 123 4567">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="servizio">Tipo di problema</label>
+            <select id="servizio" name="servizio">
+              <option value="">— Seleziona —</option>
+              <option value="cqs">Rimborso prestito CQS/CQP</option>
+              <option value="mutuo">Mutuo / Finanziamento</option>
+              <option value="energia">Bollette Gas / Luce</option>
+              <option value="telefonia">Telefonia / Pay-TV</option>
+              <option value="banca">Reclamo bancario / ABF</option>
+              <option value="conciliazione">Conciliazione</option>
+              <option value="altro">Altro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="messaggio">Descrivi brevemente il tuo caso *</label>
+            <textarea id="messaggio" name="messaggio" placeholder="Raccontaci il problema, cercheremo di aiutarti..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-invia">📩 Invia Richiesta Gratuita</button>
+
+          <p class="privacy-note">
+            Inviando accetti la nostra <a href="privacy.html">Privacy Policy</a>.<br>
+            I tuoi dati non saranno mai ceduti a terzi.
+          </p>
+        </form>
+
+        <div id="form-success">
+          <span class="ok-icon">✅</span>
+          <p>Messaggio inviato con successo!</p>
+          <small>Ti ricontatteremo entro 24 ore lavorative.</small>
+        </div>
       </div>
     </div>
   </div>
 
-  <script>
-    async function submitPrenota(e) {
-      e.preventDefault();
-      const btn = document.getElementById('pBtn');
-      const nome = document.getElementById('pNome').value.trim();
-      const tel  = document.getElementById('pTel').value.trim();
-      if (!nome || !tel) { alert('Inserisci nome e numero di telefono.'); return; }
-      btn.textContent = 'Invio in corso...';
-      btn.disabled = true;
-      try {
-        const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify({
-            tipo: 'RICHIESTA APPUNTAMENTO',
-            nome: nome + ' ' + document.getElementById('pCognome').value,
-            telefono: tel,
-            email: document.getElementById('pEmail').value,
-            modalita: document.getElementById('pModalita').value,
-            giorno: document.getElementById('pGiorno').value,
-            fascia: document.getElementById('pFascia').value,
-            pratica: document.getElementById('pPratica').value,
-            note: document.getElementById('pNote').value
-          })
-        });
-        if (res.ok) {
-          document.getElementById('prenotaForm').innerHTML = '<p style="text-align:center;color:#fff;padding:40px 0;font-size:15px;line-height:1.8;">&#10003; Richiesta ricevuta!<br><strong>Ti contatteremo entro 24 ore per confermare l\'appuntamento.</strong><br><br><a href="https://wa.me/393296491028" style="color:var(--gold);">Preferisci WhatsApp? Scrivici subito &rarr;</a></p>';
-        } else { throw new Error(); }
-      } catch {
-        btn.textContent = 'Richiedi Appuntamento \u2192';
+  <!-- CTA BOTTOM -->
+  <div class="cta-bottom">
+    <h2>Preferisci parlare <span>subito</span> con noi?</h2>
+    <p>Chiamaci o scrivici su WhatsApp — rispondiamo velocemente.</p>
+    <div class="cta-buttons">
+      <a href="tel:+393296491028" class="btn-cta-primary">📞 Chiama Ora</a>
+      <a href="https://wa.me/393296491028?text=Salve%2C%20vorrei%20una%20consulenza%20gratuita." target="_blank" class="btn-cta-secondary">💬 WhatsApp</a>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>DC S.r.l. — Difesa Consumatore</strong><br>
+  Via Novecchio 10, 56127 Pisa (PI) — P.IVA 02285180507<br>
+  <a href="privacy.html" style="color: var(--celeste);">Privacy Policy</a>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/393296491028?text=Salve%2C%20vorrei%20una%20consulenza%20gratuita." target="_blank" title="Scrivici su WhatsApp" aria-label="Contattaci su WhatsApp">💬</a>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const success = document.getElementById('form-success');
+
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('.btn-invia');
+    btn.textContent = 'Invio in corso...';
+    btn.disabled = true;
+
+    try {
+      const data = new FormData(form);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+      if (json.success) {
+        form.style.display = 'none';
+        success.style.display = 'block';
+      } else {
+        btn.textContent = '❌ Errore — riprova';
         btn.disabled = false;
-        alert('Errore nell\'invio. Contattaci direttamente su WhatsApp o per telefono.');
       }
+    } catch {
+      btn.textContent = '❌ Errore di rete — riprova';
+      btn.disabled = false;
     }
-  </script>
-  <script src="nav.js"></script>
+  });
+</script>
+
 </body>
 </html>
