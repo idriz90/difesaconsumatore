@@ -72,7 +72,7 @@
         </div>
         <div class="footer-bottom">
           <div class="footer-copy">
-            © 2024 Difesa Consumatore S.r.l.s. · Via Novecchio 10, Pisa · P.IVA 02285180507
+            © 2024 DC S.r.l.· Via Novecchio 10, Pisa · P.IVA 02285180507
           </div>
           <div class="footer-social">
             <a href="https://www.facebook.com/difesaconsumatoresrls/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
