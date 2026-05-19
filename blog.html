@@ -275,30 +275,9 @@
 
           <div class="sidebar-card">
             <h4>Categorie</h4>
-            <ul class="cat-list">
-              <li class="cat-item">
-                <span class="cat-name">Cessione del Quinto</span>
-                <span class="cat-count">CQS</span>
-              </li>
-              <li class="cat-item">
-                <span class="cat-name">Sovraindebitamento</span>
-                <span class="cat-count">L.3</span>
-              </li>
-              <li class="cat-item">
-                <span class="cat-name">Segnalazioni CRIF</span>
-                <span class="cat-count">CRIF</span>
-              </li>
-              <li class="cat-item">
-                <span class="cat-name">Saldo e Stralcio</span>
-                <span class="cat-count">S&amp;S</span>
-              </li>
-              <li class="cat-item">
-                <span class="cat-name">Rimborso Voli</span>
-                <span class="cat-count">€600</span>
-              </li>
-              <li class="cat-item">
-                <span class="cat-name">Energia &amp; Telefonia</span>
-                <span class="cat-count">GLT</span>
+            <ul class="cat-list" id="cat-list">
+              <li class="cat-item" style="border-bottom:none;">
+                <span class="cat-name" style="font-size:12px;color:var(--text-muted);">Caricamento…</span>
               </li>
             </ul>
           </div>
@@ -472,12 +451,39 @@
       recentEl.innerHTML = html;
     }
 
+    function renderCategories(items) {
+      const catEl = document.getElementById('cat-list');
+      if (!catEl) return;
+      if (!items || !items.length) {
+        catEl.innerHTML = '<li class="cat-item" style="border-bottom:none;"><span class="cat-name" style="font-size:12px;color:var(--text-muted);">Nessuna categoria</span></li>';
+        return;
+      }
+      // Count occurrences per category
+      const counts = {};
+      items.forEach(it => {
+        const c = categoryFromTitle(it.title);
+        counts[c] = (counts[c] || 0) + 1;
+      });
+      // Sort by count desc
+      const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+      let html = '';
+      sorted.forEach(([name, count]) => {
+        html += '<li class="cat-item">'
+          +   '<span class="cat-name">' + name + '</span>'
+          +   '<span class="cat-count">' + count + '</span>'
+          + '</li>';
+      });
+      catEl.innerHTML = html;
+    }
+
     function showError() {
       articlesEl.innerHTML = '<div style="padding:60px 20px;text-align:center;color:var(--text-muted);font-size:14px;">'
         + 'Non è stato possibile caricare gli articoli al momento.<br><br>'
         + '<a href="' + SUBSTACK_URL + '" target="_blank" rel="noopener" style="color:var(--gold-dark);font-weight:600;">'
         + 'Visita il blog su Substack →</a></div>';
       recentEl.innerHTML = '<div style="font-size:12px;color:var(--text-muted);">Articoli non disponibili.</div>';
+      const catEl = document.getElementById('cat-list');
+      if (catEl) catEl.innerHTML = '<li class="cat-item" style="border-bottom:none;"><span class="cat-name" style="font-size:12px;color:var(--text-muted);">Categorie non disponibili</span></li>';
     }
 
     async function tryFetch(source) {
@@ -531,6 +537,7 @@
         if (items && items.length) {
           renderArticles(items);
           renderRecent(items);
+          renderCategories(items);
           return;
         }
       }
