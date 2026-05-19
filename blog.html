@@ -353,9 +353,15 @@
   (function () {
     const SUBSTACK_URL = 'https://difesaconsumatore.substack.com';
     const FEED_URL = SUBSTACK_URL + '/feed';
-    // Cache-busting timestamp per evitare cache lato proxy/browser
     const cb = Date.now();
-    const API = 'https://api.allorigins.win/get?url=' + encodeURIComponent(FEED_URL) + '&t=' + cb;
+
+    // Fonti dati provate in ordine. La prima che risponde con articoli vince.
+    const SOURCES = [
+      // 1. rss2json (CORS ok, cache ~1h)
+      { type: 'rss2json', url: 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(FEED_URL) + '&count=20&_=' + cb },
+      // 2. allorigins fallback (CORS ok via proxy, no-cache, parse XML)
+      { type: 'allorigins', url: 'https://api.allorigins.win/get?url=' + encodeURIComponent(FEED_URL) + '&t=' + cb }
+    ];
 
     const articlesEl = document.getElementById('articles-list');
     const recentEl = document.getElementById('recent-list');
@@ -386,20 +392,6 @@
       return 'Guida';
     }
 
-    function getThumbnail(item, raw) {
-      // Try enclosure
-      const enc = item.querySelector('enclosure');
-      if (enc && enc.getAttribute('url')) return enc.getAttribute('url');
-      // Try media:content
-      const media = item.getElementsByTagNameNS('*', 'content')[0]
-        || item.querySelector('media\\:content, content[medium="image"]');
-      if (media && media.getAttribute && media.getAttribute('url')) return media.getAttribute('url');
-      // Try first <img> in content
-      const m = (raw || '').match(/<img[^>]+src=["']([^"']+)["']/i);
-      if (m) return m[1];
-      return null;
-    }
-
     function parseRSS(xmlText) {
       const parser = new DOMParser();
       const doc = parser.parseFromString(xmlText, 'application/xml');
@@ -412,7 +404,10 @@
         const contentEncoded = (item.getElementsByTagName('content:encoded')[0]?.textContent
           || item.querySelector('encoded')?.textContent || '').trim();
         const raw = contentEncoded || description;
-        const thumbnail = getThumbnail(item, raw);
+        // Try to extract first <img> as thumbnail
+        const m = (raw || '').match(/<img[^>]+src=["']([^"']+)["']/i);
+        const enclosure = item.querySelector('enclosure');
+        const thumbnail = (enclosure && enclosure.getAttribute('url')) || (m ? m[1] : null);
         items.push({ title, link, pubDate, description, content: raw, thumbnail });
       });
       return items;
@@ -485,18 +480,62 @@
       recentEl.innerHTML = '<div style="font-size:12px;color:var(--text-muted);">Articoli non disponibili.</div>';
     }
 
-    fetch(API, { cache: 'no-store' })
-      .then(r => r.json())
-      .then(data => {
-        if (data && data.contents) {
-          const items = parseRSS(data.contents);
+    async function tryFetch(source) {
+      try {
+        const res = await fetch(source.url, { cache: 'no-store' });
+        if (!res.ok) return null;
+        if (source.type === 'substack-api') {
+          const data = await res.json();
+          if (Array.isArray(data) && data.length) {
+            return data.map(p => ({
+              title: p.title,
+              link: p.canonical_url || (SUBSTACK_URL + '/p/' + p.slug),
+              pubDate: p.post_date,
+              description: p.description || p.subtitle || '',
+              content: p.description || p.subtitle || '',
+              thumbnail: p.cover_image
+            }));
+          }
+        } else if (source.type === 'rss2json') {
+          const data = await res.json();
+          if (data && data.status === 'ok' && data.items && data.items.length) {
+            return data.items.map(it => ({
+              title: it.title,
+              link: it.link,
+              pubDate: it.pubDate,
+              description: it.description,
+              content: it.content,
+              thumbnail: it.thumbnail || (it.enclosure && it.enclosure.link)
+            }));
+          }
+        } else if (source.type === 'rss-xml') {
+          const text = await res.text();
+          if (text && text.includes('<item')) {
+            return parseRSS(text);
+          }
+        } else if (source.type === 'allorigins') {
+          const data = await res.json();
+          if (data && data.contents) {
+            return parseRSS(data.contents);
+          }
+        }
+        return null;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    (async () => {
+      for (const source of SOURCES) {
+        const items = await tryFetch(source);
+        if (items && items.length) {
           renderArticles(items);
           renderRecent(items);
-        } else {
-          showError();
+          return;
         }
-      })
-      .catch(showError);
+      }
+      showError();
+    })();
   })();
   </script>
 </body>
