@@ -73,6 +73,8 @@
         <div class="footer-bottom">
           <div class="footer-copy">
             © 2024 DC S.r.l.· Via Novecchio 10, Pisa · P.IVA 02285180507
+            <span style="margin: 0 8px; opacity: 0.4;">·</span>
+            <a href="privacy.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Privacy &amp; Cookie</a>
           </div>
           <div class="footer-social">
             <a href="https://www.facebook.com/difesaconsumatoresrls/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
@@ -122,4 +124,37 @@
       }
     });
   });
+
+  // ── COOKIE BANNER ──
+  function showCookieBanner() {
+    if (localStorage.getItem('cookieConsent')) return;
+    const banner = document.createElement('div');
+    banner.id = 'cookie-banner';
+    banner.innerHTML = `
+      <div class="cb-inner">
+        <div class="cb-text">
+          <strong>Rispettiamo la tua privacy.</strong>
+          Usiamo solo cookie tecnici per il funzionamento del sito. Cliccando "Accetta" autorizzi eventuali cookie analitici anonimi.
+          <a href="privacy.html">Leggi l'informativa completa →</a>
+        </div>
+        <div class="cb-actions">
+          <button type="button" class="cb-btn cb-reject" id="cb-reject">Rifiuta</button>
+          <button type="button" class="cb-btn cb-accept" id="cb-accept">Accetta</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(banner);
+
+    function setConsent(value) {
+      try { localStorage.setItem('cookieConsent', value); } catch (e) {}
+      banner.classList.add('cb-hidden');
+      setTimeout(() => banner.remove(), 300);
+    }
+
+    document.getElementById('cb-accept').addEventListener('click', () => setConsent('accepted'));
+    document.getElementById('cb-reject').addEventListener('click', () => setConsent('rejected'));
+
+    requestAnimationFrame(() => banner.classList.add('cb-visible'));
+  }
+  showCookieBanner();
 })();
