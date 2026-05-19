@@ -27,19 +27,20 @@
     .hero-bg-photo {
       position: absolute; inset: 0;
       background-color: var(--navy);
-      /* Immagine ancorata a destra alla sua altezza naturale: non si sgrana su schermi larghi */
-      background-image: url('hero-bg.jpg?v=3');
-      background-size: auto 100%;
-      background-position: right center;
+      /* Immagine intera dietro, ancorata leggermente a destra dove c'è la targa */
+      background-image: url('hero-bg.jpg?v=4');
+      background-size: cover;
+      background-position: right 25%;
       background-repeat: no-repeat;
     }
+    /* Overlay blu in trasparenza: porta visibile in filigrana a sinistra, targa nitida a destra */
     .hero-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(90deg,
-        rgba(26,58,107,1) 0%,
-        rgba(26,58,107,0.97) 38%,
-        rgba(26,58,107,0.55) 62%,
-        rgba(26,58,107,0.15) 82%,
+        rgba(26,58,107,0.88) 0%,
+        rgba(26,58,107,0.75) 35%,
+        rgba(26,58,107,0.45) 58%,
+        rgba(26,58,107,0.15) 80%,
         rgba(26,58,107,0) 100%);
     }
     .hero-inner {
