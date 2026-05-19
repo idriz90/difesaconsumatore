@@ -262,86 +262,11 @@
 
         <!-- ARTICLES -->
         <div>
-          <div class="articles-list">
-
-            <!-- FEATURED -->
-            <a href="#" class="article-card featured">
-              <div class="article-featured-visual">
-                <span class="afv-label">Guida completa</span>
-              </div>
-              <div class="article-meta">
-                <span class="article-tag gold">In evidenza</span>
-                <span class="article-tag">Cessione del Quinto</span>
-                <span class="article-date">15 aprile 2024</span>
-              </div>
-              <div class="article-title">Guida alla Cessione del Quinto: cos'è, come funziona e quali sono i vantaggi</div>
-              <p class="article-excerpt">La cessione del quinto dello stipendio è una forma di prestito personale garantito, rimborsato attraverso trattenute dirette sull'accredito mensile. Scopri come funziona, quando hai diritto al rimborso delle commissioni e come verificare se sei stato trattato correttamente dalla tua banca.</p>
-              <span class="article-read-more">Leggi l'articolo →</span>
-            </a>
-
-            <!-- ARTICLE 2 -->
-            <a href="#" class="article-card">
-              <div class="article-meta">
-                <span class="article-tag">Sovraindebitamento</span>
-                <span class="article-date">28 marzo 2024</span>
-              </div>
-              <div class="article-title">Sovraindebitamento: un aiuto per i consumatori in difficoltà</div>
-              <p class="article-excerpt">La Legge n. 3/2012, spesso chiamata "Legge Salva-suicidi", offre una via d'uscita legale per chi non riesce a far fronte ai propri debiti. Analizziamo le procedure disponibili e come accedervi.</p>
-              <span class="article-read-more">Leggi l'articolo →</span>
-            </a>
-
-            <!-- ARTICLE 3 -->
-            <a href="#" class="article-card">
-              <div class="article-meta">
-                <span class="article-tag">CRIF</span>
-                <span class="article-date">10 marzo 2024</span>
-              </div>
-              <div class="article-title">Segnalazione al CRIF: cosa significa e come Difesa Consumatore può aiutarti</div>
-              <p class="article-excerpt">Essere segnalati al CRIF può avere conseguenze serie sul tuo accesso al credito. In questo articolo spieghiamo cosa sono le segnalazioni negative, quanto durano e come è possibile richiederne la cancellazione in caso di segnalazione illegittima.</p>
-              <span class="article-read-more">Leggi l'articolo →</span>
-            </a>
-
-            <!-- ARTICLE 4 -->
-            <a href="#" class="article-card">
-              <div class="article-meta">
-                <span class="article-tag">Saldo e Stralcio</span>
-                <span class="article-date">18 febbraio 2024</span>
-              </div>
-              <div class="article-title">Saldo e Stralcio con le banche: come funziona e quando conviene</div>
-              <p class="article-excerpt">Il saldo e stralcio è un accordo tra debitore e creditore che consente di estinguere un debito pagando una cifra inferiore al totale dovuto. Quando è applicabile, quali sono i rischi e come gestire la trattativa nel modo corretto.</p>
-              <span class="article-read-more">Leggi l'articolo →</span>
-            </a>
-
-            <!-- ARTICLE 5 -->
-            <a href="#" class="article-card">
-              <div class="article-meta">
-                <span class="article-tag">Rimborso Voli</span>
-                <span class="article-date">5 febbraio 2024</span>
-              </div>
-              <div class="article-title">Volo cancellato a Pisa: come ottenere il rimborso fino a 600€</div>
-              <p class="article-excerpt">Il Regolamento CE n. 261/2004 tutela i passeggeri in caso di cancellazione, ritardo prolungato e overbooking. Ecco come funziona il rimborso, chi ha diritto e come presentare il reclamo alla compagnia aerea.</p>
-              <span class="article-read-more">Leggi l'articolo →</span>
-            </a>
-
-            <!-- ARTICLE 6 -->
-            <a href="#" class="article-card">
-              <div class="article-meta">
-                <span class="article-tag">Cessione del Quinto</span>
-                <span class="article-date">20 gennaio 2024</span>
-              </div>
-              <div class="article-title">Rimborso anticipato della cessione del quinto: tutto quello che devi sapere</div>
-              <p class="article-excerpt">Quando si estingue anticipatamente un finanziamento, la legge prevede il diritto al rimborso proporzionale delle commissioni e dei premi assicurativi. Scopri come calcolare il rimborso e come richiederlo alla banca.</p>
-              <span class="article-read-more">Leggi l'articolo →</span>
-            </a>
-
-          </div>
-
-          <!-- PAGINATION -->
-          <div class="pagination">
-            <a href="#" class="page-btn active">1</a>
-            <a href="#" class="page-btn">2</a>
-            <a href="#" class="page-btn">3</a>
-            <a href="#" class="page-btn" style="width:auto;padding:0 14px;">Avanti →</a>
+          <div class="articles-list" id="articles-list">
+            <!-- Articoli caricati dinamicamente da Substack -->
+            <div class="articles-loading" style="padding: 60px 20px; text-align: center; color: var(--text-muted); font-size: 14px;">
+              Caricamento articoli in corso…
+            </div>
           </div>
         </div>
 
@@ -353,62 +278,35 @@
             <ul class="cat-list">
               <li class="cat-item">
                 <span class="cat-name">Cessione del Quinto</span>
-                <span class="cat-count">8</span>
+                <span class="cat-count">CQS</span>
               </li>
               <li class="cat-item">
                 <span class="cat-name">Sovraindebitamento</span>
-                <span class="cat-count">5</span>
+                <span class="cat-count">L.3</span>
               </li>
               <li class="cat-item">
                 <span class="cat-name">Segnalazioni CRIF</span>
-                <span class="cat-count">4</span>
+                <span class="cat-count">CRIF</span>
               </li>
               <li class="cat-item">
                 <span class="cat-name">Saldo e Stralcio</span>
-                <span class="cat-count">3</span>
+                <span class="cat-count">S&amp;S</span>
               </li>
               <li class="cat-item">
                 <span class="cat-name">Rimborso Voli</span>
-                <span class="cat-count">6</span>
+                <span class="cat-count">€600</span>
               </li>
               <li class="cat-item">
-                <span class="cat-name">Guide Pratiche</span>
-                <span class="cat-count">7</span>
+                <span class="cat-name">Energia &amp; Telefonia</span>
+                <span class="cat-count">GLT</span>
               </li>
             </ul>
           </div>
 
           <div class="sidebar-card">
             <h4>Articoli Recenti</h4>
-            <div class="recent-list">
-              <a href="#" class="recent-item">
-                <div class="recent-dot"></div>
-                <div>
-                  <div class="recent-title">Guida alla Cessione del Quinto: cos'è e come funziona</div>
-                  <div class="recent-date">15 aprile 2024</div>
-                </div>
-              </a>
-              <a href="#" class="recent-item">
-                <div class="recent-dot"></div>
-                <div>
-                  <div class="recent-title">Sovraindebitamento: un aiuto per i consumatori</div>
-                  <div class="recent-date">28 marzo 2024</div>
-                </div>
-              </a>
-              <a href="#" class="recent-item">
-                <div class="recent-dot"></div>
-                <div>
-                  <div class="recent-title">Segnalazione al CRIF: cosa significa e come agire</div>
-                  <div class="recent-date">10 marzo 2024</div>
-                </div>
-              </a>
-              <a href="#" class="recent-item">
-                <div class="recent-dot"></div>
-                <div>
-                  <div class="recent-title">Volo cancellato: rimborso fino a 600€</div>
-                  <div class="recent-date">5 febbraio 2024</div>
-                </div>
-              </a>
+            <div class="recent-list" id="recent-list">
+              <div style="font-size: 12px; color: var(--text-muted);">Caricamento…</div>
             </div>
           </div>
 
@@ -416,6 +314,19 @@
             <h4>Hai bisogno di aiuto?</h4>
             <p>Contattaci per una consulenza gratuita. Analizziamo il tuo caso senza impegno.</p>
             <a href="dove-siamo.html" class="btn-primary" style="width:100%;text-align:center;display:block;">Consulenza gratuita →</a>
+          </div>
+
+          <div class="sidebar-card" style="background: rgba(245,200,66,0.08); border-color: rgba(245,200,66,0.25);">
+            <h4 style="color: var(--gold-dark); border-bottom-color: rgba(245,200,66,0.3);">Iscriviti alla newsletter</h4>
+            <p style="font-size: 13px; color: var(--text-body); line-height: 1.6; margin-bottom: 14px;">
+              Ricevi i nuovi articoli e gli aggiornamenti direttamente nella tua casella email.
+            </p>
+            <a href="https://difesaconsumatore.substack.com/subscribe"
+               target="_blank" rel="noopener"
+               class="btn-primary"
+               style="width:100%;text-align:center;display:block;">
+               Iscriviti gratis →
+            </a>
           </div>
 
         </aside>
@@ -436,5 +347,122 @@
   </div>
 
   <script src="nav.js"></script>
+
+  <!-- ── SUBSTACK FEED LOADER ── -->
+  <script>
+  (function () {
+    const SUBSTACK_URL = 'https://difesaconsumatore.substack.com';
+    const FEED_URL = SUBSTACK_URL + '/feed';
+    const API = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(FEED_URL);
+
+    const articlesEl = document.getElementById('articles-list');
+    const recentEl = document.getElementById('recent-list');
+
+    function fmtDate(d) {
+      try {
+        const date = new Date(d);
+        return date.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+      } catch (e) { return ''; }
+    }
+
+    function excerpt(html, max) {
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html || '';
+      const text = (tmp.textContent || tmp.innerText || '').trim();
+      if (text.length <= max) return text;
+      return text.substring(0, max).replace(/\s+\S*$/, '') + '…';
+    }
+
+    function categoryFromTitle(title) {
+      const t = (title || '').toLowerCase();
+      if (t.match(/cessione|quinto|cqs/)) return 'Cessione del Quinto';
+      if (t.match(/sovraindebitamento|legge 3|salva-suicidi/)) return 'Sovraindebitamento';
+      if (t.match(/crif|segnalazione/)) return 'CRIF';
+      if (t.match(/saldo|stralcio/)) return 'Saldo e Stralcio';
+      if (t.match(/volo|aereo|261|rimborso vol/)) return 'Rimborso Voli';
+      if (t.match(/energia|gas|luce|telefon|arera|agcom|mercato libero/)) return 'Energia & Telefonia';
+      return 'Guida';
+    }
+
+    function renderArticles(items) {
+      if (!items || !items.length) {
+        articlesEl.innerHTML = '<div style="padding:60px 20px;text-align:center;color:var(--text-muted);font-size:14px;">'
+          + 'Nessun articolo pubblicato ancora.<br><br>'
+          + '<a href="' + SUBSTACK_URL + '" target="_blank" rel="noopener" style="color:var(--gold-dark);font-weight:600;">'
+          + 'Vai alla pubblicazione su Substack →</a></div>';
+        return;
+      }
+
+      let html = '';
+      items.forEach((item, i) => {
+        const category = categoryFromTitle(item.title);
+        const isFeatured = i === 0;
+        const cardClass = 'article-card' + (isFeatured ? ' featured' : '');
+
+        html += '<a href="' + item.link + '" target="_blank" rel="noopener" class="' + cardClass + '">';
+
+        if (isFeatured) {
+          if (item.thumbnail) {
+            html += '<div class="article-featured-visual" style="background-image:url(\'' + item.thumbnail + '\');background-size:cover;background-position:center;">'
+              + '<span class="afv-label" style="background:rgba(0,0,0,0.4);padding:6px 14px;border-radius:6px;color:#fff;opacity:1;">In evidenza</span>'
+              + '</div>';
+          } else {
+            html += '<div class="article-featured-visual"><span class="afv-label">In evidenza</span></div>';
+          }
+        }
+
+        html += '<div class="article-meta">';
+        if (isFeatured) html += '<span class="article-tag gold">In evidenza</span>';
+        html += '<span class="article-tag">' + category + '</span>';
+        html += '<span class="article-date">' + fmtDate(item.pubDate) + '</span>';
+        html += '</div>';
+        html += '<div class="article-title">' + (item.title || '') + '</div>';
+        html += '<p class="article-excerpt">' + excerpt(item.description || item.content, 240) + '</p>';
+        html += '<span class="article-read-more">Leggi l\'articolo →</span>';
+        html += '</a>';
+      });
+
+      articlesEl.innerHTML = html;
+    }
+
+    function renderRecent(items) {
+      if (!items || !items.length) {
+        recentEl.innerHTML = '<div style="font-size:12px;color:var(--text-muted);">Nessun articolo recente.</div>';
+        return;
+      }
+      let html = '';
+      items.slice(0, 5).forEach(item => {
+        html += '<a href="' + item.link + '" target="_blank" rel="noopener" class="recent-item">'
+          + '<div class="recent-dot"></div>'
+          + '<div>'
+          +   '<div class="recent-title">' + (item.title || '') + '</div>'
+          +   '<div class="recent-date">' + fmtDate(item.pubDate) + '</div>'
+          + '</div>'
+          + '</a>';
+      });
+      recentEl.innerHTML = html;
+    }
+
+    function showError() {
+      articlesEl.innerHTML = '<div style="padding:60px 20px;text-align:center;color:var(--text-muted);font-size:14px;">'
+        + 'Non è stato possibile caricare gli articoli al momento.<br><br>'
+        + '<a href="' + SUBSTACK_URL + '" target="_blank" rel="noopener" style="color:var(--gold-dark);font-weight:600;">'
+        + 'Visita il blog su Substack →</a></div>';
+      recentEl.innerHTML = '<div style="font-size:12px;color:var(--text-muted);">Articoli non disponibili.</div>';
+    }
+
+    fetch(API)
+      .then(r => r.json())
+      .then(data => {
+        if (data && data.status === 'ok' && data.items) {
+          renderArticles(data.items);
+          renderRecent(data.items);
+        } else {
+          showError();
+        }
+      })
+      .catch(showError);
+  })();
+  </script>
 </body>
 </html>
