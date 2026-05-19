@@ -486,9 +486,12 @@
       if (catEl) catEl.innerHTML = '<li class="cat-item" style="border-bottom:none;"><span class="cat-name" style="font-size:12px;color:var(--text-muted);">Categorie non disponibili</span></li>';
     }
 
-    async function tryFetch(source) {
+    const CACHE_KEY = 'blog-cache-v1';
+    const CACHE_TTL = 24 * 60 * 60 * 1000; // 24h
+
+    async function tryFetch(source, signal) {
       try {
-        const res = await fetch(source.url, { cache: 'no-store' });
+        const res = await fetch(source.url, { cache: 'no-store', signal });
         if (!res.ok) return null;
         if (source.type === 'substack-api') {
           const data = await res.json();
@@ -531,17 +534,74 @@
       }
     }
 
+    // Race tutte le fonti in parallelo: vince la prima che restituisce articoli validi.
+    function fetchAll(timeoutMs) {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+
+      return new Promise(resolve => {
+        let pending = SOURCES.length;
+        let resolved = false;
+        SOURCES.forEach(source => {
+          tryFetch(source, controller.signal).then(items => {
+            if (resolved) return;
+            if (items && items.length) {
+              resolved = true;
+              clearTimeout(timeoutId);
+              controller.abort();
+              resolve(items);
+            } else {
+              pending--;
+              if (pending === 0 && !resolved) {
+                resolved = true;
+                clearTimeout(timeoutId);
+                resolve(null);
+              }
+            }
+          });
+        });
+      });
+    }
+
+    function renderAll(items) {
+      renderArticles(items);
+      renderRecent(items);
+      renderCategories(items);
+    }
+
+    function loadFromCache() {
+      try {
+        const raw = localStorage.getItem(CACHE_KEY);
+        if (!raw) return null;
+        const cached = JSON.parse(raw);
+        if (!cached || !cached.items || !cached.items.length) return null;
+        return cached;
+      } catch (e) { return null; }
+    }
+
+    function saveCache(items) {
+      try {
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ items, savedAt: Date.now() }));
+      } catch (e) {}
+    }
+
     (async () => {
-      for (const source of SOURCES) {
-        const items = await tryFetch(source);
-        if (items && items.length) {
-          renderArticles(items);
-          renderRecent(items);
-          renderCategories(items);
-          return;
-        }
+      // 1. Mostra subito la cache se esiste (anche se vecchia) — UX immediata
+      const cached = loadFromCache();
+      let hasCached = false;
+      if (cached) {
+        renderAll(cached.items);
+        hasCached = true;
       }
-      showError();
+
+      // 2. Aggiorna in background — race in parallelo con timeout 5s
+      const fresh = await fetchAll(5000);
+      if (fresh && fresh.length) {
+        renderAll(fresh);
+        saveCache(fresh);
+      } else if (!hasCached) {
+        showError();
+      }
     })();
   })();
   </script>
