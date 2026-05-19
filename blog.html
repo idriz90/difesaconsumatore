@@ -1,628 +1,440 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog & Guide — Difesa Consumatore Pisa</title>
-  <meta name="description" content="Guide pratiche per consumatori: rimborsi CQS, reclami bancari, bollette, telefonia. Aggiornamenti e consigli da Difesa Consumatore Pisa.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script src="nav.js" defer></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | Guide e Consigli su Rimborsi Bancari e Tutela Consumatore | Difesa Consumatore Pisa</title>
+  <meta name="description" content="Guide pratiche e articoli su cessione del quinto, sovraindebitamento, segnalazioni CRIF, saldo e stralcio e rimborso voli cancellati. Aggiornamenti dalla redazione di Difesa Consumatore Pisa." />
+  <meta name="keywords" content="blog tutela consumatore, guida cessione del quinto, sovraindebitamento come funziona, cancellazione CRIF come fare, rimborso volo cancellato europa, diritti consumatore banca" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Difesa Consumatore S.r.l.s." />
+  <link rel="canonical" href="https://www.difesaconsumatore.org/blog" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.difesaconsumatore.org/blog" />
+  <meta property="og:title" content="Blog | Guide su Rimborsi Bancari e Tutela Consumatore" />
+  <meta property="og:description" content="Articoli e guide pratiche su cessione del quinto, CRIF, sovraindebitamento, saldo e stralcio e rimborso voli. Tutto quello che devi sapere per difendere i tuoi diritti." />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:site_name" content="Difesa Consumatore" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Blog | Guide su Rimborsi Bancari e Tutela Consumatore" />
+  <meta name="twitter:description" content="Guide pratiche su cessione del quinto, CRIF, sovraindebitamento e rimborso voli." />
+
+  <!-- Schema.org Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Blog Difesa Consumatore",
+    "url": "https://www.difesaconsumatore.org/blog",
+    "description": "Guide pratiche e articoli su tutela del consumatore, rimborsi bancari, cessione del quinto e diritti dei passeggeri aerei.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Difesa Consumatore",
+      "url": "https://www.difesaconsumatore.org",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Novecchio, 10",
+        "addressLocality": "Pisa",
+        "addressCountry": "IT"
+      }
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Guida alla Cessione del Quinto: cos'è, come funziona e quali sono i vantaggi",
+        "datePublished": "2024-04-15",
+        "author": { "@type": "Organization", "name": "Difesa Consumatore" }
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Sovraindebitamento: un aiuto per i consumatori in difficoltà",
+        "datePublished": "2024-03-28",
+        "author": { "@type": "Organization", "name": "Difesa Consumatore" }
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Segnalazione al CRIF: cosa significa e come Difesa Consumatore può aiutarti",
+        "datePublished": "2024-03-10",
+        "author": { "@type": "Organization", "name": "Difesa Consumatore" }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    :root {
-      --navy: #1a3a6b;
-      --navy-dark: #122a52;
-      --navy-light: #234d8a;
-      --celeste: #4a90d9;
-      --giallo: #f5c842;
-      --bianco: #ffffff;
-      --grigio-chiaro: #f4f6fa;
-      --grigio-testo: #555e6e;
-      --testo: #1a1a2e;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Open Sans', sans-serif; color: var(--testo); background: var(--bianco); }
+    /* ── BLOG LAYOUT ── */
+    .blog-section { background: var(--white); }
 
-    /* ── HERO ── */
-    .hero {
-      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, var(--celeste) 100%);
-      padding: 80px 40px 70px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M0 0h40v40H0V0zm40 40h40v40H40V40z'/%3E%3C/g%3E%3C/svg%3E");
-    }
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      color: var(--bianco);
-      position: relative;
-      margin-bottom: 14px;
-    }
-    .hero h1 em { color: var(--giallo); font-style: italic; }
-    .accent-line {
-      width: 60px; height: 3px;
-      background: var(--giallo);
-      margin: 16px auto 20px;
-      border-radius: 2px;
-      position: relative;
-    }
-    .hero p {
-      color: rgba(255,255,255,0.78);
-      font-size: 1.05rem;
-      font-weight: 300;
-      max-width: 600px;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    /* ── LAYOUT PRINCIPALE ── */
-    .blog-layout {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 70px 40px 90px;
+    .blog-grid {
       display: grid;
-      grid-template-columns: 1fr 320px;
-      gap: 50px;
+      grid-template-columns: 1fr 300px;
+      gap: 56px;
       align-items: start;
     }
-    @media (max-width: 960px) {
-      .blog-layout { grid-template-columns: 1fr; }
-      .sidebar { order: -1; }
-    }
 
-    /* ── ARTICOLO FEATURED ── */
-    .article-featured {
-      background: var(--navy);
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 36px;
-      transition: transform 0.25s, box-shadow 0.25s;
-      cursor: pointer;
+    /* ── ARTICLE CARDS ── */
+    .articles-list { display: flex; flex-direction: column; gap: 0; }
+
+    .article-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      border-bottom: 1px solid var(--border);
+      padding: 36px 0;
+      text-decoration: none;
+      color: inherit;
     }
-    .article-featured:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(26,58,107,0.25);
-    }
-    .featured-img {
-      height: 220px;
-      background: linear-gradient(135deg, var(--celeste) 0%, var(--navy-light) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      position: relative;
-    }
-    .featured-tag {
-      position: absolute;
-      top: 16px; left: 16px;
-      background: var(--giallo);
-      color: var(--navy-dark);
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 5px 12px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
-    .featured-body {
-      padding: 28px 30px 32px;
-    }
+    .article-card:first-child { padding-top: 0; }
+
     .article-meta {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       margin-bottom: 12px;
+      flex-wrap: wrap;
     }
-    .article-date {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
-    }
-    .article-cat {
-      font-size: 0.75rem;
-      color: var(--giallo);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
+
+    .article-tag {
+      display: inline-block;
+      font-size: 11px;
       font-weight: 600;
+      color: var(--navy);
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 999px;
     }
-    .featured-body h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.55rem;
-      color: var(--bianco);
+
+    .article-tag.gold {
+      background: rgba(245,200,66,0.15);
+      border-color: rgba(245,200,66,0.4);
+      color: var(--gold-dark);
+    }
+
+    .article-date {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .article-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.25;
       margin-bottom: 12px;
-      line-height: 1.35;
+      transition: color 0.2s;
     }
-    .featured-body p {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.93rem;
-      line-height: 1.75;
-      margin-bottom: 20px;
+
+    .article-card:hover .article-title { color: var(--gold-dark); }
+
+    .article-excerpt {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.78;
+      margin-bottom: 18px;
+      max-width: 640px;
     }
-    .read-more {
+
+    .article-read-more {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--navy);
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      color: var(--giallo);
-      font-weight: 700;
-      font-size: 0.88rem;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
       transition: gap 0.2s;
     }
-    .read-more:hover { gap: 10px; }
 
-    /* ── ARTICOLI GRIGLIA ── */
-    .articles-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    @media (max-width: 620px) { .articles-grid { grid-template-columns: 1fr; } }
+    .article-card:hover .article-read-more { gap: 10px; }
 
-    .article-card {
-      background: var(--grigio-chiaro);
-      border-radius: 12px;
-      overflow: hidden;
-      border-left: 4px solid var(--navy);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .article-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(26,58,107,0.12);
-    }
-    .card-img {
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-    }
-    .card-img.bg1 { background: linear-gradient(135deg, #e8f0fe, #c5d8f8); }
-    .card-img.bg2 { background: linear-gradient(135deg, #fff3cd, #ffe8a0); }
-    .card-img.bg3 { background: linear-gradient(135deg, #e8f5e9, #c8e6c9); }
-    .card-img.bg4 { background: linear-gradient(135deg, #fce4ec, #f8bbd0); }
+    /* ── FEATURED ARTICLE ── */
+    .article-card.featured { padding: 0 0 36px; }
+    .article-card.featured .article-title { font-size: clamp(1.35rem, 2.5vw, 1.8rem); }
 
-    .article-card-body {
-      padding: 18px 20px 20px;
+    .article-featured-visual {
+      width: 100%; height: 220px;
+      background: var(--navy);
+      border-radius: 10px;
+      margin-bottom: 22px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
     }
-    .article-card-body .article-meta { margin-bottom: 8px; }
-    .article-card-body .article-date { color: var(--grigio-testo); }
-    .article-card-body .article-cat { color: var(--navy); }
-    .article-card-body h3 {
+    .article-featured-visual::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    }
+    .article-featured-visual::after {
+      content: ''; position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(45deg, rgba(245,200,66,0.05) 0px, rgba(245,200,66,0.05) 1px, transparent 1px, transparent 20px);
+    }
+    .afv-label {
+      position: relative; z-index: 1;
       font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      color: var(--navy);
-      margin-bottom: 8px;
-      line-height: 1.4;
+      font-size: 1rem; color: rgba(255,255,255,0.25);
+      letter-spacing: 0.2em; text-transform: uppercase; font-style: italic;
     }
-    .article-card-body p {
-      font-size: 0.87rem;
-      color: var(--grigio-testo);
-      line-height: 1.65;
-      margin-bottom: 14px;
-    }
-    .read-more-navy {
-      color: var(--celeste);
-      font-weight: 700;
-      font-size: 0.82rem;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .read-more-navy:hover { color: var(--navy); }
 
     /* ── SIDEBAR ── */
-    .sidebar {}
+    .sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 88px; }
 
-    .sidebar-box {
-      background: var(--grigio-chiaro);
-      border-radius: 14px;
-      padding: 28px 24px;
-      margin-bottom: 28px;
-    }
-    .sidebar-box h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      color: var(--navy);
-      margin-bottom: 18px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--giallo);
+    .sidebar-card {
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 20px;
+      box-shadow: 0 2px 8px rgba(26,58,107,0.04);
     }
 
-    /* Categorie */
-    .categorie-list {
-      list-style: none;
+    .sidebar-card h4 {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--text-muted);
+      margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
     }
-    .categorie-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid #e0e6f0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+
+    .cat-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .cat-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 9px 0; border-bottom: 1px solid var(--border); cursor: pointer;
     }
-    .categorie-list li:last-child { border-bottom: none; }
-    .categorie-list a {
-      color: var(--navy);
-      text-decoration: none;
-      font-size: 0.92rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .categorie-list a:hover { color: var(--celeste); }
+    .cat-item:last-child { border-bottom: none; }
+    .cat-name { font-size: 13px; color: var(--navy); font-weight: 500; }
     .cat-count {
-      background: var(--navy);
-      color: var(--bianco);
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 20px;
+      font-size: 11px; background: var(--navy); color: var(--gold);
+      padding: 2px 8px; border-radius: 999px; font-weight: 600;
     }
 
-    /* CTA sidebar */
+    .recent-list { display: flex; flex-direction: column; gap: 14px; }
+    .recent-item { display: flex; gap: 10px; align-items: flex-start; text-decoration: none; color: inherit; }
+    .recent-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 6px; }
+    .recent-title { font-size: 13px; color: var(--navy); line-height: 1.4; font-weight: 500; transition: color 0.2s; }
+    .recent-item:hover .recent-title { color: var(--gold-dark); }
+    .recent-date { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+
     .sidebar-cta {
-      background: var(--navy);
-      border-radius: 14px;
-      padding: 28px 24px;
-      text-align: center;
+      background: var(--navy); border-radius: 10px; padding: 24px 20px; text-align: center;
     }
-    .sidebar-cta p {
-      color: rgba(255,255,255,0.8);
-      font-size: 0.92rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    .sidebar-cta p strong { color: var(--giallo); }
-    .sidebar-cta a {
-      display: block;
-      background: var(--giallo);
-      color: var(--navy-dark);
-      padding: 12px;
-      border-radius: 8px;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 0.9rem;
-      margin-bottom: 10px;
-      transition: transform 0.15s;
-    }
-    .sidebar-cta a:hover { transform: translateY(-1px); }
-    .sidebar-cta a.secondary {
-      background: transparent;
-      color: var(--bianco);
-      border: 2px solid rgba(255,255,255,0.4);
-    }
-    .sidebar-cta a.secondary:hover {
-      border-color: var(--bianco);
-    }
+    .sidebar-cta h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: 0; text-transform: none; border: none; padding: 0; }
+    .sidebar-cta p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 18px; }
 
-    /* Ultimi articoli sidebar */
-    .sidebar-articles .mini-article {
-      display: flex;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid #e0e6f0;
+    /* ── PAGINATION ── */
+    .pagination { display: flex; gap: 8px; margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border); }
+    .page-btn {
+      width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border); border-radius: 8px;
+      font-size: 13px; font-weight: 500; color: var(--navy);
+      cursor: pointer; background: var(--white); text-decoration: none;
+      transition: background 0.15s, border-color 0.15s, color 0.15s;
     }
-    .sidebar-articles .mini-article:last-child { border-bottom: none; }
-    .mini-icon {
-      width: 40px; height: 40px;
-      background: var(--navy);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-    .mini-article-text h4 {
-      font-size: 0.85rem;
-      color: var(--navy);
-      font-weight: 600;
-      margin-bottom: 3px;
-      line-height: 1.35;
-    }
-    .mini-article-text span {
-      font-size: 0.75rem;
-      color: var(--grigio-testo);
-    }
+    .page-btn:hover, .page-btn.active { background: var(--navy); color: var(--gold); border-color: var(--navy); }
 
-    /* ── NEWSLETTER ── */
-    .newsletter-band {
-      background: var(--grigio-chiaro);
-      padding: 60px 40px;
-      text-align: center;
-      border-top: 1px solid #e0e6f0;
-    }
-    .newsletter-band h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-      color: var(--navy);
-      margin-bottom: 10px;
-    }
-    .newsletter-band p {
-      color: var(--grigio-testo);
-      margin-bottom: 28px;
-      font-size: 0.95rem;
-    }
-    .newsletter-form {
-      display: flex;
-      gap: 12px;
-      max-width: 460px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .newsletter-form input {
-      flex: 1;
-      min-width: 220px;
-      padding: 13px 18px;
-      border: 2px solid #dde3ef;
-      border-radius: 8px;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .newsletter-form input:focus { border-color: var(--celeste); }
-    .newsletter-form button {
-      background: var(--navy);
-      color: var(--bianco);
-      border: none;
-      padding: 13px 24px;
-      border-radius: 8px;
-      font-weight: 700;
-      cursor: pointer;
-      font-family: 'Open Sans', sans-serif;
-      font-size: 0.9rem;
-      transition: background 0.2s;
-    }
-    .newsletter-form button:hover { background: var(--celeste); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy-dark);
-      color: rgba(255,255,255,0.6);
-      text-align: center;
-      padding: 28px 20px;
-      font-size: 0.85rem;
-    }
-    footer strong { color: var(--bianco); }
-
-    .wa-float {
-      position: fixed; bottom: 28px; right: 28px;
-      background: #25d366; color: white;
-      width: 56px; height: 56px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; text-decoration: none;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
-      z-index: 999; transition: transform 0.2s;
-    }
-    .wa-float:hover { transform: scale(1.1); }
-
-    @media (max-width: 600px) {
-      .blog-layout { padding: 40px 20px 60px; }
-      .hero { padding-left: 20px; padding-right: 20px; }
-      .newsletter-band { padding: 40px 20px; }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
     }
   </style>
 </head>
 <body>
 
-<div id="navbar-placeholder"></div>
-
-<!-- HERO -->
-<div class="hero">
-  <h1>Blog & <em>Guide</em></h1>
-  <div class="accent-line"></div>
-  <p>Consigli pratici, aggiornamenti normativi e guide per tutelare i tuoi diritti di consumatore.</p>
-</div>
-
-<!-- LAYOUT BLOG -->
-<div class="blog-layout">
-
-  <!-- COLONNA ARTICOLI -->
-  <main>
-
-    <!-- ARTICOLO FEATURED -->
-    <div class="article-featured">
-      <div class="featured-img">
-        💰
-        <div class="featured-tag">📌 In evidenza</div>
-      </div>
-      <div class="featured-body">
-        <div class="article-meta">
-          <span class="article-date">📅 15 Maggio 2026</span>
-          <span class="article-cat">CQS / Cessione del Quinto</span>
-        </div>
-        <h2>Rimborso CQS: cosa cambia dopo la sentenza Lexitor e la Corte Costituzionale n. 263/2022</h2>
-        <p>Con la storica sentenza Lexitor della Corte di Giustizia UE e la pronuncia della Corte Costituzionale italiana del 2022, milioni di consumatori che hanno estinto anticipatamente un prestito con cessione del quinto hanno diritto al rimborso proporzionale di commissioni, premi assicurativi e altri costi. Scopri come calcolarlo e come richiederlo.</p>
-        <a href="dove-siamo.html" class="read-more">Leggi l'articolo completo →</a>
-      </div>
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <div class="breadcrumb"><a href="index.html">Home</a> / Blog</div>
+      <h1>Blog &amp; Guide</h1>
+      <p>Approfondimenti, guide pratiche e aggiornamenti su diritti del consumatore, rimborsi bancari e tutela creditizia.</p>
     </div>
+  </div>
 
-    <!-- GRIGLIA ARTICOLI -->
-    <div class="articles-grid">
+  <!-- BLOG -->
+  <section class="blog-section">
+    <div class="section-inner">
+      <div class="blog-grid">
 
-      <div class="article-card">
-        <div class="card-img bg1">🏦</div>
-        <div class="article-card-body">
-          <div class="article-meta">
-            <span class="article-date">📅 8 Maggio 2026</span>
-            <span class="article-cat">ABF</span>
+        <!-- ARTICLES -->
+        <div>
+          <div class="articles-list">
+
+            <!-- FEATURED -->
+            <a href="#" class="article-card featured">
+              <div class="article-featured-visual">
+                <span class="afv-label">Guida completa</span>
+              </div>
+              <div class="article-meta">
+                <span class="article-tag gold">In evidenza</span>
+                <span class="article-tag">Cessione del Quinto</span>
+                <span class="article-date">15 aprile 2024</span>
+              </div>
+              <div class="article-title">Guida alla Cessione del Quinto: cos'è, come funziona e quali sono i vantaggi</div>
+              <p class="article-excerpt">La cessione del quinto dello stipendio è una forma di prestito personale garantito, rimborsato attraverso trattenute dirette sull'accredito mensile. Scopri come funziona, quando hai diritto al rimborso delle commissioni e come verificare se sei stato trattato correttamente dalla tua banca.</p>
+              <span class="article-read-more">Leggi l'articolo →</span>
+            </a>
+
+            <!-- ARTICLE 2 -->
+            <a href="#" class="article-card">
+              <div class="article-meta">
+                <span class="article-tag">Sovraindebitamento</span>
+                <span class="article-date">28 marzo 2024</span>
+              </div>
+              <div class="article-title">Sovraindebitamento: un aiuto per i consumatori in difficoltà</div>
+              <p class="article-excerpt">La Legge n. 3/2012, spesso chiamata "Legge Salva-suicidi", offre una via d'uscita legale per chi non riesce a far fronte ai propri debiti. Analizziamo le procedure disponibili e come accedervi.</p>
+              <span class="article-read-more">Leggi l'articolo →</span>
+            </a>
+
+            <!-- ARTICLE 3 -->
+            <a href="#" class="article-card">
+              <div class="article-meta">
+                <span class="article-tag">CRIF</span>
+                <span class="article-date">10 marzo 2024</span>
+              </div>
+              <div class="article-title">Segnalazione al CRIF: cosa significa e come Difesa Consumatore può aiutarti</div>
+              <p class="article-excerpt">Essere segnalati al CRIF può avere conseguenze serie sul tuo accesso al credito. In questo articolo spieghiamo cosa sono le segnalazioni negative, quanto durano e come è possibile richiederne la cancellazione in caso di segnalazione illegittima.</p>
+              <span class="article-read-more">Leggi l'articolo →</span>
+            </a>
+
+            <!-- ARTICLE 4 -->
+            <a href="#" class="article-card">
+              <div class="article-meta">
+                <span class="article-tag">Saldo e Stralcio</span>
+                <span class="article-date">18 febbraio 2024</span>
+              </div>
+              <div class="article-title">Saldo e Stralcio con le banche: come funziona e quando conviene</div>
+              <p class="article-excerpt">Il saldo e stralcio è un accordo tra debitore e creditore che consente di estinguere un debito pagando una cifra inferiore al totale dovuto. Quando è applicabile, quali sono i rischi e come gestire la trattativa nel modo corretto.</p>
+              <span class="article-read-more">Leggi l'articolo →</span>
+            </a>
+
+            <!-- ARTICLE 5 -->
+            <a href="#" class="article-card">
+              <div class="article-meta">
+                <span class="article-tag">Rimborso Voli</span>
+                <span class="article-date">5 febbraio 2024</span>
+              </div>
+              <div class="article-title">Volo cancellato a Pisa: come ottenere il rimborso fino a 600€</div>
+              <p class="article-excerpt">Il Regolamento CE n. 261/2004 tutela i passeggeri in caso di cancellazione, ritardo prolungato e overbooking. Ecco come funziona il rimborso, chi ha diritto e come presentare il reclamo alla compagnia aerea.</p>
+              <span class="article-read-more">Leggi l'articolo →</span>
+            </a>
+
+            <!-- ARTICLE 6 -->
+            <a href="#" class="article-card">
+              <div class="article-meta">
+                <span class="article-tag">Cessione del Quinto</span>
+                <span class="article-date">20 gennaio 2024</span>
+              </div>
+              <div class="article-title">Rimborso anticipato della cessione del quinto: tutto quello che devi sapere</div>
+              <p class="article-excerpt">Quando si estingue anticipatamente un finanziamento, la legge prevede il diritto al rimborso proporzionale delle commissioni e dei premi assicurativi. Scopri come calcolare il rimborso e come richiederlo alla banca.</p>
+              <span class="article-read-more">Leggi l'articolo →</span>
+            </a>
+
           </div>
-          <h3>Come fare ricorso all'ABF: guida passo dopo passo</h3>
-          <p>L'Arbitro Bancario Finanziario è uno strumento gratuito e veloce per risolvere controversie con la tua banca senza andare in tribunale.</p>
-          <a href="dove-siamo.html" class="read-more-navy">Leggi →</a>
-        </div>
-      </div>
 
-      <div class="article-card">
-        <div class="card-img bg2">⚡</div>
-        <div class="article-card-body">
-          <div class="article-meta">
-            <span class="article-date">📅 2 Maggio 2026</span>
-            <span class="article-cat">Energia</span>
+          <!-- PAGINATION -->
+          <div class="pagination">
+            <a href="#" class="page-btn active">1</a>
+            <a href="#" class="page-btn">2</a>
+            <a href="#" class="page-btn">3</a>
+            <a href="#" class="page-btn" style="width:auto;padding:0 14px;">Avanti →</a>
           </div>
-          <h3>Bolletta troppo alta? I 5 errori più comuni dei fornitori energetici</h3>
-          <p>Conguagli gonfiati, contratti non richiesti, cambio fornitore senza consenso: ecco i vizi più frequenti e come contestarli con l'ARERA.</p>
-          <a href="dove-siamo.html" class="read-more-navy">Leggi →</a>
         </div>
-      </div>
 
-      <div class="article-card">
-        <div class="card-img bg3">📱</div>
-        <div class="article-card-body">
-          <div class="article-meta">
-            <span class="article-date">📅 24 Aprile 2026</span>
-            <span class="article-cat">Telefonia</span>
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+          <div class="sidebar-card">
+            <h4>Categorie</h4>
+            <ul class="cat-list">
+              <li class="cat-item">
+                <span class="cat-name">Cessione del Quinto</span>
+                <span class="cat-count">8</span>
+              </li>
+              <li class="cat-item">
+                <span class="cat-name">Sovraindebitamento</span>
+                <span class="cat-count">5</span>
+              </li>
+              <li class="cat-item">
+                <span class="cat-name">Segnalazioni CRIF</span>
+                <span class="cat-count">4</span>
+              </li>
+              <li class="cat-item">
+                <span class="cat-name">Saldo e Stralcio</span>
+                <span class="cat-count">3</span>
+              </li>
+              <li class="cat-item">
+                <span class="cat-name">Rimborso Voli</span>
+                <span class="cat-count">6</span>
+              </li>
+              <li class="cat-item">
+                <span class="cat-name">Guide Pratiche</span>
+                <span class="cat-count">7</span>
+              </li>
+            </ul>
           </div>
-          <h3>Addebiti non richiesti sul telefono: come recuperare i soldi con ConciliaWeb</h3>
-          <p>Servizi in abbonamento attivati senza consenso, aumenti unilaterali tariffari, costi nascosti: la procedura AGCOM per ottenere rimborso.</p>
-          <a href="dove-siamo.html" class="read-more-navy">Leggi →</a>
-        </div>
-      </div>
 
-      <div class="article-card">
-        <div class="card-img bg4">🏠</div>
-        <div class="article-card-body">
-          <div class="article-meta">
-            <span class="article-date">📅 15 Aprile 2026</span>
-            <span class="article-cat">Mutui</span>
+          <div class="sidebar-card">
+            <h4>Articoli Recenti</h4>
+            <div class="recent-list">
+              <a href="#" class="recent-item">
+                <div class="recent-dot"></div>
+                <div>
+                  <div class="recent-title">Guida alla Cessione del Quinto: cos'è e come funziona</div>
+                  <div class="recent-date">15 aprile 2024</div>
+                </div>
+              </a>
+              <a href="#" class="recent-item">
+                <div class="recent-dot"></div>
+                <div>
+                  <div class="recent-title">Sovraindebitamento: un aiuto per i consumatori</div>
+                  <div class="recent-date">28 marzo 2024</div>
+                </div>
+              </a>
+              <a href="#" class="recent-item">
+                <div class="recent-dot"></div>
+                <div>
+                  <div class="recent-title">Segnalazione al CRIF: cosa significa e come agire</div>
+                  <div class="recent-date">10 marzo 2024</div>
+                </div>
+              </a>
+              <a href="#" class="recent-item">
+                <div class="recent-dot"></div>
+                <div>
+                  <div class="recent-title">Volo cancellato: rimborso fino a 600€</div>
+                  <div class="recent-date">5 febbraio 2024</div>
+                </div>
+              </a>
+            </div>
           </div>
-          <h3>Clausole abusive nel mutuo: quando puoi chiedere la restituzione di quanto pagato</h3>
-          <p>TAEG non trasparente, capitalizzazione degli interessi, penali eccessive: la giurisprudenza tutela il consumatore più di quanto si pensi.</p>
-          <a href="dove-siamo.html" class="read-more-navy">Leggi →</a>
-        </div>
-      </div>
 
-    </div>
+          <div class="sidebar-cta">
+            <h4>Hai bisogno di aiuto?</h4>
+            <p>Contattaci per una consulenza gratuita. Analizziamo il tuo caso senza impegno.</p>
+            <a href="dove-siamo.html" class="btn-primary" style="width:100%;text-align:center;display:block;">Consulenza gratuita →</a>
+          </div>
 
-  </main>
+        </aside>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-
-    <!-- CTA consulenza -->
-    <div class="sidebar-cta">
-      <p>Hai letto qualcosa che ti riguarda? <strong>La consulenza iniziale è gratuita.</strong></p>
-      <a href="dove-siamo.html">📩 Contattaci ora</a>
-      <a href="tel:+393296491028" class="secondary">📞 329 649 1028</a>
-    </div>
-
-    <!-- Categorie -->
-    <div class="sidebar-box">
-      <h3>📂 Categorie</h3>
-      <ul class="categorie-list">
-        <li>
-          <a href="#">💰 CQS / Cessione del Quinto</a>
-          <span class="cat-count">8</span>
-        </li>
-        <li>
-          <a href="#">🏦 Reclami Bancari & ABF</a>
-          <span class="cat-count">5</span>
-        </li>
-        <li>
-          <a href="#">🏠 Mutui & Finanziamenti</a>
-          <span class="cat-count">4</span>
-        </li>
-        <li>
-          <a href="#">⚡ Energia Gas & Luce</a>
-          <span class="cat-count">6</span>
-        </li>
-        <li>
-          <a href="#">📱 Telefonia & Pay-TV</a>
-          <span class="cat-count">5</span>
-        </li>
-        <li>
-          <a href="#">⚖️ Conciliazioni</a>
-          <span class="cat-count">3</span>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Articoli recenti -->
-    <div class="sidebar-box sidebar-articles">
-      <h3>🕐 Recenti</h3>
-      <div class="mini-article">
-        <div class="mini-icon">💰</div>
-        <div class="mini-article-text">
-          <h4>Rimborso CQS dopo la sentenza Lexitor</h4>
-          <span>15 Maggio 2026</span>
-        </div>
-      </div>
-      <div class="mini-article">
-        <div class="mini-icon">🏦</div>
-        <div class="mini-article-text">
-          <h4>Come fare ricorso all'ABF</h4>
-          <span>8 Maggio 2026</span>
-        </div>
-      </div>
-      <div class="mini-article">
-        <div class="mini-icon">⚡</div>
-        <div class="mini-article-text">
-          <h4>Bolletta troppo alta? I 5 errori comuni</h4>
-          <span>2 Maggio 2026</span>
-        </div>
-      </div>
-      <div class="mini-article">
-        <div class="mini-icon">📱</div>
-        <div class="mini-article-text">
-          <h4>Addebiti non richiesti: ConciliaWeb</h4>
-          <span>24 Aprile 2026</span>
-        </div>
       </div>
     </div>
+  </section>
 
-  </aside>
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="cta-band-inner">
+      <div class="cta-text">
+        <h2>Hai letto e vuoi sapere se ti spetta un rimborso?</h2>
+        <p>La valutazione del tuo caso è sempre gratuita e senza impegno.</p>
+      </div>
+      <a href="dove-siamo.html" class="cta-btn">Contattaci ora →</a>
+    </div>
+  </div>
 
-</div>
-
-<!-- NEWSLETTER -->
-<div class="newsletter-band">
-  <h2>📬 Resta Aggiornato</h2>
-  <p>Ricevi guide pratiche e aggiornamenti normativi direttamente nella tua email. Niente spam.</p>
-  <form class="newsletter-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="handleNewsletter(event, this)">
-    <input type="hidden" name="access_key" value="32082512-78b3-445e-a8c0-93646ca527f8">
-    <input type="hidden" name="subject" value="Nuova iscrizione newsletter Difesa Consumatore">
-    <input type="checkbox" name="botcheck" style="display:none">
-    <input type="email" name="email" placeholder="La tua email..." required>
-    <button type="submit">Iscriviti gratis</button>
-  </form>
-</div>
-
-<footer>
-  <strong>DC S.r.l. — Difesa Consumatore</strong><br>
-  Via Novecchio 10, 56127 Pisa (PI) — P.IVA 02285180507<br>
-  <a href="privacy.html" style="color: #4a90d9;">Privacy Policy</a>
-</footer>
-
-<a class="wa-float" href="https://wa.me/393296491028?text=Salve%2C%20vorrei%20una%20consulenza%20gratuita." target="_blank" title="WhatsApp" aria-label="Contattaci su WhatsApp">💬</a>
-
-<script>
-  function handleNewsletter(e, form) {
-    e.preventDefault();
-    const btn = form.querySelector('button');
-    btn.textContent = '⏳ Iscrizione...';
-    btn.disabled = true;
-    fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) })
-      .then(r => r.json())
-      .then(d => {
-        if (d.success) {
-          btn.textContent = '✅ Iscritto!';
-          form.querySelector('input[type="email"]').value = '';
-        } else {
-          btn.textContent = '❌ Riprova';
-          btn.disabled = false;
-        }
-      })
-      .catch(() => { btn.textContent = '❌ Errore'; btn.disabled = false; });
-  }
-</script>
-
+  <script src="nav.js"></script>
 </body>
 </html>
