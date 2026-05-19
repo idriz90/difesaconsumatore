@@ -3,607 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog | Guide e Consigli su Rimborsi Bancari e Tutela Consumatore | Difesa Consumatore Pisa</title>
-  <meta name="description" content="Guide pratiche e articoli su cessione del quinto, sovraindebitamento, segnalazioni CRIF, saldo e stralcio e rimborso voli cancellati. Aggiornamenti dalla redazione di Difesa Consumatore Pisa." />
-  <meta name="keywords" content="blog tutela consumatore, guida cessione del quinto, sovraindebitamento come funziona, cancellazione CRIF come fare, rimborso volo cancellato europa, diritti consumatore banca" />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="Difesa Consumatore S.r.l.s." />
-  <link rel="canonical" href="https://www.difesaconsumatore.org/blog" />
+  <title>Blog | Difesa Consumatore Pisa</title>
+  <meta name="description" content="Il blog di Difesa Consumatore è ora su Substack: guide su cessione del quinto, sovraindebitamento, CRIF, saldo e stralcio e rimborso voli." />
+  <link rel="canonical" href="https://difesaconsumatore.substack.com" />
   <link rel="icon" type="image/png" href="logo.png" />
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.difesaconsumatore.org/blog" />
-  <meta property="og:title" content="Blog | Guide su Rimborsi Bancari e Tutela Consumatore" />
-  <meta property="og:description" content="Articoli e guide pratiche su cessione del quinto, CRIF, sovraindebitamento, saldo e stralcio e rimborso voli. Tutto quello che devi sapere per difendere i tuoi diritti." />
-  <meta property="og:locale" content="it_IT" />
-  <meta property="og:site_name" content="Difesa Consumatore" />
+  <!-- Redirect immediato verso Substack -->
+  <meta http-equiv="refresh" content="0; url=https://difesaconsumatore.substack.com" />
+  <script>window.location.replace('https://difesaconsumatore.substack.com');</script>
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Blog | Guide su Rimborsi Bancari e Tutela Consumatore" />
-  <meta name="twitter:description" content="Guide pratiche su cessione del quinto, CRIF, sovraindebitamento e rimborso voli." />
-
-  <!-- Schema.org Blog -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Blog Difesa Consumatore",
-    "url": "https://www.difesaconsumatore.org/blog",
-    "description": "Guide pratiche e articoli su tutela del consumatore, rimborsi bancari, cessione del quinto e diritti dei passeggeri aerei.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Difesa Consumatore",
-      "url": "https://www.difesaconsumatore.org",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Via Novecchio, 10",
-        "addressLocality": "Pisa",
-        "addressCountry": "IT"
-      }
-    },
-    "blogPost": [
-      {
-        "@type": "BlogPosting",
-        "headline": "Guida alla Cessione del Quinto: cos'è, come funziona e quali sono i vantaggi",
-        "datePublished": "2024-04-15",
-        "author": { "@type": "Organization", "name": "Difesa Consumatore" }
-      },
-      {
-        "@type": "BlogPosting",
-        "headline": "Sovraindebitamento: un aiuto per i consumatori in difficoltà",
-        "datePublished": "2024-03-28",
-        "author": { "@type": "Organization", "name": "Difesa Consumatore" }
-      },
-      {
-        "@type": "BlogPosting",
-        "headline": "Segnalazione al CRIF: cosa significa e come Difesa Consumatore può aiutarti",
-        "datePublished": "2024-03-10",
-        "author": { "@type": "Organization", "name": "Difesa Consumatore" }
-      }
-    ]
-  }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    /* ── BLOG LAYOUT ── */
-    .blog-section { background: var(--white); }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 56px;
-      align-items: start;
-    }
-
-    /* ── ARTICLE CARDS ── */
-    .articles-list { display: flex; flex-direction: column; gap: 0; }
-
-    .article-card {
-      display: grid;
-      grid-template-columns: 1fr;
-      border-bottom: 1px solid var(--border);
-      padding: 36px 0;
-      text-decoration: none;
-      color: inherit;
-    }
-    .article-card:first-child { padding-top: 0; }
-
-    .article-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
-    }
-
-    .article-tag {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--navy);
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      padding: 3px 10px;
-      border-radius: 999px;
-    }
-
-    .article-tag.gold {
-      background: rgba(245,200,66,0.15);
-      border-color: rgba(245,200,66,0.4);
-      color: var(--gold-dark);
-    }
-
-    .article-date {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .article-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(1.1rem, 2vw, 1.4rem);
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1.25;
-      margin-bottom: 12px;
-      transition: color 0.2s;
-    }
-
-    .article-card:hover .article-title { color: var(--gold-dark); }
-
-    .article-excerpt {
-      font-size: 14px;
-      color: var(--text-body);
-      line-height: 1.78;
-      margin-bottom: 18px;
-      max-width: 640px;
-    }
-
-    .article-read-more {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--navy);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: gap 0.2s;
-    }
-
-    .article-card:hover .article-read-more { gap: 10px; }
-
-    /* ── FEATURED ARTICLE ── */
-    .article-card.featured { padding: 0 0 36px; }
-    .article-card.featured .article-title { font-size: clamp(1.35rem, 2.5vw, 1.8rem); }
-
-    .article-featured-visual {
-      width: 100%; height: 220px;
-      background: var(--navy);
-      border-radius: 10px;
-      margin-bottom: 22px;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1a3a6b;
+      min-height: 100vh;
       display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
+      padding: 24px;
+      text-align: center;
     }
-    .article-featured-visual::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    .card {
+      max-width: 460px;
+      background: #fff;
+      border: 1px solid #dce4f0;
+      border-radius: 14px;
+      padding: 40px 32px;
+      box-shadow: 0 8px 28px rgba(26,58,107,0.08);
     }
-    .article-featured-visual::after {
-      content: ''; position: absolute; inset: 0;
-      background-image: repeating-linear-gradient(45deg, rgba(245,200,66,0.05) 0px, rgba(245,200,66,0.05) 1px, transparent 1px, transparent 20px);
+    .logo { width: 64px; height: 64px; margin: 0 auto 18px; }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1a3a6b;
+      margin-bottom: 12px;
     }
-    .afv-label {
-      position: relative; z-index: 1;
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem; color: rgba(255,255,255,0.25);
-      letter-spacing: 0.2em; text-transform: uppercase; font-style: italic;
+    p {
+      font-size: 15px;
+      color: #2a5298;
+      line-height: 1.7;
+      margin-bottom: 24px;
     }
-
-    /* ── SIDEBAR ── */
-    .sidebar { display: flex; flex-direction: column; gap: 24px; position: sticky; top: 88px; }
-
-    .sidebar-card {
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 24px 20px;
-      box-shadow: 0 2px 8px rgba(26,58,107,0.04);
+    .btn {
+      display: inline-block;
+      background: #f5c842;
+      color: #1a3a6b;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
     }
-
-    .sidebar-card h4 {
-      font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--text-muted);
-      margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+    .btn:hover { background: #f9d96a; transform: translateY(-1px); }
+    .small {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #4a6fa5;
     }
-
-    .cat-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
-    .cat-item {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 9px 0; border-bottom: 1px solid var(--border); cursor: pointer;
+    .small a { color: #1a3a6b; font-weight: 600; text-decoration: none; }
+    .spinner {
+      width: 24px; height: 24px;
+      border: 2.5px solid #dce4f0;
+      border-top-color: #f5c842;
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      animation: spin 0.9s linear infinite;
     }
-    .cat-item:last-child { border-bottom: none; }
-    .cat-name { font-size: 13px; color: var(--navy); font-weight: 500; }
-    .cat-count {
-      font-size: 11px; background: var(--navy); color: var(--gold);
-      padding: 2px 8px; border-radius: 999px; font-weight: 600;
-    }
-
-    .recent-list { display: flex; flex-direction: column; gap: 14px; }
-    .recent-item { display: flex; gap: 10px; align-items: flex-start; text-decoration: none; color: inherit; }
-    .recent-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 6px; }
-    .recent-title { font-size: 13px; color: var(--navy); line-height: 1.4; font-weight: 500; transition: color 0.2s; }
-    .recent-item:hover .recent-title { color: var(--gold-dark); }
-    .recent-date { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
-
-    .sidebar-cta {
-      background: var(--navy); border-radius: 10px; padding: 24px 20px; text-align: center;
-    }
-    .sidebar-cta h4 { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: 0; text-transform: none; border: none; padding: 0; }
-    .sidebar-cta p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 18px; }
-
-    /* ── PAGINATION ── */
-    .pagination { display: flex; gap: 8px; margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border); }
-    .page-btn {
-      width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
-      border: 1px solid var(--border); border-radius: 8px;
-      font-size: 13px; font-weight: 500; color: var(--navy);
-      cursor: pointer; background: var(--white); text-decoration: none;
-      transition: background 0.15s, border-color 0.15s, color 0.15s;
-    }
-    .page-btn:hover, .page-btn.active { background: var(--navy); color: var(--gold); border-color: var(--navy); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
-      .blog-grid { grid-template-columns: 1fr; }
-      .sidebar { position: static; }
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
   </style>
 </head>
 <body>
-
-  <!-- PAGE HEADER -->
-  <div class="page-header">
-    <div class="page-header-inner">
-      <div class="breadcrumb"><a href="index.html">Home</a> / Blog</div>
-      <h1>Blog &amp; Guide</h1>
-      <p>Approfondimenti, guide pratiche e aggiornamenti su diritti del consumatore, rimborsi bancari e tutela creditizia.</p>
+  <div class="card">
+    <img src="logo.png" alt="Difesa Consumatore" class="logo" />
+    <div class="spinner"></div>
+    <h1>Stiamo aprendo il blog…</h1>
+    <p>Le nostre guide e articoli sono pubblicati su Substack. Ti stiamo reindirizzando.</p>
+    <a href="https://difesaconsumatore.substack.com" class="btn">Vai al blog &rarr;</a>
+    <div class="small">
+      Se il reindirizzamento non parte automaticamente,<br>
+      <a href="https://difesaconsumatore.substack.com">clicca qui</a> oppure
+      <a href="index.html">torna alla home</a>.
     </div>
   </div>
-
-  <!-- BLOG -->
-  <section class="blog-section">
-    <div class="section-inner">
-      <div class="blog-grid">
-
-        <!-- ARTICLES -->
-        <div>
-          <div class="articles-list" id="articles-list">
-            <!-- Articoli caricati dinamicamente da Substack -->
-            <div class="articles-loading" style="padding: 60px 20px; text-align: center; color: var(--text-muted); font-size: 14px;">
-              Caricamento articoli in corso…
-            </div>
-          </div>
-        </div>
-
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-
-          <div class="sidebar-card">
-            <h4>Categorie</h4>
-            <ul class="cat-list" id="cat-list">
-              <li class="cat-item" style="border-bottom:none;">
-                <span class="cat-name" style="font-size:12px;color:var(--text-muted);">Caricamento…</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="sidebar-card">
-            <h4>Articoli Recenti</h4>
-            <div class="recent-list" id="recent-list">
-              <div style="font-size: 12px; color: var(--text-muted);">Caricamento…</div>
-            </div>
-          </div>
-
-          <div class="sidebar-cta">
-            <h4>Hai bisogno di aiuto?</h4>
-            <p>Contattaci per una consulenza gratuita. Analizziamo il tuo caso senza impegno.</p>
-            <a href="dove-siamo.html" class="btn-primary" style="width:100%;text-align:center;display:block;">Consulenza gratuita →</a>
-          </div>
-
-          <div class="sidebar-card" style="background: rgba(245,200,66,0.08); border-color: rgba(245,200,66,0.25);">
-            <h4 style="color: var(--gold-dark); border-bottom-color: rgba(245,200,66,0.3);">Iscriviti alla newsletter</h4>
-            <p style="font-size: 13px; color: var(--text-body); line-height: 1.6; margin-bottom: 14px;">
-              Ricevi i nuovi articoli e gli aggiornamenti direttamente nella tua casella email.
-            </p>
-            <a href="https://difesaconsumatore.substack.com/subscribe"
-               target="_blank" rel="noopener"
-               class="btn-primary"
-               style="width:100%;text-align:center;display:block;">
-               Iscriviti gratis →
-            </a>
-          </div>
-
-        </aside>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <div class="cta-band">
-    <div class="cta-band-inner">
-      <div class="cta-text">
-        <h2>Hai letto e vuoi sapere se ti spetta un rimborso?</h2>
-        <p>La valutazione del tuo caso è sempre gratuita e senza impegno.</p>
-      </div>
-      <a href="dove-siamo.html" class="cta-btn">Contattaci ora →</a>
-    </div>
-  </div>
-
-  <script src="nav.js"></script>
-
-  <!-- ── SUBSTACK FEED LOADER ── -->
-  <script>
-  (function () {
-    const SUBSTACK_URL = 'https://difesaconsumatore.substack.com';
-    const FEED_URL = SUBSTACK_URL + '/feed';
-    const cb = Date.now();
-
-    // Fonti dati provate in ordine. La prima che risponde con articoli vince.
-    const SOURCES = [
-      // 1. rss2json (CORS ok, cache ~1h)
-      { type: 'rss2json', url: 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(FEED_URL) + '&count=20&_=' + cb },
-      // 2. allorigins fallback (CORS ok via proxy, no-cache, parse XML)
-      { type: 'allorigins', url: 'https://api.allorigins.win/get?url=' + encodeURIComponent(FEED_URL) + '&t=' + cb }
-    ];
-
-    const articlesEl = document.getElementById('articles-list');
-    const recentEl = document.getElementById('recent-list');
-
-    function fmtDate(d) {
-      try {
-        const date = new Date(d);
-        return date.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
-      } catch (e) { return ''; }
-    }
-
-    function excerpt(html, max) {
-      const tmp = document.createElement('div');
-      tmp.innerHTML = html || '';
-      const text = (tmp.textContent || tmp.innerText || '').trim();
-      if (text.length <= max) return text;
-      return text.substring(0, max).replace(/\s+\S*$/, '') + '…';
-    }
-
-    function categoryFromTitle(title) {
-      const t = (title || '').toLowerCase();
-      if (t.match(/cessione|quinto|cqs/)) return 'Cessione del Quinto';
-      if (t.match(/sovraindebitamento|legge 3|salva-suicidi/)) return 'Sovraindebitamento';
-      if (t.match(/crif|segnalazione/)) return 'CRIF';
-      if (t.match(/saldo|stralcio/)) return 'Saldo e Stralcio';
-      if (t.match(/volo|aereo|261|rimborso vol/)) return 'Rimborso Voli';
-      if (t.match(/energia|gas|luce|telefon|arera|agcom|mercato libero/)) return 'Energia & Telefonia';
-      return 'Guida';
-    }
-
-    function parseRSS(xmlText) {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(xmlText, 'application/xml');
-      const items = [];
-      doc.querySelectorAll('item').forEach(item => {
-        const title = (item.querySelector('title')?.textContent || '').trim();
-        const link = (item.querySelector('link')?.textContent || '').trim();
-        const pubDate = (item.querySelector('pubDate')?.textContent || '').trim();
-        const description = (item.querySelector('description')?.textContent || '').trim();
-        const contentEncoded = (item.getElementsByTagName('content:encoded')[0]?.textContent
-          || item.querySelector('encoded')?.textContent || '').trim();
-        const raw = contentEncoded || description;
-        // Try to extract first <img> as thumbnail
-        const m = (raw || '').match(/<img[^>]+src=["']([^"']+)["']/i);
-        const enclosure = item.querySelector('enclosure');
-        const thumbnail = (enclosure && enclosure.getAttribute('url')) || (m ? m[1] : null);
-        items.push({ title, link, pubDate, description, content: raw, thumbnail });
-      });
-      return items;
-    }
-
-    function renderArticles(items) {
-      if (!items || !items.length) {
-        articlesEl.innerHTML = '<div style="padding:60px 20px;text-align:center;color:var(--text-muted);font-size:14px;">'
-          + 'Nessun articolo pubblicato ancora.<br><br>'
-          + '<a href="' + SUBSTACK_URL + '" target="_blank" rel="noopener" style="color:var(--gold-dark);font-weight:600;">'
-          + 'Vai alla pubblicazione su Substack →</a></div>';
-        return;
-      }
-
-      let html = '';
-      items.forEach((item, i) => {
-        const category = categoryFromTitle(item.title);
-        const isFeatured = i === 0;
-        const cardClass = 'article-card' + (isFeatured ? ' featured' : '');
-
-        html += '<a href="' + item.link + '" target="_blank" rel="noopener" class="' + cardClass + '">';
-
-        if (isFeatured) {
-          if (item.thumbnail) {
-            html += '<div class="article-featured-visual" style="background-image:url(\'' + item.thumbnail + '\');background-size:cover;background-position:center;">'
-              + '<span class="afv-label" style="background:rgba(0,0,0,0.4);padding:6px 14px;border-radius:6px;color:#fff;opacity:1;">In evidenza</span>'
-              + '</div>';
-          } else {
-            html += '<div class="article-featured-visual"><span class="afv-label">In evidenza</span></div>';
-          }
-        }
-
-        html += '<div class="article-meta">';
-        if (isFeatured) html += '<span class="article-tag gold">In evidenza</span>';
-        html += '<span class="article-tag">' + category + '</span>';
-        html += '<span class="article-date">' + fmtDate(item.pubDate) + '</span>';
-        html += '</div>';
-        html += '<div class="article-title">' + (item.title || '') + '</div>';
-        html += '<p class="article-excerpt">' + excerpt(item.description || item.content, 240) + '</p>';
-        html += '<span class="article-read-more">Leggi l\'articolo →</span>';
-        html += '</a>';
-      });
-
-      articlesEl.innerHTML = html;
-    }
-
-    function renderRecent(items) {
-      if (!items || !items.length) {
-        recentEl.innerHTML = '<div style="font-size:12px;color:var(--text-muted);">Nessun articolo recente.</div>';
-        return;
-      }
-      let html = '';
-      items.slice(0, 5).forEach(item => {
-        html += '<a href="' + item.link + '" target="_blank" rel="noopener" class="recent-item">'
-          + '<div class="recent-dot"></div>'
-          + '<div>'
-          +   '<div class="recent-title">' + (item.title || '') + '</div>'
-          +   '<div class="recent-date">' + fmtDate(item.pubDate) + '</div>'
-          + '</div>'
-          + '</a>';
-      });
-      recentEl.innerHTML = html;
-    }
-
-    function renderCategories(items) {
-      const catEl = document.getElementById('cat-list');
-      if (!catEl) return;
-      if (!items || !items.length) {
-        catEl.innerHTML = '<li class="cat-item" style="border-bottom:none;"><span class="cat-name" style="font-size:12px;color:var(--text-muted);">Nessuna categoria</span></li>';
-        return;
-      }
-      // Count occurrences per category
-      const counts = {};
-      items.forEach(it => {
-        const c = categoryFromTitle(it.title);
-        counts[c] = (counts[c] || 0) + 1;
-      });
-      // Sort by count desc
-      const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-      let html = '';
-      sorted.forEach(([name, count]) => {
-        html += '<li class="cat-item">'
-          +   '<span class="cat-name">' + name + '</span>'
-          +   '<span class="cat-count">' + count + '</span>'
-          + '</li>';
-      });
-      catEl.innerHTML = html;
-    }
-
-    function showError() {
-      articlesEl.innerHTML = '<div style="padding:60px 20px;text-align:center;color:var(--text-muted);font-size:14px;">'
-        + 'Non è stato possibile caricare gli articoli al momento.<br><br>'
-        + '<a href="' + SUBSTACK_URL + '" target="_blank" rel="noopener" style="color:var(--gold-dark);font-weight:600;">'
-        + 'Visita il blog su Substack →</a></div>';
-      recentEl.innerHTML = '<div style="font-size:12px;color:var(--text-muted);">Articoli non disponibili.</div>';
-      const catEl = document.getElementById('cat-list');
-      if (catEl) catEl.innerHTML = '<li class="cat-item" style="border-bottom:none;"><span class="cat-name" style="font-size:12px;color:var(--text-muted);">Categorie non disponibili</span></li>';
-    }
-
-    const CACHE_KEY = 'blog-cache-v1';
-    const CACHE_TTL = 24 * 60 * 60 * 1000; // 24h
-
-    async function tryFetch(source, signal) {
-      try {
-        const res = await fetch(source.url, { cache: 'no-store', signal });
-        if (!res.ok) return null;
-        if (source.type === 'substack-api') {
-          const data = await res.json();
-          if (Array.isArray(data) && data.length) {
-            return data.map(p => ({
-              title: p.title,
-              link: p.canonical_url || (SUBSTACK_URL + '/p/' + p.slug),
-              pubDate: p.post_date,
-              description: p.description || p.subtitle || '',
-              content: p.description || p.subtitle || '',
-              thumbnail: p.cover_image
-            }));
-          }
-        } else if (source.type === 'rss2json') {
-          const data = await res.json();
-          if (data && data.status === 'ok' && data.items && data.items.length) {
-            return data.items.map(it => ({
-              title: it.title,
-              link: it.link,
-              pubDate: it.pubDate,
-              description: it.description,
-              content: it.content,
-              thumbnail: it.thumbnail || (it.enclosure && it.enclosure.link)
-            }));
-          }
-        } else if (source.type === 'rss-xml') {
-          const text = await res.text();
-          if (text && text.includes('<item')) {
-            return parseRSS(text);
-          }
-        } else if (source.type === 'allorigins') {
-          const data = await res.json();
-          if (data && data.contents) {
-            return parseRSS(data.contents);
-          }
-        }
-        return null;
-      } catch (e) {
-        return null;
-      }
-    }
-
-    // Race tutte le fonti in parallelo: vince la prima che restituisce articoli validi.
-    function fetchAll(timeoutMs) {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
-
-      return new Promise(resolve => {
-        let pending = SOURCES.length;
-        let resolved = false;
-        SOURCES.forEach(source => {
-          tryFetch(source, controller.signal).then(items => {
-            if (resolved) return;
-            if (items && items.length) {
-              resolved = true;
-              clearTimeout(timeoutId);
-              controller.abort();
-              resolve(items);
-            } else {
-              pending--;
-              if (pending === 0 && !resolved) {
-                resolved = true;
-                clearTimeout(timeoutId);
-                resolve(null);
-              }
-            }
-          });
-        });
-      });
-    }
-
-    function renderAll(items) {
-      renderArticles(items);
-      renderRecent(items);
-      renderCategories(items);
-    }
-
-    function loadFromCache() {
-      try {
-        const raw = localStorage.getItem(CACHE_KEY);
-        if (!raw) return null;
-        const cached = JSON.parse(raw);
-        if (!cached || !cached.items || !cached.items.length) return null;
-        return cached;
-      } catch (e) { return null; }
-    }
-
-    function saveCache(items) {
-      try {
-        localStorage.setItem(CACHE_KEY, JSON.stringify({ items, savedAt: Date.now() }));
-      } catch (e) {}
-    }
-
-    (async () => {
-      // 1. Mostra subito la cache se esiste (anche se vecchia) — UX immediata
-      const cached = loadFromCache();
-      let hasCached = false;
-      if (cached) {
-        renderAll(cached.items);
-        hasCached = true;
-      }
-
-      // 2. Aggiorna in background — race in parallelo con timeout 5s
-      const fresh = await fetchAll(5000);
-      if (fresh && fresh.length) {
-        renderAll(fresh);
-        saveCache(fresh);
-      } else if (!hasCached) {
-        showError();
-      }
-    })();
-  })();
-  </script>
 </body>
 </html>
