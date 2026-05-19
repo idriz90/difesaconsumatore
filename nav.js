@@ -128,8 +128,12 @@
   // ── COOKIE BANNER ──
   function showCookieBanner() {
     if (localStorage.getItem('cookieConsent')) return;
+    if (document.getElementById('cookie-banner')) return; // già presente
+
     const banner = document.createElement('div');
     banner.id = 'cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Banner cookie');
     banner.innerHTML = `
       <div class="cb-inner">
         <div class="cb-text">
@@ -147,6 +151,11 @@
 
     function setConsent(value) {
       try { localStorage.setItem('cookieConsent', value); } catch (e) {}
+      // Stop watcher prima di rimuovere
+      if (window.__cbObserver) {
+        try { window.__cbObserver.disconnect(); } catch (e) {}
+        window.__cbObserver = null;
+      }
       banner.classList.add('cb-hidden');
       setTimeout(() => banner.remove(), 300);
     }
@@ -156,5 +165,22 @@
 
     requestAnimationFrame(() => banner.classList.add('cb-visible'));
   }
+
   showCookieBanner();
+
+  // Protezione: se qualcosa rimuove il banner senza che l'utente abbia scelto,
+  // il banner viene ri-creato. Si ferma da solo quando l'utente accetta/rifiuta.
+  if (!localStorage.getItem('cookieConsent') && 'MutationObserver' in window) {
+    window.__cbObserver = new MutationObserver(() => {
+      if (localStorage.getItem('cookieConsent')) {
+        window.__cbObserver.disconnect();
+        window.__cbObserver = null;
+        return;
+      }
+      if (!document.getElementById('cookie-banner')) {
+        showCookieBanner();
+      }
+    });
+    window.__cbObserver.observe(document.body, { childList: true });
+  }
 })();
