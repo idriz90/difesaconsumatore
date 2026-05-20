@@ -1,24 +1,34 @@
 // nav.js — inietta navbar e footer in tutte le pagine
 (function() {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  // Calcola il percorso base (root del sito)
+  const depth = window.location.pathname.split('/').filter(Boolean).length;
+  const base = depth > 1 ? '../'.repeat(depth - 1) : '';
+
+  const currentPath = window.location.pathname;
 
   const SUBSTACK_URL = 'https://difesaconsumatore.substack.com';
   const WHATSAPP_URL = 'https://wa.me/393296491028';
 
   // Link interni del sito
   const links = [
-    { href: 'index.html',      label: 'HOME' },
-    { href: 'servizi.html',    label: 'Servizi Offerti' },
-    { href: 'dove-siamo.html', label: 'Dove Siamo' },
+    { href: base + '',           label: 'HOME' },
+    { href: base + 'servizi/',   label: 'Servizi Offerti' },
+    { href: base + 'dove-siamo/', label: 'Dove Siamo' },
   ];
   // Footer mostra anche il Blog (Substack)
   const footerLinks = links.concat([{ href: SUBSTACK_URL, label: 'Blog', external: true }]);
 
+  const isActive = (href) => {
+    if (href === base + '' && (currentPath === '/' || currentPath.endsWith('/index.html'))) return true;
+    if (href !== base + '' && currentPath.includes(href.replace(base, '/'))) return true;
+    return false;
+  };
+
   const navHTML = `
     <nav id="main-nav">
       <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-          <img class="logo-shield" src="logo.png" alt="Difesa Consumatore" width="48" height="48" />
+        <a href="${base}" class="nav-logo">
+          <img class="logo-shield" src="${base}logo.png" alt="Difesa Consumatore" width="48" height="48" />
           <div class="logo-text-wrap">
             <span class="logo-top">DIFESA</span>
             <span class="logo-bottom">CONSUMATORE</span>
@@ -28,7 +38,7 @@
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-links" id="navLinks">
-          ${links.map(l => `<li><a href="${l.href}" class="${currentPage === l.href ? 'active' : ''}">${l.label}</a></li>`).join('')}
+          ${links.map(l => `<li><a href="${l.href}" class="${isActive(l.href) ? 'active' : ''}">${l.label}</a></li>`).join('')}
           <li><a href="${SUBSTACK_URL}" target="_blank" rel="noopener" class="nav-cta">Blog &amp; Newsletter</a></li>
         </ul>
       </div>
@@ -41,7 +51,7 @@
         <div class="footer-top">
           <div class="footer-brand">
             <div class="footer-brand-row">
-              <img src="logo.png" alt="" width="40" height="40" />
+              <img src="${base}logo.png" alt="" width="40" height="40" />
               <div class="footer-brand-text">
                 <div class="logo-top">DIFESA</div>
                 <div class="logo-bottom">CONSUMATORE</div>
@@ -61,11 +71,11 @@
           <div class="footer-col">
             <h4>Servizi</h4>
             <ul>
-              <li><a href="servizi.html#cqs">Cessione del Quinto</a></li>
-              <li><a href="servizi.html#sovraindebitamento">Sovraindebitamento</a></li>
-              <li><a href="servizi.html#crif">Segnalazioni CRIF</a></li>
-              <li><a href="servizi.html#saldo">Saldo e Stralcio</a></li>
-              <li><a href="servizi.html#volo">Rimborso al Volo</a></li>
+              <li><a href="${base}servizi/#cqs">Cessione del Quinto</a></li>
+              <li><a href="${base}servizi/#sovraindebitamento">Sovraindebitamento</a></li>
+              <li><a href="${base}servizi/#crif">Segnalazioni CRIF</a></li>
+              <li><a href="${base}servizi/#saldo">Saldo e Stralcio</a></li>
+              <li><a href="${base}servizi/#volo">Rimborso al Volo</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -73,7 +83,7 @@
             <ul>
               <li><a href="tel:+393296491028">+39 329 649 1028</a></li>
               <li><a href="mailto:difesaconsumatorepisa@gmail.com">difesaconsumatorepisa@gmail.com</a></li>
-              <li><a href="dove-siamo.html">Via Novecchio 10, Pisa</a></li>
+              <li><a href="${base}dove-siamo/">Via Novecchio 10, Pisa</a></li>
             </ul>
           </div>
         </div>
@@ -81,7 +91,7 @@
           <div class="footer-copy">
             © 2024 DC S.r.l.· Via Novecchio 10, Pisa · P.IVA 02285180507
             <span style="margin: 0 8px; opacity: 0.4;">·</span>
-            <a href="privacy.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Privacy &amp; Cookie</a>
+            <a href="${base}privacy/" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Privacy &amp; Cookie</a>
           </div>
           <div class="footer-social">
             <a href="https://www.facebook.com/difesaconsumatoresrls/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
@@ -106,24 +116,19 @@
     </a>
   `;
 
-  // Inject nav before body content
   document.body.insertAdjacentHTML('afterbegin', navHTML);
-  // Inject footer at end of body
   document.body.insertAdjacentHTML('beforeend', footerHTML);
 
-  // Hamburger menu toggle
   document.getElementById('navHamburger').addEventListener('click', function() {
     document.getElementById('navLinks').classList.toggle('open');
     this.classList.toggle('active');
   });
 
-  // Back to top
   const backTop = document.getElementById('backTop');
   window.addEventListener('scroll', () => {
     backTop.classList.toggle('visible', window.scrollY > 400);
   });
 
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
       const id = link.getAttribute('href').slice(1);
@@ -139,7 +144,7 @@
   // ── COOKIE BANNER ──
   function showCookieBanner() {
     if (localStorage.getItem('cookieConsent')) return;
-    if (document.getElementById('cookie-banner')) return; // già presente
+    if (document.getElementById('cookie-banner')) return;
 
     const banner = document.createElement('div');
     banner.id = 'cookie-banner';
@@ -150,7 +155,7 @@
         <div class="cb-text">
           <strong>Rispettiamo la tua privacy.</strong>
           Usiamo solo cookie tecnici per il funzionamento del sito. Cliccando "Accetta" autorizzi eventuali cookie analitici anonimi.
-          <a href="privacy.html">Leggi l'informativa completa →</a>
+          <a href="${base}privacy/">Leggi l'informativa completa →</a>
         </div>
         <div class="cb-actions">
           <button type="button" class="cb-btn cb-reject" id="cb-reject">Rifiuta</button>
@@ -162,7 +167,6 @@
 
     function setConsent(value) {
       try { localStorage.setItem('cookieConsent', value); } catch (e) {}
-      // Stop watcher prima di rimuovere
       if (window.__cbObserver) {
         try { window.__cbObserver.disconnect(); } catch (e) {}
         window.__cbObserver = null;
@@ -179,8 +183,6 @@
 
   showCookieBanner();
 
-  // Protezione: se qualcosa rimuove il banner senza che l'utente abbia scelto,
-  // il banner viene ri-creato. Si ferma da solo quando l'utente accetta/rifiuta.
   if (!localStorage.getItem('cookieConsent') && 'MutationObserver' in window) {
     window.__cbObserver = new MutationObserver(() => {
       if (localStorage.getItem('cookieConsent')) {
