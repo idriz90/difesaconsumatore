@@ -1,34 +1,30 @@
 // nav.js — inietta navbar e footer in tutte le pagine
 (function() {
-  // Calcola il percorso base (root del sito)
-  const depth = window.location.pathname.split('/').filter(Boolean).length;
-  const base = depth > 1 ? '../'.repeat(depth - 1) : '';
+  const base = '/';
 
   const currentPath = window.location.pathname;
 
   const SUBSTACK_URL = 'https://difesaconsumatore.substack.com';
   const WHATSAPP_URL = 'https://wa.me/393296491028';
 
-  // Link interni del sito
   const links = [
-    { href: base + '',           label: 'HOME' },
-    { href: base + 'servizi/',   label: 'Servizi Offerti' },
-    { href: base + 'dove-siamo/', label: 'Dove Siamo' },
+    { href: '/',            label: 'HOME' },
+    { href: '/servizi/',    label: 'Servizi Offerti' },
+    { href: '/dove-siamo/', label: 'Dove Siamo' },
   ];
-  // Footer mostra anche il Blog (Substack)
   const footerLinks = links.concat([{ href: SUBSTACK_URL, label: 'Blog', external: true }]);
 
   const isActive = (href) => {
-    if (href === base + '' && (currentPath === '/' || currentPath.endsWith('/index.html'))) return true;
-    if (href !== base + '' && currentPath.includes(href.replace(base, '/'))) return true;
+    if (href === '/' && (currentPath === '/' || currentPath === '/index.html')) return true;
+    if (href !== '/' && currentPath.startsWith(href)) return true;
     return false;
   };
 
   const navHTML = `
     <nav id="main-nav">
       <div class="nav-inner">
-        <a href="${base}" class="nav-logo">
-          <img class="logo-shield" src="${base}logo.png" alt="Difesa Consumatore" width="48" height="48" />
+        <a href="/" class="nav-logo">
+          <img class="logo-shield" src="/logo.png" alt="Difesa Consumatore" width="48" height="48" />
           <div class="logo-text-wrap">
             <span class="logo-top">DIFESA</span>
             <span class="logo-bottom">CONSUMATORE</span>
@@ -51,7 +47,7 @@
         <div class="footer-top">
           <div class="footer-brand">
             <div class="footer-brand-row">
-              <img src="${base}logo.png" alt="" width="40" height="40" />
+              <img src="/logo.png" alt="" width="40" height="40" />
               <div class="footer-brand-text">
                 <div class="logo-top">DIFESA</div>
                 <div class="logo-bottom">CONSUMATORE</div>
@@ -71,11 +67,11 @@
           <div class="footer-col">
             <h4>Servizi</h4>
             <ul>
-              <li><a href="${base}servizi/#cqs">Cessione del Quinto</a></li>
-              <li><a href="${base}servizi/#sovraindebitamento">Sovraindebitamento</a></li>
-              <li><a href="${base}servizi/#crif">Segnalazioni CRIF</a></li>
-              <li><a href="${base}servizi/#saldo">Saldo e Stralcio</a></li>
-              <li><a href="${base}servizi/#volo">Rimborso al Volo</a></li>
+              <li><a href="/servizi/#cqs">Cessione del Quinto</a></li>
+              <li><a href="/servizi/#sovraindebitamento">Sovraindebitamento</a></li>
+              <li><a href="/servizi/#crif">Segnalazioni CRIF</a></li>
+              <li><a href="/servizi/#saldo">Saldo e Stralcio</a></li>
+              <li><a href="/servizi/#volo">Rimborso al Volo</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -83,7 +79,7 @@
             <ul>
               <li><a href="tel:+393296491028">+39 329 649 1028</a></li>
               <li><a href="mailto:difesaconsumatorepisa@gmail.com">difesaconsumatorepisa@gmail.com</a></li>
-              <li><a href="${base}dove-siamo/">Via Novecchio 10, Pisa</a></li>
+              <li><a href="/dove-siamo/">Via Novecchio 10, Pisa</a></li>
             </ul>
           </div>
         </div>
@@ -91,7 +87,7 @@
           <div class="footer-copy">
             © 2024 DC S.r.l.· Via Novecchio 10, Pisa · P.IVA 02285180507
             <span style="margin: 0 8px; opacity: 0.4;">·</span>
-            <a href="${base}privacy/" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Privacy &amp; Cookie</a>
+            <a href="/privacy/" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Privacy &amp; Cookie</a>
           </div>
           <div class="footer-social">
             <a href="https://www.facebook.com/difesaconsumatoresrls/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
@@ -141,7 +137,6 @@
     });
   });
 
-  // ── COOKIE BANNER ──
   function showCookieBanner() {
     if (localStorage.getItem('cookieConsent')) return;
     if (document.getElementById('cookie-banner')) return;
@@ -155,7 +150,7 @@
         <div class="cb-text">
           <strong>Rispettiamo la tua privacy.</strong>
           Usiamo solo cookie tecnici per il funzionamento del sito. Cliccando "Accetta" autorizzi eventuali cookie analitici anonimi.
-          <a href="${base}privacy/">Leggi l'informativa completa →</a>
+          <a href="/privacy/">Leggi l'informativa completa →</a>
         </div>
         <div class="cb-actions">
           <button type="button" class="cb-btn cb-reject" id="cb-reject">Rifiuta</button>
