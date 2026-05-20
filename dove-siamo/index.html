@@ -451,18 +451,18 @@
 
         <div class="contact-form-card">
           <h3>Modulo di contatto</h3>
-          <form class="cf" id="contactForm" novalidate>
+          <form class="cf" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="32082512-78b3-445e-a8c0-93646ca527f8" />
-            <input type="hidden" name="subject" value="Nuova richiesta - Difesa Consumatore" />
-            <input type="hidden" name="from_name" value="Difesa Consumatore Sito Web" />
+            <input type="hidden" name="subject" value="Nuova richiesta - Difesa Consumatore Pisa" />
+            <input type="hidden" name="redirect" value="https://www.difesaconsumatore.org/grazie/" />
             <input type="checkbox" name="botcheck" style="display:none;" />
             <div class="cf-row">
-              <input type="text" name="nome" placeholder="Nome" required />
-              <input type="text" name="cognome" placeholder="Cognome" required />
+              <input type="text" name="Nome" placeholder="Nome" required />
+              <input type="text" name="Cognome" placeholder="Cognome" required />
             </div>
-            <input type="tel" name="telefono" placeholder="Numero di telefono" required />
+            <input type="tel" name="Telefono" placeholder="Numero di telefono" required />
             <input type="email" name="email" placeholder="Indirizzo email" required />
-            <select name="pratica" required>
+            <select name="Pratica" required>
               <option value="" disabled selected>Tipo di pratica</option>
               <option>Cessione del Quinto / Prestito Personale</option>
               <option>Sovraindebitamento</option>
@@ -471,56 +471,11 @@
               <option>Rimborso al Volo</option>
               <option>Altro</option>
             </select>
-            <textarea name="messaggio" placeholder="Descrivi brevemente la tua situazione. Più dettagli fornisci, più precisa sarà la nostra valutazione..."></textarea>
-            <button class="cf-btn" type="submit" id="submitBtn">Invia Richiesta →</button>
+            <textarea name="Messaggio" placeholder="Descrivi brevemente la tua situazione. Più dettagli fornisci, più precisa sarà la nostra valutazione..."></textarea>
+            <button class="cf-btn" type="submit">Invia Richiesta →</button>
             <p class="cf-privacy">Inviando il modulo accetti il trattamento dei dati ai sensi del GDPR · <a href="/privacy/">Privacy Policy</a></p>
           </form>
-          <div id="formSuccess" style="display:none; text-align:center; padding:32px 16px;">
-            <div style="font-size:2.5rem; margin-bottom:12px;">✅</div>
-            <h3 style="color:var(--navy); margin-bottom:8px;">Richiesta inviata!</h3>
-            <p style="color:var(--text-body);">Grazie! Ti contatteremo entro 24 ore lavorative.</p>
-          </div>
         </div>
-
-        <script>
-          document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const form = e.target;
-            const btn = document.getElementById('submitBtn');
-
-            // Validazione campi obbligatori
-            const nome = form.nome.value.trim();
-            const telefono = form.telefono.value.trim();
-            const email = form.email.value.trim();
-            const pratica = form.pratica.value;
-            if (!nome || !telefono || !email || !pratica) {
-              alert('Per favore compila tutti i campi obbligatori.');
-              return;
-            }
-
-            btn.textContent = 'Invio in corso…';
-            btn.disabled = true;
-
-            try {
-              const res = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify(Object.fromEntries(new FormData(form)))
-              });
-              const data = await res.json();
-              if (data.success) {
-                form.style.display = 'none';
-                document.getElementById('formSuccess').style.display = 'block';
-              } else {
-                throw new Error(data.message);
-              }
-            } catch(err) {
-              alert('Errore nell'invio. Riprova o contattaci via WhatsApp.');
-              btn.textContent = 'Invia Richiesta →';
-              btn.disabled = false;
-            }
-          });
-        </script>
       </div>
     </div>
   </section>
