@@ -1,15 +1,20 @@
 // nav.js — inietta navbar e footer in tutte le pagine
 (function() {
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  // Normalizza un percorso per il confronto: toglie "index.html" e la barra finale.
+  // Es: "/servizi/" -> "/servizi", "/" -> "/", "/dove-siamo/index.html" -> "/dove-siamo"
+  function normPath(p) {
+    return p.replace(/index\.html$/, '').replace(/\/+$/, '') || '/';
+  }
+  const currentPath = normPath(window.location.pathname);
 
   const SUBSTACK_URL = 'https://difesaconsumatore.substack.com';
   const WHATSAPP_URL = 'https://wa.me/393296491028';
 
-  // Link interni del sito
+  // Link interni del sito (percorsi ASSOLUTI dalla radice: funzionano da ogni pagina)
   const links = [
-    { href: 'index.html',      label: 'HOME' },
-    { href: 'servizi.html',    label: 'Servizi Offerti' },
-    { href: 'dove-siamo.html', label: 'Dove Siamo' },
+    { href: '/',            label: 'HOME' },
+    { href: '/servizi/',    label: 'Servizi Offerti' },
+    { href: '/dove-siamo/', label: 'Dove Siamo' },
   ];
   // Footer mostra anche il Blog (Substack)
   const footerLinks = links.concat([{ href: SUBSTACK_URL, label: 'Blog', external: true }]);
@@ -17,8 +22,8 @@
   const navHTML = `
     <nav id="main-nav">
       <div class="nav-inner">
-        <a href="index.html" class="nav-logo">
-          <img class="logo-shield" src="logo.png" alt="Difesa Consumatore" width="48" height="48" />
+        <a href="/" class="nav-logo">
+          <img class="logo-shield" src="/logo.png" alt="Difesa Consumatore" width="48" height="48" />
           <div class="logo-text-wrap">
             <span class="logo-top">DIFESA</span>
             <span class="logo-bottom">CONSUMATORE</span>
@@ -28,7 +33,7 @@
           <span></span><span></span><span></span>
         </button>
         <ul class="nav-links" id="navLinks">
-          ${links.map(l => `<li><a href="${l.href}" class="${currentPage === l.href ? 'active' : ''}">${l.label}</a></li>`).join('')}
+          ${links.map(l => `<li><a href="${l.href}" class="${normPath(l.href) === currentPath ? 'active' : ''}">${l.label}</a></li>`).join('')}
           <li><a href="${SUBSTACK_URL}" target="_blank" rel="noopener" class="nav-cta">Blog &amp; Newsletter</a></li>
         </ul>
       </div>
@@ -41,7 +46,7 @@
         <div class="footer-top">
           <div class="footer-brand">
             <div class="footer-brand-row">
-              <img src="logo.png" alt="" width="40" height="40" />
+              <img src="/logo.png" alt="" width="40" height="40" />
               <div class="footer-brand-text">
                 <div class="logo-top">DIFESA</div>
                 <div class="logo-bottom">CONSUMATORE</div>
@@ -61,11 +66,11 @@
           <div class="footer-col">
             <h4>Servizi</h4>
             <ul>
-              <li><a href="servizi.html#cqs">Cessione del Quinto</a></li>
-              <li><a href="servizi.html#sovraindebitamento">Sovraindebitamento</a></li>
-              <li><a href="servizi.html#crif">Segnalazioni CRIF</a></li>
-              <li><a href="servizi.html#saldo">Saldo e Stralcio</a></li>
-              <li><a href="servizi.html#volo">Rimborso al Volo</a></li>
+              <li><a href="/servizi/#cqs">Cessione del Quinto</a></li>
+              <li><a href="/servizi/#sovraindebitamento">Sovraindebitamento</a></li>
+              <li><a href="/servizi/#crif">Segnalazioni CRIF</a></li>
+              <li><a href="/servizi/#saldo">Saldo e Stralcio</a></li>
+              <li><a href="/servizi/#volo">Rimborso al Volo</a></li>
             </ul>
           </div>
           <div class="footer-col">
@@ -73,7 +78,7 @@
             <ul>
               <li><a href="tel:+393296491028">+39 329 649 1028</a></li>
               <li><a href="mailto:difesaconsumatorepisa@gmail.com">difesaconsumatorepisa@gmail.com</a></li>
-              <li><a href="dove-siamo.html">Via Novecchio 10, Pisa</a></li>
+              <li><a href="/dove-siamo/">Via Novecchio 10, Pisa</a></li>
             </ul>
           </div>
         </div>
@@ -81,7 +86,7 @@
           <div class="footer-copy">
             © 2018-2026 DC S.r.l.· Via Novecchio 10, Pisa · P.IVA 02285180507
             <span style="margin: 0 8px; opacity: 0.4;">·</span>
-            <a href="privacy.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Privacy &amp; Cookie</a>
+            <a href="/privacy/" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Privacy &amp; Cookie</a>
           </div>
           <div class="footer-social">
             <a href="https://www.facebook.com/difesaconsumatoresrls/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
@@ -160,7 +165,7 @@
         <div class="cb-text">
           <strong>Rispettiamo la tua privacy.</strong>
           Usiamo solo cookie tecnici per il funzionamento del sito. Cliccando "Accetta" autorizzi eventuali cookie analitici anonimi.
-          <a href="privacy.html">Leggi l'informativa completa →</a>
+          <a href="/privacy/">Leggi l'informativa completa →</a>
         </div>
         <div class="cb-actions">
           <button type="button" class="cb-btn cb-reject" id="cb-reject">Rifiuta</button>
