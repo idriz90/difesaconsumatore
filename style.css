@@ -17,6 +17,7 @@
   --text-body: #2a5298;
   --text-muted: #4a6fa5;
   --border: #dce4f0;
+  --container: 1200px;
 }
 
 html { scroll-behavior: smooth; font-size: 17.5px; }
@@ -41,7 +42,7 @@ body {
 }
 
 .nav-inner {
-  max-width: 1200px;
+  max-width: var(--container);
   margin: 0 auto;
   padding: 0 32px;
   height: 72px;
@@ -146,7 +147,7 @@ body {
 }
 .page-header-inner {
   position: relative;
-  max-width: 1200px;
+  max-width: var(--container);
   margin: 0 auto;
   padding: 80px 32px 72px 48px;
 }
@@ -184,7 +185,7 @@ body {
 
 /* ── SECTION COMMONS ── */
 section { padding: 80px 32px; }
-.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-inner { max-width: var(--container); margin: 0 auto; }
 
 .section-label {
   font-size: 12.5px; font-weight: 700; letter-spacing: 0.22em;
@@ -222,7 +223,7 @@ section { padding: 80px 32px; }
 /* ── TRUST STRIP ── */
 .trust-strip { background: var(--off-white); padding: 18px 32px; border-bottom: 1px solid var(--border); border-top: 1px solid var(--border); }
 .trust-strip-inner {
-  max-width: 1200px; margin: 0 auto;
+  max-width: var(--container); margin: 0 auto;
   display: flex; align-items: center; justify-content: center;
   gap: 40px; flex-wrap: wrap;
 }
@@ -236,7 +237,7 @@ footer {
   padding: 56px 32px 32px;
   border-top: 3px solid var(--gold);
 }
-.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-inner { max-width: var(--container); margin: 0 auto; }
 .footer-top {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
@@ -297,7 +298,7 @@ footer {
 /* ── FLOATING WHATSAPP ── */
 .wa-float {
   position: fixed;
-  bottom: 24px; right: 24px; z-index: 95;
+  bottom: 24px; right: 24px;
   width: 60px; height: 60px;
   background: #25D366;
   border-radius: 50%;
@@ -386,7 +387,7 @@ footer {
 /* ── CTA BAND ── */
 .cta-band { background: var(--navy); padding: 72px 32px; }
 .cta-band-inner {
-  max-width: 1200px; margin: 0 auto;
+  max-width: var(--container); margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
   gap: 40px; flex-wrap: wrap;
 }
@@ -414,7 +415,7 @@ footer {
     display: none; flex-direction: column;
     position: absolute; top: 108px; left: 0; right: 0;
     background: #fff; border-bottom: 1px solid var(--border);
-    padding: 16px 24px 24px; gap: 14px;
+    padding: 16px 24px 24px; gap: 8px;
     box-shadow: 0 8px 24px rgba(26,58,107,0.1);
   }
   .nav-links.open { display: flex; }
@@ -509,73 +510,15 @@ footer {
   .cb-actions { justify-content: flex-end; }
   .cb-btn { padding: 10px 18px; font-size: 14px; }
 }
-/* ── FLOATING BUTTONS GROUP ── */
-.float-group {
-  position: fixed;
-  bottom: 24px; right: 24px;
-  display: flex; flex-direction: column;
-  align-items: flex-end;
-  gap: 12px;
-  z-index: 95;
-}
-.float-btn {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  text-decoration: none;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-  transition: transform 0.2s, box-shadow 0.2s;
-  position: relative;
-}
-.float-btn:hover { transform: scale(1.08); }
-.float-btn svg { width: 26px; height: 26px; }
-.float-btn .float-tooltip {
-  position: absolute;
-  right: calc(100% + 12px);
-  top: 50%; transform: translateY(-50%);
-  background: #1a3a6b; color: #fff;
-  font-size: 13px; font-weight: 600;
-  padding: 7px 13px; border-radius: 8px;
-  white-space: nowrap;
-  box-shadow: 0 4px 12px rgba(26,58,107,0.25);
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.2s;
-}
-.float-btn .float-tooltip::after {
-  content: '';
-  position: absolute;
-  left: 100%; top: 50%; transform: translateY(-50%);
-  border: 6px solid transparent;
-  border-left-color: #1a3a6b;
-}
-.float-btn:hover .float-tooltip { opacity: 1; }
 
-/* WhatsApp */
-.float-btn.float-wa {
-  background: #25D366;
-  box-shadow: 0 6px 20px rgba(37,211,102,0.4), 0 2px 8px rgba(0,0,0,0.12);
-  animation: wa-pulse 2.4s ease-out infinite;
-}
-.float-btn.float-wa svg { fill: #fff; }
 
-/* Chiamata */
-.float-btn.float-call {
-  background: #1a3a6b;
-  box-shadow: 0 4px 16px rgba(26,58,107,0.35);
+/* ── SCHERMI GRANDI: il sito riempie meglio il monitor ── */
+@media (min-width: 1500px) {
+  :root { --container: 1380px; }
+  html, body { font-size: 18.5px; }
+  section { padding: 96px 32px; }
 }
-.float-btn.float-call svg { stroke: #fff; fill: none; stroke-width: 2; }
-
-/* Indicazioni */
-.float-btn.float-maps {
-  background: #fff;
-  border: 2px solid #e0e8f0;
-  box-shadow: 0 4px 16px rgba(26,58,107,0.15);
-}
-.float-btn.float-maps svg { fill: none; stroke: #1a3a6b; stroke-width: 2; }
-
-@media (max-width: 640px) {
-  .float-group { bottom: 18px; right: 18px; gap: 10px; }
-  .float-btn { width: 50px; height: 50px; }
-  .float-btn svg { width: 22px; height: 22px; }
-  .float-btn .float-tooltip { display: none; }
+@media (min-width: 1850px) {
+  :root { --container: 1560px; }
+  html, body { font-size: 19.5px; }
 }
