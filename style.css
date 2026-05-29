@@ -28,7 +28,7 @@ body {
   color: var(--text);
   font-size: 17.5px;
   line-height: 1.6;
-  padding-top: 108px;
+  padding-top: 80px;
 }
 
 /* ── NAV ── */
@@ -61,7 +61,7 @@ body {
   flex-shrink: 0;
 }
 .nav-logo .logo-shield {
-  width: 64px; height: 64px; flex-shrink: 0;
+  width: 50px; height: 50px; flex-shrink: 0;
   object-fit: contain;
 }
 .nav-logo .logo-text-wrap {
@@ -71,7 +71,7 @@ body {
 }
 .nav-logo .logo-top {
   font-family: 'Noticia Text', Georgia, serif;
-  font-size: 34px;
+  font-size: 25px;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--navy);
@@ -79,24 +79,24 @@ body {
   line-height: 1;
 }
 .nav-logo .logo-bottom {
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.26em;
   color: var(--text-muted);
   text-transform: uppercase;
   line-height: 1;
 }
-.nav-inner { height: auto; min-height: 108px; padding-top: 16px; padding-bottom: 16px; }
+.nav-inner { height: auto; min-height: 80px; padding-top: 12px; padding-bottom: 12px; }
 
 /* Nav links — pill style */
 .nav-links {
   display: flex; align-items: center; gap: 8px; list-style: none;
 }
 .nav-links a {
-  font-size: 16px; font-weight: 500;
+  font-size: 15px; font-weight: 500;
   color: var(--navy);
   text-decoration: none;
-  padding: 12px 26px;
+  padding: 10px 22px;
   border-radius: 999px;
   border: 1.5px solid var(--border);
   transition: background 0.18s, border-color 0.18s, color 0.18s;
@@ -413,7 +413,7 @@ footer {
 @media (max-width: 768px) {
   .nav-links {
     display: none; flex-direction: column;
-    position: absolute; top: 108px; left: 0; right: 0;
+    position: absolute; top: 80px; left: 0; right: 0;
     background: #fff; border-bottom: 1px solid var(--border);
     padding: 16px 24px 24px; gap: 8px;
     box-shadow: 0 8px 24px rgba(26,58,107,0.1);
