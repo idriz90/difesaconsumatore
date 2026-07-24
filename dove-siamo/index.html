@@ -58,9 +58,6 @@
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
   <style>
     /* ── CONTACT SECTION ── */
@@ -126,7 +123,18 @@
       height: 420px;
       border-top: 3px solid var(--gold);
     }
-    .map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+    .map-placeholder {
+      min-height: 360px; display: grid; place-items: center; text-align: center;
+      padding: 42px 24px; background: linear-gradient(135deg, #eef3f8, #fff);
+      border: 1px solid rgba(26,58,107,0.14);
+    }
+    .map-placeholder h2 { color: var(--navy); margin: 0 0 10px; }
+    .map-placeholder p { margin: 0 0 22px; color: var(--text-muted); }
+    .map-external-link {
+      display: inline-block; padding: 12px 22px; border-radius: 999px;
+      background: var(--navy); color: #fff; text-decoration: none; font-weight: 700;
+    }
+    .map-external-link:hover { background: var(--navy-dark); }
 
     /* ── FORM SECTION ── */
     .form-section { background: var(--off-white); border-top: 1px solid var(--border); }
@@ -414,14 +422,16 @@
 
   <!-- MAP -->
   <div class="map-section">
-    <div class="map-wrap">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2870.5!2d10.3768!3d43.7102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d591bcf3b68a4b%3A0x1a0b2c3d4e5f6a7b!2sVia%20Novecchio%2C%20Pisa%20PI%2C%20Italia!5e0!3m2!1sit!2sit!4v1"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Mappa Difesa Consumatore Pisa">
-      </iframe>
+    <div class="map-wrap map-placeholder">
+      <div>
+        <h2>Come raggiungerci</h2>
+        <p>Via Novecchio 10, 56121 Pisa</p>
+        <a class="map-external-link"
+           href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Novecchio%2010%2C%2056121%20Pisa"
+           target="_blank" rel="noopener noreferrer">
+          Apri le indicazioni su Google Maps
+        </a>
+      </div>
     </div>
   </div>
 
@@ -473,7 +483,7 @@
             </select>
             <textarea name="Messaggio" placeholder="Descrivi brevemente la tua situazione. Più dettagli fornisci, più precisa sarà la nostra valutazione..."></textarea>
             <button class="cf-btn" type="submit">Invia Richiesta →</button>
-            <p class="cf-privacy">Inviando il modulo accetti il trattamento dei dati ai sensi del GDPR · <a href="/privacy/">Privacy Policy</a></p>
+            <p class="cf-privacy">I dati saranno trattati per rispondere alla richiesta, come descritto nell'<a href="/privacy/">informativa privacy</a>.</p>
           </form>
         </div>
       </div>
