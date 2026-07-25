@@ -87,6 +87,8 @@
             © 2018-2026 DC S.r.l.· Via Novecchio 10, Pisa · P.IVA 02285180507
             <span style="margin: 0 8px; opacity: 0.4;">·</span>
             <a href="/privacy/" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Privacy &amp; Cookie</a>
+            <span style="margin: 0 8px; opacity: 0.4;">Â·</span>
+            <button type="button" class="dc-consent-manage" data-dc-consent-open>Gestisci cookie</button>
           </div>
           <div class="footer-social">
             <a href="https://www.facebook.com/difesaconsumatoresrls/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
@@ -150,5 +152,166 @@
       }
     });
   });
+
+  // Gestore cookie pronto per servizi futuri: nessuno script facoltativo
+  // viene caricato finché la relativa categoria non è stata accettata.
+  const consentConfig = window.DC_CONSENT_CONFIG || {
+    version: '2026-07-25-1',
+    retentionDays: 180,
+    services: []
+  };
+  const consentStorageKey = 'dc_cookie_preferences';
+  const optionalServices = Array.isArray(consentConfig.services) ? consentConfig.services : [];
+  const hasOptionalServices = optionalServices.length > 0;
+  let consentLayer = null;
+
+  function readConsent() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(consentStorageKey));
+      if (!saved || saved.version !== consentConfig.version || Date.now() >= saved.expiresAt) return null;
+      return saved;
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function saveConsent(categories, mode) {
+    const retention = Number(consentConfig.retentionDays) || 180;
+    const record = {
+      version: consentConfig.version,
+      mode,
+      categories,
+      decidedAt: Date.now(),
+      expiresAt: Date.now() + retention * 86400000
+    };
+    try { localStorage.setItem(consentStorageKey, JSON.stringify(record)); } catch (_) {}
+    return record;
+  }
+
+  function categoryIds() {
+    return [...new Set(optionalServices.map(service => service.category).filter(Boolean))];
+  }
+
+  function loadAcceptedServices(record) {
+    if (!record || !record.categories) return;
+    optionalServices.forEach(service => {
+      if (record.categories[service.category] === true && typeof service.load === 'function' && !service.__loaded) {
+        service.__loaded = true;
+        try { service.load(); } catch (error) { console.error('Servizio cookie non caricato:', service.id, error); }
+      }
+    });
+  }
+
+  function closeConsentLayer() {
+    if (consentLayer) {
+      consentLayer.remove();
+      consentLayer = null;
+    }
+  }
+
+  function decideAll(allowed) {
+    const categories = Object.fromEntries(categoryIds().map(id => [id, allowed]));
+    const mustUnload = !allowed && optionalServices.some(service => service.__loaded);
+    const record = saveConsent(categories, allowed ? 'accepted' : 'rejected');
+    closeConsentLayer();
+    if (mustUnload) window.location.reload();
+    else if (allowed) loadAcceptedServices(record);
+  }
+
+  function renderTechnicalNotice() {
+    return `
+      <div class="dc-consent-card dc-cookie-notice" role="dialog" aria-modal="true" aria-labelledby="dc-consent-title">
+        <button type="button" class="dc-consent-close" data-dc-action="ack" aria-label="Chiudi l'avviso">×</button>
+        <div class="dc-consent-copy">
+          <h2 id="dc-consent-title">Cookie tecnici</h2>
+          <p>Questo sito utilizza esclusivamente strumenti tecnici necessari al funzionamento. Non vengono usati cookie di profilazione o Analytics.</p>
+          <a href="/privacy/">Leggi l'informativa Privacy &amp; Cookie</a>
+        </div>
+        <div class="dc-consent-actions">
+          <button type="button" class="dc-consent-primary" data-dc-action="ack">Ho capito</button>
+        </div>
+      </div>`;
+  }
+
+  function renderConsentBanner() {
+    const groups = categoryIds().map(category => {
+      const services = optionalServices.filter(service => service.category === category);
+      const label = services[0]?.categoryLabel || category;
+      const description = services.map(service => `${service.name}: ${service.purpose}`).join(' ');
+      return `<label class="dc-consent-option">
+        <span><strong>${label}</strong><small>${description}</small></span>
+        <input type="checkbox" data-dc-category="${category}">
+      </label>`;
+    }).join('');
+    return `
+      <div class="dc-consent-card dc-consent-banner" role="dialog" aria-modal="true" aria-labelledby="dc-consent-title">
+        <button type="button" class="dc-consent-close" data-dc-action="reject" aria-label="Rifiuta i cookie facoltativi e chiudi">×</button>
+        <div class="dc-consent-copy">
+          <h2 id="dc-consent-title">La tua privacy, la tua scelta</h2>
+          <p>Usiamo strumenti tecnici necessari. Gli strumenti facoltativi restano bloccati finché non esprimi il consenso.</p>
+          <a href="/privacy/">Leggi l'informativa Privacy &amp; Cookie</a>
+        </div>
+        <div class="dc-consent-preferences" data-dc-preferences hidden>${groups}</div>
+        <div class="dc-consent-actions">
+          <button type="button" class="dc-consent-secondary" data-dc-action="reject">Rifiuta tutti</button>
+          <button type="button" class="dc-consent-secondary" data-dc-action="customize">Personalizza</button>
+          <button type="button" class="dc-consent-primary" data-dc-action="accept">Accetta tutti</button>
+          <button type="button" class="dc-consent-primary" data-dc-action="save" hidden>Salva preferenze</button>
+        </div>
+      </div>`;
+  }
+
+  function openConsentLayer(force = false) {
+    closeConsentLayer();
+    const saved = readConsent();
+    if (!force && saved) return;
+    consentLayer = document.createElement('div');
+    consentLayer.className = 'dc-consent-layer';
+    consentLayer.innerHTML = hasOptionalServices ? renderConsentBanner() : renderTechnicalNotice();
+    document.body.appendChild(consentLayer);
+
+    consentLayer.addEventListener('click', event => {
+      const button = event.target.closest('[data-dc-action]');
+      if (!button) return;
+      const action = button.dataset.dcAction;
+      if (action === 'ack') {
+        saveConsent({}, 'technical-notice');
+        closeConsentLayer();
+      } else if (action === 'accept') {
+        decideAll(true);
+      } else if (action === 'reject') {
+        decideAll(false);
+      } else if (action === 'customize') {
+        consentLayer.querySelector('[data-dc-preferences]').hidden = false;
+        button.hidden = true;
+        consentLayer.querySelector('[data-dc-action="save"]').hidden = false;
+      } else if (action === 'save') {
+        const categories = {};
+        consentLayer.querySelectorAll('[data-dc-category]').forEach(input => {
+          categories[input.dataset.dcCategory] = input.checked;
+        });
+        const mustUnload = optionalServices.some(service =>
+          service.__loaded && categories[service.category] !== true
+        );
+        const record = saveConsent(categories, 'custom');
+        closeConsentLayer();
+        if (mustUnload) window.location.reload();
+        else loadAcceptedServices(record);
+      }
+    });
+  }
+
+  document.querySelectorAll('[data-dc-consent-open]').forEach(button => {
+    button.addEventListener('click', () => openConsentLayer(true));
+  });
+
+  const savedConsent = readConsent();
+  if (savedConsent) loadAcceptedServices(savedConsent);
+  else openConsentLayer();
+
+  window.DCConsent = {
+    open: () => openConsentLayer(true),
+    hasConsent: category => readConsent()?.categories?.[category] === true
+  };
 
 })();
