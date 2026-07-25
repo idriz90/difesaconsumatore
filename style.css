@@ -460,6 +460,51 @@ footer {
   html, body { font-size: 19.5px; }
 }
 
+/* Gestore cookie: avviso tecnico oggi, consenso granulare quando necessario */
+.dc-consent-manage {
+  padding: 0; border: 0; border-bottom: 1px solid rgba(255,255,255,.3);
+  color: inherit; background: transparent; font: inherit; cursor: pointer;
+}
+.dc-consent-layer {
+  position: fixed; z-index: 10000; inset: auto 0 0;
+  padding: 18px; background: rgba(5,22,45,.2);
+}
+.dc-consent-card {
+  position: relative; max-width: 1120px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: center;
+  padding: 24px 58px 24px 26px; border: 1px solid #d7e0eb; border-radius: 16px;
+  color: var(--navy); background: #fff; box-shadow: 0 -6px 32px rgba(5,22,45,.18);
+}
+.dc-consent-copy h2 { margin: 0 0 7px; font-size: 21px; }
+.dc-consent-copy p { margin: 0 0 7px; max-width: 720px; line-height: 1.5; }
+.dc-consent-copy a { color: var(--blue); font-weight: 700; }
+.dc-consent-close {
+  position: absolute; top: 10px; right: 14px; width: 38px; height: 38px;
+  border: 0; border-radius: 50%; color: var(--navy); background: transparent;
+  font-size: 28px; line-height: 1; cursor: pointer;
+}
+.dc-consent-close:hover, .dc-consent-close:focus-visible { background: #edf2f8; }
+.dc-consent-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+.dc-consent-actions button {
+  min-height: 44px; padding: 10px 17px; border: 2px solid var(--navy);
+  border-radius: 999px; font: inherit; font-weight: 750; cursor: pointer;
+}
+.dc-consent-primary { color: #fff; background: var(--navy); }
+.dc-consent-secondary { color: var(--navy); background: #fff; }
+.dc-consent-preferences {
+  grid-column: 1 / -1; padding: 15px; border-radius: 12px; background: #f4f7fb;
+}
+.dc-consent-option { display: flex; justify-content: space-between; gap: 18px; align-items: center; }
+.dc-consent-option small { display: block; margin-top: 4px; line-height: 1.4; }
+.dc-consent-option input { width: 22px; height: 22px; accent-color: var(--navy); }
+[hidden] { display: none !important; }
+@media (max-width: 760px) {
+  .dc-consent-layer { padding: 10px; }
+  .dc-consent-card { grid-template-columns: 1fr; padding: 22px 48px 20px 20px; gap: 16px; }
+  .dc-consent-actions { justify-content: stretch; }
+  .dc-consent-actions button { flex: 1 1 140px; }
+}
+
   --white: #ffffff;
   --off-white: #f5f7fb;
   --text: #1a3a6b;
