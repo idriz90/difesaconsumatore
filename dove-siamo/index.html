@@ -189,7 +189,21 @@
       transition: background 0.2s; width: 100%;
     }
     .cf-btn:hover { background: var(--gold-light); }
-    .cf-privacy { font-size: 10px; color: rgba(255,255,255,0.3); text-align: center; }
+    .cf-sensitive-note {
+      margin: -2px 0 0; font-size: 11px; line-height: 1.45;
+      color: rgba(255,255,255,0.68);
+    }
+    .cf-ack {
+      display: flex; align-items: flex-start; gap: 9px;
+      font-size: 11px; line-height: 1.45; color: rgba(255,255,255,0.82);
+      cursor: pointer;
+    }
+    .cf .cf-ack input {
+      flex: 0 0 auto; width: 17px; height: 17px; margin: 1px 0 0;
+      padding: 0; accent-color: var(--gold);
+    }
+    .cf-ack a, .cf-privacy a { color: var(--gold-light); font-weight: 700; }
+    .cf-privacy { margin: 0; font-size: 10px; color: rgba(255,255,255,0.55); text-align: center; }
 
     /* ── SOCIAL BAND ── */
     .social-band { background: var(--off-white); padding: 56px 32px; border-top: 1px solid var(--border); }
@@ -481,7 +495,12 @@
               <option>Rimborso al Volo</option>
               <option>Altro</option>
             </select>
-            <textarea name="Messaggio" placeholder="Descrivi brevemente la tua situazione. Più dettagli fornisci, più precisa sarà la nostra valutazione..."></textarea>
+            <textarea name="Messaggio" maxlength="2000" aria-describedby="cf-sensitive-note" placeholder="Descrivi brevemente la tua situazione (massimo 2.000 caratteri)."></textarea>
+            <p class="cf-sensitive-note" id="cf-sensitive-note">Non inserire dati sanitari, credenziali, documenti, codici bancari o altre informazioni particolarmente riservate. Potremo richiederli successivamente tramite un canale adeguato, se necessari.</p>
+            <label class="cf-ack">
+              <input type="checkbox" name="Presa_visione_informativa" value="Sì" required />
+              <span>Dichiaro di aver letto l'<a href="/privacy/" target="_blank" rel="noopener">informativa privacy</a>. Questa presa visione non costituisce consenso a finalità promozionali.</span>
+            </label>
             <button class="cf-btn" type="submit">Invia Richiesta →</button>
             <p class="cf-privacy">I dati saranno trattati per rispondere alla richiesta, come descritto nell'<a href="/privacy/">informativa privacy</a>.</p>
           </form>
@@ -514,7 +533,8 @@
     </div>
   </div>
 
-  <script src="../nav.js"></script>
+  <script src="../consent-config.js?v=1"></script>
+  <script src="../nav.js?v=6"></script>
 
   <!-- ── TWEAKS PANEL ── -->
   <div id="tweaks-panel" role="dialog" aria-label="Tweaks">
