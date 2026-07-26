@@ -479,6 +479,7 @@
             <input type="hidden" name="access_key" value="32082512-78b3-445e-a8c0-93646ca527f8" />
             <input type="hidden" name="subject" value="Nuova richiesta - Difesa Consumatore Pisa" />
             <input type="hidden" name="redirect" value="https://www.difesaconsumatore.org/grazie/" />
+            <input type="hidden" name="Provenienza" id="cf-source" value="Difesa Consumatore" />
             <input type="checkbox" name="botcheck" style="display:none;" />
             <div class="cf-row">
               <input type="text" name="Nome" placeholder="Nome" required />
@@ -486,6 +487,14 @@
             </div>
             <input type="tel" name="Telefono" placeholder="Numero di telefono" required />
             <input type="email" name="email" placeholder="Indirizzo email" required />
+            <input type="text" name="Azienda" id="cf-company" placeholder="Azienda (se richiesta per un'impresa)" />
+            <select name="Provincia" id="cf-province">
+              <option value="">Provincia (facoltativa)</option>
+              <option>Pisa</option>
+              <option>Lucca</option>
+              <option>Livorno</option>
+              <option>Altra provincia</option>
+            </select>
             <select name="Pratica" required>
               <option value="" disabled selected>Tipo di pratica</option>
               <option>Cessione del Quinto / Prestito Personale</option>
@@ -493,6 +502,9 @@
               <option>Segnalazioni CRIF</option>
               <option>Saldo e Stralcio</option>
               <option>Rimborso al Volo</option>
+              <option value="Privacy e cookie per sito aziendale">Difesa Impresa - Privacy e cookie del sito</option>
+              <option value="Fatture non pagate e gestione del credito">Difesa Impresa - Fatture non pagate</option>
+              <option value="Conciliazione utenze aziendali">Difesa Impresa - Conciliazione utenze</option>
               <option>Altro</option>
             </select>
             <textarea name="Messaggio" maxlength="2000" aria-describedby="cf-sensitive-note" placeholder="Descrivi brevemente la tua situazione (massimo 2.000 caratteri)."></textarea>
@@ -504,6 +516,28 @@
             <button class="cf-btn" type="submit">Invia Richiesta →</button>
             <p class="cf-privacy">I dati saranno trattati per rispondere alla richiesta, come descritto nell'<a href="/privacy/">informativa privacy</a>.</p>
           </form>
+          <script>
+            (function () {
+              const params = new URLSearchParams(window.location.search);
+              const area = params.get('area');
+              if (!area) return;
+              const source = document.getElementById('cf-source');
+              const company = document.getElementById('cf-company');
+              const subject = document.querySelector('.cf input[name="subject"]');
+              const practice = document.querySelector('.cf select[name="Pratica"]');
+              const choices = {
+                'privacy-cookie': 'Privacy e cookie per sito aziendale',
+                'crediti-impresa': 'Fatture non pagate e gestione del credito',
+                'utenze-impresa': 'Conciliazione utenze aziendali'
+              };
+              source.value = 'Difesa Impresa';
+              subject.value = 'Nuova richiesta - Difesa Impresa';
+              company.required = true;
+              company.placeholder = 'Azienda';
+              document.getElementById('cf-province').required = true;
+              if (choices[area]) practice.value = choices[area];
+            }());
+          </script>
         </div>
       </div>
     </div>
@@ -534,7 +568,7 @@
   </div>
 
   <script src="../consent-config.js?v=1"></script>
-  <script src="../nav.js?v=6"></script>
+  <script src="../nav.js?v=7"></script>
 
   <!-- ── TWEAKS PANEL ── -->
   <div id="tweaks-panel" role="dialog" aria-label="Tweaks">
