@@ -26,20 +26,19 @@
       position: absolute; inset: 0;
       background-color: var(--navy);
       /* Immagine intera dietro, ancorata leggermente a destra dove c'è la targa */
-      background-image: url('hero-bg.jpg?v=4');
+      background-image: url('assets/ufficio/sala-riunioni.webp?v=1');
       background-size: cover;
-      background-position: right 25%;
+      background-position: center 48%;
       background-repeat: no-repeat;
     }
     /* Overlay blu in trasparenza: porta visibile in filigrana a sinistra, targa nitida a destra */
     .hero-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(90deg,
-        rgba(26,58,107,0.88) 0%,
-        rgba(26,58,107,0.75) 35%,
-        rgba(26,58,107,0.45) 58%,
-        rgba(26,58,107,0.15) 80%,
-        rgba(26,58,107,0) 100%);
+        rgba(13,35,69,0.96) 0%,
+        rgba(18,45,86,0.90) 34%,
+        rgba(18,45,86,0.62) 58%,
+        rgba(18,45,86,0.20) 100%);
     }
     .hero-inner {
       position: relative; z-index: 2;
@@ -103,6 +102,59 @@
     .hero-stat-label {
       font-size: 12.5px; color: rgba(255,255,255,0.65);
       margin-top: 4px; font-weight: 400;
+    }
+
+    /* La sede reale: fiducia attraverso luoghi e dettagli autentici */
+    .office-story { background: #fff; padding: 88px 32px; }
+    .office-story-inner {
+      max-width: var(--container); margin: 0 auto;
+      display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(340px, .85fr);
+      gap: 64px; align-items: center;
+    }
+    .office-gallery {
+      display: grid; grid-template-columns: 1.25fr .75fr;
+      grid-template-rows: repeat(4, 96px); gap: 12px;
+    }
+    .office-photo {
+      width: 100%; height: 100%; object-fit: cover; display: block;
+      border-radius: 6px; box-shadow: 0 18px 45px rgba(18,45,86,.12);
+    }
+    .office-photo-main { grid-row: 1 / 5; }
+    .office-photo-sign { object-position: 52% 38%; }
+    .office-copy .section-label { margin-bottom: 14px; display: block; }
+    .office-copy h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 3.3vw, 3rem); line-height: 1.13;
+      color: var(--navy-dark); margin-bottom: 22px;
+    }
+    .office-copy > p {
+      color: #526176; font-size: 16.5px; line-height: 1.8; margin-bottom: 28px;
+    }
+    .office-facts { display: grid; gap: 0; margin-bottom: 30px; }
+    .office-fact {
+      display: grid; grid-template-columns: 34px 1fr; gap: 12px;
+      align-items: start; padding: 15px 0; border-top: 1px solid var(--border);
+    }
+    .office-fact:last-child { border-bottom: 1px solid var(--border); }
+    .office-fact-mark {
+      width: 28px; height: 28px; border-radius: 50%;
+      display: grid; place-items: center; background: rgba(245,200,66,.24);
+      color: var(--navy); font-weight: 800;
+    }
+    .office-fact strong { display: block; color: var(--navy-dark); margin-bottom: 2px; }
+    .office-fact span { color: #667387; font-size: 14px; line-height: 1.55; }
+    .office-link {
+      display: inline-flex; color: var(--navy); font-weight: 700;
+      text-decoration: none; border-bottom: 2px solid var(--gold); padding-bottom: 4px;
+    }
+    @media (max-width: 850px) {
+      .office-story { padding: 64px 20px; }
+      .office-story-inner { grid-template-columns: 1fr; gap: 38px; }
+      .office-gallery { grid-template-rows: repeat(4, 100px); }
+    }
+    @media (max-width: 540px) {
+      .office-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 250px 130px 130px; }
+      .office-photo-main { grid-column: 1 / 3; grid-row: auto; }
     }
 
     /* ── AREE DI COMPETENZA ── */
@@ -344,12 +396,12 @@
     <div class="hero-overlay"></div>
     <div class="hero-inner">
       <div class="hero-content">
-        <span class="hero-eyebrow">ASSISTENZA AL CONSUMATORE · PISA</span>
+        <span class="hero-eyebrow">UNA SEDE REALE A PISA · ASSISTENZA IN TUTTA ITALIA</span>
         <h1 class="hero-title">
-          <span class="hero-line"><span>Più di 2000</span></span><span class="hero-line"><span>contenziosi bancari</span></span><span class="hero-line"><span>risolti ogni anno</span></span>
+          <span class="hero-line"><span>Dalla parte di chi</span></span><span class="hero-line"><span>vuole fare chiarezza</span></span>
         </h1>
         <p class="hero-subtitle">
-          Nel 95% dei casi sono stati emessi rimborsi a favore del cliente.
+          Affianchiamo consumatori e famiglie nei rapporti con banche, finanziarie e fornitori di servizi.
         </p>
         <div class="hero-actions">
           <a href="/dove-siamo/#modulo" class="btn-yellow">Consulenza gratuita →</a>
@@ -394,6 +446,39 @@
       </div>
     </div>
   </div>
+
+  <!-- ══ LA NOSTRA SEDE ══ -->
+  <section class="office-story" aria-labelledby="office-title">
+    <div class="office-story-inner">
+      <div class="office-gallery reveal">
+        <img class="office-photo office-photo-main" src="assets/ufficio/sala-attesa.webp" alt="Sala d'attesa della sede operativa di Difesa Consumatore a Pisa" />
+        <img class="office-photo" src="assets/ufficio/sala-riunioni.webp" alt="Sala riunioni dove vengono esaminate le pratiche" />
+        <img class="office-photo office-photo-sign" src="assets/ufficio/ingresso.webp" alt="Ingresso dell'ufficio Difesa Consumatore" />
+        <img class="office-photo" src="assets/ufficio/sede-esterna-v2.webp" alt="Esterno dell'edificio della sede operativa a Pisa" loading="lazy" />
+        <img class="office-photo" src="assets/ufficio/archivio.webp" alt="Archivio delle pratiche seguito dall'ufficio" loading="lazy" />
+      </div>
+      <div class="office-copy reveal">
+        <span class="section-label">DIFESA CONSUMATORE, DA VICINO</span>
+        <h2 id="office-title">Un luogo concreto, dove ogni pratica viene ascoltata e studiata</h2>
+        <p>La nostra sede operativa è a Pisa, in Via Novecchio 10. Qui riceviamo su appuntamento, analizziamo la documentazione e spieghiamo con parole chiare il percorso possibile.</p>
+        <div class="office-facts">
+          <div class="office-fact">
+            <div class="office-fact-mark">1</div>
+            <div><strong>Prima verifichiamo</strong><span>Esaminiamo il caso prima di proporre l'apertura di una pratica.</span></div>
+          </div>
+          <div class="office-fact">
+            <div class="office-fact-mark">2</div>
+            <div><strong>Restiamo raggiungibili</strong><span>Telefono fisso, cellulare e WhatsApp per seguire il rapporto nel tempo.</span></div>
+          </div>
+          <div class="office-fact">
+            <div class="office-fact-mark">3</div>
+            <div><strong>Operiamo anche a distanza</strong><span>Da Pisa assistiamo consumatori in tutta Italia.</span></div>
+          </div>
+        </div>
+        <a class="office-link" href="/dove-siamo/">Scopri la sede e come raggiungerci →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- ══ AREE DI COMPETENZA con mascotte ══ -->
   <section class="competenze">
