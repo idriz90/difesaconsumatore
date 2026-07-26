@@ -942,3 +942,20 @@ footer {
   :root { --container: 1560px; }
   html, body { font-size: 19.5px; }
 }
+/* Menu mobile: più respiro e area di tocco più comoda */
+@media (max-width: 768px) {
+  .nav-links {
+    padding: 22px 24px 30px;
+    gap: 14px;
+  }
+  .nav-links li {
+    width: 100%;
+  }
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 14px 18px;
+    line-height: 1.35;
+    text-align: center;
+  }
+}
