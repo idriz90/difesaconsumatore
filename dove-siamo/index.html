@@ -60,6 +60,15 @@
 
   <link rel="stylesheet" href="../style.css" />
   <style>
+    .page-header {
+      background-image:
+        linear-gradient(90deg, rgba(18,45,86,.95) 0%, rgba(26,58,107,.80) 48%, rgba(26,58,107,.28) 100%),
+        url('/assets/ufficio/sede-dove-siamo.webp');
+      background-size: cover;
+      background-position: center 58%;
+      background-repeat: no-repeat;
+    }
+
     /* ── CONTACT SECTION ── */
     .contact-section { background: var(--white); }
 
@@ -735,6 +744,21 @@
         panel.classList.remove('visible');
       }
     });
+
+    closeBtn.addEventListener('click', () => {
+      panel.classList.remove('visible');
+      try { window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); } catch (e) {}
+    });
+
+    /* Init */
+    syncControls();
+    applyLink();
+
+    try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch (e) {}
+  })();
+  </script>
+</body>
+</html>
 
     closeBtn.addEventListener('click', () => {
       panel.classList.remove('visible');
