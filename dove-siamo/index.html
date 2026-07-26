@@ -339,7 +339,7 @@
 <body>
 
   <!-- PAGE HEADER -->
-  <div class="page-header">
+  <div class="page-header" style="background-image:linear-gradient(90deg,rgba(18,45,86,.95) 0%,rgba(26,58,107,.80) 48%,rgba(26,58,107,.28) 100%),url('/assets/ufficio/sede-dove-siamo.webp?v=2');background-size:cover;background-position:center 58%;background-repeat:no-repeat;">
     <div class="page-header-inner">
       <div class="breadcrumb"><a href="../">Home</a> / Dove Siamo</div>
       <h1>Dove Siamo</h1>
@@ -744,21 +744,6 @@
         panel.classList.remove('visible');
       }
     });
-
-    closeBtn.addEventListener('click', () => {
-      panel.classList.remove('visible');
-      try { window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); } catch (e) {}
-    });
-
-    /* Init */
-    syncControls();
-    applyLink();
-
-    try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch (e) {}
-  })();
-  </script>
-</body>
-</html>
 
     closeBtn.addEventListener('click', () => {
       panel.classList.remove('visible');
