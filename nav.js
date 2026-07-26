@@ -14,6 +14,7 @@
   const links = [
     { href: '/',            label: 'HOME' },
     { href: '/servizi/',    label: 'Servizi Offerti' },
+    { href: '/difesa-impresa/', label: 'Difesa Impresa' },
     { href: '/dove-siamo/', label: 'Dove Siamo' },
   ];
   // Footer mostra anche il Blog (Substack)
@@ -71,6 +72,7 @@
               <li><a href="/servizi/#crif">Segnalazioni CRIF</a></li>
               <li><a href="/servizi/#saldo">Saldo e Stralcio</a></li>
               <li><a href="/servizi/#volo">Rimborso al Volo</a></li>
+              <li><a href="/difesa-impresa/">Servizi per imprese</a></li>
             </ul>
           </div>
           <div class="footer-col">
