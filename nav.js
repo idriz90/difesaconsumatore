@@ -86,11 +86,11 @@
         </div>
         <div class="footer-bottom">
           <div class="footer-copy">
-            © 2018-2026 DC S.r.l.· Via Novecchio 10, Pisa · P.IVA 02285180507
+            © 2018-2026 DC S.r.l. · Via Novecchio 10, Pisa · P.IVA 02285180507
             <span style="margin: 0 8px; opacity: 0.4;">·</span>
             <a href="/privacy/" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Privacy &amp; Cookie</a>
-            <span style="margin: 0 8px; opacity: 0.4;">Â·</span>
-            <button type="button" class="dc-consent-manage" data-dc-consent-open>Gestisci cookie</button>
+            <button type="button" class="dc-consent-manage" data-dc-consent-open style="margin-left: 12px;">Gestisci cookie</button>
+            <span style="margin-left: 12px;">Powered by IS</span>
           </div>
           <div class="footer-social">
             <a href="https://www.facebook.com/difesaconsumatoresrls/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
