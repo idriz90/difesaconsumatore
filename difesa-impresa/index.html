@@ -106,6 +106,7 @@
     .di-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.di-step{border-top:4px solid var(--gold);padding:24px 18px;background:#fff}.di-step strong{display:block;color:var(--navy);font-size:1.05rem;margin-bottom:10px}.di-step p{color:var(--text-body);line-height:1.65;font-size:15px}
     .di-docs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.di-doc{background:#fff;border-left:4px solid var(--navy);padding:25px}.di-doc h3{color:var(--navy);margin:0 0 10px}.di-doc p{color:var(--text-body);line-height:1.7}
     .di-faq{max-width:900px}.di-faq details{border-bottom:1px solid var(--border);padding:20px 0}.di-faq summary{cursor:pointer;color:var(--navy);font-weight:800;font-size:17px}.di-faq p{color:var(--text-body);line-height:1.75;padding-top:12px}
+    body.di-panel-active #faq{display:none}
     .di-final{background:var(--gold);padding:54px 0}.di-final-grid{display:flex;align-items:center;justify-content:space-between;gap:30px}.di-final h2{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:2.2rem;margin:0 0 8px}.di-final p{color:var(--navy)}
     @media(max-width:900px){.di-services,.di-docs{grid-template-columns:1fr}.di-steps{grid-template-columns:1fr 1fr}.di-panel-grid{grid-template-columns:1fr}.di-trust{grid-template-columns:1fr}}
     @media(max-width:560px){.di-wrap{width:min(100% - 28px,1120px)}.di-hero{padding:68px 0 58px}.di-section{padding:58px 0}.di-steps{grid-template-columns:1fr}.di-service-panel{padding:24px}.di-panel-form{padding:20px}.di-final-grid{align-items:flex-start;flex-direction:column}}
@@ -194,6 +195,8 @@
                 </ul>
                 <h3>Cosa ricevi</h3>
                 <p>Un report tecnico con prove visive e di rete, criticità ordinate per priorità e indicazioni per l’adeguamento del sito.</p>
+                <h3>Cosa preparare</h3>
+                <p>Indirizzo del sito, accesso al pannello se disponibile, elenco dei servizi esterni e informative attuali.</p>
                 <p class="di-panel-note">Lo screening non è un accertamento legale né una certificazione automatica di conformità. Finalità, basi giuridiche, contratti e processi interni richiedono una valutazione professionale.</p>
               </div>
               <div class="di-panel-form">
@@ -237,6 +240,8 @@
                 </ul>
                 <h3>Cosa viene chiarito prima dell’incarico</h3>
                 <p>Attività comprese, costi, eventuale componente a risultato, tempi indicativi e condizioni per interrompere o passare alla fase successiva.</p>
+                <h3>Cosa preparare</h3>
+                <p>Fattura, ordine o contratto, prova della prestazione, scadenza e comunicazioni già inviate.</p>
                 <p class="di-panel-note">Il recupero non garantisce l’incasso: esito e tempi dipendono dalla documentazione, dalla contestazione e dalla situazione del debitore.</p>
               </div>
               <div class="di-panel-form">
@@ -279,6 +284,8 @@
                 </ul>
                 <h3>Risultato della prima verifica</h3>
                 <p>Ricevi un’indicazione chiara sul percorso possibile, sui documenti mancanti e sulle condizioni economiche dell’assistenza.</p>
+                <h3>Cosa preparare</h3>
+                <p>Contratto, fatture contestate, reclamo già inviato, risposta del gestore e dati della fornitura.</p>
                 <p class="di-panel-note">La procedura e l’eventuale accordo dipendono dal settore, dal tipo di cliente, dai termini e dalla documentazione disponibile.</p>
               </div>
               <div class="di-panel-form">
@@ -324,21 +331,6 @@
       </div>
     </section>
 
-    <section class="di-section alt" id="documenti">
-      <div class="di-wrap">
-        <div class="di-heading">
-          <div class="di-kicker">Prima verifica</div>
-          <h2>Cosa preparare prima del contatto</h2>
-          <p>Nel modulo è sufficiente una descrizione sintetica. I documenti verranno richiesti successivamente attraverso un canale adeguato.</p>
-        </div>
-        <div class="di-docs">
-          <article class="di-doc"><h3>Privacy e cookie</h3><p>Indirizzo del sito, accesso al pannello se disponibile, elenco dei servizi esterni e informative attuali.</p></article>
-          <article class="di-doc"><h3>Fatture insolute</h3><p>Fattura, ordine o contratto, prova della prestazione, scadenza e comunicazioni già inviate.</p></article>
-          <article class="di-doc"><h3>Utenze aziendali</h3><p>Contratto, fatture contestate, reclamo già inviato, risposta del gestore e dati della fornitura.</p></article>
-        </div>
-      </div>
-    </section>
-
     <section class="di-section" id="faq">
       <div class="di-wrap">
         <div class="di-heading">
@@ -363,12 +355,24 @@
   </section>
 
   <script src="/consent-config.js?v=1"></script>
-  <script src="/nav.js?v=7"></script>
+  <script src="/nav.js?v=8"></script>
   <script>
     (function () {
       const buttons = [...document.querySelectorAll('.di-card-open')];
       const panels = [...document.querySelectorAll('.di-service-panel')];
-      function openPanel(panelId, moveFocus) {
+      const panelAliases = { 'panel-privacy': 'privacy', 'panel-crediti': 'crediti', 'panel-utenze': 'utenze' };
+      function closePanels() {
+        panels.forEach(panel => {
+          panel.classList.remove('is-open');
+          panel.setAttribute('aria-hidden', 'true');
+        });
+        buttons.forEach(button => {
+          button.setAttribute('aria-expanded', 'false');
+          button.closest('.di-card').classList.remove('is-active');
+        });
+        document.body.classList.remove('di-panel-active');
+      }
+      function openPanel(panelId, moveFocus, updateHistory) {
         panels.forEach(panel => {
           const open = panel.id === panelId;
           panel.classList.toggle('is-open', open);
@@ -379,21 +383,36 @@
           button.setAttribute('aria-expanded', String(active));
           button.closest('.di-card').classList.toggle('is-active', active);
         });
+        document.body.classList.add('di-panel-active');
+        if (updateHistory) {
+          const url = new URL(location.href);
+          url.searchParams.set('servizio', panelAliases[panelId]);
+          url.hash = 'servizi';
+          const method = history.state && history.state.diPanel ? 'replaceState' : 'pushState';
+          history[method]({ diPanel: panelId }, '', url);
+        }
         const panel = document.getElementById(panelId);
         if (panel && moveFocus) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
       buttons.forEach(button => button.addEventListener('click', function () {
         const alreadyOpen = this.getAttribute('aria-expanded') === 'true';
         if (alreadyOpen) {
-          panels.forEach(panel => { panel.classList.remove('is-open'); panel.setAttribute('aria-hidden', 'true'); });
-          buttons.forEach(item => { item.setAttribute('aria-expanded', 'false'); item.closest('.di-card').classList.remove('is-active'); });
+          if (history.state && history.state.diPanel) history.back();
+          else closePanels();
         } else {
-          openPanel(this.dataset.panel, true);
+          openPanel(this.dataset.panel, true, true);
         }
       }));
       const requested = new URLSearchParams(location.search).get('servizio');
       const aliases = { privacy: 'panel-privacy', crediti: 'panel-crediti', utenze: 'panel-utenze' };
-      if (aliases[requested]) openPanel(aliases[requested], false);
+      if (aliases[requested]) openPanel(aliases[requested], false, false);
+      window.addEventListener('popstate', function (event) {
+        if (event.state && event.state.diPanel) openPanel(event.state.diPanel, false, false);
+        else {
+          closePanels();
+          document.getElementById('servizi').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
     }());
   </script>
 </body>
