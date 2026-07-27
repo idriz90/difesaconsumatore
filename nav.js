@@ -24,7 +24,7 @@
     <nav id="main-nav">
       <div class="nav-inner">
         <a href="/" class="nav-logo">
-          <img class="logo-shield" src="/logo.png" alt="Difesa Consumatore" width="48" height="48" />
+          <img class="logo-shield" src="/logo.png?v=2" alt="Difesa Consumatore" width="56" height="56" />
           <div class="logo-text-wrap">
             <span class="logo-top">DIFESA</span>
             <span class="logo-bottom">CONSUMATORE</span>
@@ -47,7 +47,7 @@
         <div class="footer-top">
           <div class="footer-brand">
             <div class="footer-brand-row">
-              <img src="/logo.png" alt="" width="40" height="40" />
+              <img src="/logo.png?v=2" alt="" width="40" height="40" />
               <div class="footer-brand-text">
                 <div class="logo-top">DIFESA</div>
                 <div class="logo-bottom">CONSUMATORE</div>
