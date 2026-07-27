@@ -8,13 +8,13 @@
   <meta name="description" content="Difesa Consumatore Pisa: più di 2000 contenziosi bancari risolti ogni anno. Rimborsi cessione del quinto, sovraindebitamento, CRIF, saldo e stralcio, rimborso voli. Consulenza gratuita." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.difesaconsumatore.org/" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="icon" type="image/png" href="/logo.png?v=2" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.difesaconsumatore.org/" />
   <meta property="og:title" content="Difesa Consumatore Pisa | Rimborsi Bancari e Tutela Consumatore" />
   <meta property="og:description" content="Più di 2000 contenziosi bancari risolti ogni anno. Nel 95% dei casi rimborsi a favore del cliente." />
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LegalService","name":"Difesa Consumatore","url":"https://www.difesaconsumatore.org","telephone":"+393296491028","email":"difesaconsumatorepisa@gmail.com","vatID":"02285180507","address":{"@type":"PostalAddress","streetAddress":"Via Novecchio, 10","addressLocality":"Pisa","addressRegion":"PI","addressCountry":"IT"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"4"}}</script>
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="style.css?v=8" />
   <style>
     /* ── HERO ── */
     .hero {
@@ -372,7 +372,7 @@
 
     /* ══ HOME B · FIDUCIA CONTEMPORANEA ══ */
     .hero {
-      min-height: 650px;
+      min-height: 570px;
       align-items: stretch;
       background: var(--navy-dark);
     }
@@ -388,9 +388,9 @@
     .hero-inner {
       display: flex;
       align-items: center;
-      padding: 96px 40px 112px;
+      padding: 82px 40px 96px;
     }
-    .hero-content { max-width: 610px; }
+    .hero-content { max-width: 760px; }
     .hero-eyebrow {
       display: inline-flex;
       padding: 7px 12px;
@@ -401,8 +401,8 @@
       color: #fff;
     }
     .hero-title {
-      font-size: clamp(3rem,5.6vw,5.4rem);
-      max-width: 780px;
+      font-size: clamp(3rem,5.1vw,4.8rem);
+      max-width: 720px;
       letter-spacing: -.035em;
     }
     .hero-subtitle {
@@ -418,11 +418,6 @@
       box-shadow: 0 10px 24px rgba(0,0,0,.12);
     }
     .hero-actions .btn-ghost { border-radius: 5px; }
-    .hero-stats {
-      max-width: 520px;
-      margin-top: 4px;
-    }
-
     .trust-strip {
       position: relative;
       z-index: 4;
@@ -436,16 +431,21 @@
     }
     .trust-strip-inner {
       display: grid;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(5,1fr);
       gap: 0;
     }
     .trust-item {
       justify-content: flex-start;
       padding: 28px 24px;
       border-right: 1px solid var(--border);
+      text-decoration: none;
+      transition: background .2s ease;
     }
+    .trust-item:hover { background: #f5f8fc; }
     .trust-item:last-child { border-right: 0; }
-    .trust-item span { letter-spacing: 0; font-size: 14px; }
+    .trust-item span { display:block; letter-spacing: 0; font-size: 14px; }
+    .trust-item strong { display:block; color:var(--navy); margin-bottom:3px; }
+    .trust-item small { display:block; color:#667387; font-size:12px; font-weight:500; }
 
     .competenze {
       padding: 100px 32px;
@@ -457,39 +457,61 @@
     }
     .mascotte-col { display: none; }
     .competenze-list {
+      display: none;
+    }
+    .home-category-grid {
       display: grid;
       grid-template-columns: repeat(3,1fr);
-      gap: 18px;
+      gap: 20px;
     }
-    .competenze-list > h2 {
+    .home-category-heading {
       grid-column: 1 / -1;
-      border: 0 !important;
-      padding: 0 !important;
-      margin: 0 0 26px !important;
-      font-size: clamp(2.2rem,4vw,3.2rem) !important;
       text-align: center;
+      max-width:760px;
+      margin:0 auto 30px;
     }
-    .competenza-item {
-      display: grid;
-      grid-template-columns: 48px 1fr;
-      gap: 16px;
-      align-items: start;
-      min-height: 190px;
-      padding: 26px;
+    .home-category-heading h2 {
+      font-family:'Playfair Display',Georgia,serif;
+      color:var(--navy);
+      font-size:clamp(2.3rem,4vw,3.3rem);
+      line-height:1.12;
+      margin:10px 0 14px;
+      letter-spacing:-.025em;
+    }
+    .home-category-heading p { color:#667387; font-size:17px; line-height:1.7; }
+    .home-category-card {
+      display:flex;
+      flex-direction:column;
+      min-height:270px;
+      padding:32px;
       border: 1px solid #dfe6f0;
       border-radius: 9px;
       background: #fff;
       box-shadow: 0 5px 20px rgba(18,45,86,.05);
+      color:inherit;
+      text-decoration:none;
+      transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
     }
-    .competenza-item:hover {
-      background: #fff;
+    .home-category-card:hover {
       border-color: #90acd0;
       transform: translateY(-3px);
       box-shadow: 0 14px 32px rgba(18,45,86,.10);
     }
-    .competenza-icon { width: 48px; height: 48px; border-radius: 7px; }
-    .competenza-title { font-size: 17px; margin-bottom: 9px; }
-    .competenza-desc { line-height: 1.6; }
+    .home-category-num {
+      color:var(--gold-dark);
+      font-family:'Playfair Display',serif;
+      font-size:1.8rem;
+      font-weight:700;
+    }
+    .home-category-card h3 {
+      color:var(--navy);
+      font-family:'Playfair Display',Georgia,serif;
+      font-size:1.55rem;
+      line-height:1.2;
+      margin:18px 0 12px;
+    }
+    .home-category-card p { color:#526176; line-height:1.7; margin-bottom:24px; }
+    .home-category-card strong { color:var(--navy-light); margin-top:auto; }
 
     .office-story {
       padding: 100px 32px;
@@ -501,10 +523,19 @@
       gap: 72px;
     }
     .office-story-photo {
-      min-height: 480px;
+      min-height: 0;
+      height:100%;
       border-radius: 8px;
       box-shadow: none;
     }
+    .office-photo-pair {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      min-height:430px;
+    }
+    .office-photo-pair img { width:100%; object-fit:cover; }
+    .office-story-photo-secondary { object-position:58% center; }
     .office-copy h2 { letter-spacing: -.025em; }
     .office-fact { padding: 17px 0; }
 
@@ -524,9 +555,9 @@
       .hero-title { font-size: clamp(2.7rem,10vw,4.3rem); }
       .trust-strip { margin: -34px 18px 0; }
       .trust-strip-inner { grid-template-columns: 1fr 1fr; }
-      .trust-item:nth-child(2) { border-right: 0; }
-      .trust-item:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
-      .competenze-list { grid-template-columns: 1fr 1fr; }
+      .trust-item:nth-child(even) { border-right: 0; }
+      .trust-item { border-bottom: 1px solid var(--border); }
+      .home-category-grid { grid-template-columns: 1fr; }
       .office-story-inner { grid-template-columns: 1fr; }
       .testi-grid { grid-template-columns: 1fr; }
     }
@@ -539,11 +570,12 @@
       .hero-stats { gap: 14px; }
       .hero-stat { padding-right: 14px; margin-right: 0; }
       .trust-strip-inner,
-      .competenze-list { grid-template-columns: 1fr; }
+      .home-category-grid { grid-template-columns: 1fr; }
       .trust-item { border-right: 0; border-bottom: 1px solid var(--border); padding: 20px; }
       .competenze,.office-story,.testimonials { padding: 72px 20px; }
-      .competenza-item { min-height: auto; }
-      .office-story-photo { min-height: 300px; }
+      .home-category-card { min-height: auto; }
+      .office-photo-pair { min-height:0; grid-template-columns:1fr; }
+      .office-story-photo { min-height:250px; }
     }
   </style>
 </head>
@@ -556,29 +588,13 @@
     <div class="hero-inner">
       <div class="hero-content">
         <span class="hero-eyebrow">UNA SEDE REALE A PISA · ASSISTENZA IN TUTTA ITALIA</span>
-        <h1 class="hero-title">
-          <span class="hero-line"><span>Dalla parte di chi</span></span><span class="hero-line"><span>vuole fare chiarezza</span></span>
-        </h1>
+        <h1 class="hero-title">Dalla parte di chi vuole fare chiarezza.</h1>
         <p class="hero-subtitle">
           Affianchiamo consumatori e famiglie nei rapporti con banche, finanziarie e fornitori di servizi.
         </p>
         <div class="hero-actions">
           <a href="/dove-siamo/#modulo" class="btn-yellow">Consulenza gratuita →</a>
           <a href="/servizi/" class="btn-ghost">Scopri i servizi</a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-num" data-count="2000" data-suffix="+">2000+</div>
-            <div class="hero-stat-label">Pratiche annue</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num" data-count="95" data-suffix="%">95%</div>
-            <div class="hero-stat-label">Rimborsi ottenuti</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num" data-prefix="€" data-count="1000">€1000</div>
-            <div class="hero-stat-label">Rimborso medio cqs</div>
-          </div>
         </div>
       </div>
     </div>
@@ -587,41 +603,28 @@
   <!-- ══ TRUST STRIP ══ -->
   <div class="trust-strip">
     <div class="trust-strip-inner">
-      <div class="trust-item">
+      <a class="trust-item" href="https://wa.me/393296491028" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-        <span>Consulenza Gratuita</span>
-      </div>
-      <div class="trust-item">
+        <span><strong>WhatsApp</strong><small>Scrivici ora</small></span>
+      </a>
+      <a class="trust-item" href="tel:+390505201278">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <span>Nessun Anticipo</span>
-      </div>
-      <div class="trust-item">
+        <span><strong>Chiama ora</strong><small>050 520 1278</small></span>
+      </a>
+      <a class="trust-item" href="https://www.google.com/search?q=Difesa+Consumatore+Pisa" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <span>Risposta in 24 Ore</span>
-      </div>
-      <div class="trust-item">
+        <span><strong>Recensioni Google</strong><small>Valutazione 5 stelle</small></span>
+      </a>
+      <a class="trust-item" href="/dove-siamo/">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-        <span>2000+ Clienti Soddisfatti</span>
-      </div>
+        <span><strong>Sede a Pisa</strong><small>Via Novecchio 10</small></span>
+      </a>
+      <a class="trust-item" href="/dove-siamo/#modulo">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span><strong>Prima consulenza</strong><small>Gratuita e senza impegno</small></span>
+      </a>
     </div>
   </div>
-
-  <section class="office-story" aria-labelledby="office-title">
-    <div class="office-story-inner">
-      <img class="office-story-photo reveal" src="assets/ufficio/sala-attesa.webp" alt="Sala d'attesa della sede operativa di Difesa Consumatore a Pisa" />
-      <div class="office-copy reveal">
-        <span class="section-label">DIFESA CONSUMATORE, DA VICINO</span>
-        <h2 id="office-title">Un luogo concreto, dove ogni pratica viene ascoltata e studiata</h2>
-        <p>La nostra sede operativa è a Pisa, in Via Novecchio 10. Qui riceviamo su appuntamento, analizziamo la documentazione e spieghiamo con parole chiare il percorso possibile.</p>
-        <div class="office-facts">
-          <div class="office-fact"><strong>Prima verifichiamo</strong><span>Esaminiamo il caso prima di proporre l'apertura di una pratica.</span></div>
-          <div class="office-fact"><strong>Restiamo raggiungibili</strong><span>Telefono fisso, cellulare e WhatsApp per seguire il rapporto nel tempo.</span></div>
-          <div class="office-fact"><strong>Operiamo anche a distanza</strong><span>Da Pisa assistiamo consumatori in tutta Italia.</span></div>
-        </div>
-        <a class="office-link" href="/dove-siamo/">Scopri la sede e come raggiungerci →</a>
-      </div>
-    </div>
-  </section>
 
   <!-- ══ AREE DI COMPETENZA con mascotte ══ -->
   <section class="competenze">
@@ -640,6 +643,32 @@
         <a href="tel:+390505201278" class="masc-callpill" id="mascPill">
           <svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.08 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
           Chiama ora · <span class="pill-num">050 520 1278</span>
+        </a>
+      </div>
+
+      <div class="home-category-grid">
+        <div class="home-category-heading">
+          <span class="section-label">COME POSSIAMO AIUTARTI</span>
+          <h2>Partiamo dal problema, troviamo il percorso giusto</h2>
+          <p>Tre aree chiare per orientarti subito e capire quale tipo di assistenza può essere utile.</p>
+        </div>
+        <a class="home-category-card reveal" href="/servizi/">
+          <span class="home-category-num">01</span>
+          <h3>Tutela del consumatore</h3>
+          <p>Cessione del quinto, sovraindebitamento, segnalazioni CRIF, saldo e stralcio, voli e conciliazioni.</p>
+          <strong>Scopri i servizi →</strong>
+        </a>
+        <a class="home-category-card reveal" href="/servizi/#conciliazioni">
+          <span class="home-category-num">02</span>
+          <h3>Problemi con aziende e fornitori</h3>
+          <p>Assistenza nei rapporti con banche, finanziarie, compagnie aeree, gestori di luce, gas e telefonia.</p>
+          <strong>Trova la soluzione →</strong>
+        </a>
+        <a class="home-category-card reveal" href="/difesa-impresa/">
+          <span class="home-category-num">03</span>
+          <h3>Difesa dell’impresa</h3>
+          <p>Privacy e cookie del sito, fatture non pagate e controversie sulle utenze per PMI e professionisti.</p>
+          <strong>Vai a Difesa Impresa →</strong>
         </a>
       </div>
 
@@ -709,6 +738,26 @@
             <div class="competenza-desc">Privacy e cookie del sito, fatture non pagate e conciliazioni delle utenze per PMI e professionisti di Pisa, Lucca e Livorno.</div>
           </div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="office-story" aria-labelledby="office-title">
+    <div class="office-story-inner">
+      <div class="office-photo-pair reveal">
+        <img class="office-story-photo" src="assets/ufficio/sala-attesa.webp" alt="Sala d'attesa della sede operativa di Difesa Consumatore a Pisa" />
+        <img class="office-story-photo office-story-photo-secondary" src="assets/ufficio/sala-riunioni.webp" alt="Sala riunioni della sede operativa" />
+      </div>
+      <div class="office-copy reveal">
+        <span class="section-label">LA NOSTRA SEDE</span>
+        <h2 id="office-title">Spazi reali, un contatto diretto, risposte chiare</h2>
+        <p>La nostra sede operativa è a Pisa, in Via Novecchio 10. Riceviamo su appuntamento e seguiamo pratiche anche a distanza in tutta Italia.</p>
+        <div class="office-facts">
+          <div class="office-fact"><strong>Prima verifichiamo</strong><span>Esaminiamo il caso prima di proporre l’apertura di una pratica.</span></div>
+          <div class="office-fact"><strong>Restiamo raggiungibili</strong><span>Telefono fisso, cellulare e WhatsApp per seguire il rapporto nel tempo.</span></div>
+          <div class="office-fact"><strong>Spieghiamo il percorso</strong><span>Documenti, attività e passaggi vengono chiariti prima di iniziare.</span></div>
+        </div>
+        <a class="office-link" href="/dove-siamo/">Scopri la sede e come raggiungerci →</a>
       </div>
     </div>
   </section>
