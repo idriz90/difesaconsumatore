@@ -959,3 +959,101 @@ footer {
     text-align: center;
   }
 }
+
+/* ══ DESIGN SYSTEM B · FIDUCIA CONTEMPORANEA ══ */
+body {
+  color: #17243a;
+  background: #fff;
+}
+#main-nav {
+  border-bottom: 1px solid #e6ebf2;
+  box-shadow: 0 4px 18px rgba(18,45,86,.04);
+}
+.nav-inner { min-height: 82px; max-width: 1180px; padding-left: 24px; padding-right: 24px; }
+.nav-logo .logo-shield { width: 56px; height: 56px; }
+.nav-logo .logo-top { font-size: 27px; }
+.nav-logo .logo-bottom { font-size: 10px; letter-spacing: .25em; }
+@media (max-width: 768px) {
+  .nav-inner { padding-left: 18px; padding-right: 18px; }
+  .nav-hamburger {
+    display: flex;
+    margin-left: auto;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dce5f0;
+    border-radius: 6px;
+    background: #fff;
+  }
+}
+.nav-links { gap: 4px; }
+.nav-links a {
+  border-color: transparent;
+  border-radius: 4px;
+  padding: 9px 12px;
+  font-size: 13px;
+}
+.nav-links a:hover {
+  border-color: transparent;
+  background: #f2f6fb;
+}
+.nav-links a.active:not(.nav-cta) {
+  color: var(--navy-light);
+  border-color: transparent;
+  background: #eef4fb;
+}
+.nav-links .nav-cta {
+  border-radius: 4px;
+  padding: 10px 15px;
+}
+.page-header {
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  background-position: center 45%;
+}
+.page-header-inner {
+  width: 100%;
+  padding: 86px 40px 78px;
+}
+.page-header h1 {
+  max-width: 850px;
+  font-size: clamp(3rem,6vw,5rem);
+  letter-spacing: -.035em;
+}
+.page-header p {
+  max-width: 690px;
+  font-style: normal;
+  color: rgba(255,255,255,.86);
+  line-height: 1.7;
+}
+.section-inner { max-width: 1180px; }
+.section-title { letter-spacing: -.025em; }
+.section-label { letter-spacing: .14em; }
+.btn-primary,.cta-btn {
+  border-radius: 5px;
+  box-shadow: 0 8px 20px rgba(18,45,86,.10);
+}
+.btn-secondary { border-radius: 5px; }
+.trust-strip { background: #f7f9fc; }
+.contact-card,.review-card {
+  border-radius: 8px;
+  box-shadow: 0 6px 22px rgba(18,45,86,.06);
+}
+.cta-band { padding: 64px 32px; }
+.cta-band-inner { max-width: 1180px; }
+.footer { border-top: 0; }
+.footer-top { max-width: 1180px; }
+
+@media (max-width: 768px) {
+  .nav-inner { min-height: 76px; }
+  .nav-links {
+    top: 76px;
+    border-radius: 0 0 10px 10px;
+  }
+  .page-header { min-height: 330px; }
+  .page-header-inner { padding: 64px 22px 58px; }
+  .page-header h1 { font-size: clamp(2.7rem,13vw,4rem); }
+}
