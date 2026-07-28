@@ -16,9 +16,13 @@
     { href: '/servizi/',    label: 'Servizi Offerti' },
     { href: '/difesa-impresa/', label: 'Difesa Impresa' },
     { href: '/dove-siamo/', label: 'Dove Siamo' },
+    { href: '/chi-siamo/',   label: 'Chi siamo' },
   ];
-  // Footer mostra anche il Blog (Substack)
-  const footerLinks = links.concat([{ href: SUBSTACK_URL, label: 'Blog', external: true }]);
+  // Il footer riprende le pagine principali e aggiunge il Blog.
+  const footerLinks = [
+    ...links,
+    { href: SUBSTACK_URL, label: 'Blog', external: true }
+  ];
 
   const navHTML = `
     <nav id="main-nav">
@@ -53,7 +57,7 @@
                 <div class="logo-bottom">CONSUMATORE</div>
               </div>
             </div>
-            <p>Studio specializzato nella tutela del consumatore nei confronti di banche, finanziarie e compagnie aeree. Operiamo da Pisa con esperienza e professionalità.</p>
+            <p>Difesa Consumatore è l’insegna di DC S.r.l., non un’associazione di consumatori. Operiamo da Pisa nell’assistenza a consumatori e imprese, anche a distanza.</p>
           </div>
           <div class="footer-col">
             <h4>Link rapidi</h4>
@@ -67,11 +71,13 @@
           <div class="footer-col">
             <h4>Servizi</h4>
             <ul>
-              <li><a href="/servizi/#cqs">Cessione del Quinto</a></li>
-              <li><a href="/servizi/#sovraindebitamento">Sovraindebitamento</a></li>
-              <li><a href="/servizi/#crif">Segnalazioni CRIF</a></li>
-              <li><a href="/servizi/#saldo">Saldo e Stralcio</a></li>
-              <li><a href="/servizi/#volo">Rimborso al Volo</a></li>
+              <li><a href="/servizi/rimborso-cessione-del-quinto/">Cessione del Quinto</a></li>
+              <li><a href="/servizi/sovraindebitamento-esdebitazione/">Sovraindebitamento</a></li>
+              <li><a href="/servizi/cancellazione-segnalazione-crif/">Segnalazioni CRIF</a></li>
+              <li><a href="/servizi/saldo-e-stralcio-debiti/">Saldo e Stralcio</a></li>
+              <li><a href="/servizi/conciliazione-bollette-luce-gas/">Bollette luce e gas</a></li>
+              <li><a href="/servizi/conciliaweb-telefonia-internet/">Telefonia e Internet</a></li>
+              <li><a href="/servizi/rimborso-volo-cancellato-ritardo/">Rimborso al Volo</a></li>
               <li><a href="/difesa-impresa/">Servizi per imprese</a></li>
             </ul>
           </div>
