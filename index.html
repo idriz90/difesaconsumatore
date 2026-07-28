@@ -1,1023 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('js-anim');}</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Difesa Consumatore Pisa | Rimborsi e Tutela Consumatore</title>
-  <meta name="description" content="Difesa Consumatore Pisa: più di 2000 contenziosi bancari risolti ogni anno. Rimborsi cessione del quinto, sovraindebitamento, CRIF, saldo e stralcio, rimborso voli. Consulenza gratuita." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.difesaconsumatore.org/" />
-  <link rel="icon" type="image/png" href="/favicon-brand.png?v=1" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.difesaconsumatore.org/" />
-  <meta property="og:title" content="Difesa Consumatore Pisa | Rimborsi Bancari e Tutela Consumatore" />
-  <meta property="og:description" content="Più di 2000 contenziosi bancari risolti ogni anno. Nel 95% dei casi rimborsi a favore del cliente." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Difesa Consumatore Pisa | Tutela per consumatori e imprese</title>
+  <meta name="description" content="Difesa Consumatore a Pisa assiste consumatori e imprese nei rapporti con banche, finanziarie, fornitori e utenze. Prima consulenza gratuita.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.difesaconsumatore.org/">
+  <link rel="icon" type="image/png" href="/favicon-brand.png?v=2">
+  <meta property="og:title" content="Difesa Consumatore Pisa">
+  <meta property="og:description" content="Tutela concreta per consumatori e imprese.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.difesaconsumatore.org/">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LegalService","name":"Difesa Consumatore","url":"https://www.difesaconsumatore.org","telephone":"+393296491028","email":"difesaconsumatorepisa@gmail.com","vatID":"02285180507","address":{"@type":"PostalAddress","streetAddress":"Via Novecchio, 10","addressLocality":"Pisa","addressRegion":"PI","addressCountry":"IT"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","bestRating":"5","reviewCount":"4"}}</script>
-  <link rel="stylesheet" href="style.css?v=10" />
-  <style>
-    /* ── HERO ── */
-    .hero {
-      min-height: 80vh;
-      position: relative; overflow: hidden;
-      display: flex; align-items: center;
-    }
-    .hero-bg-photo {
-      position: absolute; inset: 0;
-      background-color: var(--navy);
-      /* Immagine intera dietro, ancorata leggermente a destra dove c'è la targa */
-      background-image: url('assets/ufficio/sede-esterna-v2.webp?v=1');
-      background-size: cover;
-      background-position: center 12%;
-      background-repeat: no-repeat;
-    }
-    /* Overlay blu in trasparenza: porta visibile in filigrana a sinistra, targa nitida a destra */
-    .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(90deg,
-        rgba(13,35,69,0.96) 0%,
-        rgba(18,45,86,0.90) 36%,
-        rgba(18,45,86,0.58) 62%,
-        rgba(18,45,86,0.16) 100%);
-    }
-    .hero-inner {
-      position: relative; z-index: 2;
-      max-width: var(--container); margin: 0 auto;
-      padding: 72px 32px 56px 48px;
-      width: 100%;
-    }
-    .hero-content { max-width: 460px; margin-left: 0; }
-    .hero-eyebrow {
-      font-size: 12.5px; font-weight: 600; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 18px; display: block;
-    }
-    .hero-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 4.5vw, 3.6rem);
-      font-weight: 700; line-height: 1.12; color: var(--white);
-      margin-bottom: 18px;
-    }
-    .hero-subtitle {
-      font-size: 17.5px; color: rgba(255,255,255,0.78);
-      line-height: 1.75; margin-bottom: 32px;
-      font-style: italic; max-width: 460px;
-    }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
-
-    /* pulsanti visibili sull'hero */
-    .hero-actions .btn-yellow {
-      background: var(--gold); color: var(--navy);
-      padding: 13px 28px; border-radius: 999px;
-      font-size: 14.5px; font-weight: 700;
-      text-decoration: none; border: 2px solid var(--gold);
-      transition: all 0.2s; display: inline-flex; align-items: center;
-    }
-    .hero-actions .btn-yellow:hover { background: #ffd84d; border-color: #ffd84d; }
-    .hero-actions .btn-ghost {
-      background: transparent; color: var(--white);
-      padding: 13px 28px; border-radius: 999px;
-      font-size: 14.5px; font-weight: 500;
-      text-decoration: none; border: 1.5px solid rgba(255,255,255,0.5);
-      transition: all 0.2s; display: inline-flex; align-items: center;
-    }
-    .hero-actions .btn-ghost:hover { border-color: white; background: rgba(255,255,255,0.1); }
-
-    /* statistiche leggibili */
-    .hero-stats {
-      display: flex; gap: 0;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      padding-top: 28px;
-    }
-    .hero-stat {
-      padding-right: 28px; margin-right: 28px;
-      border-right: 1px solid rgba(255,255,255,0.2);
-    }
-    .hero-stat:last-child { border-right: none; padding-right: 0; margin-right: 0; }
-    .hero-stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem; font-weight: 700;
-      color: var(--gold); line-height: 1;
-    }
-    .hero-stat-label {
-      font-size: 12.5px; color: rgba(255,255,255,0.65);
-      margin-top: 4px; font-weight: 400;
-    }
-
-    .office-story { background: #fff; padding: 88px 32px; }
-    .office-story-inner {
-      max-width: var(--container); margin: 0 auto;
-      display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(340px, .9fr);
-      gap: 64px; align-items: center;
-    }
-    .office-story-photo {
-      width: 100%; min-height: 470px; height: 100%; object-fit: cover;
-      border-radius: 8px; box-shadow: 0 22px 50px rgba(18,45,86,.15);
-    }
-    .office-copy .section-label { display: block; margin-bottom: 14px; }
-    .office-copy h2 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: clamp(2rem, 3.3vw, 3rem); line-height: 1.13;
-      color: var(--navy-dark); margin-bottom: 22px;
-    }
-    .office-copy > p {
-      color: #526176; font-size: 16.5px; line-height: 1.8; margin-bottom: 28px;
-    }
-    .office-facts { margin-bottom: 30px; }
-    .office-fact {
-      padding: 15px 0; border-top: 1px solid var(--border);
-    }
-    .office-fact:last-child { border-bottom: 1px solid var(--border); }
-    .office-fact strong { display: block; color: var(--navy-dark); margin-bottom: 3px; }
-    .office-fact span { color: #667387; font-size: 14px; line-height: 1.55; }
-    .office-link {
-      display: inline-flex; color: var(--navy); font-weight: 700;
-      text-decoration: none; border-bottom: 2px solid var(--gold); padding-bottom: 4px;
-    }
-    @media (max-width: 850px) {
-      .office-story { padding: 64px 20px; }
-      .office-story-inner { grid-template-columns: 1fr; gap: 38px; }
-      .office-story-photo { min-height: 320px; }
-    }
-
-    /* ── AREE DI COMPETENZA ── */
-    .competenze { background: var(--off-white); padding: 72px 32px; }
-    .competenze-inner {
-      max-width: var(--container); margin: 0 auto;
-      display: grid; grid-template-columns: 380px 1fr;
-      gap: 48px; align-items: start;
-    }
-    .mascotte-col {
-      display: flex; flex-direction: column;
-      align-items: center; position: sticky; top: 100px;
-    }
-    /* ── MASCOTTE: animazione "telefonata" fotogramma per fotogramma ── */
-    .masc-stage {
-      position: relative;
-      width: 360px;
-      aspect-ratio: 339 / 609;
-      filter: drop-shadow(0 14px 26px rgba(26,58,107,0.22));
-      animation: float 4s ease-in-out infinite;
-      transition: scale 0.35s cubic-bezier(0.34,1.56,0.64,1), filter 0.35s ease;
-      cursor: pointer;
-    }
-    .masc-stage:hover { scale: 1.05; filter: drop-shadow(0 20px 36px rgba(26,58,107,0.32)); }
-    .masc-frame {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      object-fit: contain; object-position: center bottom;
-      opacity: 0;
-      transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      will-change: opacity;
-    }
-    .masc-frame.is-on { opacity: 1; }
-    @keyframes float { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-10px) rotate(1deg); } }
-    @media (prefers-reduced-motion: reduce) {
-      .masc-stage { animation: none !important; }
-      .masc-frame { transition: none !important; }
-    }
-    .mascotte-title {
-      margin-top: 16px; text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem; font-weight: 700;
-      color: var(--navy); line-height: 1.3;
-    }
-
-    .competenze-list { display: flex; flex-direction: column; }
-    .competenza-item {
-      display: flex; align-items: flex-start; gap: 18px;
-      padding: 22px 16px; border-bottom: 1px solid var(--border);
-      text-decoration: none; color: inherit;
-      border-radius: 6px;
-      transition: background 0.2s;
-    }
-    .competenza-item:first-child { padding-top: 0; }
-    .competenza-item:last-child { border-bottom: none; }
-    .competenza-item:hover { background: rgba(74,144,217,0.06); }
-    .competenza-item:hover .competenza-title { color: var(--navy-light); }
-    .competenza-icon {
-      width: 44px; height: 44px; flex-shrink: 0;
-      background: var(--navy); border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .competenza-icon svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
-    .competenza-title {
-      font-size: 14.5px; font-weight: 700; color: var(--navy);
-      margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em;
-      transition: color 0.2s;
-    }
-    .competenza-desc { font-size: 14.5px; color: var(--text-body); line-height: 1.65; }
-
-    /* ── TESTIMONIANZE ── */
-    .testimonials { background: var(--white); padding: 72px 32px; }
-    .testi-inner { max-width: var(--container); margin: 0 auto; }
-    .testi-header {
-      display: flex; align-items: flex-end;
-      justify-content: space-between; gap: 24px;
-      margin-bottom: 40px; flex-wrap: wrap;
-    }
-    .testi-google-link {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--white); border: 1.5px solid var(--border);
-      color: var(--navy); text-decoration: none;
-      padding: 10px 20px; border-radius: 999px;
-      font-size: 13.5px; font-weight: 600;
-      transition: all 0.2s; white-space: nowrap;
-    }
-    .testi-google-link:hover { border-color: var(--navy-light); color: var(--navy-light); }
-    .testi-google-link svg { width: 18px; height: 18px; flex-shrink: 0; }
-
-    .testi-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
-    .testi-card {
-      background: var(--off-white); border: 1px solid var(--border);
-      border-radius: 8px; padding: 24px 20px;
-      border-top: 3px solid var(--gold);
-    }
-    .testi-quote {
-      font-size: 2.5rem; color: var(--navy-light); opacity: 0.25;
-      font-family: Georgia, serif; line-height: 1; margin-bottom: 6px;
-    }
-    .testi-stars { display: flex; gap: 3px; margin-bottom: 10px; }
-    .testi-star { width: 12px; height: 12px; background: var(--gold); clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%); }
-    .testi-text { font-size: 14.5px; color: var(--text-body); line-height: 1.78; margin-bottom: 18px; font-style: italic; }
-    .testi-name { font-size: 14.5px; font-weight: 700; color: var(--navy); }
-    .testi-source { font-size: 12.5px; color: var(--text-muted); margin-top: 2px; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
-      .competenze-inner { grid-template-columns: 1fr; }
-      .mascotte-col { flex-direction: row; gap: 20px; position: static; }
-      .masc-stage { width: 100px; }
-      .mascotte-title { text-align: left; font-size: 1rem; }
-      .testi-grid { grid-template-columns: repeat(2,1fr); }
-    }
-    @media (max-width: 600px) {
-      .hero-inner { padding: 52px 20px 40px; }
-      .hero-stats { flex-wrap: wrap; gap: 16px; }
-      .hero-stat { border-right: none; padding-right: 0; margin-right: 0; flex: 0 0 45%; }
-      .testi-grid { grid-template-columns: 1fr; }
-      .competenze { padding: 56px 20px; }
-      .mascotte-col { flex-direction: column; align-items: center; }
-      .masc-stage { width: 140px; }
-    }
-
-    /* ════ ANIMAZIONE D'INGRESSO HERO (cascata elegante) ════ */
-    .hero-title .hero-line {
-      display: block;
-      overflow: hidden;
-      padding-bottom: 0.1em;
-      margin-bottom: -0.1em;
-    }
-    .hero-title .hero-line > span { display: block; }
-
-    /* Stato iniziale SOLO con JS attivo (senza JS il testo resta sempre visibile) */
-    .js-anim .hero-eyebrow,
-    .js-anim .hero-title .hero-line > span,
-    .js-anim .hero-subtitle,
-    .js-anim .hero-actions,
-    .js-anim .hero-stats {
-      opacity: 0;
-      transition: opacity 0.85s cubic-bezier(0.16,1,0.3,1),
-                  transform 0.85s cubic-bezier(0.16,1,0.3,1);
-      will-change: transform, opacity;
-    }
-    .js-anim .hero-title .hero-line > span { transform: translateY(105%); }
-    .js-anim .hero-eyebrow,
-    .js-anim .hero-subtitle,
-    .js-anim .hero-actions,
-    .js-anim .hero-stats { transform: translateY(22px); }
-
-    /* Stato finale (classe .anim-go aggiunta da JS) + scaletta dei ritardi */
-    .hero.anim-go .hero-eyebrow,
-    .hero.anim-go .hero-title .hero-line > span,
-    .hero.anim-go .hero-subtitle,
-    .hero.anim-go .hero-actions,
-    .hero.anim-go .hero-stats { opacity: 1; transform: translateY(0); }
-
-    .hero.anim-go .hero-eyebrow                              { transition-delay: 0.10s; }
-    .hero.anim-go .hero-title .hero-line:nth-child(1) > span { transition-delay: 0.24s; }
-    .hero.anim-go .hero-title .hero-line:nth-child(2) > span { transition-delay: 0.37s; }
-    .hero.anim-go .hero-title .hero-line:nth-child(3) > span { transition-delay: 0.50s; }
-    .hero.anim-go .hero-subtitle                             { transition-delay: 0.72s; }
-    .hero.anim-go .hero-actions                              { transition-delay: 0.88s; }
-    .hero.anim-go .hero-stats                                { transition-delay: 1.02s; }
-
-    @media (prefers-reduced-motion: reduce) {
-      .js-anim .hero-eyebrow,
-      .js-anim .hero-title .hero-line > span,
-      .js-anim .hero-subtitle,
-      .js-anim .hero-actions,
-      .js-anim .hero-stats { opacity: 1 !important; transform: none !important; transition: none !important; }
-    }
-
-    /* ════ REVEAL AL SCROLL (sezioni) ════ */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1),
-                  transform 0.75s cubic-bezier(0.16,1,0.3,1);
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; }
-    }
-
-    /* ════ MASCOTTE: ingresso a molla ════ */
-    .mascotte-col.reveal {
-      transform: translateY(26px) scale(0.78) rotate(-6deg);
-      transition: opacity 0.7s ease,
-                  transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-    .mascotte-col.reveal.visible {
-      transform: translateY(0) scale(1) rotate(0deg);
-    }
-
-    /* ── MASCOTTE: pill "chiama ora" sotto la mascotte ── */
-    .masc-callpill {
-      margin-top: 18px;
-      display: inline-flex; align-items: center; gap: 9px;
-      background: var(--navy); color: #fff; text-decoration: none;
-      padding: 11px 20px; border-radius: 999px;
-      font-size: 14px; font-weight: 700; letter-spacing: 0.01em;
-      box-shadow: 0 10px 24px rgba(14,33,71,0.28);
-      position: relative;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
-    .masc-callpill:hover { background: var(--navy-light); transform: translateY(-2px); box-shadow: 0 14px 30px rgba(14,33,71,0.34); }
-    .masc-callpill svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 2; flex-shrink: 0; }
-    .masc-callpill .pill-num { color: var(--gold); }
-    .masc-callpill::after {
-      content: ""; position: absolute; inset: 0; border-radius: 999px;
-      border: 2px solid var(--gold); opacity: 0; pointer-events: none;
-    }
-    .masc-callpill.ringing::after { animation: pillRing 1s ease-out 2; }
-    @keyframes pillRing {
-      0% { opacity: 0.6; transform: scale(1); }
-      100% { opacity: 0; transform: scale(1.16); }
-    }
-    @media (max-width: 960px) { .masc-callpill { font-size: 13px; padding: 9px 16px; } }
-    @media (prefers-reduced-motion: reduce) {
-      .masc-callpill.ringing::after { animation: none !important; }
-    }
-
-    /* ── HERO su schermi grandi ── */
-    @media (min-width: 1500px) {
-      .hero { min-height: 84vh; }
-      .hero-inner { padding: 96px 32px 80px 56px; }
-      .hero-content { max-width: 600px; }
-      .hero-title { font-size: clamp(2rem, 4.4vw, 4.4rem); }
-      .hero-subtitle { font-size: 20px; max-width: 560px; }
-      .hero-stat-num { font-size: 2.7rem; }
-    }
-
-    /* ══ HOME B · FIDUCIA CONTEMPORANEA ══ */
-    .hero {
-      min-height: 500px;
-      align-items: stretch;
-      background: var(--navy-dark);
-    }
-    .hero-bg-photo {
-      background-image: url('assets/ufficio/sede-esterna-v2.webp?v=3');
-      background-position: center 18%;
-      filter: saturate(.92) contrast(.98) brightness(1.08);
-    }
-    .hero-overlay {
-      background: linear-gradient(90deg,rgba(8,35,74,.78) 0%,rgba(12,61,124,.54) 43%,rgba(28,105,184,.12) 72%,rgba(28,105,184,.02) 100%);
-    }
-    .hero-inner {
-      display: flex;
-      align-items: center;
-      padding: 60px 40px 78px;
-    }
-    .hero-content { max-width: 600px; }
-    .hero-eyebrow {
-      display: inline-flex;
-      padding: 7px 12px;
-      border: 1px solid rgba(255,255,255,.24);
-      border-radius: 4px;
-      background: rgba(255,255,255,.08);
-      letter-spacing: .15em;
-      color: #fff;
-    }
-    .hero-title {
-      font-size: clamp(2.8rem,4.4vw,4.2rem);
-      max-width: 590px;
-      letter-spacing: -.035em;
-    }
-    .hero-subtitle {
-      max-width: 560px;
-      font-style: normal;
-      color: rgba(255,255,255,.88);
-      font-size: 18px;
-    }
-    .hero-actions .btn-yellow,
-    .cta-band .btn-yellow {
-      border-radius: 5px;
-      padding: 14px 24px;
-      box-shadow: 0 10px 24px rgba(0,0,0,.12);
-    }
-    .hero-actions .btn-ghost { border-radius: 5px; }
-    .trust-strip {
-      position: relative;
-      z-index: 4;
-      max-width: 1120px;
-      margin: -50px auto 0;
-      padding: 0;
-      border: 0;
-      border-radius: 10px;
-      background: #fff;
-      box-shadow: 0 18px 55px rgba(18,45,86,.16);
-    }
-    .trust-strip-inner {
-      display: grid;
-      grid-template-columns: repeat(5,1fr);
-      gap: 0;
-    }
-    .trust-item {
-      justify-content: flex-start;
-      padding: 28px 24px;
-      border-right: 1px solid var(--border);
-      text-decoration: none;
-      transition: background .2s ease;
-    }
-    .trust-item:hover { background: #f5f8fc; }
-    .trust-item:last-child { border-right: 0; }
-    .trust-item span { display:block; letter-spacing: 0; font-size: 14px; }
-    .trust-item strong { display:block; color:var(--navy); margin-bottom:3px; }
-    .trust-item small { display:block; color:#667387; font-size:12px; font-weight:500; }
-    .trust-icon {
-      width:27px !important;
-      height:27px !important;
-      flex:0 0 27px;
-      stroke-width:1.8;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-    }
-    .trust-icon-wa { stroke:#25a85a !important; }
-    .trust-icon-phone,.trust-icon-pin,.trust-icon-check { stroke:#1762b0 !important; }
-    .trust-icon-star { fill:#f4b400 !important; stroke:#f4b400 !important; }
-
-    .competenze {
-      padding: 100px 32px;
-      background: #f7f9fc;
-    }
-    .competenze-inner {
-      display: block;
-      max-width: 1180px;
-    }
-    .mascotte-col { display: none; }
-    .competenze-list {
-      display: none;
-    }
-    .home-category-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 20px;
-    }
-    .home-category-heading {
-      grid-column: 1 / -1;
-      text-align: center;
-      max-width:760px;
-      margin:0 auto 30px;
-    }
-    .home-category-heading h2 {
-      font-family:'Playfair Display',Georgia,serif;
-      color:var(--navy);
-      font-size:clamp(2.3rem,4vw,3.3rem);
-      line-height:1.12;
-      margin:10px 0 14px;
-      letter-spacing:-.025em;
-    }
-    .home-category-heading p { color:#667387; font-size:17px; line-height:1.7; }
-    .home-category-card {
-      display:flex;
-      flex-direction:column;
-      min-height:270px;
-      padding:32px;
-      border: 1px solid #dfe6f0;
-      border-radius: 9px;
-      background: #fff;
-      box-shadow: 0 5px 20px rgba(18,45,86,.05);
-      color:inherit;
-      text-decoration:none;
-      transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
-    }
-    .home-category-card:hover {
-      border-color: #90acd0;
-      transform: translateY(-3px);
-      box-shadow: 0 14px 32px rgba(18,45,86,.10);
-    }
-    .home-category-num {
-      color:var(--gold-dark);
-      font-family:'Playfair Display',serif;
-      font-size:1.8rem;
-      font-weight:700;
-    }
-    .home-category-icon {
-      width:48px;
-      height:48px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:50%;
-      background:#eef5ff;
-      color:#1762b0;
-    }
-    .home-category-icon svg {
-      width:24px;
-      height:24px;
-      fill:none;
-      stroke:currentColor;
-      stroke-width:1.7;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-    }
-    .home-category-card h3 {
-      color:var(--navy);
-      font-family:'Playfair Display',Georgia,serif;
-      font-size:1.55rem;
-      line-height:1.2;
-      margin:18px 0 12px;
-    }
-    .home-category-card p { color:#526176; line-height:1.7; margin-bottom:24px; }
-    .home-category-card strong { color:var(--navy-light); margin-top:auto; }
-
-    .office-story {
-      padding: 100px 32px;
-      background: #fff;
-    }
-    .office-story-inner {
-      max-width: 1180px;
-      display:grid;
-      grid-template-columns:1fr;
-      gap:24px;
-      text-align:center;
-    }
-    .office-section-heading {
-      max-width:760px;
-      margin:0 auto 8px;
-    }
-    .office-section-heading h2 {
-      font-family:'Playfair Display',Georgia,serif;
-      color:var(--navy);
-      font-size:clamp(2.2rem,4vw,3.2rem);
-      line-height:1.12;
-      margin:10px 0 12px;
-      letter-spacing:-.025em;
-    }
-    .office-section-heading p { color:#667387; font-size:17px; }
-    .office-story-photo {
-      min-height: 0;
-      height:100%;
-      border-radius: 8px;
-      box-shadow: none;
-    }
-    .office-photo-pair {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      min-height:400px;
-      width:100%;
-    }
-    .office-photo-pair img { width:100%; object-fit:cover; }
-    .office-story-photo-secondary { object-position:58% center; }
-    .office-primary-link {
-      justify-self:center;
-      display:inline-flex;
-      padding:12px 26px;
-      border-radius:5px;
-      background:#0d3d82;
-      color:#fff;
-      text-decoration:none;
-      font-weight:700;
-    }
-
-    .testimonials { padding: 34px 32px 74px; background: #fff; }
-    .testi-inner { max-width: 1180px; }
-    .testi-header,.testi-grid { display:none; }
-    .home-rating-band {
-      display:grid;
-      grid-template-columns:1.3fr .75fr 1fr 1fr;
-      align-items:center;
-      gap:24px;
-      padding:28px 38px;
-      border-radius:9px;
-      background:#e9f2ff;
-      color:var(--navy);
-      text-decoration:none;
-    }
-    .rating-intro { font-size:18px; line-height:1.35; }
-    .rating-score strong { display:block; font:700 2.5rem/1 'Playfair Display',serif; }
-    .rating-score small,.rating-google small { display:block; color:#526176; margin-top:5px; }
-    .rating-stars { color:#f4b400; font-size:2rem; letter-spacing:.08em; white-space:nowrap; }
-    .rating-google { text-align:right; }
-    .rating-google strong { display:block; color:#4285f4; font-size:1.7rem; }
-    .cta-band { padding: 42px 32px; }
-
-    @media (max-width: 900px) {
-      .hero { min-height: 500px; }
-      .hero-inner { padding: 62px 24px 86px; }
-      .hero-title { font-size: clamp(2.7rem,10vw,4.3rem); }
-      .trust-strip { margin: -34px 18px 0; }
-      .trust-strip-inner { grid-template-columns: 1fr 1fr; }
-      .trust-item:nth-child(even) { border-right: 0; }
-      .trust-item { border-bottom: 1px solid var(--border); }
-      .home-category-grid { grid-template-columns: 1fr; }
-      .office-story-inner { grid-template-columns: 1fr; }
-      .home-rating-band { grid-template-columns:1fr 1fr; text-align:center; }
-      .rating-google { text-align:center; }
-    }
-    @media (max-width: 600px) {
-      .hero { min-height: 500px; }
-      .hero-bg-photo { background-position: 22% top; }
-      .hero-overlay {
-        background: linear-gradient(90deg,rgba(8,35,74,.82) 0%,rgba(10,55,111,.66) 58%,rgba(16,83,158,.24) 100%);
-      }
-      .hero-inner { padding: 48px 20px 76px; align-items:flex-end; }
-      .hero-content { max-width: 340px; }
-      .hero-eyebrow { font-size:10px; margin-bottom:12px; padding:6px 9px; }
-      .hero-title { font-size: clamp(2rem,9.2vw,2.45rem); line-height:1.06; margin-bottom:12px; max-width:330px; }
-      .hero-subtitle { font-size:15px; line-height:1.55; margin-bottom:20px; }
-      .hero-actions { margin-bottom:0; gap:8px; }
-      .hero-actions .btn-yellow,.hero-actions .btn-ghost { padding:11px 15px; font-size:13px; }
-      .hero-stats { gap: 14px; }
-      .hero-stat { padding-right: 14px; margin-right: 0; }
-      .trust-strip { margin:-28px 10px 0; }
-      .trust-strip-inner { grid-template-columns:repeat(2,1fr); }
-      .home-category-grid { grid-template-columns: 1fr; }
-      .trust-item { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); padding:16px 13px; }
-      .trust-item:nth-child(even),.trust-item:last-child { border-right:0; }
-      .trust-item:last-child { grid-column:1/-1; justify-content:center; }
-      .trust-item span { font-size:12px; }
-      .trust-icon { width:23px !important; height:23px !important; flex-basis:23px; }
-      .competenze,.office-story { padding:64px 20px; }
-      .testimonials { padding:10px 20px 54px; }
-      .home-category-card { min-height: auto; }
-      .office-photo-pair { min-height:0; grid-template-columns:1fr; }
-      .office-story-photo { min-height:250px; }
-      .home-rating-band { grid-template-columns:1fr; padding:28px 20px; }
-    }
-    @media (min-width: 769px) {
-      .trust-strip-inner { grid-template-columns:repeat(5,minmax(0,1fr)); }
-      .trust-item:last-child {
-        grid-column:auto;
-        justify-content:flex-start;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/style.css?v=21">
 </head>
-<body style="background-color: rgb(255, 255, 255);">
-
-  <!-- ══ HERO ══ -->
-  <section class="hero" id="home">
-    <div class="hero-bg-photo"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-inner">
-      <div class="hero-content">
-        <span class="hero-eyebrow">UNA SEDE REALE A PISA · ASSISTENZA IN TUTTA ITALIA</span>
-        <h1 class="hero-title">Dalla parte di chi vuole fare chiarezza.</h1>
-        <p class="hero-subtitle">
-          Affianchiamo consumatori e famiglie nei rapporti con banche, finanziarie e fornitori di servizi.
-        </p>
-        <div class="hero-actions">
-          <a href="/dove-siamo/#modulo" class="btn-yellow">Consulenza gratuita →</a>
-          <a href="/servizi/" class="btn-ghost">Scopri i servizi</a>
+<body>
+  <main>
+    <section class="home-hero">
+      <div class="home-hero-copy">
+        <span class="eyebrow">Difesa Consumatore · Pisa</span>
+        <h1>Tutela concreta, spiegata con chiarezza.</h1>
+        <p>Analizziamo il tuo problema e ti indichiamo il percorso possibile, senza soluzioni preconfezionate.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="/dove-siamo/#modulo">Richiedi una verifica</a>
+          <a class="btn btn-secondary" href="/servizi/">Scopri i servizi</a>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="home-hero-photo">
+        <img src="/assets/ufficio/sede-esterna-v2.webp" alt="Sede di Difesa Consumatore a Pisa con la croce pisana e l'insegna dello studio">
+        <span class="photo-caption">La nostra sede a Pisa</span>
+      </div>
+    </section>
 
-  <!-- ══ TRUST STRIP ══ -->
-  <div class="trust-strip">
-    <div class="trust-strip-inner">
-      <a class="trust-item" href="https://wa.me/393296491028" target="_blank" rel="noopener">
-        <svg class="trust-icon trust-icon-wa" viewBox="0 0 24 24" fill="none"><path d="M20.5 11.6a8.5 8.5 0 01-12.6 7.5L3 20.5l1.4-4.7A8.5 8.5 0 1120.5 11.6z"/><path d="M8.2 7.8c.4 3.2 2.8 5.7 6 6.2l1.2-1.3"/></svg>
+    <div class="trust-bar" aria-label="Contatti e informazioni principali">
+      <a class="trust-link wa" href="https://wa.me/393296491028" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M20.5 11.6a8.5 8.5 0 01-12.6 7.5L3 20.5l1.4-4.7A8.5 8.5 0 1120.5 11.6z"/><path d="M8.2 7.8c.4 3.2 2.8 5.7 6 6.2l1.2-1.3"/></svg>
         <span><strong>WhatsApp</strong><small>Scrivici ora</small></span>
       </a>
-      <a class="trust-item" href="tel:+390505201278">
-        <svg class="trust-icon trust-icon-phone" viewBox="0 0 24 24" fill="none"><path d="M5 3h4l2 5-2.4 1.7a15 15 0 005.7 5.7L16 13l5 2v4a2 2 0 01-2 2C10.2 21 3 13.8 3 5a2 2 0 012-2z"/></svg>
-        <span><strong>Chiama ora</strong><small>050 520 1278</small></span>
+      <a class="trust-link" href="tel:+390505201278">
+        <svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.4 1.7a15 15 0 005.7 5.7L16 13l5 2v4a2 2 0 01-2 2C10.2 21 3 13.8 3 5a2 2 0 012-2z"/></svg>
+        <span><strong>Chiama</strong><small>050 520 1278</small></span>
       </a>
-      <a class="trust-item" href="https://www.google.com/search?q=Difesa+Consumatore+Pisa" target="_blank" rel="noopener">
-        <svg class="trust-icon trust-icon-star" viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.3-5.6-3-5.6 3 1.1-6.3-4.6-4.4 6.3-.9L12 2.8z"/></svg>
-        <span><strong>Recensioni Google</strong><small>Valutazione 4,9 su 5</small></span>
+      <a class="trust-link rating" href="https://www.google.com/search?q=Difesa+Consumatore+Pisa" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.3-5.6-3-5.6 3 1.1-6.3-4.6-4.4 6.3-.9L12 2.8z"/></svg>
+        <span><strong>Google 4,9</strong><small>Recensioni verificate</small></span>
       </a>
-      <a class="trust-item" href="/dove-siamo/">
-        <svg class="trust-icon trust-icon-pin" viewBox="0 0 24 24" fill="none"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      <a class="trust-link" href="/dove-siamo/">
+        <svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
         <span><strong>Sede a Pisa</strong><small>Via Novecchio 10</small></span>
       </a>
-      <a class="trust-item" href="/dove-siamo/#modulo">
-        <svg class="trust-icon trust-icon-check" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.7 2.7L16.5 9"/></svg>
-        <span><strong>Prima consulenza</strong><small>Gratuita e senza impegno</small></span>
+      <a class="trust-link" href="/dove-siamo/#modulo">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.7 2.7L16.5 9"/></svg>
+        <span><strong>Prima consulenza</strong><small>Gratuita</small></span>
       </a>
     </div>
-  </div>
 
-  <!-- ══ AREE DI COMPETENZA con mascotte ══ -->
-  <section class="competenze">
-    <div class="competenze-inner">
-
-      <!-- Mascotte sinistra: animazione "telefonata" fotogramma per fotogramma -->
-      <div class="mascotte-col reveal">
-        <div class="masc-stage" id="mascStage" role="img" aria-label="Mascotte Difesa Consumatore che risponde al telefono">
-          <img class="masc-frame is-on" src="reg1.png" alt="Mascotte Difesa Consumatore" />
-          <img class="masc-frame" src="reg2.png" alt="" aria-hidden="true" />
-          <img class="masc-frame" src="reg3.png" alt="" aria-hidden="true" />
-          <img class="masc-frame" src="reg4.png" alt="" aria-hidden="true" />
-          <img class="masc-frame" src="reg5.png" alt="" aria-hidden="true" />
-          <img class="masc-frame" src="reg6.png" alt="" aria-hidden="true" />
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="section-label">Come possiamo aiutarti</span><h2>Parti dal tuo problema</h2></div>
+          <p>Tre aree semplici. Apri quella che ti riguarda per leggere tutti i dettagli.</p>
         </div>
-        <a href="tel:+390505201278" class="masc-callpill" id="mascPill">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.08 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          Chiama ora · <span class="pill-num">050 520 1278</span>
-        </a>
-      </div>
-
-      <div class="home-category-grid">
-        <div class="home-category-heading">
-          <span class="section-label">COME POSSIAMO AIUTARTI</span>
-          <h2>Partiamo dal problema, troviamo il percorso giusto</h2>
-          <p>Tre aree chiare per orientarti subito e capire quale tipo di assistenza può essere utile.</p>
-        </div>
-        <a class="home-category-card reveal" href="/servizi/">
-          <span class="home-category-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4.5-2.8 7.5-7 9-4.2-1.5-7-4.5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
-          <h3>Tutela del consumatore</h3>
-          <p>Cessione del quinto, sovraindebitamento, segnalazioni CRIF, saldo e stralcio, voli e conciliazioni.</p>
-          <strong>Scopri i servizi →</strong>
-        </a>
-        <a class="home-category-card reveal" href="/servizi/#conciliazioni">
-          <span class="home-category-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h16V8l-8-5-8 5v12z"/><path d="M8 20v-6h8v6M8 10h.01M12 10h.01M16 10h.01"/></svg></span>
-          <h3>Problemi con aziende e fornitori</h3>
-          <p>Assistenza nei rapporti con banche, finanziarie, compagnie aeree, gestori di luce, gas e telefonia.</p>
-          <strong>Trova la soluzione →</strong>
-        </a>
-        <a class="home-category-card reveal" href="/difesa-impresa/">
-          <span class="home-category-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c.7-5 3.4-7 8-7s7.3 2 8 7"/></svg></span>
-          <h3>Difesa dell’impresa</h3>
-          <p>Privacy e cookie del sito, fatture non pagate e controversie sulle utenze per PMI e professionisti.</p>
-          <strong>Vai a Difesa Impresa →</strong>
-        </a>
-      </div>
-
-      <!-- Lista servizi destra -->
-      <div class="competenze-list">
-        <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--navy);margin-bottom:24px;padding-bottom:16px;border-bottom:3px solid var(--gold);">Aree di Competenza</h2>
-        <a href="/servizi/#cqs" class="competenza-item reveal">
-          <div class="competenza-icon">
-            <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
-          </div>
-          <div>
-            <div class="competenza-title">Cessione del Quinto / Prestito Personale</div>
-            <div class="competenza-desc">Hai chiuso o rinegoziato in anticipo una CQS o un PP? Il nostro staff ti può aiutare a capire se sei stato rimborsato completamente.</div>
-          </div>
-        </a>
-        <a href="/servizi/#sovraindebitamento" class="competenza-item reveal">
-          <div class="competenza-icon">
-            <svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M7 4H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2h-2M9 4a2 2 0 002 2h2a2 2 0 002-2"/></svg>
-          </div>
-          <div>
-            <div class="competenza-title">Sovraindebitamento</div>
-            <div class="competenza-desc">Ai sensi della Legge n. 3/2012 i consumatori, imprese e tutti i soggetti sovraindebitati possono ricorrere al procedimento di esdebitazione e sanare la propria condizione CRIF.</div>
-          </div>
-        </a>
-        <a href="/servizi/#crif" class="competenza-item reveal">
-          <div class="competenza-icon">
-            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-          </div>
-          <div>
-            <div class="competenza-title">Segnalazioni CRIF</div>
-            <div class="competenza-desc">Se vuoi avere una visura, richiedere una cancellazione o conoscere la tua situazione creditizia, siamo pronti ad assisterti.</div>
-          </div>
-        </a>
-        <a href="/servizi/#saldo" class="competenza-item reveal">
-          <div class="competenza-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <div>
-            <div class="competenza-title">Saldo e Stralcio</div>
-            <div class="competenza-desc">Offriamo assistenza nelle procedure di intermediazione contro gli Istituti bancari, al fine di ottenere piani di rientro e stralciare debiti esistenti.</div>
-          </div>
-        </a>
-        <a href="/servizi/#volo" class="competenza-item reveal">
-          <div class="competenza-icon">
-            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.08 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          </div>
-          <div>
-            <div class="competenza-title">Rimborso al Volo</div>
-            <div class="competenza-desc">Il tuo volo è stato cancellato o ha subito un ritardo? Potresti avere diritto ad un rimborso fino a 600€.</div>
-          </div>
-        </a>
-        <a href="/servizi/#conciliazioni" class="competenza-item reveal">
-          <div class="competenza-icon">
-            <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-width="1.8"/></svg>
-          </div>
-          <div>
-            <div class="competenza-title">Conciliazioni Gas, Luce, Telefonia</div>
-            <div class="competenza-desc">Problematiche con fornitori di energia, gas o operatori telefonici? Ti assistiamo nelle procedure di conciliazione.</div>
-          </div>
-        </a>
-        <a href="/difesa-impresa/" class="competenza-item reveal">
-          <div class="competenza-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 10h2M13 10h2M9 14h2M13 14h2"/></svg>
-          </div>
-          <div>
-            <div class="competenza-title">Difesa Impresa</div>
-            <div class="competenza-desc">Privacy e cookie del sito, fatture non pagate e conciliazioni delle utenze per PMI e professionisti di Pisa, Lucca e Livorno.</div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="office-story" aria-labelledby="office-title">
-    <div class="office-story-inner">
-      <div class="office-section-heading reveal">
-        <span class="section-label">LA NOSTRA SEDE</span>
-        <h2 id="office-title">Spazi accoglienti e riservati per ascoltarti al meglio</h2>
-        <p>Riceviamo a Pisa, in Via Novecchio 10, e seguiamo pratiche anche a distanza in tutta Italia.</p>
-      </div>
-      <div class="office-photo-pair reveal">
-        <img class="office-story-photo" src="assets/ufficio/sala-attesa.webp" alt="Sala d'attesa della sede operativa di Difesa Consumatore a Pisa" />
-        <img class="office-story-photo office-story-photo-secondary" src="assets/ufficio/sala-riunioni.webp" alt="Sala riunioni della sede operativa" />
-      </div>
-      <a class="office-primary-link reveal" href="/dove-siamo/">Dove siamo</a>
-    </div>
-  </section>
-
-  <!-- ══ TESTIMONIANZE con link Google ══ -->
-  <section class="testimonials">
-    <div class="testi-inner">
-      <a class="home-rating-band reveal" href="https://www.google.com/search?q=Difesa+Consumatore+Pisa" target="_blank" rel="noopener">
-        <span class="rating-intro">Persone che si sono<br><strong>affidate a noi</strong></span>
-        <span class="rating-score"><strong>4,9</strong><small>4 recensioni verificate</small></span>
-        <span class="rating-stars" aria-label="4,9 stelle su 5">★★★★★</span>
-        <span class="rating-google"><strong>Google</strong><small>Leggi le recensioni</small></span>
-      </a>
-      <div class="testi-header reveal">
-        <div>
-          <span class="section-label">Recensioni Google</span>
-          <h2 class="section-title">Le testimonianze dei clienti</h2>
-        </div>
-        <!-- Link diretto alla pagina Google My Business -->
-        <a href="https://www.google.com/search?sxsrf=ANbL-n49x4EvY7Ey2LPZy_4H4qYOtaa5EQ:1778153783232&q=Difesa+Consumatore+Pisa+&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOXMQyEyh2gQjUXBqKf23VOlsZag1dATnsLxGYxA1bWwLzcu6mr9T-lJHy8atwdyKTJDEx38%3D&uds=ALYpb_kG5vW-vCilX_Rbjx0DZ5HJpM8LByoeqckkYro2D3XJ9ClmXyaMq_KnRDtrJ3WaZuRDKDdYwfI-cLd6m3digJj-ZdEc0XekE0JuTl56hyELn1_HqTLaN2twnJXW-4jH30Nuc_1_"
-           target="_blank" rel="noopener" class="testi-google-link">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-          </svg>
-          Leggi tutte le recensioni su Google →
-        </a>
-      </div>
-      <div class="testi-grid">
-        <div class="testi-card reveal">
-          <div class="testi-quote">"</div>
-          <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
-          <p class="testi-text">Mi sono rivolta a difesa consumatore per vedere se riuscivo a recuperare qualcosa di una cessione del quinto e c'è andato un po' di tempo però devo dire che sono riusciti a farmi avere quello che mi spettava e soprattutto sono sempre stati molto cordiali gentili e pronti a risolvere i miei problemi. Li consiglio vivamente perché sono veramente dei professionisti e ottengono quello che vogliono</p>
-          <div class="testi-name">Barbara</div>
-          <div class="testi-source">Recensione Google ★★★★★</div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="testi-quote">"</div>
-          <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
-          <p class="testi-text">Veramente molto professionali, molto gentili e competenti : inoltre sanno consigliare più che bene. Complimenti,firmato Gianfranco Latino, sono un dirigente della Polizia in quiescenza ed anche consulente legale.</p>
-          <div class="testi-name">Gianfranco</div>
-          <div class="testi-source">Recensione Google ★★★★★</div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="testi-quote">"</div>
-          <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
-          <p class="testi-text">Persone serie e affidabili. Non mollano mai, anche se occorrono mesi o anni per vincere, vanno sempre fino in fondo.
-E vincono.
-Grazie ancora.</p>
-          <div class="testi-name">Davide</div>
-          <div class="testi-source">Recensione Google ★★★★★</div>
-        </div>
-        <div class="testi-card reveal">
-          <div class="testi-quote">"</div>
-          <div class="testi-stars"><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div><div class="testi-star"></div></div>
-          <p class="testi-text">Dalla mia esperienza avuta con personale dell' Ufficio Difesa Consumatore di Pisa, posso affermare che sono operatori nel settore professionali, e, nel contempo attenzionati alle esigenze dei propri assistiti. Grato per quanto hanno fatto , nel contenzioso positivamente portano a termine, affermando le ragioni del proprio assistito. Grazie .</p>
-          <div class="testi-name">Gerardo</div>
-          <div class="testi-source">Recensione Google ★★★★★</div>
+        <div class="card-grid">
+          <a class="choice-card" href="/servizi/">
+            <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4.5-2.8 7.5-7 9-4.2-1.5-7-4.5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <h3>Tutela del consumatore</h3>
+            <p>Rimborsi, debiti, segnalazioni CRIF, voli e conciliazioni.</p>
+            <span class="card-link">Apri i servizi →</span>
+          </a>
+          <a class="choice-card" href="/servizi/#utenze">
+            <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 20h16V8l-8-5-8 5v12z"/><path d="M8 20v-6h8v6"/></svg></span>
+            <h3>Problemi con aziende e fornitori</h3>
+            <p>Banche, finanziarie, energia, gas, telefonia e compagnie aeree.</p>
+            <span class="card-link">Trova la soluzione →</span>
+          </a>
+          <a class="choice-card" href="/difesa-impresa/">
+            <span class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c.7-5 3.4-7 8-7s7.3 2 8 7"/></svg></span>
+            <h3>Difesa dell’impresa</h3>
+            <p>Privacy, crediti insoluti e utenze per PMI e professionisti.</p>
+            <span class="card-link">Apri Difesa Impresa →</span>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ══ CTA ══ -->
-  <div class="cta-band">
-    <div class="cta-band-inner">
-      <div class="cta-text">
-        <h2>Pensi di avere diritto a un rimborso?</h2>
-        <p>La consulenza iniziale è completamente gratuita e senza impegno.</p>
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="section-label">Una presenza reale</span><h2>La nostra sede a Pisa</h2></div>
+          <p>Spazi riservati dove ascoltiamo, raccogliamo i documenti e analizziamo ogni pratica.</p>
+        </div>
+        <div class="place-grid">
+          <img src="/assets/ufficio/sala-attesa.webp" alt="Sala d'attesa di Difesa Consumatore">
+          <img src="/assets/ufficio/sala-riunioni.webp" alt="Sala riunioni di Difesa Consumatore">
+        </div>
+        <div class="actions"><a class="btn btn-primary" href="/dove-siamo/">Dove siamo</a></div>
       </div>
-      <a href="/dove-siamo/#modulo" class="btn-yellow" style="color: rgb(234, 234, 240)">Contattaci ora →</a>
-    </div>
-  </div>
+    </section>
 
-  <script>
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          e.target.style.transitionDelay = (i % 4) * 0.08 + 's';
-          e.target.classList.add('visible');
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    <section class="section">
+      <div class="container">
+        <a class="rating-band" href="https://www.google.com/search?q=Difesa+Consumatore+Pisa" target="_blank" rel="noopener">
+          <strong>Persone che si sono affidate a noi</strong>
+          <span class="rating-number">4,9</span>
+          <span class="stars" aria-label="4,9 stelle su 5">★★★★★</span>
+          <span class="google-word">Google</span>
+        </a>
+      </div>
+    </section>
 
-    /* Trigger animazione d'ingresso hero (con fallback anti-blocco) */
-    (function () {
-      const hero = document.querySelector('.hero');
-      if (!hero || !document.documentElement.classList.contains('js-anim')) return;
-      const go = () => hero.classList.add('anim-go');
-      requestAnimationFrame(() => requestAnimationFrame(go));
-      setTimeout(go, 150); // garantisce la comparsa anche se rAF e' sospeso
-    })();
-
-    /* Mascotte: animazione telefonata fotogramma per fotogramma */
-    (function () {
-      const stage = document.getElementById('mascStage');
-      const pill = document.getElementById('mascPill');
-      const col = document.querySelector('.mascotte-col');
-      if (!stage || !col) return;
-      const frames = [...stage.querySelectorAll('.masc-frame')];
-      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // sequenza a "ping-pong": entra la chiamata, poi ripone il telefono
-      const seq = [
-        [0, 1700],  // fermo: valigetta + mano in tasca
-        [1, 620],   // fruga in tasca
-        [2, 950],   // estrae il telefono che squilla
-        [3, 680],   // guarda il telefono
-        [4, 620],   // se lo porta all'orecchio
-        [5, 2300],  // parla
-        [4, 580],   // abbassa il telefono
-        [3, 580],   // lo guarda di nuovo
-        [2, 620],   // lo ripone
-        [1, 600],   // mano in tasca
-      ];
-      const TALK = 5;
-
-      function show(i) {
-        frames.forEach((f, k) => {
-          const on = k === i;
-          f.classList.toggle('is-on', on);
-          f.style.zIndex = on ? 2 : 1;
-        });
-        if (pill) {
-          pill.classList.remove('ringing');
-          if (i === TALK) { void pill.offsetWidth; pill.classList.add('ringing'); }
-        }
-      }
-
-      if (reduce) { show(TALK); return; }
-
-      let step = 0, timer = null, running = false;
-      function tick() {
-        const [fi, hold] = seq[step];
-        show(fi);
-        step = (step + 1) % seq.length;
-        timer = setTimeout(tick, hold);
-      }
-      function start() { if (running) return; running = true; step = 0; tick(); }
-      function stop() { running = false; clearTimeout(timer); }
-
-      const io = new IntersectionObserver((ents) => {
-        ents.forEach(e => { e.isIntersecting ? start() : stop(); });
-      }, { threshold: 0.35 });
-      io.observe(col);
-
-      stage.addEventListener('click', () => { stop(); start(); });
-    })();
-
-    /* CONTATORI ANIMATI (statistiche hero) */
-    (function () {
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const stats = document.querySelectorAll('.hero-stat-num[data-count]');
-      if (reduce || !stats.length) return;
-      function animate(el) {
-        const target = parseFloat(el.dataset.count);
-        const prefix = el.dataset.prefix || '';
-        const suffix = el.dataset.suffix || '';
-        const dur = 1500;
-        const start = performance.now();
-        function tick(now) {
-          const p = Math.min((now - start) / dur, 1);
-          const eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = prefix + Math.round(target * eased) + suffix;
-          if (p < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-      }
-      stats.forEach(el => { el.textContent = (el.dataset.prefix || '') + '0' + (el.dataset.suffix || ''); });
-      setTimeout(() => stats.forEach(animate), 1050);
-    })();
-  </script>
-  <script src="consent-config.js?v=1"></script>
-  <script src="nav.js?v=8"></script>
+    <section class="cta-band">
+      <div class="cta-band-inner">
+        <div><h2>Hai un problema da chiarire?</h2><p>Raccontacelo in poche righe. La prima consulenza è gratuita.</p></div>
+        <a class="btn btn-primary" href="/dove-siamo/#modulo">Contattaci</a>
+      </div>
+    </section>
+  </main>
+  <script src="/consent-config.js?v=1"></script>
+  <script src="/nav.js?v=9"></script>
 </body>
 </html>
-
-<style id="__om-edit-overrides">
-:is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,blockquote,figcaption,label,span,a,em,strong,small,td,th,caption) [jscontroller="lgNNHf"] { font-family: "Helvetica Neue" !important }
-</style>
