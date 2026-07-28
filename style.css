@@ -1,240 +1,123 @@
-:root{
-  --blue:#123f73;
-  --blue-2:#1678b8;
-  --sky:#eaf5fb;
-  --sky-2:#f5fafc;
-  --gold:#efbd2f;
-  --ink:#18324d;
-  --muted:#60758a;
-  --line:#dce8ef;
-  --white:#fff;
-  --navy:#123f73;
-  --border:#dce8ef;
-  --text-body:#60758a;
-  --gold-dark:#b48700;
-  --container:1160px;
-  --shadow:0 16px 40px rgba(18,63,115,.09);
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"Segoe UI",Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6;padding-top:80px}
-a{color:inherit}
-img{display:block;max-width:100%}
-button,input,select,textarea{font:inherit}
-.container,.section-inner{width:min(var(--container),calc(100% - 40px));margin-inline:auto}
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Difesa Consumatore Pisa | Tutela per consumatori e imprese</title>
+  <meta name="description" content="Difesa Consumatore a Pisa assiste consumatori e imprese nei rapporti con banche, finanziarie, fornitori e utenze. Prima consulenza gratuita.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.difesaconsumatore.org/">
+  <link rel="icon" type="image/png" href="/favicon-brand.png?v=2">
+  <meta property="og:title" content="Difesa Consumatore Pisa">
+  <meta property="og:description" content="Tutela concreta per consumatori e imprese.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.difesaconsumatore.org/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LegalService","name":"Difesa Consumatore","url":"https://www.difesaconsumatore.org","telephone":"+393296491028","email":"difesaconsumatorepisa@gmail.com","vatID":"02285180507","address":{"@type":"PostalAddress","streetAddress":"Via Novecchio, 10","addressLocality":"Pisa","addressRegion":"PI","addressCountry":"IT"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","bestRating":"5","reviewCount":"4"}}</script>
+  <link rel="stylesheet" href="/style.css?v=22">
+</head>
+<body>
+  <main>
+    <section class="home-hero">
+      <div class="home-hero-copy">
+        <span class="eyebrow">Difesa Consumatore · Pisa</span>
+        <h1>Tutela concreta, spiegata con chiarezza.</h1>
+        <p>Analizziamo il tuo problema e ti indichiamo il percorso possibile, senza soluzioni preconfezionate.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="/dove-siamo/#modulo">Richiedi una verifica</a>
+          <a class="btn btn-secondary" href="/servizi/">Scopri i servizi</a>
+        </div>
+      </div>
+      <div class="home-hero-photo">
+        <img src="/assets/ufficio/sede-esterna-v2.webp" alt="Sede di Difesa Consumatore a Pisa con la croce pisana e l'insegna dello studio">
+        <span class="photo-caption">La nostra sede a Pisa</span>
+      </div>
+    </section>
 
-/* Navigazione */
-#main-nav{position:fixed;inset:0 0 auto;z-index:100;background:#fff;border-top:4px solid #78bfdf;border-bottom:1px solid var(--line)}
-.nav-inner{width:min(var(--container),calc(100% - 40px));height:76px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:28px}
-.nav-logo{display:flex;align-items:center;gap:9px;text-decoration:none}
-.nav-logo .logo-shield{width:46px;height:46px;object-fit:contain}
-.logo-text-wrap{display:flex;flex-direction:column;line-height:1}
-.nav-logo .logo-top{font-family:Georgia,serif;font-size:21px;font-weight:700;letter-spacing:.07em;color:var(--blue)}
-.nav-logo .logo-bottom{font-size:8px;font-weight:700;letter-spacing:.25em;color:#577086;margin-top:4px}
-.nav-links{display:flex;align-items:center;gap:5px;list-style:none}
-.nav-links a{display:block;padding:10px 13px;text-decoration:none;font-size:13px;font-weight:700;color:var(--blue);border-radius:4px}
-.nav-links a:hover,.nav-links a.active:not(.nav-cta){color:var(--blue-2);background:var(--sky-2)}
-.nav-links .nav-cta{color:#fff;background:var(--blue-2);padding-inline:17px}
-.nav-hamburger{display:none;width:42px;height:42px;border:1px solid var(--line);background:#fff;border-radius:5px;flex-direction:column;align-items:center;justify-content:center;gap:5px}
-.nav-hamburger span{width:20px;height:2px;background:var(--blue);transition:.2s}
-.nav-hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.nav-hamburger.active span:nth-child(2){opacity:0}
-.nav-hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    <div class="trust-bar" aria-label="Contatti e informazioni principali">
+      <a class="trust-link wa" href="https://wa.me/393296491028" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M20.5 11.6a8.5 8.5 0 01-12.6 7.5L3 20.5l1.4-4.7A8.5 8.5 0 1120.5 11.6z"/><path d="M8.2 7.8c.4 3.2 2.8 5.7 6 6.2l1.2-1.3"/></svg>
+        <span><strong>WhatsApp</strong><small>Scrivici ora</small></span>
+      </a>
+      <a class="trust-link" href="tel:+390505201278">
+        <svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.4 1.7a15 15 0 005.7 5.7L16 13l5 2v4a2 2 0 01-2 2C10.2 21 3 13.8 3 5a2 2 0 012-2z"/></svg>
+        <span><strong>Chiama</strong><small>050 520 1278</small></span>
+      </a>
+      <a class="trust-link rating" href="https://www.google.com/search?q=Difesa+Consumatore+Pisa#sv=CAwSrAIKBmxjbF9wdhI-CgNwdnESN0NnMHZaeTh4TVdnM2RtcHhjMmhzSWhnS0VrUnBabVZ6WVNCRGIyNXpkVzFoZEc5eVpSQUNHQU0SmwEKA2xxaRKTAUNoZEVhV1psYzJFZ1EyOXVjM1Z0WVhSdmNtVWdVR2x6WVVqeXc2Mm9uNi1BZ0FoYUt4QUFFQUVZQUJnQkdBSWlGMlJwWm1WellTQmpiMjV6ZFcxaGRHOXlaU0J3YVhOaEtnWUlBaEFBRUFHU0FSdGhjM052WTJsaGRHbHZibDl2Y2w5dmNtZGhibWw2WVhScGIyNBISCgN0YnMSC2xyZjohM3NJQUU9EhwKAXESF0RpZmVzYSBDb25zdW1hdG9yZSBQaXNhGhJsb2NhbC1wbGFjZS12aWV3ZXIYCiCTrdO3BQ" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.3-5.6-3-5.6 3 1.1-6.3-4.6-4.4 6.3-.9L12 2.8z"/></svg>
+        <span><strong>Google 4,9</strong><small>Recensioni verificate</small></span>
+      </a>
+      <a class="trust-link" href="/dove-siamo/">
+        <svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span><strong>Sede a Pisa</strong><small>Via Novecchio 10</small></span>
+      </a>
+      <a class="trust-link" href="/dove-siamo/#modulo">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.7 2.7L16.5 9"/></svg>
+        <span><strong>Prima consulenza</strong><small>Gratuita</small></span>
+      </a>
+    </div>
 
-/* Elementi comuni */
-.eyebrow,.section-label{display:block;color:var(--blue-2);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
-h1,h2,h3{color:var(--blue);line-height:1.16}
-h1{font-size:clamp(2.35rem,5vw,4.4rem);letter-spacing:-.045em}
-h2{font-size:clamp(1.8rem,3.2vw,2.65rem);letter-spacing:-.035em}
-h3{font-size:1.15rem}
-.lead{font-size:18px;color:var(--muted);max-width:660px}
-.btn,.btn-primary,.btn-secondary,.cta-btn,.btn-yellow,.btn-ghost{
-  display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 21px;border-radius:4px;
-  text-decoration:none;font-size:14px;font-weight:800;border:1px solid transparent;transition:.2s
-}
-.btn-primary,.btn-yellow,.cta-btn{background:var(--blue-2);color:#fff}
-.btn-primary:hover,.btn-yellow:hover,.cta-btn:hover{background:#0f6197;transform:translateY(-1px)}
-.btn-secondary,.btn-ghost{border-color:#a9bdcc;color:var(--blue);background:transparent}
-.btn-secondary:hover,.btn-ghost:hover{border-color:var(--blue);background:#fff}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
-.section{padding:76px 0}
-.section-soft{background:var(--sky-2)}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:34px}
-.section-head p{color:var(--muted);max-width:560px}
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="section-label">Come possiamo aiutarti</span><h2>Parti dal tuo problema</h2></div>
+          <p>Tre aree semplici. Apri quella che ti riguarda per leggere tutti i dettagli.</p>
+        </div>
+        <div class="card-grid">
+          <a class="choice-card" href="/servizi/">
+            <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4.5-2.8 7.5-7 9-4.2-1.5-7-4.5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <h3>Tutela del consumatore</h3>
+            <p>Rimborsi, debiti, segnalazioni CRIF, voli e conciliazioni.</p>
+            <span class="card-link">Apri i servizi →</span>
+          </a>
+          <a class="choice-card" href="/servizi/#utenze">
+            <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 20h16V8l-8-5-8 5v12z"/><path d="M8 20v-6h8v6"/></svg></span>
+            <h3>Problemi con aziende e fornitori</h3>
+            <p>Banche, finanziarie, energia, gas, telefonia e compagnie aeree.</p>
+            <span class="card-link">Trova la soluzione →</span>
+          </a>
+          <a class="choice-card" href="/difesa-impresa/">
+            <span class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c.7-5 3.4-7 8-7s7.3 2 8 7"/></svg></span>
+            <h3>Difesa dell’impresa</h3>
+            <p>Privacy, crediti insoluti e utenze per PMI e professionisti.</p>
+            <span class="card-link">Apri Difesa Impresa →</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-/* Hero home */
-.home-hero{width:min(var(--container),calc(100% - 40px));margin:28px auto 0;display:grid;grid-template-columns:44% 56%;min-height:400px;background:var(--sky-2);border:1px solid var(--line);overflow:hidden}
-.home-hero-copy{padding:42px 44px;display:flex;flex-direction:column;justify-content:center}
-.home-hero-copy h1{font-size:clamp(2.45rem,4vw,3.3rem)}
-.home-hero-copy p{font-size:17px;color:var(--muted);margin-top:20px}
-.home-hero-photo{position:relative;min-height:400px;background:#dcecf5}
-.home-hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center}
-.photo-caption{position:absolute;right:16px;bottom:14px;padding:7px 10px;background:rgba(255,255,255,.9);color:var(--blue);font-size:11px;font-weight:800}
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="section-label">Una presenza reale</span><h2>La nostra sede a Pisa</h2></div>
+          <p>Spazi riservati dove ascoltiamo, raccogliamo i documenti e analizziamo ogni pratica.</p>
+        </div>
+        <div class="place-grid">
+          <img src="/assets/ufficio/sala-attesa.webp" alt="Sala d'attesa di Difesa Consumatore">
+          <img src="/assets/ufficio/sala-riunioni.webp" alt="Sala riunioni di Difesa Consumatore">
+        </div>
+        <div class="actions"><a class="btn btn-primary" href="/dove-siamo/">Dove siamo</a></div>
+      </div>
+    </section>
 
-/* Barra fiducia */
-.trust-bar{width:min(1080px,calc(100% - 64px));margin:-26px auto 0;position:relative;z-index:3;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(5,1fr)}
-.trust-link{display:flex;align-items:center;gap:10px;padding:20px 15px;text-decoration:none;border-right:1px solid var(--line)}
-.trust-link:last-child{border-right:0}
-.trust-link svg{width:22px;height:22px;flex:none;fill:none;stroke:var(--blue-2);stroke-width:1.8}
-.trust-link strong,.trust-link small{display:block}
-.trust-link strong{font-size:12px;color:var(--blue)}
-.trust-link small{font-size:10px;color:var(--muted)}
-.trust-link.wa svg{stroke:#19a85a}.trust-link.rating svg{fill:var(--gold);stroke:var(--gold)}
+    <section class="section">
+      <div class="container">
+        <a class="rating-band" href="https://www.google.com/search?q=Difesa+Consumatore+Pisa#sv=CAwSrAIKBmxjbF9wdhI-CgNwdnESN0NnMHZaeTh4TVdnM2RtcHhjMmhzSWhnS0VrUnBabVZ6WVNCRGIyNXpkVzFoZEc5eVpSQUNHQU0SmwEKA2xxaRKTAUNoZEVhV1psYzJFZ1EyOXVjM1Z0WVhSdmNtVWdVR2x6WVVqeXc2Mm9uNi1BZ0FoYUt4QUFFQUVZQUJnQkdBSWlGMlJwWm1WellTQmpiMjV6ZFcxaGRHOXlaU0J3YVhOaEtnWUlBaEFBRUFHU0FSdGhjM052WTJsaGRHbHZibDl2Y2w5dmNtZGhibWw2WVhScGIyNBISCgN0YnMSC2xyZjohM3NJQUU9EhwKAXESF0RpZmVzYSBDb25zdW1hdG9yZSBQaXNhGhJsb2NhbC1wbGFjZS12aWV3ZXIYCiCTrdO3BQ" target="_blank" rel="noopener">
+          <strong>Persone che si sono affidate a noi</strong>
+          <span class="rating-number">4,9</span>
+          <span class="stars" aria-label="4,9 stelle su 5">★★★★★</span>
+          <span class="google-word">Google</span>
+        </a>
+      </div>
+    </section>
 
-/* Schede */
-.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.choice-card{display:flex;flex-direction:column;min-height:250px;padding:26px;border:1px solid var(--line);background:#fff;text-decoration:none;transition:.2s}
-.choice-card:hover{border-color:#83bada;transform:translateY(-3px);box-shadow:var(--shadow)}
-.card-icon{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--sky);color:var(--blue-2);margin-bottom:24px}
-.card-icon svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.choice-card h3{font-size:1.2rem;margin-bottom:10px}
-.choice-card p{color:var(--muted);font-size:14px}
-.choice-card .card-link{margin-top:auto;padding-top:22px;color:var(--blue-2);font-size:13px;font-weight:800}
-
-/* Sede e reputazione */
-.place-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
-.place-grid img{width:100%;height:340px;object-fit:cover}
-.rating-band{display:grid;grid-template-columns:1.4fr .6fr 1fr .7fr;align-items:center;gap:20px;padding:26px 30px;background:var(--sky);text-decoration:none}
-.rating-band strong{color:var(--blue)}
-.rating-number{font-size:2.2rem;font-weight:800}
-.stars{color:#f3b719;font-size:1.55rem;letter-spacing:.08em}
-.google-word{font-size:1.45rem;font-weight:800;color:#4285f4;text-align:right}
-
-/* Intestazioni interne */
-.page-hero{padding:72px 0 58px;background:var(--sky-2);border-bottom:1px solid var(--line)}
-.page-hero .lead{margin-top:16px}
-.breadcrumb{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-2);margin-bottom:14px}
-.breadcrumb a{text-decoration:none}
-
-/* Schede apribili */
-.accordion-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-items:start}
-.service-card{border:1px solid var(--line);background:#fff}
-.service-card summary{list-style:none;cursor:pointer;padding:24px;display:grid;grid-template-columns:48px 1fr auto;align-items:center;gap:16px}
-.service-card summary::-webkit-details-marker{display:none}
-.service-card summary::after{content:'+';font-size:26px;color:var(--blue-2);font-weight:500}
-.service-card[open] summary::after{content:'–'}
-.service-card[open]{border-color:#87bddd;box-shadow:0 12px 34px rgba(18,63,115,.07)}
-.service-card h2,.service-card h3{font-size:1.12rem;letter-spacing:0}
-.service-card .summary-copy p{font-size:13px;color:var(--muted);margin-top:4px}
-.service-detail{padding:0 24px 26px 88px;color:#4d6479;font-size:14px}
-.service-detail p+p{margin-top:12px}
-.service-detail ul{padding-left:18px;margin-top:13px}
-.service-detail li+li{margin-top:6px}
-.service-detail .btn{margin-top:20px}
-.service-visual{display:grid;grid-template-columns:.8fr 1.2fr;background:var(--sky-2);border:1px solid var(--line);margin-top:34px}
-.service-visual img{width:100%;height:280px;object-fit:cover}
-.service-visual-copy{padding:34px;display:flex;flex-direction:column;justify-content:center}
-.service-visual-copy p{color:var(--muted);margin-top:12px}
-
-/* Contatti */
-.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:34px;align-items:start}
-.contact-panel,.form-panel{border:1px solid var(--line);background:#fff;padding:30px}
-.contact-list{display:grid;gap:20px;margin-top:24px}
-.contact-row{display:grid;grid-template-columns:40px 1fr;gap:13px;align-items:start}
-.contact-row svg{width:22px;height:22px;stroke:var(--blue-2);fill:none}
-.contact-row strong,.contact-row span{display:block}
-.contact-row span,.contact-row a{display:block;font-size:14px;color:var(--muted)}
-.building-photo{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:center 42%;margin-bottom:30px}
-.cf{display:grid;gap:14px;margin-top:24px}
-.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.cf input,.cf select,.cf textarea{width:100%;border:1px solid #cbdbe6;background:#fff;border-radius:3px;padding:13px 14px;color:var(--ink)}
-.cf textarea{min-height:120px;resize:vertical}
-.cf-ack{display:flex;align-items:flex-start;gap:9px;font-size:12px;color:var(--muted)}
-.cf-ack input{width:auto;margin-top:4px}
-.cf-btn{border:0;background:var(--blue-2);color:#fff;border-radius:4px;padding:14px 20px;font-weight:800;cursor:pointer}
-.cf-sensitive-note,.cf-privacy{font-size:11px;color:var(--muted)}
-
-/* CTA e footer */
-.cta-band{padding:48px 0;background:var(--blue)}
-.cta-band-inner{width:min(var(--container),calc(100% - 40px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px}
-.cta-band h2{color:#fff;font-size:1.7rem}
-.cta-band p{color:#c7d7e5;font-size:14px;margin-top:5px}
-footer{background:#0e3159;color:#fff;padding:48px 0 24px}
-.footer-inner{width:min(var(--container),calc(100% - 40px));margin:auto}
-.footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:36px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.13)}
-.footer-brand-row{display:flex;align-items:center;gap:10px}
-.footer-brand-row img{width:42px;height:42px;object-fit:contain}
-.footer-brand .logo-top{font-family:Georgia,serif;font-size:20px;font-weight:700}
-.footer-brand .logo-bottom{font-size:8px;letter-spacing:.22em}
-.footer-brand p{font-size:12px;color:#b6c8d8;margin-top:14px;max-width:330px}
-.footer-col h4{color:#83c8e6;font-size:11px;text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
-.footer-col ul{list-style:none;display:grid;gap:7px}
-.footer-col a{font-size:12px;color:#c4d3df;text-decoration:none}
-.footer-bottom{display:flex;justify-content:space-between;gap:20px;align-items:center;padding-top:22px}
-.footer-copy{font-size:11px;color:#aebfce}
-.footer-copy a{color:inherit}
-.dc-consent-manage{border:0;background:none;color:inherit;text-decoration:underline;cursor:pointer}
-.footer-social{display:flex;gap:8px}
-.social-link{width:32px;height:32px;border:1px solid rgba(255,255,255,.18);border-radius:50%;display:grid;place-items:center;color:#fff}
-.social-link svg{width:14px;height:14px}
-
-/* Pulsanti mobili e cookie */
-.fab-stack{position:fixed;right:18px;bottom:18px;z-index:90;display:grid;gap:9px}
-.fab{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:#fff;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.18)}
-.fab-call{background:var(--blue)}.fab-nav{background:var(--gold)}.fab-wa{background:#20bd66}
-.fab svg{width:23px;height:23px}.fab-tooltip{display:none}
-.back-top{display:none}
-.dc-consent-layer{position:fixed;inset:0;z-index:300;background:rgba(8,31,58,.28);display:flex;align-items:flex-end;justify-content:center;padding:20px}
-.dc-consent-card{position:relative;width:min(900px,100%);background:#fff;border:1px solid var(--line);box-shadow:0 18px 55px rgba(10,38,70,.2);padding:22px;border-radius:6px}
-.dc-consent-card h2{font-size:1.1rem;margin-bottom:7px}
-.dc-consent-card p{font-size:13px;color:var(--muted)}
-.dc-consent-card a{font-weight:700}
-.dc-consent-close{position:absolute;right:14px;top:10px;border:0;background:none;color:var(--blue);font-size:22px;cursor:pointer}
-.dc-consent-actions{display:flex;gap:10px;margin-top:16px}
-.dc-consent-actions button{border:0;border-radius:4px;padding:11px 18px;font-weight:800;cursor:pointer}
-.dc-consent-primary{background:var(--blue);color:#fff}.dc-consent-secondary{background:var(--sky);color:var(--blue)}
-
-/* Informativa e pagina di conferma */
-.privacy-section{padding:68px 0}
-.privacy-content{max-width:880px;margin:auto;color:var(--muted);font-size:15px;line-height:1.75}
-.privacy-content h2{font-size:1.35rem;letter-spacing:-.015em;margin:34px 0 12px;padding-bottom:9px;border-bottom:1px solid var(--line)}
-.privacy-content p{margin-bottom:13px}.privacy-content ul{padding-left:20px;margin-bottom:16px}.privacy-content li+li{margin-top:5px}
-.privacy-intro{padding:20px 22px;background:var(--sky-2);border-left:3px solid var(--blue-2);margin-bottom:28px}
-.privacy-meta{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-2);font-weight:800;margin-bottom:6px}
-.thanks-main{min-height:calc(100vh - 80px);display:grid;place-items:center;padding:60px 20px;background:var(--sky-2)}
-.thanks-card{width:min(540px,100%);padding:42px;text-align:center;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
-.thanks-icon{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;margin:0 auto 18px;background:#e7f7ef;color:#149b55;font-size:28px}
-.thanks-card p{color:var(--muted);margin:14px 0 24px}
-
-@media(max-width:900px){
-  body{padding-top:76px}
-  .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:18px 20px 24px;flex-direction:column;align-items:stretch;gap:8px}
-  .nav-links.open{display:flex}.nav-links a{text-align:center;padding:13px}.nav-hamburger{display:flex}
-  .home-hero{grid-template-columns:1fr;margin-top:18px}
-  .home-hero-copy{padding:44px 30px}
-  .home-hero-photo{min-height:330px;order:-1}
-  .home-hero-photo img{object-fit:cover;object-position:center}
-  .trust-bar{grid-template-columns:repeat(2,1fr);margin-top:18px}
-  .trust-link{border-bottom:1px solid var(--line)}
-  .trust-link:nth-child(even){border-right:0}
-  .trust-link:last-child{grid-column:1/-1;justify-content:center}
-  .card-grid{grid-template-columns:1fr}
-  .choice-card{min-height:0}
-  .accordion-grid{grid-template-columns:1fr}
-  .service-visual{grid-template-columns:1fr}.service-visual img{height:260px}
-  .contact-grid{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr 1fr}
-}
-@media(max-width:600px){
-  .container,.section-inner,.nav-inner{width:min(100% - 28px,var(--container))}
-  .nav-logo .logo-shield{width:40px;height:40px}.nav-logo .logo-top{font-size:18px}.nav-logo .logo-bottom{font-size:7px}
-  .home-hero{width:100%;margin-top:0;border-left:0;border-right:0}
-  .home-hero-photo{min-height:240px}
-  .home-hero-copy{padding:34px 20px 40px}
-  .home-hero-copy h1{font-size:2.35rem}
-  .home-hero-copy p{font-size:15px}
-  .trust-bar{width:calc(100% - 24px)}
-  .trust-link{padding:15px 12px}
-  .section{padding:56px 0}
-  .section-head{display:block}.section-head p{margin-top:10px}
-  .place-grid{grid-template-columns:1fr}.place-grid img{height:240px}
-  .rating-band{grid-template-columns:1fr 1fr;text-align:center;padding:22px 18px}
-  .google-word{text-align:center}
-  .page-hero{padding:52px 0 44px}.page-hero h1{font-size:2.35rem}
-  .service-card summary{grid-template-columns:42px 1fr auto;padding:19px 16px;gap:11px}
-  .service-detail{padding:0 18px 22px}
-  .contact-panel,.form-panel{padding:22px 18px}
-  .cf-row{grid-template-columns:1fr}
-  .cta-band-inner{display:block}.cta-band .btn{margin-top:20px}
-  .footer-top{grid-template-columns:1fr}.footer-bottom{display:block}.footer-social{margin-top:18px}
-}
+    <section class="cta-band">
+      <div class="cta-band-inner">
+        <div><h2>Hai un problema da chiarire?</h2><p>Raccontacelo in poche righe. La prima consulenza è gratuita.</p></div>
+        <a class="btn btn-primary" href="/dove-siamo/#modulo">Contattaci</a>
+      </div>
+    </section>
+  </main>
+  <script src="/consent-config.js?v=1"></script>
+  <script src="/nav.js?v=9"></script>
+</body>
+</html>
