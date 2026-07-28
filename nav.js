@@ -96,7 +96,7 @@
             <span style="margin: 0 8px; opacity: 0.4;">·</span>
             <a href="/privacy/" style="color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Privacy &amp; Cookie</a>
             <button type="button" class="dc-consent-manage" data-dc-consent-open style="margin-left: 12px;">Gestisci cookie</button>
-            <span style="margin-left: 12px;">Powered by IS</span>
+            <a href="https://www.linkedin.com/in/idris-sinaj-24697397" target="_blank" rel="noopener" style="margin-left: 12px; color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3);">Powered by IS</a>
           </div>
           <div class="footer-social">
             <a href="https://www.facebook.com/difesaconsumatoresrls/" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">

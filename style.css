@@ -225,7 +225,7 @@ footer{background:var(--sky);color:var(--blue);padding:48px 0 24px;border-top:1p
 /* Pulsanti mobili e cookie */
 .fab-stack{position:fixed;right:18px;bottom:18px;z-index:90;display:grid;gap:9px}
 .fab{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:#fff;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.18)}
-.fab-call{background:var(--blue)}.fab-nav{background:var(--gold)}.fab-wa{background:#20bd66}
+.fab-call{background:var(--blue-2)}.fab-nav{background:var(--gold)}.fab-wa{background:#20bd66}
 .fab svg{width:23px;height:23px}.fab-tooltip{display:none}
 .back-top{display:none}
 .dc-consent-layer{position:fixed;inset:0;z-index:300;background:rgba(8,31,58,.28);display:flex;align-items:flex-end;justify-content:center;padding:20px}
