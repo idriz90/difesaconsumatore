@@ -1,428 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Difesa Impresa | Privacy, Crediti e Utenze per PMI in Toscana</title>
-  <meta name="description" content="Difesa Impresa affianca PMI e professionisti di Pisa, Lucca e Livorno su privacy e cookie del sito, fatture non pagate e conciliazioni delle utenze." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.difesaconsumatore.org/difesa-impresa/" />
-  <link rel="icon" type="image/png" href="/favicon-brand.png?v=1" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.difesaconsumatore.org/difesa-impresa/" />
-  <meta property="og:title" content="Difesa Impresa | Servizi per PMI a Pisa, Lucca e Livorno" />
-  <meta property="og:description" content="Un unico contatto per verificare privacy e cookie del sito, gestire fatture insolute e affrontare controversie sulle utenze aziendali." />
-  <meta property="og:image" content="https://www.difesaconsumatore.org/logo.png" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Difesa Impresa | Privacy, Crediti e Utenze per PMI" />
-  <meta name="twitter:description" content="Servizi per PMI e professionisti di Pisa, Lucca e Livorno." />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ProfessionalService",
-        "@id": "https://www.difesaconsumatore.org/#organization",
-        "name": "DC S.r.l. - Difesa Impresa",
-        "url": "https://www.difesaconsumatore.org/difesa-impresa/",
-        "telephone": "+393296491028",
-        "email": "difesaconsumatorepisa@gmail.com",
-        "vatID": "02285180507",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Via Novecchio, 10",
-          "addressLocality": "Pisa",
-          "postalCode": "56121",
-          "addressRegion": "PI",
-          "addressCountry": "IT"
-        },
-        "areaServed": [
-          {"@type": "AdministrativeArea", "name": "Provincia di Pisa"},
-          {"@type": "AdministrativeArea", "name": "Provincia di Lucca"},
-          {"@type": "AdministrativeArea", "name": "Provincia di Livorno"}
-        ]
-      },
-      {
-        "@type": "Service",
-        "name": "Difesa Impresa",
-        "provider": {"@id": "https://www.difesaconsumatore.org/#organization"},
-        "serviceType": ["Privacy e cookie per siti web", "Gestione fatture non pagate", "Conciliazione utenze aziendali"],
-        "areaServed": ["Pisa", "Lucca", "Livorno"],
-        "description": "Verifica preliminare, definizione del perimetro e gestione trasparente di esigenze concrete delle PMI."
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Lo screening del sito certifica la conformità al GDPR?",
-            "acceptedAnswer": {"@type": "Answer", "text": "No. Lo scanner raccoglie evidenze tecniche su cookie, tracker, banner e informative. La valutazione completa richiede anche una revisione professionale del caso concreto."}
-          },
-          {
-            "@type": "Question",
-            "name": "Quali documenti servono per una fattura non pagata?",
-            "acceptedAnswer": {"@type": "Answer", "text": "In genere servono fattura, contratto o ordine, prova della prestazione, scadenza, comunicazioni già inviate e dati corretti del debitore."}
-          },
-          {
-            "@type": "Question",
-            "name": "La conciliazione ARERA è sempre possibile per un'azienda?",
-            "acceptedAnswer": {"@type": "Answer", "text": "L'ammissibilità dipende dal tipo di utenza, dalla controversia e dal reclamo preliminare. La prima verifica serve a stabilire il percorso applicabile."}
-          },
-          {
-            "@type": "Question",
-            "name": "Operate anche fuori Pisa?",
-            "acceptedAnswer": {"@type": "Answer", "text": "Il progetto parte dalle province di Pisa, Lucca e Livorno. Molte attività possono essere gestite a distanza, dopo la verifica iniziale."}
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-<link rel="stylesheet" href="/style.css?v=10" />
-  <style>
-    .di-hero{
-      background-image:
-        linear-gradient(90deg,rgba(18,45,86,.97) 0%,rgba(26,58,107,.88) 46%,rgba(26,58,107,.38) 100%),
-        url('/assets/ufficio/archivio.webp');
-      background-size:cover;
-      background-position:center 22%;
-      background-repeat:no-repeat;
-      color:#fff;
-      min-height:570px;
-      display:flex;
-      align-items:center;
-      padding:92px 0 82px
-    }
-    .di-wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
-    .di-breadcrumb{font-size:13px;color:rgba(255,255,255,.65);margin-bottom:22px}.di-breadcrumb a{color:var(--gold)}
-    .di-kicker{font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-    .di-hero h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.35rem,5vw,4.4rem);line-height:1.04;max-width:880px;margin:0 0 22px}
-    .di-hero p{font-size:clamp(1.05rem,2vw,1.25rem);line-height:1.7;max-width:780px;color:rgba(255,255,255,.82)}
-    .di-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}.di-actions .btn-secondary{color:#fff;border-color:rgba(255,255,255,.5)}
-    .di-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-bottom:1px solid var(--border)}
-    .di-trust div{background:#fff;padding:24px;text-align:center;color:var(--navy);font-weight:700}.di-trust small{display:block;color:var(--text-muted);font-weight:400;margin-top:6px}
-    .di-section{padding:82px 0}.di-section.alt{background:var(--off-white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-    .di-heading{max-width:760px;margin-bottom:42px}.di-heading h2{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:clamp(2rem,4vw,3rem);line-height:1.15;margin:0 0 15px}.di-heading p{font-size:17px;line-height:1.75;color:var(--text-body)}
-    .di-services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.di-card{background:#fff;border:1px solid #dfe6f0;border-radius:9px;padding:30px;box-shadow:0 5px 22px rgba(26,58,107,.06);display:flex;flex-direction:column;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}.di-card:hover,.di-card.is-active{transform:translateY(-3px);border-color:#90acd0;box-shadow:0 12px 30px rgba(26,58,107,.12)}.di-card-num{font-family:'Playfair Display',Georgia,serif;color:var(--gold-dark);font-size:2.2rem;font-weight:700}.di-card h3{color:var(--navy);font-size:1.3rem;margin:12px 0}.di-card p{color:var(--text-body);line-height:1.7;margin-bottom:16px}.di-card ul{padding-left:20px;color:var(--text-body);line-height:1.65;margin:0 0 24px}.di-card li+li{margin-top:8px}.di-card-open{margin-top:auto;border:0;background:none;padding:0;text-align:left;color:var(--navy);font:inherit;font-weight:800;text-decoration:underline;cursor:pointer}
-    .di-card h3{color:var(--text-body)}
-    .di-card .di-card-problem{font-weight:700;color:#1e2430}
-    .di-service-panels{margin-top:34px}.di-service-panel{display:none;background:var(--navy);color:#fff;border-radius:9px;padding:42px;box-shadow:0 16px 38px rgba(18,45,86,.18)}.di-service-panel.is-open{display:block}.di-panel-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px}.di-service-panel h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.9rem,4vw,2.7rem);margin:0 0 16px}.di-service-panel h3{color:var(--gold);font-size:1.05rem;margin:26px 0 10px}.di-service-panel p{color:rgba(255,255,255,.8);line-height:1.75}.di-service-panel ul{padding-left:21px;line-height:1.75;color:rgba(255,255,255,.87)}.di-panel-note{font-size:13px;color:rgba(255,255,255,.62)!important;margin-top:16px}
-    .di-problem{margin:0 0 24px;padding:18px 20px;border-left:4px solid var(--gold);background:rgba(255,255,255,.08);border-radius:0 8px 8px 0;color:#fff!important;font-size:16px;line-height:1.7!important}
-    .di-panel-form{background:#fff;color:var(--navy);border-radius:11px;padding:28px}.di-panel-form h3{color:var(--navy);font-family:'Playfair Display',Georgia,serif;font-size:1.45rem;margin:0 0 8px}.di-panel-form>p{color:var(--text-body);font-size:14px;margin-bottom:18px}.di-mini-form{display:grid;gap:11px}.di-mini-form input,.di-mini-form select,.di-mini-form textarea{width:100%;border:1px solid var(--border);border-radius:6px;padding:12px;font:inherit;color:var(--navy);background:#fff}.di-mini-form textarea{min-height:90px;resize:vertical}.di-mini-form label{display:flex;gap:9px;align-items:flex-start;color:var(--text-body);font-size:12px;line-height:1.45}.di-mini-form label input{width:auto;margin-top:3px}.di-mini-form label a{color:var(--navy);font-weight:700}.di-mini-form button{border:0;border-radius:6px;background:var(--gold);color:var(--navy);padding:13px 18px;font-weight:800;cursor:pointer}.di-mini-form small{color:var(--text-muted);line-height:1.45}
-    .di-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.di-step{border-top:4px solid var(--gold);padding:24px 18px;background:#fff}.di-step strong{display:block;color:var(--navy);font-size:1.05rem;margin-bottom:10px}.di-step p{color:var(--text-body);line-height:1.65;font-size:15px}
-    .di-docs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.di-doc{background:#fff;border-left:4px solid var(--navy);padding:25px}.di-doc h3{color:var(--navy);margin:0 0 10px}.di-doc p{color:var(--text-body);line-height:1.7}
-    .di-faq{max-width:900px}.di-faq details{border-bottom:1px solid var(--border);padding:20px 0}.di-faq summary{cursor:pointer;color:var(--navy);font-weight:800;font-size:17px}.di-faq p{color:var(--text-body);line-height:1.75;padding-top:12px}
-    body.di-panel-active #faq{display:none}
-    .di-final{background:var(--gold);padding:54px 0}.di-final-grid{display:flex;align-items:center;justify-content:space-between;gap:30px}.di-final h2{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:2.2rem;margin:0 0 8px}.di-final p{color:var(--navy)}
-    @media(max-width:900px){.di-services,.di-docs{grid-template-columns:1fr}.di-steps{grid-template-columns:1fr 1fr}.di-panel-grid{grid-template-columns:1fr}.di-trust{grid-template-columns:1fr}}
-    @media(max-width:560px){.di-wrap{width:min(100% - 28px,1120px)}.di-hero{padding:68px 0 58px}.di-section{padding:58px 0}.di-steps{grid-template-columns:1fr}.di-service-panel{padding:24px}.di-panel-form{padding:20px}.di-final-grid{align-items:flex-start;flex-direction:column}}
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Difesa Impresa | Privacy, crediti e utenze per PMI</title>
+  <meta name="description" content="Difesa Impresa assiste PMI e professionisti su privacy e cookie del sito, fatture non pagate e controversie con i gestori delle utenze.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.difesaconsumatore.org/difesa-impresa/">
+  <link rel="icon" type="image/png" href="/favicon-brand.png?v=2">
+  <link rel="stylesheet" href="/style.css?v=21">
 </head>
 <body>
-  <header class="di-hero">
-    <div class="di-wrap">
-      <div class="di-breadcrumb"><a href="/">Home</a> / Difesa Impresa</div>
-      <div class="di-kicker">Servizi per PMI e professionisti</div>
-      <h1>Rischi digitali, crediti e utenze: un percorso chiaro per affrontarli</h1>
-      <p>Difesa Impresa supporta aziende di Pisa, Lucca e Livorno con una prima verifica concreta, un perimetro trasparente e un referente lungo il percorso.</p>
-      <div class="di-actions">
-        <a class="btn-primary" href="/dove-siamo/?area=difesa-impresa#modulo">Richiedi una prima verifica →</a>
-        <a class="btn-secondary" href="https://wa.me/393296491028?text=Buongiorno%2C%20vorrei%20informazioni%20su%20Difesa%20Impresa" target="_blank" rel="noopener">Scrivi su WhatsApp</a>
-      </div>
-    </div>
-  </header>
-
-  <div class="di-trust" aria-label="Territorio coperto">
-    <div>Pisa<small>Sede e presidio diretto</small></div>
-    <div>Lucca<small>Assistenza anche a distanza</small></div>
-    <div>Livorno<small>Assistenza anche a distanza</small></div>
-  </div>
-
   <main>
-    <section class="di-section" id="servizi">
-      <div class="di-wrap">
-        <div class="di-heading">
-          <div class="di-kicker">Tre aree operative</div>
-          <h2>Partiamo dal problema reale, non da una soluzione preconfezionata</h2>
-          <p>Il primo contatto serve a verificare requisiti, documenti e percorso possibile. Prima di ogni incarico vengono chiariti attività, costi, responsabilità e limiti.</p>
-        </div>
-        <div class="di-services">
-          <article class="di-card" id="servizio-sito-web">
-            <div class="di-card-num">01</div>
-            <h3>Privacy sito e cookie</h3>
-            <p class="di-card-problem">Hai un sito realizzato tempo fa o aggiornato senza controllare privacy e cookie? Verifichiamo se banner, tracker, moduli e informative descrivono correttamente ciò che il sito fa oggi.</p>
-            <ul>
-              <li>Cookie banner GDPR e preferenze</li>
-              <li>Tracker prima e dopo la scelta</li>
-              <li>Privacy e cookie policy</li>
-              <li>Piano tecnico di adeguamento</li>
-            </ul>
-            <button class="di-card-open" type="button" data-panel="panel-privacy" aria-expanded="false">Scopri il servizio e contattaci →</button>
-          </article>
-          <article class="di-card" id="fatture-non-pagate">
-            <div class="di-card-num">02</div>
-            <h3>Fatture non pagate</h3>
-            <p class="di-card-problem">Hai eseguito un lavoro o consegnato un prodotto, ma la fattura è scaduta e il cliente non paga? Verifichiamo documenti e credito prima di scegliere come intervenire.</p>
-            <ul>
-              <li>Controllo di fatture e documenti</li>
-              <li>Sollecito e contatto con il debitore</li>
-              <li>Negoziazione e piano di rientro</li>
-              <li>Invio a professionisti abilitati quando necessario</li>
-            </ul>
-            <button class="di-card-open" type="button" data-panel="panel-crediti" aria-expanded="false">Scopri il servizio e contattaci →</button>
-          </article>
-          <article class="di-card" id="conciliazione-utenze">
-            <div class="di-card-num">03</div>
-            <h3>Conciliazione utenze PMI</h3>
-            <p class="di-card-problem">Hai ricevuto una fattura anomala, un conguaglio inatteso o una risposta insufficiente dal gestore? Analizziamo la controversia e verifichiamo il percorso applicabile.</p>
-            <ul>
-              <li>Analisi di fatture e contratto</li>
-              <li>Preparazione del reclamo</li>
-              <li>Procedura ARERA, se applicabile</li>
-              <li>Assistenza fino alla definizione</li>
-            </ul>
-            <button class="di-card-open" type="button" data-panel="panel-utenze" aria-expanded="false">Scopri il servizio e contattaci →</button>
-          </article>
-        </div>
-        <div class="di-service-panels">
-          <section class="di-service-panel" id="panel-privacy" aria-hidden="true">
-            <div class="di-panel-grid">
-              <div>
-                <div class="di-kicker">01 · Privacy sito e cookie</div>
-                <p class="di-problem">Hai un sito web realizzato tempo fa o aggiornato senza verificare privacy, cookie e servizi esterni? Le tecnologie utilizzate e le indicazioni delle autorità possono cambiare: banner e informative potrebbero non descrivere più correttamente ciò che il sito fa oggi.</p>
-                <h2>Le decisioni partono da evidenze tecniche ripetibili</h2>
-                <p>Il Cookie &amp; Privacy Scanner visita il sito in scenari distinti, osserva richieste e cookie e documenta cosa accade prima e dopo accettazione, rifiuto e revoca.</p>
-                <h3>Cosa verifichiamo</h3>
-                <ul>
-                  <li>Banner, comandi di accettazione, rifiuto e preferenze</li>
-                  <li>Tracker e cookie osservati prima della scelta</li>
-                  <li>Differenze dopo accettazione, rifiuto e revoca</li>
-                  <li>Privacy policy, cookie policy e moduli individuati</li>
-                  <li>Comportamenti da confermare con revisione professionale</li>
-                </ul>
-                <h3>Cosa ricevi</h3>
-                <p>Un report tecnico con prove visive e di rete, criticità ordinate per priorità e indicazioni per l’adeguamento del sito.</p>
-                <h3>Cosa preparare</h3>
-                <p>Indirizzo del sito, accesso al pannello se disponibile, elenco dei servizi esterni e informative attuali.</p>
-                <p class="di-panel-note">Lo screening non è un accertamento legale né una certificazione automatica di conformità. Finalità, basi giuridiche, contratti e processi interni richiedono una valutazione professionale.</p>
-              </div>
-              <div class="di-panel-form">
-                <h3>Richiedi lo screening del sito</h3>
-                <p>Inserisci i dati essenziali. Non allegare documenti o informazioni riservate.</p>
-                <form class="di-mini-form" action="https://api.web3forms.com/submit" method="POST">
-                  <input type="hidden" name="access_key" value="32082512-78b3-445e-a8c0-93646ca527f8">
-                  <input type="hidden" name="subject" value="Nuova richiesta Difesa Impresa - Privacy e cookie">
-                  <input type="hidden" name="redirect" value="https://www.difesaconsumatore.org/grazie/">
-                  <input type="hidden" name="Provenienza" value="Difesa Impresa">
-                  <input type="hidden" name="Pratica" value="Privacy e cookie per sito aziendale">
-                  <input type="checkbox" name="botcheck" style="display:none">
-                  <input type="text" name="Nome" placeholder="Nome e cognome" required>
-                  <input type="text" name="Azienda" placeholder="Azienda" required>
-                  <input type="url" name="Sito_web" placeholder="https://www.esempio.it" required>
-                  <input type="email" name="email" placeholder="Indirizzo email" required>
-                  <input type="tel" name="Telefono" placeholder="Numero di telefono" required>
-                  <select name="Provincia" required><option value="">Provincia</option><option>Pisa</option><option>Lucca</option><option>Livorno</option><option>Altra provincia</option></select>
-                  <textarea name="Messaggio" maxlength="1200" placeholder="Descrivi brevemente cosa vuoi verificare"></textarea>
-                  <small>Non inserire credenziali, documenti, dati sanitari o codici bancari.</small>
-                  <label><input type="checkbox" name="Presa_visione_informativa" value="Sì" required><span>Ho letto l’<a href="/privacy/" target="_blank" rel="noopener">informativa privacy</a>. Non presto consenso a comunicazioni promozionali.</span></label>
-                  <button type="submit">Invia richiesta →</button>
-                </form>
-              </div>
-            </div>
-          </section>
+    <header class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="/">Home</a> / Difesa Impresa</div>
+        <h1>Difesa Impresa</h1>
+        <p class="lead">Tre problemi concreti, tre percorsi distinti. Apri la scheda che riguarda la tua attività.</p>
+      </div>
+    </header>
 
-          <section class="di-service-panel" id="panel-crediti" aria-hidden="true">
-            <div class="di-panel-grid">
-              <div>
-                <div class="di-kicker">02 · Fatture non pagate</div>
-                <p class="di-problem">Hai svolto un lavoro o consegnato un prodotto, ma la fattura è scaduta e il pagamento non arriva? Solleciti informali e promesse rinviate possono far perdere tempo: prima di procedere serve verificare che credito e documentazione siano solidi.</p>
-                <h2>La gestione del credito parte dalla solidità dei documenti</h2>
-                <p>Prima di contattare il debitore verifichiamo origine del credito, scadenza, prestazione eseguita e comunicazioni già intercorse. Questo consente di scegliere un percorso proporzionato.</p>
-                <h3>Come lavoriamo</h3>
-                <ul>
-                  <li>Controllo preliminare di fattura, ordine o contratto</li>
-                  <li>Verifica della prova della fornitura o prestazione</li>
-                  <li>Sollecito e interlocuzione documentata con il debitore</li>
-                  <li>Negoziazione di pagamento o piano di rientro</li>
-                  <li>Invio a professionisti abilitati quando necessario</li>
-                </ul>
-                <h3>Cosa viene chiarito prima dell’incarico</h3>
-                <p>Attività comprese, costi, eventuale componente a risultato, tempi indicativi e condizioni per interrompere o passare alla fase successiva.</p>
-                <h3>Cosa preparare</h3>
-                <p>Fattura, ordine o contratto, prova della prestazione, scadenza e comunicazioni già inviate.</p>
-                <p class="di-panel-note">Il recupero non garantisce l’incasso: esito e tempi dipendono dalla documentazione, dalla contestazione e dalla situazione del debitore.</p>
-              </div>
-              <div class="di-panel-form">
-                <h3>Parlaci della fattura insoluta</h3>
-                <p>Descrivi la posizione senza allegare documenti: li richiederemo tramite un canale adeguato.</p>
-                <form class="di-mini-form" action="https://api.web3forms.com/submit" method="POST">
-                  <input type="hidden" name="access_key" value="32082512-78b3-445e-a8c0-93646ca527f8">
-                  <input type="hidden" name="subject" value="Nuova richiesta Difesa Impresa - Fatture non pagate">
-                  <input type="hidden" name="redirect" value="https://www.difesaconsumatore.org/grazie/">
-                  <input type="hidden" name="Provenienza" value="Difesa Impresa">
-                  <input type="hidden" name="Pratica" value="Fatture non pagate e gestione del credito">
-                  <input type="checkbox" name="botcheck" style="display:none">
-                  <input type="text" name="Nome" placeholder="Nome e cognome" required>
-                  <input type="text" name="Azienda" placeholder="Azienda" required>
-                  <input type="email" name="email" placeholder="Indirizzo email" required>
-                  <input type="tel" name="Telefono" placeholder="Numero di telefono" required>
-                  <select name="Provincia" required><option value="">Provincia</option><option>Pisa</option><option>Lucca</option><option>Livorno</option><option>Altra provincia</option></select>
-                  <textarea name="Messaggio" maxlength="1200" placeholder="Importo indicativo, scadenza e attività già svolte"></textarea>
-                  <small>Non inserire dati bancari, documenti o informazioni particolarmente riservate.</small>
-                  <label><input type="checkbox" name="Presa_visione_informativa" value="Sì" required><span>Ho letto l’<a href="/privacy/" target="_blank" rel="noopener">informativa privacy</a>. Non presto consenso a comunicazioni promozionali.</span></label>
-                  <button type="submit">Invia richiesta →</button>
-                </form>
-              </div>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="section-label">Servizi per PMI e professionisti</span><h2>Da quale problema parti?</h2></div>
+          <p>Prima verifichiamo documenti e requisiti. Solo dopo definiamo l’attività utile.</p>
+        </div>
+        <div class="accordion-grid">
+          <details class="service-card" id="privacy">
+            <summary>
+              <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 4.5-2.8 7.5-7 9-4.2-1.5-7-4.5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
+              <span class="summary-copy"><h2>Privacy sito e cookie</h2><p>Il sito deve rispettare GDPR e indicazioni del Garante.</p></span>
+            </summary>
+            <div class="service-detail">
+              <p>Hai un sito che non aggiorni da tempo o non sai se banner, informative e preferenze funzionano correttamente? Eseguiamo una verifica preliminare degli elementi visibili e del percorso di consenso.</p>
+              <ul><li>Cookie banner e gestione delle preferenze</li><li>Privacy e cookie policy</li><li>Moduli, tracciamenti e coerenza dei testi</li><li>Elenco chiaro delle criticità rilevate</li></ul>
+              <p>Per iniziare bastano l’indirizzo del sito e una breve descrizione degli strumenti utilizzati.</p>
+              <a class="btn btn-primary" href="/dove-siamo/#modulo">Richiedi lo screening</a>
             </div>
-          </section>
+          </details>
 
-          <section class="di-service-panel" id="panel-utenze" aria-hidden="true">
-            <div class="di-panel-grid">
-              <div>
-                <div class="di-kicker">03 · Conciliazione utenze PMI</div>
-                <p class="di-problem">Hai ricevuto una fattura anomala, un conguaglio inatteso o una risposta insufficiente dal gestore della tua utenza aziendale? Prima di avviare una procedura occorre ricostruire contratto, consumi, reclami e termini applicabili.</p>
-                <h2>La controversia viene qualificata prima di avviare la procedura</h2>
-                <p>Analizziamo il tipo di fornitura, la fattura contestata, il reclamo preliminare e la risposta del gestore per stabilire se e come può essere attivata la conciliazione.</p>
-                <h3>Ambiti e attività</h3>
-                <ul>
-                  <li>Energia elettrica, gas, servizio idrico e telecalore</li>
-                  <li>Controllo di contratto, fatture e dati della fornitura</li>
-                  <li>Preparazione o verifica del reclamo preliminare</li>
-                  <li>Valutazione dell’ammissibilità alla procedura ARERA</li>
-                  <li>Predisposizione del fascicolo e assistenza fino alla definizione</li>
-                </ul>
-                <h3>Risultato della prima verifica</h3>
-                <p>Ricevi un’indicazione chiara sul percorso possibile, sui documenti mancanti e sulle condizioni economiche dell’assistenza.</p>
-                <h3>Cosa preparare</h3>
-                <p>Contratto, fatture contestate, reclamo già inviato, risposta del gestore e dati della fornitura.</p>
-                <p class="di-panel-note">La procedura e l’eventuale accordo dipendono dal settore, dal tipo di cliente, dai termini e dalla documentazione disponibile.</p>
-              </div>
-              <div class="di-panel-form">
-                <h3>Verifica la controversia</h3>
-                <p>Indica il gestore e il problema in modo sintetico. I documenti saranno richiesti successivamente.</p>
-                <form class="di-mini-form" action="https://api.web3forms.com/submit" method="POST">
-                  <input type="hidden" name="access_key" value="32082512-78b3-445e-a8c0-93646ca527f8">
-                  <input type="hidden" name="subject" value="Nuova richiesta Difesa Impresa - Utenze">
-                  <input type="hidden" name="redirect" value="https://www.difesaconsumatore.org/grazie/">
-                  <input type="hidden" name="Provenienza" value="Difesa Impresa">
-                  <input type="hidden" name="Pratica" value="Conciliazione utenze aziendali">
-                  <input type="checkbox" name="botcheck" style="display:none">
-                  <input type="text" name="Nome" placeholder="Nome e cognome" required>
-                  <input type="text" name="Azienda" placeholder="Azienda" required>
-                  <input type="text" name="Gestore" placeholder="Gestore della fornitura" required>
-                  <input type="email" name="email" placeholder="Indirizzo email" required>
-                  <input type="tel" name="Telefono" placeholder="Numero di telefono" required>
-                  <select name="Provincia" required><option value="">Provincia</option><option>Pisa</option><option>Lucca</option><option>Livorno</option><option>Altra provincia</option></select>
-                  <textarea name="Messaggio" maxlength="1200" placeholder="Tipo di utenza, contestazione e reclamo già inviato"></textarea>
-                  <small>Non inserire codici di fornitura completi, documenti o dati bancari.</small>
-                  <label><input type="checkbox" name="Presa_visione_informativa" value="Sì" required><span>Ho letto l’<a href="/privacy/" target="_blank" rel="noopener">informativa privacy</a>. Non presto consenso a comunicazioni promozionali.</span></label>
-                  <button type="submit">Invia richiesta →</button>
-                </form>
-              </div>
+          <details class="service-card" id="crediti">
+            <summary>
+              <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16v13H4zM8 10h8M8 14h5"/><path d="M16 3v6"/></svg></span>
+              <span class="summary-copy"><h2>Fatture non pagate</h2><p>Hai eseguito il lavoro, ma il cliente non paga.</p></span>
+            </summary>
+            <div class="service-detail">
+              <p>Verifichiamo fatture, accordi, consegne e comunicazioni per capire la consistenza del credito e il percorso più proporzionato.</p>
+              <ul><li>Controllo dei documenti</li><li>Sollecito e contatto con il debitore</li><li>Valutazione di un accordo o piano di rientro</li><li>Invio a professionisti abilitati quando necessario</li></ul>
+              <p>Servono fattura, accordo o preventivo e le comunicazioni già intercorse.</p>
+              <a class="btn btn-primary" href="/dove-siamo/#modulo">Parlaci della fattura</a>
             </div>
-          </section>
+          </details>
+
+          <details class="service-card" id="utenze">
+            <summary>
+              <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h8l-1 8 9-12h-8l1-8z"/></svg></span>
+              <span class="summary-copy"><h2>Utenze aziendali</h2><p>Conguagli, fatture anomale e risposte insufficienti.</p></span>
+            </summary>
+            <div class="service-detail">
+              <p>Analizziamo contratto, fatture e reclami per qualificare la controversia e verificare la procedura di conciliazione applicabile.</p>
+              <ul><li>Analisi di fatture e contratto</li><li>Preparazione o integrazione del reclamo</li><li>Procedura ARERA o altra procedura competente</li><li>Assistenza fino alla definizione</li></ul>
+              <p>Per la prima verifica servono le fatture contestate, il contratto e le risposte del gestore.</p>
+              <a class="btn btn-primary" href="/dove-siamo/#modulo">Verifica la controversia</a>
+            </div>
+          </details>
+
+          <div class="choice-card">
+            <span class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 20h16V8l-8-5-8 5v12z"/><path d="M8 20v-6h8v6"/></svg></span>
+            <h3>Un contatto unico</h3>
+            <p>La prima verifica serve a capire se possiamo intervenire direttamente o indicarti il professionista competente.</p>
+            <span class="card-link">Pisa · Lucca · Livorno e assistenza a distanza</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="di-section" id="come-funziona">
-      <div class="di-wrap">
-        <div class="di-heading">
-          <div class="di-kicker">Metodo comune</div>
-          <h2>Quattro passaggi per capire subito cosa può essere fatto</h2>
+    <section class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="section-label">Organizzazione</span><h2>Documenti ordinati, decisioni più chiare</h2></div>
+          <p>Ogni pratica viene ricostruita prima di scegliere il percorso.</p>
         </div>
-        <div class="di-steps">
-          <div class="di-step"><strong>1 · Contatto</strong><p>Raccogliamo problema, urgenza, azienda, provincia e servizio richiesto.</p></div>
-          <div class="di-step"><strong>2 · Verifica</strong><p>Controlliamo requisiti e documenti minimi senza richiedere dati riservati nel form.</p></div>
-          <div class="di-step"><strong>3 · Proposta</strong><p>Definiamo perimetro, attività, costi, tempi indicativi e responsabilità.</p></div>
-          <div class="di-step"><strong>4 · Gestione</strong><p>Un referente coordina attività, aggiornamenti ed eventuali professionisti coinvolti.</p></div>
+        <div class="place-grid">
+          <img src="/assets/ufficio/archivio.webp" alt="Archivio delle pratiche di Difesa Consumatore">
+          <img src="/assets/ufficio/sala-riunioni.webp" alt="Sala riunioni per gli incontri con le imprese">
         </div>
       </div>
     </section>
 
-    <section class="di-section" id="faq">
-      <div class="di-wrap">
-        <div class="di-heading">
-          <div class="di-kicker">Domande frequenti</div>
-          <h2>Informazioni utili prima di richiedere la verifica</h2>
-        </div>
-        <div class="di-faq">
-          <details><summary>Lo screening del sito certifica la conformità al GDPR?</summary><p>No. Lo scanner raccoglie evidenze tecniche su cookie, tracker, banner e informative. La valutazione completa richiede anche una revisione professionale del caso concreto.</p></details>
-          <details><summary>Quali documenti servono per una fattura non pagata?</summary><p>In genere servono fattura, contratto o ordine, prova della prestazione, scadenza, comunicazioni già inviate e dati corretti del debitore.</p></details>
-          <details><summary>La conciliazione ARERA è sempre possibile per un’azienda?</summary><p>L’ammissibilità dipende dal tipo di utenza, dalla controversia e dal reclamo preliminare. La prima verifica serve a stabilire il percorso applicabile.</p></details>
-          <details><summary>Operate anche fuori Pisa?</summary><p>Il progetto parte dalle province di Pisa, Lucca e Livorno. Molte attività possono essere gestite a distanza, dopo la verifica iniziale.</p></details>
-        </div>
+    <section class="cta-band">
+      <div class="cta-band-inner">
+        <div><h2>Descrivi il problema in poche righe</h2><p>Ti ricontattiamo per verificare percorso e documenti necessari.</p></div>
+        <a class="btn btn-primary" href="/dove-siamo/#modulo">Contattaci</a>
       </div>
     </section>
   </main>
-
-  <section class="di-final">
-    <div class="di-wrap di-final-grid">
-      <div><h2>Descrivi il problema in poche righe</h2><p>Ti ricontattiamo per verificare il percorso possibile e i documenti necessari.</p></div>
-      <a class="btn-primary" href="/dove-siamo/?area=difesa-impresa#modulo">Contatta Difesa Impresa →</a>
-    </div>
-  </section>
-
   <script src="/consent-config.js?v=1"></script>
-  <script src="/nav.js?v=8"></script>
+  <script src="/nav.js?v=9"></script>
   <script>
-    (function () {
-      const buttons = [...document.querySelectorAll('.di-card-open')];
-      const panels = [...document.querySelectorAll('.di-service-panel')];
-      const panelAliases = { 'panel-privacy': 'privacy', 'panel-crediti': 'crediti', 'panel-utenze': 'utenze' };
-      function closePanels() {
-        panels.forEach(panel => {
-          panel.classList.remove('is-open');
-          panel.setAttribute('aria-hidden', 'true');
-        });
-        buttons.forEach(button => {
-          button.setAttribute('aria-expanded', 'false');
-          button.closest('.di-card').classList.remove('is-active');
-        });
-        document.body.classList.remove('di-panel-active');
-      }
-      function openPanel(panelId, moveFocus, updateHistory) {
-        panels.forEach(panel => {
-          const open = panel.id === panelId;
-          panel.classList.toggle('is-open', open);
-          panel.setAttribute('aria-hidden', String(!open));
-        });
-        buttons.forEach(button => {
-          const active = button.dataset.panel === panelId;
-          button.setAttribute('aria-expanded', String(active));
-          button.closest('.di-card').classList.toggle('is-active', active);
-        });
-        document.body.classList.add('di-panel-active');
-        if (updateHistory) {
-          const url = new URL(location.href);
-          url.searchParams.set('servizio', panelAliases[panelId]);
-          url.hash = 'servizi';
-          const method = history.state && history.state.diPanel ? 'replaceState' : 'pushState';
-          history[method]({ diPanel: panelId }, '', url);
-        }
-        const panel = document.getElementById(panelId);
-        if (panel && moveFocus) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-      buttons.forEach(button => button.addEventListener('click', function () {
-        const alreadyOpen = this.getAttribute('aria-expanded') === 'true';
-        if (alreadyOpen) {
-          if (history.state && history.state.diPanel) history.back();
-          else closePanels();
-        } else {
-          openPanel(this.dataset.panel, true, true);
-        }
-      }));
-      const requested = new URLSearchParams(location.search).get('servizio');
-      const aliases = { privacy: 'panel-privacy', crediti: 'panel-crediti', utenze: 'panel-utenze' };
-      if (aliases[requested]) openPanel(aliases[requested], false, false);
-      window.addEventListener('popstate', function (event) {
-        if (event.state && event.state.diPanel) openPanel(event.state.diPanel, false, false);
-        else {
-          closePanels();
-          document.getElementById('servizi').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    }());
+    const cards=[...document.querySelectorAll('details.service-card')];
+    cards.forEach(card=>card.addEventListener('toggle',()=>{if(card.open)cards.forEach(other=>{if(other!==card)other.open=false})}));
+    if(location.hash){const item=document.querySelector(location.hash);if(item&&item.tagName==='DETAILS')item.open=true}
   </script>
 </body>
 </html>
