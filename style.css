@@ -71,7 +71,7 @@ h3{font-size:1.15rem}
 .home-hero-copy p{font-size:17px;color:rgba(255,255,255,.88);margin-top:20px}
 .home-hero-copy .btn-secondary{color:#fff;border-color:rgba(255,255,255,.65);background:rgba(255,255,255,.06)}
 .home-hero-photo{position:absolute;inset:0;z-index:0;min-height:400px;background:#dcecf5}
-.home-hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 62%}
+.home-hero-photo img{width:100%;height:100%;object-fit:fill;object-position:center}
 .photo-caption{position:absolute;right:16px;bottom:14px;z-index:3;padding:7px 10px;background:rgba(255,255,255,.9);color:var(--blue);font-size:11px;font-weight:800}
 
 /* Barra fiducia */
@@ -224,6 +224,8 @@ footer{background:var(--sky);color:var(--blue);padding:48px 0 24px;border-top:1p
   .home-hero{min-height:440px}
   .home-hero::after{background:linear-gradient(90deg,rgba(8,38,74,.88),rgba(10,54,102,.66))}
   .home-hero-photo{min-height:440px}
+  .home-hero-photo img{object-fit:cover;object-position:center 48%}
+  .home-hero .photo-caption{display:none}
   .home-hero-copy{width:100%;min-height:440px;padding:34px 20px 40px;justify-content:flex-end}
   .home-hero-copy h1{font-size:2.35rem}
   .home-hero-copy p{font-size:15px}
