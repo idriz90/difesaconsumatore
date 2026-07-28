@@ -8,11 +8,14 @@
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://www.difesaconsumatore.org/dove-siamo/">
   <link rel="icon" type="image/png" href="/favicon-brand.png?v=2">
-  <link rel="stylesheet" href="/style.css?v=22">
+  <link rel="stylesheet" href="/style.css?v=27">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"ContactPage","name":"Contatti e sede di Difesa Consumatore a Pisa","url":"https://www.difesaconsumatore.org/dove-siamo/","mainEntity":{"@type":"LocalBusiness","name":"Difesa Consumatore","legalName":"DC S.r.l.","url":"https://www.difesaconsumatore.org/","telephone":"+390505201278","email":"difesaconsumatorepisa@gmail.com","vatID":"02285180507","address":{"@type":"PostalAddress","streetAddress":"Via Novecchio, 10","addressLocality":"Pisa","addressRegion":"PI","postalCode":"56121","addressCountry":"IT"},"areaServed":{"@type":"AdministrativeArea","name":"Pisa e provincia"}}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.difesaconsumatore.org/"},{"@type":"ListItem","position":2,"name":"Dove siamo","item":"https://www.difesaconsumatore.org/dove-siamo/"}]}]}
+  </script>
 </head>
 <body>
   <main>
-    <header class="page-hero">
+    <header class="page-hero page-hero-photo page-hero-location">
       <div class="container">
         <div class="breadcrumb"><a href="/">Home</a> / Dove siamo</div>
         <h1>Contatti e sede</h1>
@@ -22,7 +25,6 @@
 
     <section class="section">
       <div class="container">
-        <img class="building-photo" src="/assets/ufficio/sede-dove-siamo-v3.webp" alt="Edificio della sede operativa di Difesa Consumatore in Via Novecchio a Pisa">
         <div class="contact-grid">
           <aside class="contact-panel">
             <span class="section-label">Contatti diretti</span>
@@ -48,7 +50,7 @@
           </aside>
 
           <div class="form-panel" id="modulo">
-            <span class="section-label">Prima consulenza gratuita</span>
+            <span class="section-label">Richiesta di contatto</span>
             <h2>Descrivi il problema</h2>
             <p class="lead">Bastano poche informazioni. Non allegare documenti o dati riservati.</p>
             <form class="cf" action="https://api.web3forms.com/submit" method="post">
@@ -73,13 +75,14 @@
                 <option>Saldo e stralcio</option>
                 <option>Volo o bagaglio</option>
                 <option>Gas, luce o telefonia</option>
-                <option>Privacy e cookie del sito</option>
-                <option>Fattura non pagata</option>
+                <option>Adeguamento del sito al GDPR</option>
+                <option>Ristrutturazione del debito e del credito</option>
+                <option>Conciliazione utenze energetiche per imprese</option>
                 <option>Altro</option>
               </select>
               <textarea name="Messaggio" maxlength="2000" placeholder="Descrivi brevemente la situazione"></textarea>
               <p class="cf-sensitive-note">Non inserire dati sanitari, credenziali, documenti, codici bancari o altre informazioni particolarmente riservate.</p>
-              <label class="cf-ack"><input type="checkbox" name="Presa_visione_informativa" value="Sì" required><span>Ho letto l’<a href="/privacy/">informativa privacy</a> e acconsento al trattamento dei dati per ricevere risposta.</span></label>
+              <label class="cf-ack"><input type="checkbox" name="Presa_visione_informativa" value="Sì" required><span>Ho letto l’<a href="/privacy/">informativa privacy</a> e chiedo di essere ricontattato in merito alla mia richiesta.</span></label>
               <button class="cf-btn" type="submit">Invia la richiesta</button>
               <p class="cf-privacy">I dati saranno utilizzati esclusivamente per rispondere alla richiesta.</p>
             </form>
@@ -89,6 +92,6 @@
     </section>
   </main>
   <script src="/consent-config.js?v=1"></script>
-  <script src="/nav.js?v=9"></script>
+  <script src="/nav.js?v=13"></script>
 </body>
 </html>

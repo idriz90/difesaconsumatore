@@ -102,12 +102,29 @@ h3{font-size:1.15rem}
 .rating-number{font-size:2.2rem;font-weight:800}
 .stars{color:#f3b719;font-size:1.55rem;letter-spacing:.08em}
 .google-word{font-size:1.45rem;font-weight:800;color:#4285f4;text-align:right}
+.association-note{margin-top:24px;padding:22px 24px;background:#fff;border-left:3px solid var(--blue-2)}
+.association-note h2{font-size:1.35rem;margin-bottom:7px}
+.association-note p{color:var(--muted);font-size:14px;max-width:900px}
+.association-note a{color:var(--blue-2);font-weight:700}
 
 /* Intestazioni interne */
 .page-hero{padding:72px 0 58px;background:var(--sky-2);border-bottom:1px solid var(--line)}
 .page-hero .lead{margin-top:16px}
 .breadcrumb{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-2);margin-bottom:14px}
 .breadcrumb a{text-decoration:none}
+.page-hero-photo{position:relative;min-height:430px;padding:72px 0;display:flex;align-items:center;background-size:cover;background-repeat:no-repeat;border-bottom:0;isolation:isolate}
+.page-hero-photo::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,34,67,.92) 0%,rgba(10,52,99,.76) 52%,rgba(10,52,99,.38) 100%)}
+.page-hero-photo .container{position:relative}
+.page-hero-photo h1{color:#fff;max-width:900px;text-shadow:0 2px 18px rgba(0,0,0,.2)}
+.page-hero-photo .lead{max-width:760px;color:#eef6fb;text-shadow:0 1px 10px rgba(0,0,0,.18)}
+.page-hero-photo .breadcrumb{color:#d9ebf5}
+.page-hero-photo .breadcrumb a{color:inherit}
+.page-hero-photo .section-label{color:var(--gold)}
+.page-hero-photo .btn-secondary{color:#fff;border-color:rgba(255,255,255,.72);background:rgba(7,34,67,.18)}
+.page-hero-services{background-image:url("/assets/ufficio/archivio.webp");background-position:center 42%}
+.page-hero-business{background-image:url("/assets/ufficio/sala-riunioni.webp");background-position:center 48%}
+.page-hero-location{background-image:url("/assets/ufficio/sede-dove-siamo-v3.webp");background-position:center 43%}
+.page-hero-about{background-image:url("/assets/ufficio/sala-attesa.webp");background-position:center 48%}
 
 /* Schede apribili */
 .accordion-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-items:start}
@@ -128,6 +145,38 @@ h3{font-size:1.15rem}
 .service-visual img{width:100%;height:280px;object-fit:cover}
 .service-visual-copy{padding:34px;display:flex;flex-direction:column;justify-content:center}
 .service-visual-copy p{color:var(--muted);margin-top:12px}
+
+/* Pagine informative SEO */
+.seo-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:44px;align-items:start}
+.seo-content{color:#425d73;font-size:16px}
+.seo-content h2{font-size:clamp(1.65rem,2.7vw,2.25rem);margin:42px 0 15px}
+.seo-content h2:first-child{margin-top:0}
+.seo-content h3{margin:25px 0 9px}
+.seo-content p+p{margin-top:14px}
+.seo-content ul,.seo-content ol{padding-left:21px;margin:15px 0}
+.seo-content li+li{margin-top:8px}
+.seo-note{margin:24px 0;padding:19px 21px;background:var(--sky-2);border-left:4px solid var(--blue-2)}
+.seo-note strong{color:var(--blue)}
+.seo-aside{position:sticky;top:104px;display:grid;gap:18px}
+.seo-panel{padding:25px;border:1px solid var(--line);background:#fff}
+.seo-panel h2,.seo-panel h3{font-size:1.25rem;letter-spacing:0;margin-bottom:12px}
+.seo-panel p{font-size:14px;color:var(--muted)}
+.seo-panel ul{list-style:none;display:grid;gap:9px;margin-top:16px}
+.seo-panel li{font-size:14px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.seo-panel .btn{width:100%;margin-top:19px}
+.seo-links{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:24px}
+.seo-link-card{padding:21px;border:1px solid var(--line);text-decoration:none;background:#fff}
+.seo-link-card strong{display:block;color:var(--blue);margin-bottom:7px}
+.seo-link-card span{font-size:13px;color:var(--muted)}
+.seo-link-card:hover{border-color:#83bada;box-shadow:var(--shadow)}
+.seo-faq{border-top:1px solid var(--line)}
+.seo-faq details{border-bottom:1px solid var(--line);padding:17px 0}
+.seo-faq summary{cursor:pointer;font-weight:800;color:var(--blue)}
+.seo-faq p{margin-top:10px;font-size:14px}
+.content-evidence{margin-top:30px;padding:17px 19px;background:var(--sky-2);border-left:3px solid var(--blue-2);font-size:12px;line-height:1.65;color:var(--muted)}
+.content-evidence strong{display:block;color:var(--blue);font-size:13px;margin-bottom:4px}
+.content-evidence a{color:var(--blue-2);font-weight:700}
+.content-evidence .review-date{display:block;margin-top:7px;font-size:11px}
 
 /* Contatti */
 .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:34px;align-items:start}
@@ -215,6 +264,8 @@ footer{background:var(--sky);color:var(--blue);padding:48px 0 24px;border-top:1p
   .accordion-grid{grid-template-columns:1fr}
   .service-visual{grid-template-columns:1fr}.service-visual img{height:260px}
   .contact-grid{grid-template-columns:1fr}
+  .seo-layout{grid-template-columns:1fr}.seo-aside{position:static}
+  .seo-links{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
@@ -237,6 +288,8 @@ footer{background:var(--sky);color:var(--blue);padding:48px 0 24px;border-top:1p
   .rating-band{grid-template-columns:1fr 1fr;text-align:center;padding:22px 18px}
   .google-word{text-align:center}
   .page-hero{padding:52px 0 44px}.page-hero h1{font-size:2.35rem}
+  .page-hero-photo{min-height:400px;padding:58px 0 48px;background-position:center}
+  .page-hero-photo::before{background:linear-gradient(90deg,rgba(7,34,67,.92),rgba(10,52,99,.68))}
   .service-card summary{grid-template-columns:42px 1fr auto;padding:19px 16px;gap:11px}
   .service-detail{padding:0 18px 22px}
   .contact-panel,.form-panel{padding:22px 18px}
