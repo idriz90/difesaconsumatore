@@ -1,761 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dove Siamo | Contatti Difesa Consumatore Pisa | Via Novecchio 10</title>
-  <meta name="description" content="Difesa Consumatore Pisa si trova in Via Novecchio 10, Pisa. Contattaci al +39 329 649 1028 o via email. Consulenza gratuita anche online e telefonica per tutta Italia." />
-  <meta name="keywords" content="difesa consumatore pisa indirizzo, via novecchio pisa, contatti difesa consumatore, consulenza gratuita pisa, tutela consumatore pisa" />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="Difesa Consumatore S.r.l.s." />
-  <link rel="canonical" href="https://www.difesaconsumatore.org/dove-siamo" />
-  <link rel="icon" type="image/png" href="/favicon-brand.png?v=1" />
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.difesaconsumatore.org/dove-siamo" />
-  <meta property="og:title" content="Dove Siamo | Contatti Difesa Consumatore Pisa" />
-  <meta property="og:description" content="Via Novecchio 10, Pisa. Tel: +39 329 649 1028. Consulenza gratuita anche online per tutta Italia." />
-  <meta property="og:locale" content="it_IT" />
-  <meta property="og:site_name" content="Difesa Consumatore" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Dove Siamo | Contatti Difesa Consumatore Pisa" />
-  <meta name="twitter:description" content="Via Novecchio 10, Pisa. Tel: +39 329 649 1028. Consulenza gratuita." />
-
-  <!-- Schema.org LocalBusiness + ContactPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Difesa Consumatore",
-    "url": "https://www.difesaconsumatore.org",
-    "telephone": "+393296491028",
-    "email": "difesaconsumatorepisa@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Via Novecchio, 10",
-      "addressLocality": "Pisa",
-      "addressRegion": "PI",
-      "postalCode": "56121",
-      "addressCountry": "IT"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 43.7102,
-      "longitude": 10.3768
-    },
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "16:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "16:00" }
-    ],
-    "sameAs": [
-      "https://www.facebook.com/difesaconsumatoresrls/",
-      "https://www.instagram.com/difesaconsumatore/"
-    ]
-  }
-  </script>
-
-<link rel="stylesheet" href="../style.css?v=10" />
-  <style>
-    .page-header {
-      background-image:
-        linear-gradient(90deg, rgba(18,45,86,.95) 0%, rgba(26,58,107,.80) 48%, rgba(26,58,107,.28) 100%),
-        url('/assets/ufficio/sede-dove-siamo.webp');
-      background-size: cover;
-      background-position: center 58%;
-      background-repeat: no-repeat;
-    }
-
-    /* ── CONTACT SECTION ── */
-    .contact-section { background: var(--white); }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-
-    .contact-card {
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 36px 32px;
-      box-shadow: 0 2px 12px rgba(26,58,107,0.05);
-    }
-
-    .contact-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 24px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .contact-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .contact-row:last-child { border-bottom: none; }
-
-    .contact-icon-wrap {
-      width: 40px; height: 40px;
-      background: var(--navy);
-      border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .contact-icon-wrap svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
-
-    .contact-label {
-      font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px;
-    }
-    .contact-value {
-      font-size: 15px; color: var(--navy); font-weight: 500;
-    }
-    .contact-value a { color: var(--navy); text-decoration: none; transition: color 0.2s; }
-    .contact-value a:hover { color: var(--gold-dark); }
-
-    /* ── MAP ── */
-    .map-section { background: var(--off-white); padding: 0; }
-    .map-wrap {
-      width: 100%;
-      height: 420px;
-      border-top: 3px solid var(--gold);
-    }
-    .map-placeholder {
-      min-height: 360px; display: grid; place-items: center; text-align: center;
-      padding: 42px 24px; background: linear-gradient(135deg, #eef3f8, #fff);
-      border: 1px solid rgba(26,58,107,0.14);
-    }
-    .map-placeholder h2 { color: var(--navy); margin: 0 0 10px; }
-    .map-placeholder p { margin: 0 0 22px; color: var(--text-muted); }
-    .map-external-link {
-      display: inline-block; padding: 12px 22px; border-radius: 999px;
-      background: var(--navy); color: #fff; text-decoration: none; font-weight: 700;
-    }
-    .map-external-link:hover { background: var(--navy-dark); }
-
-    /* ── FORM SECTION ── */
-    .form-section { background: var(--off-white); border-top: 1px solid var(--border); }
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: start;
-    }
-
-    .info-boxes { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
-    .info-box {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--gold);
-      border-radius: 6px;
-      padding: 16px 18px;
-    }
-    .info-box-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
-    .info-box-text { font-size: 13px; color: var(--text-body); line-height: 1.6; }
-
-    /* ── CONTACT FORM ── */
-    .contact-form-card {
-      background: var(--navy);
-      border-radius: 10px;
-      padding: 40px 36px;
-      box-shadow: 0 8px 32px rgba(26,58,107,0.15);
-    }
-    .contact-form-card h3 {
-      font-size: 13px; font-weight: 700; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
-    }
-    .cf { display: flex; flex-direction: column; gap: 12px; }
-    .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .cf input, .cf select, .cf textarea {
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.13);
-      border-radius: 6px; padding: 12px 14px;
-      font-size: 13px; color: #fff; font-family: inherit;
-      outline: none; width: 100%; transition: border-color 0.2s;
-    }
-    .cf input::placeholder, .cf textarea::placeholder { color: rgba(255,255,255,0.32); }
-    .cf input:focus, .cf select:focus, .cf textarea:focus { border-color: var(--gold); }
-    .cf select { color: rgba(255,255,255,0.55); }
-    .cf select option { background: var(--navy); color: #fff; }
-    .cf textarea { min-height: 110px; resize: vertical; }
-    .cf-btn {
-      background: var(--gold); color: var(--navy);
-      font-size: 13px; font-weight: 700;
-      border: none; padding: 14px;
-      border-radius: 999px; cursor: pointer; font-family: inherit;
-      transition: background 0.2s; width: 100%;
-    }
-    .cf-btn:hover { background: var(--gold-light); }
-    .cf-sensitive-note {
-      margin: -2px 0 0; font-size: 11px; line-height: 1.45;
-      color: rgba(255,255,255,0.68);
-    }
-    .cf-ack {
-      display: flex; align-items: flex-start; gap: 9px;
-      font-size: 11px; line-height: 1.45; color: rgba(255,255,255,0.82);
-      cursor: pointer;
-    }
-    .cf .cf-ack input {
-      flex: 0 0 auto; width: 17px; height: 17px; margin: 1px 0 0;
-      padding: 0; accent-color: var(--gold);
-    }
-    .cf-ack a, .cf-privacy a { color: var(--gold-light); font-weight: 700; }
-    .cf-privacy { margin: 0; font-size: 10px; color: rgba(255,255,255,0.55); text-align: center; }
-
-    /* ── SOCIAL BAND ── */
-    .social-band { background: var(--off-white); padding: 56px 32px; border-top: 1px solid var(--border); }
-    .social-band-inner {
-      max-width: 1200px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 32px; flex-wrap: wrap;
-    }
-    .social-band h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem; font-weight: 700; color: var(--navy); margin-bottom: 6px;
-    }
-    .social-band p { font-size: 14px; color: var(--text-body); }
-    .social-links-row { display: flex; gap: 12px; }
-    .social-btn {
-      display: flex; align-items: center; gap: 10px;
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 999px; padding: 11px 20px;
-      text-decoration: none; color: var(--navy);
-      font-size: 13px; font-weight: 500;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
-      box-shadow: 0 2px 8px rgba(26,58,107,0.06);
-    }
-    .social-btn svg { width: 17px; height: 17px; }
-    .social-btn:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
-
-    /* ── ORARI ── */
-    .orari-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    .orari-table tr { border-bottom: 1px solid var(--border); }
-    .orari-table td { padding: 11px 0; font-size: 14px; }
-    .orari-table td:first-child { color: var(--text-muted); }
-    .orari-table td:last-child { color: var(--navy); font-weight: 600; text-align: right; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
-      .form-grid { grid-template-columns: 1fr; gap: 40px; }
-      .cf-row { grid-template-columns: 1fr; }
-      .social-band-inner { flex-direction: column; text-align: center; }
-      .social-links-row { justify-content: center; flex-wrap: wrap; }
-    }
-
-    /* ── TWEAKS PANEL ── */
-    #tweaks-panel {
-      position: fixed; right: 20px; bottom: 20px;
-      width: 320px; max-height: 80vh; overflow: auto;
-      background: #fff; border: 1px solid var(--border);
-      border-radius: 12px; box-shadow: 0 12px 40px rgba(26,58,107,0.2);
-      z-index: 9999; font-family: inherit; display: none;
-    }
-    #tweaks-panel.visible { display: block; }
-    .tw-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 18px; border-bottom: 1px solid var(--border);
-      background: var(--navy); color: #fff; cursor: move;
-      border-radius: 12px 12px 0 0;
-    }
-    .tw-header h4 {
-      font-size: 12px; font-weight: 700; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--gold); margin: 0;
-    }
-    .tw-close {
-      background: none; border: none; color: #fff;
-      font-size: 18px; cursor: pointer; padding: 0; line-height: 1;
-    }
-    .tw-body { padding: 16px 18px; }
-    .tw-section { margin-bottom: 18px; }
-    .tw-section:last-child { margin-bottom: 0; }
-    .tw-section-title {
-      font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
-      text-transform: uppercase; color: var(--text-muted);
-      margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border);
-    }
-    .tw-field { margin-bottom: 10px; }
-    .tw-field label {
-      display: block; font-size: 11px; font-weight: 600;
-      color: var(--navy); margin-bottom: 4px;
-    }
-    .tw-field input, .tw-field select {
-      width: 100%; padding: 8px 10px; font-size: 13px;
-      border: 1px solid var(--border); border-radius: 6px;
-      font-family: inherit; color: var(--navy); background: #fff;
-      outline: none; transition: border-color 0.15s;
-    }
-    .tw-field input:focus, .tw-field select:focus { border-color: var(--gold); }
-    .tw-toggle-row {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 8px 0;
-    }
-    .tw-toggle-row label { font-size: 13px; color: var(--navy); margin: 0; }
-    .tw-toggle {
-      position: relative; width: 38px; height: 22px;
-      background: var(--border); border-radius: 999px;
-      cursor: pointer; transition: background 0.2s; flex-shrink: 0;
-    }
-    .tw-toggle.on { background: var(--gold); }
-    .tw-toggle::after {
-      content: ''; position: absolute; top: 2px; left: 2px;
-      width: 18px; height: 18px; background: #fff;
-      border-radius: 50%; transition: transform 0.2s;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    }
-    .tw-toggle.on::after { transform: translateX(16px); }
-    .tw-hint {
-      font-size: 11px; color: var(--text-muted);
-      line-height: 1.4; margin-top: 4px;
-    }
-
-    /* ── CUSTOM LINK (the link this tweak inserts) ── */
-    .custom-link-row {
-      display: flex; align-items: flex-start; gap: 14px;
-      padding: 16px 0; border-top: 1px solid var(--border);
-    }
-    .custom-link-row .contact-icon-wrap { /* reuse style */ }
-    .custom-link-row a {
-      color: var(--navy); text-decoration: none;
-      font-size: 15px; font-weight: 500;
-      transition: color 0.2s;
-      word-break: break-word;
-    }
-    .custom-link-row a:hover { color: var(--gold-dark); }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dove siamo e contatti | Difesa Consumatore Pisa</title>
+  <meta name="description" content="Sede operativa in Via Novecchio 10, Pisa. Contatta Difesa Consumatore per telefono, WhatsApp o tramite il modulo online.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://www.difesaconsumatore.org/dove-siamo/">
+  <link rel="icon" type="image/png" href="/favicon-brand.png?v=2">
+  <link rel="stylesheet" href="/style.css?v=21">
 </head>
 <body>
+  <main>
+    <header class="page-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="/">Home</a> / Dove siamo</div>
+        <h1>Contatti e sede</h1>
+        <p class="lead">Siamo a Pisa. Puoi incontrarci in sede oppure richiedere assistenza telefonica e online.</p>
+      </div>
+    </header>
 
-  <!-- PAGE HEADER -->
-  <div class="page-header" style="background-image:linear-gradient(90deg,rgba(18,45,86,.95) 0%,rgba(26,58,107,.80) 48%,rgba(26,58,107,.28) 100%),url('/assets/ufficio/sede-dove-siamo.webp?v=2');background-size:cover;background-position:center 58%;background-repeat:no-repeat;">
-    <div class="page-header-inner">
-      <div class="breadcrumb"><a href="../">Home</a> / Dove Siamo</div>
-      <h1>Dove Siamo</h1>
-      <p>Siamo a Pisa e disponibili anche per consulenze telefoniche e online. Contattaci — la prima consulenza è gratuita.</p>
-    </div>
-  </div>
-
-  <!-- CONTACT INFO -->
-  <section class="contact-section" id="contatti">
-    <div class="section-inner">
-      <div class="contact-grid">
-
-        <div>
-          <div class="section-label">Recapiti</div>
-          <h2 class="section-title">Contatti diretti</h2>
-          <p class="section-desc" style="margin-bottom:32px;">Siamo disponibili dal lunedì al venerdì. Puoi contattarci per telefono, WhatsApp, email o venire direttamente in ufficio.</p>
-
-          <div class="contact-card">
-            <h3>Informazioni di contatto</h3>
-
-            <div class="contact-row">
-              <div class="contact-icon-wrap">
-                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    <section class="section">
+      <div class="container">
+        <img class="building-photo" src="/assets/ufficio/sede-dove-siamo.webp" alt="Edificio della sede operativa di Difesa Consumatore in Via Novecchio a Pisa">
+        <div class="contact-grid">
+          <aside class="contact-panel">
+            <span class="section-label">Contatti diretti</span>
+            <h2>Parliamone</h2>
+            <div class="contact-list">
+              <div class="contact-row">
+                <svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.4 1.7a15 15 0 005.7 5.7L16 13l5 2v4a2 2 0 01-2 2C10.2 21 3 13.8 3 5a2 2 0 012-2z"/></svg>
+                <div><strong>Telefono</strong><a href="tel:+390505201278">050 520 1278</a><a href="tel:+393296491028">329 649 1028</a></div>
               </div>
-              <div>
-                <div class="contact-label">Indirizzo</div>
-                <div class="contact-value">Via Novecchio, 10 — Pisa (PI), Italia</div>
+              <div class="contact-row">
+                <svg viewBox="0 0 24 24"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>
+                <div><strong>Email</strong><a href="mailto:difesaconsumatorepisa@gmail.com">difesaconsumatorepisa@gmail.com</a></div>
+              </div>
+              <div class="contact-row">
+                <svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1116 0z"/><circle cx="12" cy="10" r="2.5"/></svg>
+                <div><strong>Sede operativa</strong><span>Via Novecchio 10, Pisa</span><a href="https://www.google.com/maps/dir/?api=1&destination=Via%20Novecchio%2010%2C%20Pisa" target="_blank" rel="noopener">Apri le indicazioni →</a></div>
+              </div>
+              <div class="contact-row">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                <div><strong>Ricevimento</strong><span>Su appuntamento. Contattaci prima di raggiungere la sede.</span></div>
               </div>
             </div>
+          </aside>
 
-            <div class="contact-row">
-              <div class="contact-icon-wrap">
-                <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013.08 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <div class="form-panel" id="modulo">
+            <span class="section-label">Prima consulenza gratuita</span>
+            <h2>Descrivi il problema</h2>
+            <p class="lead">Bastano poche informazioni. Non allegare documenti o dati riservati.</p>
+            <form class="cf" action="https://api.web3forms.com/submit" method="post">
+              <input type="hidden" name="access_key" value="32082512-78b3-445e-a8c0-93646ca527f8">
+              <input type="hidden" name="subject" value="Nuova richiesta - Difesa Consumatore Pisa">
+              <input type="hidden" name="redirect" value="https://www.difesaconsumatore.org/grazie/">
+              <input type="hidden" name="Provenienza" value="Difesa Consumatore">
+              <input type="checkbox" name="botcheck" style="display:none">
+              <div class="cf-row">
+                <input type="text" name="Nome" placeholder="Nome" aria-label="Nome" required>
+                <input type="text" name="Cognome" placeholder="Cognome" aria-label="Cognome" required>
               </div>
-              <div>
-                <div class="contact-label">Telefono / WhatsApp</div>
-                <div class="contact-value"><a href="tel:+393296491028">+39 329 649 1028</a></div>
+              <div class="cf-row">
+                <input type="tel" name="Telefono" placeholder="Telefono" aria-label="Telefono" required>
+                <input type="email" name="email" placeholder="Email" aria-label="Email" required>
               </div>
-            </div>
-
-            <div class="contact-row">
-              <div class="contact-icon-wrap">
-                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <div class="contact-label">Email</div>
-                <div class="contact-value"><a href="mailto:difesaconsumatorepisa@gmail.com">difesaconsumatorepisa@gmail.com</a></div>
-              </div>
-            </div>
-
-            <div class="contact-row">
-              <div class="contact-icon-wrap">
-                <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-              </div>
-              <div>
-                <div class="contact-label">Partita IVA</div>
-                <div class="contact-value">02285180507</div>
-              </div>
-            </div>
-
-            <div class="contact-row" id="custom-link-row" style="display:none;">
-              <div class="contact-icon-wrap">
-                <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.07 0l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.07 0l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
-              </div>
-              <div style="min-width:0; flex:1;">
-                <div class="contact-label" id="custom-link-label">Link</div>
-                <div class="contact-value">
-                  <a id="custom-link-anchor" href="#" target="_blank" rel="noopener">link</a>
-                </div>
-              </div>
-            </div>
+              <select name="Pratica" aria-label="Tipo di problema" required>
+                <option value="">Qual è il problema?</option>
+                <option>Cessione del quinto o prestito</option>
+                <option>Sovraindebitamento</option>
+                <option>Segnalazione CRIF</option>
+                <option>Saldo e stralcio</option>
+                <option>Volo o bagaglio</option>
+                <option>Gas, luce o telefonia</option>
+                <option>Privacy e cookie del sito</option>
+                <option>Fattura non pagata</option>
+                <option>Altro</option>
+              </select>
+              <textarea name="Messaggio" maxlength="2000" placeholder="Descrivi brevemente la situazione"></textarea>
+              <p class="cf-sensitive-note">Non inserire dati sanitari, credenziali, documenti, codici bancari o altre informazioni particolarmente riservate.</p>
+              <label class="cf-ack"><input type="checkbox" name="Presa_visione_informativa" value="Sì" required><span>Ho letto l’<a href="/privacy/">informativa privacy</a> e acconsento al trattamento dei dati per ricevere risposta.</span></label>
+              <button class="cf-btn" type="submit">Invia la richiesta</button>
+              <p class="cf-privacy">I dati saranno utilizzati esclusivamente per rispondere alla richiesta.</p>
+            </form>
           </div>
         </div>
-
-        <div>
-          <div class="section-label">Orari</div>
-          <h2 class="section-title">Quando siamo disponibili</h2>
-          <p class="section-desc">Puoi venire in ufficio o contattarci telefonicamente negli orari indicati. Fuori orario puoi scrivere su WhatsApp.</p>
-          <table class="orari-table">
-            <tr><td>Lunedì</td><td>09:00 – 16:00</td></tr>
-            <tr><td>Martedì</td><td>09:00 – 16:00</td></tr>
-            <tr><td>Mercoledì</td><td>09:00 – 16:00</td></tr>
-            <tr><td>Giovedì</td><td>09:00 – 16:00</td></tr>
-            <tr><td>Venerdì</td><td>09:00 – 16:00</td></tr>
-            <tr><td>Sabato</td><td style="color:var(--text-muted);">Chiuso</td></tr>
-            <tr><td>Domenica</td><td style="color:var(--text-muted);">Chiuso</td></tr>
-          </table>
-          <div class="info-boxes" style="margin-top:28px;">
-            <div class="info-box">
-              <div class="info-box-title">Risposta garantita in 24 ore</div>
-              <div class="info-box-text">Ogni richiesta inviata via email o WhatsApp riceve risposta entro il giorno lavorativo successivo.</div>
-            </div>
-            <div class="info-box">
-              <div class="info-box-title">Consulenza anche a distanza</div>
-              <div class="info-box-text">Non sei a Pisa? Offriamo consulenze telefoniche e via videochiamata per tutta Italia.</div>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
-
-  <!-- MAP -->
-  <div class="map-section">
-    <div class="map-wrap map-placeholder">
-      <div>
-        <h2>Come raggiungerci</h2>
-        <p>Via Novecchio 10, 56121 Pisa</p>
-        <a class="map-external-link"
-           href="https://www.google.com/maps/dir/?api=1&amp;destination=Via%20Novecchio%2010%2C%2056121%20Pisa"
-           target="_blank" rel="noopener noreferrer">
-          Apri le indicazioni su Google Maps
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- CONTACT FORM -->
-  <section class="form-section" id="modulo">
-    <div class="section-inner">
-      <div class="form-grid">
-        <div class="form-intro">
-          <div class="section-label">Scrivici</div>
-          <h2 class="section-title">Invia la tua richiesta</h2>
-          <p class="section-desc">Compilа il modulo con i tuoi dati e descrivi brevemente la tua situazione. Ti risponderemo entro 24 ore lavorative.</p>
-          <div class="info-boxes">
-            <div class="info-box">
-              <div class="info-box-title">Prima consulenza gratuita</div>
-              <div class="info-box-text">Analizziamo il tuo caso senza alcun costo iniziale e senza impegno da parte tua.</div>
-            </div>
-            <div class="info-box">
-              <div class="info-box-title">Solo a successo</div>
-              <div class="info-box-text">Il nostro compenso è una percentuale sul rimborso effettivamente ottenuto. Se non otteniamo risultati, non paghi nulla.</div>
-            </div>
-            <div class="info-box">
-              <div class="info-box-title">Massima riservatezza</div>
-              <div class="info-box-text">I tuoi dati sono trattati nel pieno rispetto del GDPR e della normativa sulla privacy.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-form-card">
-          <h3>Modulo di contatto</h3>
-          <form class="cf" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="32082512-78b3-445e-a8c0-93646ca527f8" />
-            <input type="hidden" name="subject" value="Nuova richiesta - Difesa Consumatore Pisa" />
-            <input type="hidden" name="redirect" value="https://www.difesaconsumatore.org/grazie/" />
-            <input type="hidden" name="Provenienza" id="cf-source" value="Difesa Consumatore" />
-            <input type="checkbox" name="botcheck" style="display:none;" />
-            <div class="cf-row">
-              <input type="text" name="Nome" placeholder="Nome" required />
-              <input type="text" name="Cognome" placeholder="Cognome" required />
-            </div>
-            <input type="tel" name="Telefono" placeholder="Numero di telefono" required />
-            <input type="email" name="email" placeholder="Indirizzo email" required />
-            <input type="text" name="Azienda" id="cf-company" placeholder="Azienda (se richiesta per un'impresa)" />
-            <select name="Provincia" id="cf-province">
-              <option value="">Provincia (facoltativa)</option>
-              <option>Pisa</option>
-              <option>Lucca</option>
-              <option>Livorno</option>
-              <option>Altra provincia</option>
-            </select>
-            <select name="Pratica" required>
-              <option value="" disabled selected>Tipo di pratica</option>
-              <option>Cessione del Quinto / Prestito Personale</option>
-              <option>Sovraindebitamento</option>
-              <option>Segnalazioni CRIF</option>
-              <option>Saldo e Stralcio</option>
-              <option>Rimborso al Volo</option>
-              <option value="Privacy e cookie per sito aziendale">Difesa Impresa - Privacy e cookie del sito</option>
-              <option value="Fatture non pagate e gestione del credito">Difesa Impresa - Fatture non pagate</option>
-              <option value="Conciliazione utenze aziendali">Difesa Impresa - Conciliazione utenze</option>
-              <option>Altro</option>
-            </select>
-            <textarea name="Messaggio" maxlength="2000" aria-describedby="cf-sensitive-note" placeholder="Descrivi brevemente la tua situazione (massimo 2.000 caratteri)."></textarea>
-            <p class="cf-sensitive-note" id="cf-sensitive-note">Non inserire dati sanitari, credenziali, documenti, codici bancari o altre informazioni particolarmente riservate. Potremo richiederli successivamente tramite un canale adeguato, se necessari.</p>
-            <label class="cf-ack">
-              <input type="checkbox" name="Presa_visione_informativa" value="Sì" required />
-              <span>Dichiaro di aver letto l'<a href="/privacy/" target="_blank" rel="noopener">informativa privacy</a>. Questa presa visione non costituisce consenso a finalità promozionali.</span>
-            </label>
-            <button class="cf-btn" type="submit">Invia Richiesta →</button>
-            <p class="cf-privacy">I dati saranno trattati per rispondere alla richiesta, come descritto nell'<a href="/privacy/">informativa privacy</a>.</p>
-          </form>
-          <script>
-            (function () {
-              const params = new URLSearchParams(window.location.search);
-              const area = params.get('area');
-              if (!area) return;
-              const source = document.getElementById('cf-source');
-              const company = document.getElementById('cf-company');
-              const subject = document.querySelector('.cf input[name="subject"]');
-              const practice = document.querySelector('.cf select[name="Pratica"]');
-              const choices = {
-                'privacy-cookie': 'Privacy e cookie per sito aziendale',
-                'crediti-impresa': 'Fatture non pagate e gestione del credito',
-                'utenze-impresa': 'Conciliazione utenze aziendali'
-              };
-              source.value = 'Difesa Impresa';
-              subject.value = 'Nuova richiesta - Difesa Impresa';
-              company.required = true;
-              company.placeholder = 'Azienda';
-              document.getElementById('cf-province').required = true;
-              if (choices[area]) practice.value = choices[area];
-            }());
-          </script>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOCIAL BAND -->
-  <div class="social-band">
-    <div class="social-band-inner">
-      <div>
-        <h3>Seguici sui social</h3>
-        <p>Aggiornamenti, news e consigli per tutelare i tuoi diritti.</p>
-      </div>
-      <div class="social-links-row">
-        <a href="https://www.facebook.com/difesaconsumatoresrls/" class="social-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-          Facebook
-        </a>
-        <a href="https://www.instagram.com/difesaconsumatore/" class="social-btn" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          Instagram
-        </a>
-        <a href="tel:+393296491028" class="social-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-          WhatsApp
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <script src="../consent-config.js?v=1"></script>
-  <script src="../nav.js?v=8"></script>
-
-  <!-- ── TWEAKS PANEL ── -->
-  <div id="tweaks-panel" role="dialog" aria-label="Tweaks">
-    <div class="tw-header" id="tw-header">
-      <h4>Tweaks</h4>
-      <button class="tw-close" id="tw-close" aria-label="Chiudi">×</button>
-    </div>
-    <div class="tw-body">
-
-      <div class="tw-section">
-        <div class="tw-section-title">Aggiungi link</div>
-
-        <div class="tw-toggle-row">
-          <label for="tw-link-enabled">Mostra link personalizzato</label>
-          <div class="tw-toggle" id="tw-link-enabled" role="switch" aria-checked="false" tabindex="0"></div>
-        </div>
-
-        <div class="tw-field">
-          <label for="tw-link-label">Etichetta</label>
-          <input type="text" id="tw-link-label" placeholder="Es. Sito web" />
-        </div>
-
-        <div class="tw-field">
-          <label for="tw-link-text">Testo del link</label>
-          <input type="text" id="tw-link-text" placeholder="Es. www.esempio.it" />
-        </div>
-
-        <div class="tw-field">
-          <label for="tw-link-url">URL</label>
-          <input type="url" id="tw-link-url" placeholder="https://..." />
-          <div class="tw-hint">Includi <code>https://</code> per link esterni, <code>tel:</code> o <code>mailto:</code> per telefono/email.</div>
-        </div>
-
-        <div class="tw-field">
-          <label for="tw-link-position">Posizione</label>
-          <select id="tw-link-position">
-            <option value="contact-card">Nel riquadro contatti</option>
-            <option value="social-band">Tra i pulsanti social</option>
-          </select>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <script>
-  (function () {
-    /* ── Defaults (persisted via __edit_mode_set_keys) ── */
-    const TWEAKS = /*EDITMODE-BEGIN*/{
-      "linkEnabled": false,
-      "linkLabel": "Sito web",
-      "linkText": "www.esempio.it",
-      "linkUrl": "https://www.esempio.it",
-      "linkPosition": "contact-card"
-    }/*EDITMODE-END*/;
-
-    const panel = document.getElementById('tweaks-panel');
-    const closeBtn = document.getElementById('tw-close');
-    const header = document.getElementById('tw-header');
-
-    const $enabled = document.getElementById('tw-link-enabled');
-    const $label = document.getElementById('tw-link-label');
-    const $text = document.getElementById('tw-link-text');
-    const $url = document.getElementById('tw-link-url');
-    const $position = document.getElementById('tw-link-position');
-
-    const $row = document.getElementById('custom-link-row');
-    const $rowLabel = document.getElementById('custom-link-label');
-    const $rowAnchor = document.getElementById('custom-link-anchor');
-
-    let extraSocialBtn = null;
-
-    function applyLink() {
-      const enabled = !!TWEAKS.linkEnabled;
-      const label = TWEAKS.linkLabel || 'Link';
-      const text = TWEAKS.linkText || TWEAKS.linkUrl || '';
-      const url = TWEAKS.linkUrl || '#';
-      const position = TWEAKS.linkPosition || 'contact-card';
-
-      // Reset both placements
-      $row.style.display = 'none';
-      if (extraSocialBtn && extraSocialBtn.parentNode) {
-        extraSocialBtn.parentNode.removeChild(extraSocialBtn);
-        extraSocialBtn = null;
-      }
-
-      if (!enabled || !text) return;
-
-      if (position === 'social-band') {
-        const row = document.querySelector('.social-links-row');
-        if (row) {
-          extraSocialBtn = document.createElement('a');
-          extraSocialBtn.className = 'social-btn';
-          extraSocialBtn.href = url;
-          extraSocialBtn.target = '_blank';
-          extraSocialBtn.rel = 'noopener';
-          extraSocialBtn.innerHTML =
-            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">'
-            + '<path d="M10 13a5 5 0 007.07 0l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/>'
-            + '<path d="M14 11a5 5 0 00-7.07 0l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>'
-            + '<span></span>';
-          extraSocialBtn.querySelector('span').textContent = text;
-          row.appendChild(extraSocialBtn);
-        }
-      } else {
-        $rowLabel.textContent = label;
-        $rowAnchor.textContent = text;
-        $rowAnchor.href = url;
-        $row.style.display = 'flex';
-      }
-    }
-
-    function syncControls() {
-      $enabled.classList.toggle('on', !!TWEAKS.linkEnabled);
-      $enabled.setAttribute('aria-checked', TWEAKS.linkEnabled ? 'true' : 'false');
-      $label.value = TWEAKS.linkLabel || '';
-      $text.value = TWEAKS.linkText || '';
-      $url.value = TWEAKS.linkUrl || '';
-      $position.value = TWEAKS.linkPosition || 'contact-card';
-    }
-
-    function setKey(key, value) {
-      TWEAKS[key] = value;
-      try {
-        window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { [key]: value } }, '*');
-      } catch (e) {}
-      applyLink();
-    }
-
-    /* Controls */
-    $enabled.addEventListener('click', () => setKey('linkEnabled', !TWEAKS.linkEnabled));
-    $enabled.addEventListener('keydown', (e) => {
-      if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); setKey('linkEnabled', !TWEAKS.linkEnabled); syncControls(); }
-    });
-    $label.addEventListener('input', (e) => setKey('linkLabel', e.target.value));
-    $text.addEventListener('input', (e) => setKey('linkText', e.target.value));
-    $url.addEventListener('input', (e) => setKey('linkUrl', e.target.value));
-    $position.addEventListener('change', (e) => setKey('linkPosition', e.target.value));
-
-    /* Drag */
-    let dragging = false, dx = 0, dy = 0;
-    header.addEventListener('mousedown', (e) => {
-      if (e.target === closeBtn) return;
-      dragging = true;
-      const rect = panel.getBoundingClientRect();
-      dx = e.clientX - rect.left; dy = e.clientY - rect.top;
-      panel.style.right = 'auto'; panel.style.bottom = 'auto';
-      e.preventDefault();
-    });
-    window.addEventListener('mousemove', (e) => {
-      if (!dragging) return;
-      panel.style.left = (e.clientX - dx) + 'px';
-      panel.style.top = (e.clientY - dy) + 'px';
-    });
-    window.addEventListener('mouseup', () => { dragging = false; });
-
-    /* Tweak protocol */
-    window.addEventListener('message', (e) => {
-      const data = e.data || {};
-      if (data.type === '__activate_edit_mode') {
-        panel.classList.add('visible');
-        syncControls();
-      } else if (data.type === '__deactivate_edit_mode') {
-        panel.classList.remove('visible');
-      }
-    });
-
-    closeBtn.addEventListener('click', () => {
-      panel.classList.remove('visible');
-      try { window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); } catch (e) {}
-    });
-
-    /* Init */
-    syncControls();
-    applyLink();
-
-    try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch (e) {}
-  })();
-  </script>
+    </section>
+  </main>
+  <script src="/consent-config.js?v=1"></script>
+  <script src="/nav.js?v=9"></script>
 </body>
 </html>
