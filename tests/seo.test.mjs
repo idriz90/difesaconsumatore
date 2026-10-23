@@ -85,3 +85,34 @@ test("il cluster debiti collega guide, servizio e sitemap", () => {
     assert.match(html, /href="\/servizi\/sovraindebitamento-esdebitazione\/"/, `${guide}: link di ritorno al servizio mancante`);
   }
 });
+
+test("le pagine prioritarie usano titoli coerenti con le query Search Console", () => {
+  const expectedTitles = new Map([
+    ["servizi/rimborso-cessione-del-quinto/index.html", "Cessione del quinto a Pisa"],
+    ["dove-siamo/index.html", "Difesa Consumatore Pisa: contatti"],
+    ["servizi/rimborso-volo-cancellato-ritardo/index.html", "Volo cancellato o in ritardo"],
+    ["servizi/cancellazione-segnalazione-crif/index.html", "Segnalazione CRIF a Pisa"],
+  ]);
+
+  for (const [file, phrase] of expectedTitles) {
+    const html = readFileSync(join(root, ...file.split("/")), "utf8");
+    const title = value(html, /<title>(.*?)<\/title>/is);
+    const h1 = value(html, /<h1>(.*?)<\/h1>/is);
+    assert.match(title, new RegExp(phrase, "i"), `${file}: frase target assente dal title`);
+    assert.match(h1, new RegExp(phrase.split(":")[0], "i"), `${file}: tema principale assente dall'H1`);
+  }
+});
+
+test("il cluster cessione del quinto collega guida, servizio, homepage e sitemap", () => {
+  const guidePath = "/guide/rimborso-cessione-quinto-estinzione-anticipata/";
+  const servicePath = "/servizi/rimborso-cessione-del-quinto/";
+  const home = readFileSync(join(root, "index.html"), "utf8");
+  const service = readFileSync(join(root, "servizi", "rimborso-cessione-del-quinto", "index.html"), "utf8");
+  const guide = readFileSync(join(root, "guide", "rimborso-cessione-quinto-estinzione-anticipata", "index.html"), "utf8");
+  const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
+
+  assert.match(home, new RegExp(`href=["']${servicePath}["']`), "homepage: link al servizio mancante");
+  assert.match(service, new RegExp(`href=["']${guidePath}["']`), "servizio: link alla guida mancante");
+  assert.match(guide, new RegExp(`href=["']${servicePath}["']`), "guida: link di ritorno al servizio mancante");
+  assert.match(sitemap, new RegExp(`<loc>https://www\\.difesaconsumatore\\.org${guidePath}</loc>`), "guida: URL in sitemap mancante");
+});
