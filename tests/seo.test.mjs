@@ -66,3 +66,22 @@ test("robots e sitemap usano il dominio canonico", () => {
   assert.ok(locations.every((location) => location.startsWith("https://www.difesaconsumatore.org/")));
   assert.doesNotMatch(sitemap, /github\.io/);
 });
+
+test("il cluster debiti collega guide, servizio e sitemap", () => {
+  const service = readFileSync(join(root, "servizi", "sovraindebitamento-esdebitazione", "index.html"), "utf8");
+  const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
+  const guides = [
+    "saldo-stralcio-o-sovraindebitamento",
+    "piano-del-consumatore-pisa",
+    "esdebitazione-debitore-incapiente",
+    "debiti-pignoramento-cosa-fare",
+  ];
+
+  for (const guide of guides) {
+    const path = `/guide/${guide}/`;
+    assert.match(service, new RegExp(`href=["']${path}["']`), `${guide}: link dal servizio mancante`);
+    assert.match(sitemap, new RegExp(`<loc>https://www\\.difesaconsumatore\\.org${path}</loc>`), `${guide}: URL in sitemap mancante`);
+    const html = readFileSync(join(root, "guide", guide, "index.html"), "utf8");
+    assert.match(html, /href="\/servizi\/sovraindebitamento-esdebitazione\/"/, `${guide}: link di ritorno al servizio mancante`);
+  }
+});
