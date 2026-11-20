@@ -22,7 +22,7 @@
   const footerLinks = [
     ...links,
     { href: '/blog/', label: 'Blog' },
-    { href: SUBSTACK_URL, label: 'Newsletter Substack', external: true }
+    { href: '/blog/#newsletter', label: 'Newsletter' }
   ];
 
   const navHTML = `

@@ -20,4 +20,9 @@
   categories.forEach(button=>button.addEventListener('click',()=>{activeCategory=button.dataset.category;categories.forEach(item=>item.classList.toggle('is-active',item===button));filter();document.getElementById('guide').scrollIntoView({behavior:'smooth'});}));
   document.querySelectorAll('[data-search]').forEach(button=>button.addEventListener('click',()=>{input.value=button.dataset.search;filter();}));
   document.getElementById('resetSearch').addEventListener('click',()=>{input.value='';activeCategory='all';categories.forEach(item=>item.classList.toggle('is-active',item.dataset.category==='all'));filter();input.focus();});
+  const params=new URLSearchParams(window.location.search);
+  if(params.get('newsletter')==='grazie'){
+    const success=document.getElementById('newsletterSuccess');
+    if(success)success.hidden=false;
+  }
 })();
