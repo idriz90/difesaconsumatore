@@ -1,92 +1,35 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog | Difesa Consumatore Pisa</title>
-  <meta name="description" content="Il blog di Difesa Consumatore è ora su Substack: guide su cessione del quinto, sovraindebitamento, CRIF, saldo e stralcio e rimborso voli." />
-  <meta name="robots" content="noindex,follow" />
-  <link rel="canonical" href="https://difesaconsumatore.substack.com" />
-  <link rel="icon" type="image/png" href="/favicon-brand.png?v=2" />
+<!doctype html>
+<html lang="it"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Guide per consumatori: bollette, debiti e credito | Pisa</title>
+  <meta name="description" content="Guide pratiche di Difesa Consumatore Pisa su bollette, energia, debiti, credito e viaggi. Cerca una risposta e verifica i passaggi da seguire.">
+  <meta name="robots" content="index,follow"><link rel="canonical" href="https://www.difesaconsumatore.org/blog/">
+  <meta property="og:site_name" content="Difesa Consumatore"><meta property="og:locale" content="it_IT"><meta property="og:type" content="website"><meta property="og:title" content="Guide pratiche per consumatori | Difesa Consumatore Pisa"><meta property="og:description" content="Risposte chiare su bollette, energia, debiti, credito e viaggi."><meta property="og:url" content="https://www.difesaconsumatore.org/blog/"><meta property="og:image" content="https://www.difesaconsumatore.org/assets/blog/2026-11-20/bonus-sociale-energia-contatore.jpg">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Guide pratiche per consumatori"><meta name="twitter:description" content="Cerca una risposta chiara ai problemi più comuni dei consumatori."><meta name="twitter:image" content="https://www.difesaconsumatore.org/assets/blog/2026-11-20/bonus-sociale-energia-contatore.jpg">
+  <link rel="alternate" type="application/rss+xml" title="Blog Difesa Consumatore" href="/blog/feed.xml"><link rel="icon" type="image/png" href="/favicon-brand.png?v=2"><link rel="stylesheet" href="/style.css?v=27"><link rel="stylesheet" href="/blog/blog.css?v=1">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Guide pratiche per consumatori","url":"https://www.difesaconsumatore.org/blog/","description":"Guide pratiche di Difesa Consumatore su bollette, energia, debiti, credito e viaggi.","publisher":{"@id":"https://www.difesaconsumatore.org/#organization"}}</script>
+</head><body><main>
+  <header class="blog-hero"><div class="container blog-hero-inner"><span class="eyebrow">Il blog di Difesa Consumatore</span><h1>Trova subito la guida che ti serve</h1><p>Risposte pratiche, fonti verificabili e passaggi chiari per orientarti tra bollette, debiti, credito e viaggi.</p>
+    <form class="blog-search" role="search" id="blogSearch"><label class="sr-only" for="blogQuery">Cerca nelle guide</label><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg><input id="blogQuery" type="search" placeholder="Es. bonus bollette, CRIF, volo cancellato…" autocomplete="off"><button type="submit">Cerca</button></form>
+    <p class="blog-search-hint">Prova con: <button type="button" data-search="bollette">bollette</button>, <button type="button" data-search="debiti">debiti</button>, <button type="button" data-search="credito">credito</button></p>
+  </div></header>
 
-  <!-- Redirect immediato verso Substack -->
-  <meta http-equiv="refresh" content="0; url=https://difesaconsumatore.substack.com" />
-  <script>window.location.replace('https://difesaconsumatore.substack.com');</script>
-
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-      background: #f5f7fb;
-      color: #1a3a6b;
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      padding: 24px;
-      text-align: center;
-    }
-    .card {
-      max-width: 460px;
-      background: #fff;
-      border: 1px solid #dce4f0;
-      border-radius: 14px;
-      padding: 40px 32px;
-      box-shadow: 0 8px 28px rgba(26,58,107,0.08);
-    }
-    .logo { width: 64px; height: 64px; margin: 0 auto 18px; }
-    h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #1a3a6b;
-      margin-bottom: 12px;
-    }
-    p {
-      font-size: 15px;
-      color: #2a5298;
-      line-height: 1.7;
-      margin-bottom: 24px;
-    }
-    .btn {
-      display: inline-block;
-      background: #f5c842;
-      color: #1a3a6b;
-      font-size: 14px;
-      font-weight: 700;
-      padding: 14px 28px;
-      border-radius: 999px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn:hover { background: #f9d96a; transform: translateY(-1px); }
-    .small {
-      margin-top: 18px;
-      font-size: 13px;
-      color: #4a6fa5;
-    }
-    .small a { color: #1a3a6b; font-weight: 600; text-decoration: none; }
-    .spinner {
-      width: 24px; height: 24px;
-      border: 2.5px solid #dce4f0;
-      border-top-color: #f5c842;
-      border-radius: 50%;
-      margin: 0 auto 18px;
-      animation: spin 0.9s linear infinite;
-    }
-    @keyframes spin { to { transform: rotate(360deg); } }
-  </style>
-</head>
-<body>
-  <div class="card">
-        <img src="../logo.png" alt="Difesa Consumatore" class="logo" width="65" height="64" />
-    <div class="spinner"></div>
-    <h1>Stiamo aprendo il blog…</h1>
-    <p>Le nostre guide e articoli sono pubblicati su Substack. Ti stiamo reindirizzando.</p>
-    <a href="https://difesaconsumatore.substack.com" class="btn">Vai al blog &rarr;</a>
-    <div class="small">
-      Se il reindirizzamento non parte automaticamente,<br>
-      <a href="https://difesaconsumatore.substack.com">clicca qui</a> oppure
-      <a href="../">torna alla home</a>.
+  <section class="section blog-categories"><div class="container"><div class="section-head"><div><span class="section-label">Esplora per argomento</span><h2>Da dove vuoi iniziare?</h2></div><p>Seleziona un tema oppure usa la ricerca per filtrare tutte le guide.</p></div>
+    <div class="category-grid" aria-label="Categorie del blog">
+      <button class="category-card is-active" type="button" data-category="all"><span>⌕</span><strong>Tutte le guide</strong><small>Vedi tutti gli articoli</small></button>
+      <button class="category-card" type="button" data-category="energia"><span>⚡</span><strong>Bollette ed energia</strong><small>Bonus, forniture e reclami</small></button>
+      <button class="category-card" type="button" data-category="credito"><span>€</span><strong>Credito e finanziamenti</strong><small>CRIF, prestiti e rimborsi</small></button>
+      <button class="category-card" type="button" data-category="debiti"><span>✓</span><strong>Debiti</strong><small>Procedure e soluzioni</small></button>
+      <button class="category-card" type="button" data-category="viaggi"><span>↗</span><strong>Viaggi</strong><small>Voli e rimborsi</small></button>
     </div>
-  </div>
-</body>
-</html>
+  </div></section>
+
+  <section class="section section-soft" id="guide"><div class="container"><div class="blog-results-head"><div><span class="section-label">Guide aggiornate</span><h2>Le ultime pubblicazioni</h2></div><p id="resultCount" aria-live="polite">2 guide trovate</p></div>
+    <div class="article-grid" id="articleGrid">
+      <article class="article-card article-card-featured" data-category="energia" data-search="bonus sociali luce gas 2026 bollette isee arera dsu disagio fisico energia pisa"><a class="article-image" href="/blog/bonus-sociali-luce-gas-2026/"><img src="/assets/blog/2026-11-20/bonus-sociale-energia-contatore.jpg" alt="Primo piano di un contatore elettrico per i bonus sociali energia 2026" width="1200" height="800"><span>In evidenza</span></a><div class="article-card-body"><div class="article-meta"><span>Bollette ed energia</span><time datetime="2026-11-20">20 novembre 2026</time></div><h3><a href="/blog/bonus-sociali-luce-gas-2026/">Bonus sociali luce e gas 2026: requisiti, domanda e controlli</a></h3><p>Soglie ISEE, riconoscimento automatico, disagio fisico e verifiche da fare quando lo sconto non arriva in bolletta.</p><a class="article-link" href="/blog/bonus-sociali-luce-gas-2026/">Leggi la guida <span>→</span></a></div></article>
+      <article class="article-card" data-category="energia" data-search="fine servizio tutele graduali marzo 2027 stg arera mercato libero clienti vulnerabili offerte luce"><a class="article-image" href="/blog/fine-servizio-tutele-graduali-marzo-2027/"><img src="/assets/blog/2026-11-13/fine-tutele-graduali-energia-elettrica.jpg" alt="Traliccio e linee elettriche in Italia per la fine delle tutele graduali" width="1200" height="800"></a><div class="article-card-body"><div class="article-meta"><span>Bollette ed energia</span><time datetime="2026-11-13">13 novembre 2026</time></div><h3><a href="/blog/fine-servizio-tutele-graduali-marzo-2027/">Fine del Servizio a Tutele Graduali: cosa fare entro marzo 2027</a></h3><p>Scadenze, passaggio automatico, clienti vulnerabili e controlli da fare prima di scegliere un’offerta.</p><a class="article-link" href="/blog/fine-servizio-tutele-graduali-marzo-2027/">Leggi la guida <span>→</span></a></div></article>
+    </div><div class="blog-empty" id="blogEmpty" hidden><h3>Nessuna guida trovata</h3><p>Prova con una parola più generale oppure visualizza tutte le guide.</p><button type="button" class="btn btn-primary" id="resetSearch">Azzera la ricerca</button></div>
+  </div></section>
+
+  <section class="newsletter-band"><div class="container newsletter-inner"><div><span class="section-label">Manteniamo anche Substack</span><h2>Ricevi le nuove guide via email</h2><p>Il blog ora vive nel sito; la newsletter Substack resta attiva per ricevere gli aggiornamenti.</p></div><a class="btn btn-primary" href="https://difesaconsumatore.substack.com" target="_blank" rel="noopener">Iscriviti alla newsletter ↗</a></div></section>
+</main><script src="/consent-config.js?v=1"></script><script src="/nav.js?v=14"></script><script src="/blog/blog.js?v=1"></script></body></html>

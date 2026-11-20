@@ -21,7 +21,8 @@
   // Il footer riprende le pagine principali e aggiunge il Blog.
   const footerLinks = [
     ...links,
-    { href: SUBSTACK_URL, label: 'Blog', external: true }
+    { href: '/blog/', label: 'Blog' },
+    { href: SUBSTACK_URL, label: 'Newsletter Substack', external: true }
   ];
 
   const navHTML = `
@@ -39,7 +40,7 @@
         </button>
         <ul class="nav-links" id="navLinks">
           ${links.map(l => `<li><a href="${l.href}" class="${normPath(l.href) === currentPath ? 'active' : ''}">${l.label}</a></li>`).join('')}
-          <li><a href="${SUBSTACK_URL}" target="_blank" rel="noopener" class="nav-cta">Blog &amp; Newsletter</a></li>
+          <li><a href="/blog/" class="nav-cta ${currentPath.startsWith('/blog') ? 'active' : ''}">Blog</a></li>
         </ul>
       </div>
     </nav>
