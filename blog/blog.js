@@ -2,11 +2,12 @@
   const form=document.getElementById('blogSearch');
   if(!form)return;
   const input=document.getElementById('blogQuery');
+  const grid=document.getElementById('articleGrid');
   const cards=[...document.querySelectorAll('.article-card')];
+  cards.sort((a,b)=>{const dateA=a.querySelector('time')?.dateTime||'';const dateB=b.querySelector('time')?.dateTime||'';return dateB.localeCompare(dateA);}).forEach(card=>grid.appendChild(card));
   const categories=[...document.querySelectorAll('[data-category]')];
   const count=document.getElementById('resultCount');
   const empty=document.getElementById('blogEmpty');
-  const grid=document.getElementById('articleGrid');
   const viewButtons=[...document.querySelectorAll('[data-view]')];
   let activeCategory='all';
   const normalize=value=>value.toLocaleLowerCase('it').normalize('NFD').replace(/[\u0300-\u036f]/g,'').trim();
